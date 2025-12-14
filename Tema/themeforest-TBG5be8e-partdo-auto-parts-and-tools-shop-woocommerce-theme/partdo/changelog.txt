@@ -1,0 +1,248 @@
+v1.4.3
+-- Added: Social Login/Register with Google.
+-- Added: Social Login/Register with Facebook.
+-- Added: "Extra Tab" option in product page.
+-- Updated: Partdo Core plugin.
+
+v1.4.2
+-- Added: KLB AI integration to generate product descriptions using OpenAI.
+-- Added: KLB AI integration to generate product short descriptions using OpenAI.
+-- Added: "Generate Full Description (AI)" and "Generate Short Description (AI)" buttons to WooCommerce product edit page.
+-- Added: Brands A-Z list.
+-- Added: Searcy by product tags.
+-- Added: Ajax Search with Variable SKU.
+-- Updated: WooCommerce outdated files.
+-- Updated: Partdo Core plugin.
+
+v1.4.1
+-- Updated: WooCommerce outdated files.
+-- Updated: Partdo Core plugin.
+
+v1.4.0
+-- Updated: WooCommerce outdated files.
+-- Updated: Partdo Core plugin.
+
+v1.3.9
+-- Updated: WooCommerce outdated files.
+-- Updated: Partdo Core plugin.
+
+v1.3.8
+-- Updated: WooCommerce outdated files.
+-- Updated: Partdo Core plugin.
+
+v1.3.7
+-- Added: Product Categories Widget on Category Page.
+-- Updated: Partdo Core plugin.
+
+v1.3.6
+-- Added: Current year tag for copyright.
+-- Updated: WooCommerce outdated files.
+-- Updated: Partdo Core plugin.
+
+v1.3.5
+-- Updated: WooCommerce.
+-- Updated: Partdo Core plugin.
+
+v1.3.4
+-- Updated: WooCommerce outdated files.
+-- Updated: Shop password button.
+-- Updated: Partdo Core plugin.
+
+v1.3.3
+-- Added: Search for Mobile Header.
+-- Added: Side Cart.
+-- Added: SKU for the product box.
+-- Added: Attributes for the product Box.
+-- Added: Variations on Product Archive.
+-- Added: Login Popup.
+-- Added: Mini Cart Color Settings.
+-- Added: Product Detail Color Settings.
+-- Added: Product Detail Low Stock Notification.
+-- Added: Single Gallery 1 Column.
+-- Added: Single Gallery 2 Columns.
+-- Added: Single Gallery Carousel 2 Columns.
+-- Added: Product Detail Shipping Class Notification.
+-- Added: Product Detail How many people have added a product in their cart.
+-- Added: Product Detail Vertical Tab.
+-- Added: Product Detail Accordion Tab.
+-- Added: Product Detail Accordion Tab in Content.
+-- Added: Column option for Cross Sells Products.
+-- Added: Column option for Cross Upsell Products.
+-- Added: Blog Grid Layout.
+-- Added: KLB Wishlist shortcode. [klbwl_list]
+-- Added: KLB Compare shortcode. [klbcp_list]
+-- Added: 404 Page template option.
+-- Updated: Wishlist plugin removed.
+-- Updated: Compare plugin removed.
+-- Updated: WooCommerce outdated files.
+-- Updated: Partdo Core plugin.
+
+v1.3.2
+-- Updated: WooCommerce outdated files.
+-- Updated: Partdo Core plugin.
+
+v1.3.1
+-- Fixed: Elementor v3.26.0 issue.
+
+v1.3.0
+-- Updated: WooCommerce outdated files.
+-- Updated: Partdo Core plugin.
+
+v1.2.9
+-- Updated: Low stock notification.
+-- Updated: WooCommerce.
+-- Updated: Partdo Core plugin.
+
+v1.2.8
+-- Updated: Product Categories widget.
+-- Updated: Customizer X button.
+-- Updated: File version.
+-- Updated: WooCommerce.
+-- Updated: Partdo Core plugin.
+
+v1.2.7
+-- Updated: WooCommerce outdated files.
+-- Updated: Partdo Core plugin.
+
+v1.2.6
+-- Fixed: PHP 8.2 and PHP 8.3 deprecations.
+-- Updated: Load More pagination.
+-- Updated: Infinity Scroll pagination.
+-- Updated: WooCommerce outdated files.
+-- Updated: Translation file.
+-- Updated: Partdo Core plugin.
+-- Updated: Envato Market plugin.
+
+v1.2.5
+-- Updated: WooCommerce outdated files.
+-- Updated: Partdo Core plugin.
+
+v1.2.4
+-- Updated: WooCommerce outdated files.
+-- Updated: Partdo Core plugin.
+
+v1.2.3
+-- Fixed: Customizer PHP error.
+-- Fixed: PHP 8.2 and PHP 8.3 deprecations.
+-- Updated: Partdo Core plugin.
+-- Updated: WooCommerce.
+
+v1.2.2
+-- Fixed: Ajax dropdown filter.
+-- Updated: WooCommerce outdated files.
+-- Updated: Partdo Core plugin.
+
+v1.2.1
+-- Fixed: Mini Cart scroll.
+-- Updated: WooCommerce.
+-- Updated: Partdo Core plugin.
+
+v1.2.0
+-- Fixed: Registration conflict.
+
+v1.1.9
+-- Fixed: Variation SKU.
+-- Updated: KlbTheme Register page.
+-- Updated: WooCommerce.
+-- Updated: Partdo Core plugin.
+
+v1.1.8
+-- Updated: WooCommerce.
+-- Updated: Partdo Core plugin.
+
+v1.1.7
+-- Updated: WooCommerce.
+-- Updated: Partdo Core plugin.
+
+v1.1.6
+-- Improved: On Sale Products Query.
+-- Fixed: Single Product with video.
+-- Fixed: Sigle Product zoom.
+-- Updated: WooCommerce.
+-- Updated: Partdo Core plugin.
+
+v1.1.5
+-- Fixed: Product Gallery.
+-- Updated: WooCommerce.
+
+v1.1.4
+-- Updated: WooCommerce.
+-- Updated: Partdo Core plugin.
+
+v1.1.3
+-- Updated: WooCommerce.
+-- Updated: Partdo Core plugin.
+
+v1.1.2
+-- Updated: WooCommerce.
+-- Updated: Partdo Core plugin.
+
+v1.1.1
+-- Updated: WooCommerce outdated files.
+-- Updated: Partdo Core plugin.
+
+v1.1.0
+-- Updated: Quick View button.
+-- Updated: Partdo Core plugin.
+-- Updated: WooCommerce.
+
+v1.0.9
+-- Updated: WooCommerce outdated files.
+
+v1.0.8
+-- Added: SKU Search option.
+-- Updated: The language file.
+-- Updated: Product Tab Carousel widget.
+-- Updated: Partdo Core plugin.
+-- Updated: WooCommerce.
+
+v1.0.7
+-- Updated: Free Shipping Bar.
+-- Updated: Partdo Core plugin.
+-- Updated: WooCommerce.
+
+v1.0.6
+-- Added: Mega Menu with Elementor Template.
+-- Updated: Partdo Core plugin.
+-- Updated: WooCommerce.
+
+v1.0.5
+-- Added: Icon picker for the menu.
+-- Added: Style options for single product.
+-- Updated: The language file.
+-- Updated: Buy Now button.
+-- Updated: Partdo Core plugin.
+-- Updated: WooCommerce outdated files.
+-- Updated: Envato Market plugin.
+
+v1.0.4
+-- Added: Advanced Badge Settings.
+-- Updated: The language file.
+-- Updated: Ajax search form.
+-- Updated: Deprecated functions.
+-- Updated: Partdo Core plugin.
+
+v1.0.3
+-- Added: Ajax Login/Register Form.
+-- Added: Single Sticky Titles.
+-- Added: Single Product Navigation.
+-- Added: Single Sticky Cart.
+-- Added: Maintenance Mode.
+-- Added: Back to Top.
+-- Added: Single re-order option.
+-- Updated: Infinite - Load More pagination.
+-- Updated: Ajax add to cart notice.
+-- Updated: Partdo Core plugin.
+-- Updated: WooCommerce outdated files.
+
+v1.0.2
+-- Updated: Login-Register Form tab.
+-- Updated: The color option.
+-- Updated: Partdo Core plugin.
+-- Updated: WooCommerce outdated files.
+
+v1.0.1
+-- Added: Theme Setup Wizard.
+-- Added: The child theme.
+-- Updated: RTL.
+-- Updated: WooCommerce.
