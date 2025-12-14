@@ -1,0 +1,105 @@
+﻿ 
+@{
+}
+<header class="site-header header-type-default">
+
+    <!-- TOP BAR (isteğe bağlı) -->
+    <div class="header-top">
+        <div class="container">
+            <div class="header-top-inner">
+                <div class="header-top-left">
+                    <span>Free shipping on orders over $99</span>
+                </div>
+                <div class="header-top-right">
+                    <ul class="top-links">
+                        <li><a href="/account">My Account</a></li>
+                        <li><a href="/wishlist">Wishlist</a></li>
+                        <li><a href="/checkout">Checkout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN HEADER -->
+    <div class="header-main">
+        <div class="container">
+            <div class="header-inner">
+
+                <!-- MOBILE MENU BUTTON -->
+                <div class="header-mobile-toggle">
+                    <a href="#" class="menu-toggle">
+                        <span></span><span></span><span></span>
+                    </a>
+                </div>
+
+                <!-- LOGO -->
+                <div class="site-branding">
+                    <a href="/">
+                        <img src="~/assets/images/logo.png" alt="Partdo" />
+                    </a>
+                </div>
+
+                <!-- MAIN NAV -->
+                <nav class="site-navigation">
+                    <ul class="menu main-menu">
+                        <li class="menu-item">
+                            <a href="/">Home</a>
+                        </li>
+                        <li class="menu-item menu-item-has-children">
+                            <a href="/shop">Shop</a>
+                            <ul class="sub-menu">
+                                <li><a href="/shop">Shop Grid</a></li>
+                                <li><a href="/shop/category">Categories</a></li>
+                                <li><a href="/shop/product">Single Product</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu-item">
+                            <a href="/blog">Blog</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="/contact">Contact</a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- HEADER ACTIONS -->
+                <div class="header-actions">
+
+                    <!-- SEARCH -->
+                    <a href="#" class="header-action header-search">
+                        <i class="klb-search"></i>
+                    </a>
+
+                    <!-- USER -->
+                    <a href="/account" class="header-action header-user">
+                        <i class="klb-user"></i>
+                    </a>
+
+                    <!-- CART -->
+                    <a href="/cart" class="header-action header-cart">
+                        <i class="klb-cart"></i>
+                        <span class="cart-count">0</span>
+                    </a>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- SEARCH MODAL -->
+    <div class="search-overlay">
+        <div class="search-overlay-inner">
+            <form action="/search" method="get">
+                <input type="text" name="q" placeholder="Search products..." />
+                <button type="submit">
+                    <i class="klb-search"></i>
+                </button>
+            </form>
+            <a href="#" class="search-close">×</a>
+        </div>
+    </div>
+
+</header>
+
