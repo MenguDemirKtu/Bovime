@@ -1,0 +1,37 @@
+.klbth-free-shipping {
+  padding: 0.9375rem;
+  margin-bottom: 0.75rem;
+  background-color: var(--color-info-light);
+  border-radius: var(--theme-theme-radius-base);
+  width: 100%;
+}
+.klbth-free-shipping .free-shipping-notice {
+  font-size: 0.75rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+.klbth-free-shipping .free-shipping-notice .woocommerce-Price-amount {
+  font-size: 0.875rem;
+  line-height: normal;
+  font-weight: 700;
+  color: var(--color-danger);
+}
+.klbth-free-shipping .shipping-progress {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 0.25rem;
+  background-color: #fff;
+  border-radius: 0.9375rem;
+}
+.klbth-free-shipping .shipping-progress span {
+  position: absolute;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-color: var(--color-danger);
+  border-radius: 0.9375rem;
+}
+.klbth-free-shipping.success .shipping-progress span {
+    background: var(--color-success);
+}
