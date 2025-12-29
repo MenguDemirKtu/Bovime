@@ -23,10 +23,7 @@ namespace Bovime.Models
                 mansetler = await vari.MansetAYRINTIs.Where(p => p.e_yayindami == true).OrderBy(p => p.sirasi).ToListAsync();
                 reklamKusagi1 = await vari.ReklamKusagi1AYRINTIs.ToListAsync();
                 anaSektorler = await vari.SektorAYRINTIs.OrderBy(p => p.sektorAdi).ToListAsync();
-
-
-                Genel.menuHtml = await Genel.menuOlustur(vari);
-
+                await Genel.yenile(vari);
             }
         }
     }

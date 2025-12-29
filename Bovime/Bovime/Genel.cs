@@ -9,32 +9,86 @@ namespace Bovime
     public class Genel
     {
 
+        public static bool yenilensinmi = true;
         public static string menuHtml { get; set; }
+
+        public static string mobilMenuHtml { get; set; }
+
+
+
+        public async static Task yenile(veri.Varlik vari)
+        {
+            if (yenilensinmi == true)
+            {
+                await menuOlustur(vari);
+                yenilensinmi = false;
+            }
+        }
+
+
+
+        private static void alt(List<SiteMenuAYRINTI> menuler)
+        {
+            /*
+             
+             
+            		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-40 current_page_item current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-3847">
+							<a href="https://klbtheme.com/partdo/">Home</a>
+							<ul class="sub-menu">
+								<li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home"><a href="https://klbtheme.com/partdo/">Home Tools 1</a></li>
+								<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://klbtheme.com/partdo/home-2/">Home Tools 2</a></li>
+								<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://klbtheme.com/partdo/home-3/">Home Tools 3</a></li>
+								<li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="https://klbtheme.com/partdo/phone/">Home Phone 1</a></li>
+								<li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="https://klbtheme.com/partdo/phone/home-2/">Home Phone 2</a></li>
+								<li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="https://klbtheme.com/partdo/phone/home-3/">Home Phone 3</a></li>
+							</ul>
+						</li>
+					 
+						<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat"><a href="https://klbtheme.com/partdo/product-category/tires-wheels/">Tires &amp; Wheels</a></li>
+						<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat"><a href="https://klbtheme.com/partdo/product-category/interior-accessories/">Interior Accessories</a></li>
+						<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://klbtheme.com/partdo/blog/">Blog</a></li>
+						<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://klbtheme.com/partdo/contact/">Contact</a></li>
+					 
+
+
+             */
+
+            List<SiteMenuAYRINTI> ustler = menuler.Where(p => p.e_altMenuMu == false).OrderBy(p => p.sirasi).ToList();
+            mobilMenuHtml = "";
+            for (int i = 0; i < ustler.Count; i++)
+            {
+                var siradaki = ustler[i];
+                var altlari = menuler.Where(p => p.e_altMenuMu == true && p.i_ustSiteMenuKimlik == ustler[i].siteMenukimlik).OrderBy(p => p.sirasi).ToList();
+
+                if (altlari.Count == 0)
+                {
+                    mobilMenuHtml += String.Format(" <li class=\"menu-item menu-item-type-post_type menu-item-object-page\"><a href=\"https://klbtheme.com/partdo/contact/\"> {0} </a></li>", siradaki.siteMenuAdi);
+                }
+                else
+                {
+
+                    mobilMenuHtml += "\t\t<li class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-40 current_page_item current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-3847\">\r\n\t\t\t\t\t\t\t<a href=\"https://klbtheme.com/partdo/\"> " + siradaki.siteMenuAdi + " </a>\r\n\t\t\t\t\t\t\t<ul class=\"sub-menu\">";
+
+
+                    for (int k = 0; k < altlari.Count; k++)
+                    {
+                        mobilMenuHtml += String.Format("\t<li class=\"menu-item menu-item-type-post_type menu-item-object-page\"><a href=\"https://klbtheme.com/partdo/home-2/\">   " + altlari[k].siteMenuAdi + "  </a></li>\r\n\t\t\t\t\t\t\t");
+
+                    }
+
+
+                    mobilMenuHtml += "</ul>\r\n\t\t\t\t\t\t</li>";
+
+                }
+            }
+        }
         public static async Task<string> menuOlustur(veri.Varlik vari)
         {
             List<SiteMenuAYRINTI> menuler = await vari.SiteMenuAYRINTIs.ToListAsync();
             List<SiteMenuAYRINTI> ustler = menuler.Where(p => p.e_altMenuMu == false).OrderBy(p => p.sirasi).ToList();
 
-            /*
-             	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-40 current_page_item current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-3847" id="menu-item-3847">
-										<a href="https://klbtheme.com/partdo/">Home</a>
-										<ul class="sub-menu">
-											<li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home" ><a href="https://klbtheme.com/partdo/">Home Tools 1</a></li>
-											<li class="menu-item menu-item-type-post_type menu-item-object-page" ><a href="https://klbtheme.com/partdo/home-2/">Home Tools 2</a></li>
-											<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://klbtheme.com/partdo/home-3/">Home Tools 3</a></li>
-											<li class="menu-item menu-item-type-custom menu-item-object-custom" ><a href="https://klbtheme.com/partdo/phone/">Home Phone 1</a></li>
-											<li class="menu-item menu-item-type-custom menu-item-object-custom" ><a href="https://klbtheme.com/partdo/phone/home-2/">Home Phone 2</a></li>
-											<li class="menu-item menu-item-type-custom menu-item-object-custom" ><a href="https://klbtheme.com/partdo/phone/home-3/">Home Phone 3</a></li>
-										</ul>
-									</li>
-								 
-									<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat"  ><a href="https://klbtheme.com/partdo/product-category/tires-wheels/">Tires &amp; Wheels</a></li>
-									<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat" ><a href="https://klbtheme.com/partdo/product-category/interior-accessories/">Interior Accessories</a></li>
-									<li class="menu-item menu-item-type-post_type menu-item-object-page"  ><a href="https://klbtheme.com/partdo/blog/">Blog</a></li>
-									<li class="menu-item menu-item-type-post_type menu-item-object-page"  ><a href="https://klbtheme.com/partdo/contact/">İletişim</a></li>
-								
-             
-             */
+
+            alt(menuler);
 
             string tamami = "";
             for (int i = 0; i < ustler.Count; i++)
@@ -66,7 +120,7 @@ namespace Bovime
                 }
 
             }
-
+            menuHtml = tamami;
             return tamami;
         }
         public static DateTime devamGunuOlusturmaTarihi { get; set; }
