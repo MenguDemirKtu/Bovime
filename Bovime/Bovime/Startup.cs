@@ -132,7 +132,7 @@ namespace Bovime
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=AnaSayfa}/{action=Index}/{id?}");
+                    pattern: "{controller=SiteAnaSayfa}/{action=Index}/{id?}");
             });
         }
     }

@@ -3,18 +3,18 @@ using Bovime.veriTabani;
 using Newtonsoft.Json;
 namespace Bovime.Models
 {
-    public class ReklamKusagi2Model : ModelTabani
+    public class MansetModel : ModelTabani
     {
-        public ReklamKusagi2 kartVerisi { get; set; }
-        public List<ReklamKusagi2AYRINTI> dokumVerisi { get; set; }
-        public ReklamKusagi2AYRINTIArama aramaParametresi { get; set; }
+        public Manset kartVerisi { get; set; }
+        public List<MansetAYRINTI> dokumVerisi { get; set; }
+        public MansetAYRINTIArama aramaParametresi { get; set; }
 
 
-        public ReklamKusagi2Model()
+        public MansetModel()
         {
-            this.kartVerisi = new ReklamKusagi2();
-            this.dokumVerisi = new List<ReklamKusagi2AYRINTI>();
-            this.aramaParametresi = new ReklamKusagi2AYRINTIArama();
+            this.kartVerisi = new Manset();
+            this.dokumVerisi = new List<MansetAYRINTI>();
+            this.aramaParametresi = new MansetAYRINTIArama();
         }
 
 
@@ -38,14 +38,14 @@ namespace Bovime.Models
                 List<string> kayitlar = id.Split(',').ToList();
                 for (int i = 0; i < kayitlar.Count; i++)
                 {
-                    ReklamKusagi2? silinecek = await ReklamKusagi2.olusturKos(vari, kayitlar[i]);
+                    Manset? silinecek = await Manset.olusturKos(vari, kayitlar[i]);
                     if (silinecek == null)
                         continue;
                     silinecek._sayfaAta(sayfasi);
                     await silinecek.silKos(vari);
                 }
             }
-            Models.ReklamKusagi2Model modeli = new Models.ReklamKusagi2Model();
+            Models.MansetModel modeli = new Models.MansetModel();
             await modeli.veriCekKos(silen);
         }
         public async Task yetkiKontrolu(Sayfa sayfasi)
@@ -60,7 +60,7 @@ namespace Bovime.Models
 
 
 
-        public async Task<ReklamKusagi2> kaydetKos(Sayfa sayfasi)
+        public async Task<Manset> kaydetKos(Sayfa sayfasi)
         {
             using (veri.Varlik vari = new veri.Varlik())
             {
@@ -83,10 +83,10 @@ namespace Bovime.Models
             yenimiBelirle(kimlik);
             using (veri.Varlik vari = new Varlik())
             {
-                var kart = await ReklamKusagi2.olusturKos(vari, kimlik);
+                var kart = await Manset.olusturKos(vari, kimlik);
                 if (kart != null)
                     kartVerisi = kart;
-                dokumVerisi = new List<ReklamKusagi2AYRINTI>();
+                dokumVerisi = new List<MansetAYRINTI>();
                 await baglilariCek(vari, kime);
                 await fotoAyariBelirle(vari, kartVerisi._cizelgeAdi());
             }
@@ -99,9 +99,9 @@ namespace Bovime.Models
             this.kullanan = kime;
             using (veri.Varlik vari = new Varlik())
             {
-                ReklamKusagi2AYRINTIArama kosul = new ReklamKusagi2AYRINTIArama();
+                MansetAYRINTIArama kosul = new MansetAYRINTIArama();
                 kosul.varmi = true;
-                kartVerisi = new ReklamKusagi2();
+                kartVerisi = new Manset();
                 dokumVerisi = await kosul.cek(vari);
                 await baglilariCek(vari, kime);
             }
@@ -114,9 +114,9 @@ namespace Bovime.Models
                 var talep = vari.AramaTalebis.FirstOrDefault(p => p.kodu == id);
                 if (talep != null)
                 {
-                    ReklamKusagi2AYRINTIArama kosul = JsonConvert.DeserializeObject<ReklamKusagi2AYRINTIArama>(talep.talepAyrintisi ?? "") ?? new ReklamKusagi2AYRINTIArama();
+                    MansetAYRINTIArama kosul = JsonConvert.DeserializeObject<MansetAYRINTIArama>(talep.talepAyrintisi ?? "") ?? new MansetAYRINTIArama();
                     dokumVerisi = await kosul.cek(vari);
-                    kartVerisi = new ReklamKusagi2();
+                    kartVerisi = new Manset();
                     await baglilariCek(vari, kime);
                     aramaParametresi = kosul;
                 }

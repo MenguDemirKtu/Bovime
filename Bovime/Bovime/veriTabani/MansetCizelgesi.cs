@@ -6,51 +6,54 @@ using System.Linq.Expressions;
 namespace Bovime.veriTabani
 {
 
-    public class ReklamKusagi2Arama
+    public class MansetArama
     {
-        public Int32? reklamKusagi2kimlik { get; set; }
-        public string? baslik { get; set; }
-        public string? metin { get; set; }
-        public string? hefefUrl { get; set; }
-        public Int64? i_fotoKimlik { get; set; }
+        public Int32? mansetkimlik { get; set; }
+        public string? baslikUst { get; set; }
+        public string? baslikOrta { get; set; }
+        public string? altYazi { get; set; }
         public Int32? sirasi { get; set; }
+        public Int64? i_fotoKimlik { get; set; }
+        public bool? e_yayindami { get; set; }
         public bool? varmi { get; set; }
-        public ReklamKusagi2Arama()
+        public MansetArama()
         {
             this.varmi = true;
         }
 
-        private ExpressionStarter<ReklamKusagi2> kosulOlustur()
+        private ExpressionStarter<Manset> kosulOlustur()
         {
-            var predicate = PredicateBuilder.New<ReklamKusagi2>(P => P.varmi == true);
-            if (reklamKusagi2kimlik != null)
-                predicate = predicate.And(x => x.reklamKusagi2kimlik == reklamKusagi2kimlik);
-            if (baslik != null)
-                predicate = predicate.And(x => x.baslik != null && x.baslik.Contains(baslik));
-            if (metin != null)
-                predicate = predicate.And(x => x.metin != null && x.metin.Contains(metin));
-            if (hefefUrl != null)
-                predicate = predicate.And(x => x.hefefUrl != null && x.hefefUrl.Contains(hefefUrl));
-            if (i_fotoKimlik != null)
-                predicate = predicate.And(x => x.i_fotoKimlik == i_fotoKimlik);
+            var predicate = PredicateBuilder.New<Manset>(P => P.varmi == true);
+            if (mansetkimlik != null)
+                predicate = predicate.And(x => x.mansetkimlik == mansetkimlik);
+            if (baslikUst != null)
+                predicate = predicate.And(x => x.baslikUst != null && x.baslikUst.Contains(baslikUst));
+            if (baslikOrta != null)
+                predicate = predicate.And(x => x.baslikOrta != null && x.baslikOrta.Contains(baslikOrta));
+            if (altYazi != null)
+                predicate = predicate.And(x => x.altYazi != null && x.altYazi.Contains(altYazi));
             if (sirasi != null)
                 predicate = predicate.And(x => x.sirasi == sirasi);
+            if (i_fotoKimlik != null)
+                predicate = predicate.And(x => x.i_fotoKimlik == i_fotoKimlik);
+            if (e_yayindami != null)
+                predicate = predicate.And(x => x.e_yayindami == e_yayindami);
             if (varmi != null)
                 predicate = predicate.And(x => x.varmi == varmi);
             return predicate;
 
         }
-        public async Task<List<ReklamKusagi2>> cek(veri.Varlik vari)
+        public async Task<List<Manset>> cek(veri.Varlik vari)
         {
-            List<ReklamKusagi2> sonuc = await vari.ReklamKusagi2s
+            List<Manset> sonuc = await vari.Mansets
            .Where(kosulOlustur())
            .ToListAsync();
             return sonuc;
         }
-        public async Task<ReklamKusagi2?> bul(veri.Varlik vari)
+        public async Task<Manset?> bul(veri.Varlik vari)
         {
             var predicate = kosulOlustur();
-            ReklamKusagi2? sonuc = await vari.ReklamKusagi2s
+            Manset? sonuc = await vari.Mansets
            .Where(predicate)
            .FirstOrDefaultAsync();
             return sonuc;
@@ -58,7 +61,7 @@ namespace Bovime.veriTabani
     }
 
 
-    public class ReklamKusagi2Cizelgesi
+    public class MansetCizelgesi
     {
 
 
@@ -69,45 +72,45 @@ namespace Bovime.veriTabani
         /// </summary>  
         /// <param name="kosullar"></param> 
         /// <returns></returns> 
-        public static async Task<List<ReklamKusagi2>> ara(params Expression<Func<ReklamKusagi2, bool>>[] kosullar)
+        public static async Task<List<Manset>> ara(params Expression<Func<Manset, bool>>[] kosullar)
         {
             using (var vari = new veri.Varlik())
             {
                 return await ara(vari, kosullar);
             }
         }
-        public static async Task<List<ReklamKusagi2>> ara(veri.Varlik vari, params Expression<Func<ReklamKusagi2, bool>>[] kosullar)
+        public static async Task<List<Manset>> ara(veri.Varlik vari, params Expression<Func<Manset, bool>>[] kosullar)
         {
             var kosul = Vt.Birlestir(kosullar);
-            return await vari.ReklamKusagi2s
-                            .Where(kosul).OrderByDescending(p => p.reklamKusagi2kimlik)
+            return await vari.Mansets
+                            .Where(kosul).OrderByDescending(p => p.mansetkimlik)
                    .ToListAsync();
         }
 
 
 
-        public static async Task<ReklamKusagi2?> tekliCekKos(Int32 kimlik, Varlik kime)
+        public static async Task<Manset?> tekliCekKos(Int32 kimlik, Varlik kime)
         {
-            ReklamKusagi2? kayit = await kime.ReklamKusagi2s.FirstOrDefaultAsync(p => p.reklamKusagi2kimlik == kimlik && p.varmi == true);
+            Manset? kayit = await kime.Mansets.FirstOrDefaultAsync(p => p.mansetkimlik == kimlik && p.varmi == true);
             return kayit;
         }
 
 
-        public static async Task kaydetKos(ReklamKusagi2 yeni, Varlik vari, params bool[] yedekAlinsinmi)
+        public static async Task kaydetKos(Manset yeni, Varlik vari, params bool[] yedekAlinsinmi)
         {
-            if (yeni.reklamKusagi2kimlik <= 0)
+            if (yeni.mansetkimlik <= 0)
             {
                 Kayit kay = new Kayit(yeni, "E", yeni._tanimi() + " kaydının eklenmesi ");
                 if (yeni.varmi == null)
                     yeni.varmi = true;
-                await vari.ReklamKusagi2s.AddAsync(yeni);
+                await vari.Mansets.AddAsync(yeni);
                 await vari.SaveChangesAsync();
                 await kay.kaydetKos(vari, yedekAlinsinmi);
             }
             else
             {
                 Kayit kay = new Kayit(yeni, "G", yeni._tanimi() + " kaydının güncellenmesi ");
-                ReklamKusagi2? bulunan = await vari.ReklamKusagi2s.FirstOrDefaultAsync(p => p.reklamKusagi2kimlik == yeni.reklamKusagi2kimlik);
+                Manset? bulunan = await vari.Mansets.FirstOrDefaultAsync(p => p.mansetkimlik == yeni.mansetkimlik);
                 if (bulunan == null)
                     return;
                 vari.Entry(bulunan).CurrentValues.SetValues(yeni);
@@ -117,11 +120,11 @@ namespace Bovime.veriTabani
         }
 
 
-        public static async Task silKos(ReklamKusagi2 kimi, Varlik vari, params bool[] yedekAlinsinmi)
+        public static async Task silKos(Manset kimi, Varlik vari, params bool[] yedekAlinsinmi)
         {
             Kayit kay = new Kayit(kimi, "S", kimi._tanimi() + " kaydının silinmesi");
             kimi.varmi = false;
-            var bulunan = await vari.ReklamKusagi2s.FirstOrDefaultAsync(p => p.reklamKusagi2kimlik == kimi.reklamKusagi2kimlik);
+            var bulunan = await vari.Mansets.FirstOrDefaultAsync(p => p.mansetkimlik == kimi.mansetkimlik);
             if (bulunan == null)
                 return;
             kimi.varmi = false;
@@ -130,9 +133,9 @@ namespace Bovime.veriTabani
         }
 
 
-        public static ReklamKusagi2? tekliCek(Int32 kimlik, Varlik kime)
+        public static Manset? tekliCek(Int32 kimlik, Varlik kime)
         {
-            ReklamKusagi2? kayit = kime.ReklamKusagi2s.FirstOrDefault(p => p.reklamKusagi2kimlik == kimlik);
+            Manset? kayit = kime.Mansets.FirstOrDefault(p => p.mansetkimlik == kimlik);
             if (kayit != null)
                 if (kayit.varmi != true)
                     return null;
@@ -146,13 +149,13 @@ namespace Bovime.veriTabani
         /// <param name="yeni"></param> 
         /// <param name="kime"></param> 
         /// <param name="kaydedilsinmi">Girmek isteğe bağlıdır. Eğer false değeri girilirse yedeği alınmaz. İkinci parametre </param> 
-        public static void kaydet(ReklamKusagi2 yeni, Varlik kime, params bool[] yedekAlinsinmi)
+        public static void kaydet(Manset yeni, Varlik kime, params bool[] yedekAlinsinmi)
         {
-            if (yeni.reklamKusagi2kimlik <= 0)
+            if (yeni.mansetkimlik <= 0)
             {
                 if (yeni.varmi == null)
                     yeni.varmi = true;
-                kime.ReklamKusagi2s.Add(yeni);
+                kime.Mansets.Add(yeni);
                 kime.SaveChanges();
                 Kayit kay = new Kayit(yeni, "E", yeni._tanimi() + " kaydının eklenmesi ");
                 kay.kaydet(yedekAlinsinmi);
@@ -160,7 +163,7 @@ namespace Bovime.veriTabani
             else
             {
 
-                var bulunan = kime.ReklamKusagi2s.FirstOrDefault(p => p.reklamKusagi2kimlik == yeni.reklamKusagi2kimlik);
+                var bulunan = kime.Mansets.FirstOrDefault(p => p.mansetkimlik == yeni.mansetkimlik);
                 if (bulunan == null)
                     return;
                 kime.Entry(bulunan).CurrentValues.SetValues(yeni);
@@ -172,10 +175,10 @@ namespace Bovime.veriTabani
         }
 
 
-        public static void sil(ReklamKusagi2 kimi, Varlik kime)
+        public static void sil(Manset kimi, Varlik kime)
         {
             kimi.varmi = false;
-            var bulunan = kime.ReklamKusagi2s.FirstOrDefault(p => p.reklamKusagi2kimlik == kimi.reklamKusagi2kimlik);
+            var bulunan = kime.Mansets.FirstOrDefault(p => p.mansetkimlik == kimi.mansetkimlik);
             if (bulunan == null)
                 return;
             kime.Entry(bulunan).CurrentValues.SetValues(kimi);

@@ -1,13 +1,74 @@
 ﻿using Bovime.veri;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
-
 
 
 namespace Bovime
 {
     public class Genel
     {
+
+        public static string menuHtml { get; set; }
+        public static async Task<string> menuOlustur(veri.Varlik vari)
+        {
+            List<SiteMenuAYRINTI> menuler = await vari.SiteMenuAYRINTIs.ToListAsync();
+            List<SiteMenuAYRINTI> ustler = menuler.Where(p => p.e_altMenuMu == false).OrderBy(p => p.sirasi).ToList();
+
+            /*
+             	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-40 current_page_item current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-3847" id="menu-item-3847">
+										<a href="https://klbtheme.com/partdo/">Home</a>
+										<ul class="sub-menu">
+											<li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home" ><a href="https://klbtheme.com/partdo/">Home Tools 1</a></li>
+											<li class="menu-item menu-item-type-post_type menu-item-object-page" ><a href="https://klbtheme.com/partdo/home-2/">Home Tools 2</a></li>
+											<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://klbtheme.com/partdo/home-3/">Home Tools 3</a></li>
+											<li class="menu-item menu-item-type-custom menu-item-object-custom" ><a href="https://klbtheme.com/partdo/phone/">Home Phone 1</a></li>
+											<li class="menu-item menu-item-type-custom menu-item-object-custom" ><a href="https://klbtheme.com/partdo/phone/home-2/">Home Phone 2</a></li>
+											<li class="menu-item menu-item-type-custom menu-item-object-custom" ><a href="https://klbtheme.com/partdo/phone/home-3/">Home Phone 3</a></li>
+										</ul>
+									</li>
+								 
+									<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat"  ><a href="https://klbtheme.com/partdo/product-category/tires-wheels/">Tires &amp; Wheels</a></li>
+									<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat" ><a href="https://klbtheme.com/partdo/product-category/interior-accessories/">Interior Accessories</a></li>
+									<li class="menu-item menu-item-type-post_type menu-item-object-page"  ><a href="https://klbtheme.com/partdo/blog/">Blog</a></li>
+									<li class="menu-item menu-item-type-post_type menu-item-object-page"  ><a href="https://klbtheme.com/partdo/contact/">İletişim</a></li>
+								
+             
+             */
+
+            string tamami = "";
+            for (int i = 0; i < ustler.Count; i++)
+            {
+
+                var altlari = menuler.Where(p => p.e_altMenuMu == true && p.i_ustSiteMenuKimlik == ustler[i].siteMenukimlik).OrderBy(p => p.sirasi).ToList();
+
+                if (altlari.Count == 0)
+                {
+                    string siradaki = "<li class=\"menu-item menu-item-type-post_type menu-item-object-page\"  ><a href=\"https://klbtheme.com/partdo/contact/\">İletişim</a></li>";
+                    tamami += siradaki;
+                }
+                else
+                {
+
+                    string ara = @"	<li class=""menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-40 current_page_item current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children""  >
+										<a href=""https://klbtheme.com/partdo/"">" + ustler[i].siteMenuAdi + "</a> ";
+                    ara += "\t<ul class=\"sub-menu\">";
+
+                    tamami += ara;
+                    for (int k = 0; k < altlari.Count; k++)
+                    {
+
+                        tamami += " <li class=\"menu-item menu-item-type-post_type menu-item-object-page\"><a href=\"https://klbtheme.com/partdo/home-3/\">   " + altlari[k].siteMenuAdi + "  </a></li> ";
+                    }
+
+                    tamami += "\t\t</ul>\r\n\t\t\t\t\t\t\t\t\t</li>";
+
+                }
+
+            }
+
+            return tamami;
+        }
         public static DateTime devamGunuOlusturmaTarihi { get; set; }
         public static string baglantiTumcesi = "......";
         public static void yenile()

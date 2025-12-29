@@ -1,4 +1,7 @@
-﻿
+﻿@using Bovime
+@using Bovime.veri;
+@model Bovime.Models.SiteAnaSayfaModel
+
 <html lang="en-US">
 <head>
 	<meta charset="utf-8" />
@@ -1117,50 +1120,7 @@
 <body class="home wp-singular page-template-default page page-id-40 wp-theme-partdo theme-partdo woocommerce-no-js elementor-default elementor-kit-5 elementor-page elementor-page-40">
 	<div class="page-content" id="page">
 		<header class="site-header header-type-1 shadow-enable" id="masthead">
-			<div class="header-border"></div>
-			<div class="header-row header-topbar border-bottom-full hide-below-1200">
-				<div class="container">
-					<div class="header-inner">
-						<div class="column left align-center">
-							<nav class="klbth-menu-wrapper horizontal topbar shadow-enable">
-								<ul class="klbth-menu" id="topbar-left">
-									<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3859" id="menu-item-3859"><a href="https://klbtheme.com/partdo/about-us/">About Us</a></li>
-									<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3861" id="menu-item-3861"><a href="https://klbtheme.com/partdo/my-account/">My account</a></li>
-									<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3862" id="menu-item-3862"><a href="https://klbtheme.com/partdo/order-tracking/">Order Tracking</a></li>
-									<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3860" id="menu-item-3860"><a href="https://klbtheme.com/partdo/wishlist/">Wishlist</a></li>
-								</ul>
-							</nav>
-						</div>
-						<div class="column right align-center">
-							<div class="header-notice">
-								<p>Need help? <span>Call us:</span> <a href="tel:(+800) 1234 5678 90">(+800) 1234 5678 90</a> <span>or</span> <a href="/cdn-cgi/l/email-protection#5e373038311e3d31332e3f3027703d3133"><span class="__cf_email__" data-cfemail="2940474f46694a464459484750074a4644">[email protected]</span></a></p>
-							</div>
-							<div class="header-switcher">
-								<nav class="klbth-menu-wrapper horizontal topbar shadow-enable">
-									<ul class="klbth-menu" id="topbar-right">
-										<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-3655" id="menu-item-3655">
-											<a href="#">English</a>
-											<ul class="sub-menu">
-												<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3662" id="menu-item-3662"><a href="#">English</a></li>
-												<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3661" id="menu-item-3661"><a href="#">Spanish</a></li>
-												<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3660" id="menu-item-3660"><a href="#">German</a></li>
-											</ul>
-										</li>
-										<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-3659" id="menu-item-3659">
-											<a href="#">USD</a>
-											<ul class="sub-menu">
-												<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3658" id="menu-item-3658"><a href="#">USD</a></li>
-												<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3657" id="menu-item-3657"><a href="#">INR</a></li>
-												<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3656" id="menu-item-3656"><a href="#">GBP</a></li>
-											</ul>
-										</li>
-									</ul>
-								</nav>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
+	 
 			<div class="header-row header-main spacing hide-below-1200">
 				<div class="container">
 					<div class="header-inner">
@@ -1194,8 +1154,7 @@
 													</div>
 													<form action="https://klbtheme.com/partdo/shop/" class="service-search-form" id="klb-attribute-filter" method="get"><div class="form-column"><select class="theme-select" data-placeholder="Select Make" data-search="true" data-searchplaceholder="Search item..." id="filter_make" name="filter_make" tax="pa_make"><option value="">Select Make</option><option id="83" value="audi">Audi</option><option id="84" value="bmw">BMW</option><option id="85" value="chevrolet">Chevrolet</option><option id="86" value="dodge">Dodge</option><option id="87" value="fiat">Fiat</option><option id="88" value="ford">Ford</option><option id="89" value="honda">Honda</option><option id="90" value="hyundai">Hyundai</option><option id="91" value="jaguar">Jaguar</option><option id="92" value="kia">Kia</option></select></div><div class="form-column"><select class="child-attr theme-select" data-placeholder="Select Model" data-search="true" data-searchplaceholder="Search item..." disabled="" id="child_filter_make" name="filter_make"><option value="0">Select make First</option></select></div><input hidden="" id="klb_filter_make" name="filter_make" type="text" value="" /><div class="form-column"><select class="theme-select" data-placeholder="Select Year" data-search="true" data-searchplaceholder="Search item..." id="filter_year-attr" name="filter_year-attr" tax="pa_year-attr"><option value="">Select Year</option><option id="98" value="1990">1990</option><option id="99" value="1991">1991</option><option id="100" value="1992">1992</option><option id="101" value="1993">1993</option><option id="102" value="1994">1994</option><option id="103" value="1995">1995</option><option id="110" value="2002">2002</option><option id="111" value="2003">2003</option><option id="112" value="2004">2004</option><option id="113" value="2005">2005</option><option id="114" value="2006">2006</option><option id="115" value="2007">2007</option><option id="116" value="2008">2008</option><option id="117" value="2009">2009</option><option id="118" value="2010">2010</option><option id="119" value="2011">2011</option><option id="120" value="2012">2012</option><option id="121" value="2013">2013</option><option id="122" value="2014">2014</option><option id="123" value="2015">2015</option><option id="124" value="2016">2016</option><option id="125" value="2017">2017</option><option id="126" value="2018">2018</option><option id="127" value="2019">2019</option><option id="128" value="2020">2020</option><option id="129" value="2021">2021</option><option id="130" value="2022">2022</option></select></div><input hidden="" id="klb_filter_year-attr" name="filter_year-attr" type="text" value="" /><div class="form-column"><button class="btn primary">Find Auto Parts</button></div></form> <div class="service-description">
 														<p>Please fill in the criteria you are looking for</p>
-													</div>
-													</img>
+													</div> 
 												</div>
 											</div>
 										</div>
@@ -1277,74 +1236,18 @@
 								</a>
 								<div class="dropdown-menu collapse show">
 									<nav class="klbth-menu-wrapper vertical">
-										<ul class="klbth-menu" id="category-menu">
-											<li class="category-parent parent menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children">
-												<a href="https://klbtheme.com/partdo/product-category/headlights-lighting/"><span class="menu-icon"><i class="klbth-icon-car-headlight"></i></span>Headlights &amp; Lighting</a>
-												<ul class="sub-menu">
-													<li class="category-parent parent menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children">
-														<a href="https://klbtheme.com/partdo/product-category/headlights-lighting/">Headlights &amp; Lighting</a>
-														<ul class="sub-menu">
-															<li class="category-parent menu-item menu-item-type-taxonomy menu-item-object-product_cat"><a href="https://klbtheme.com/partdo/product-category/headlights-lighting/daytime-running-lights/">Daytime Running Lights</a></li>
-															<li class="category-parent menu-item menu-item-type-taxonomy menu-item-object-product_cat"><a href="https://klbtheme.com/partdo/product-category/headlights-lighting/fog-lights/">Fog Lights</a></li>
-															<li class="category-parent menu-item menu-item-type-taxonomy menu-item-object-product_cat"><a href="https://klbtheme.com/partdo/product-category/headlights-lighting/interior-lights/">Interior Lights</a></li>
-															<li class="category-parent menu-item menu-item-type-taxonomy menu-item-object-product_cat"><a href="https://klbtheme.com/partdo/product-category/headlights-lighting/license-plate-lights/">License Plate Lights</a></li>
-															<li class="category-parent menu-item menu-item-type-taxonomy menu-item-object-product_cat"><a href="https://klbtheme.com/partdo/product-category/headlights-lighting/rear-fog-lights/">Rear Fog Lights</a></li>
-															<li class="category-parent menu-item menu-item-type-taxonomy menu-item-object-product_cat"><a href="https://klbtheme.com/partdo/product-category/headlights-lighting/reflectors/">Reflectors</a></li>
-															<li class="category-parent menu-item menu-item-type-taxonomy menu-item-object-product_cat"><a href="https://klbtheme.com/partdo/product-category/headlights-lighting/stop-tail-lights/">Stop &amp; Tail Lights</a></li>
-															<li class="category-parent menu-item menu-item-type-taxonomy menu-item-object-product_cat"><a href="https://klbtheme.com/partdo/product-category/headlights-lighting/turn-signal-lights/">Turn Signal Lights</a></li>
-														</ul>
-													</li>
-												</ul>
-											</li>
-											<li class="category-parent parent menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children">
-												<a href="https://klbtheme.com/partdo/product-category/interior-accessories/"> <span class="menu-icon"><i class="klbth-icon-car-signaling"></i></span> Interior Accessories</a>
-												<ul class="sub-menu">
-													<li class="category-parent parent menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children">
-														<a href="https://klbtheme.com/partdo/product-category/interior-accessories/">Interior Accessories</a>
-														<ul class="sub-menu">
-															<li class="category-parent menu-item menu-item-type-taxonomy menu-item-object-product_cat"><a href="https://klbtheme.com/partdo/product-category/interior-accessories/alarm-systems/">Alarm Systems</a></li>
-															<li class="category-parent menu-item menu-item-type-taxonomy menu-item-object-product_cat"><a href="https://klbtheme.com/partdo/product-category/interior-accessories/armrest-box/">Armrest Box</a></li>
-															<li class="category-parent menu-item menu-item-type-taxonomy menu-item-object-product_cat"><a href="https://klbtheme.com/partdo/product-category/interior-accessories/auto-audio-and-video-systems/">Auto Audio and Video Systems</a></li>
-															<li class="category-parent menu-item menu-item-type-taxonomy menu-item-object-product_cat"><a href="https://klbtheme.com/partdo/product-category/interior-accessories/car-key/">Car Key</a></li>
-															<li class="category-parent menu-item menu-item-type-taxonomy menu-item-object-product_cat"><a href="https://klbtheme.com/partdo/product-category/interior-accessories/car-seat-accessories/">Car Seat Accessories</a></li>
-															<li class="category-parent menu-item menu-item-type-taxonomy menu-item-object-product_cat"><a href="https://klbtheme.com/partdo/product-category/interior-accessories/door-accessories/">Door Accessories</a></li>
-															<li class="category-parent menu-item menu-item-type-taxonomy menu-item-object-product_cat"><a href="https://klbtheme.com/partdo/product-category/interior-accessories/remote-starters/">Remote Starters</a></li>
-															<li class="category-parent menu-item menu-item-type-taxonomy menu-item-object-product_cat"><a href="https://klbtheme.com/partdo/product-category/interior-accessories/keyless-entry-systems/">Keyless Entry Systems</a></li>
-															<li class="category-parent menu-item menu-item-type-taxonomy menu-item-object-product_cat"><a href="https://klbtheme.com/partdo/product-category/interior-accessories/vehicle-backup-cameras/">Vehicle Backup Cameras</a></li>
-														</ul>
-													</li>
-												</ul>
-											</li>
-											<li class="category-parent parent menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children">
-												<a href="https://klbtheme.com/partdo/product-category/tires-wheels/"> <span class="menu-icon"><i class="klbth-icon-car-wheel"></i></span> Tires &amp; Wheels</a>
-												<ul class="sub-menu">
-													<li class="category-parent parent menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children">
-														<a href="https://klbtheme.com/partdo/product-category/tires-wheels/">Tires &amp; Wheels</a>
-														<ul class="sub-menu">
-															<li class="category-parent menu-item menu-item-type-taxonomy menu-item-object-product_cat"><a href="https://klbtheme.com/partdo/product-category/tires-wheels/all-season/">All Season</a></li>
-															<li class="category-parent menu-item menu-item-type-taxonomy menu-item-object-product_cat"><a href="https://klbtheme.com/partdo/product-category/tires-wheels/alloy-wheels/">Alloy wheels</a></li>
-															<li class="category-parent menu-item menu-item-type-taxonomy menu-item-object-product_cat"><a href="https://klbtheme.com/partdo/product-category/tires-wheels/competition-tire/">Competition Tire</a></li>
-															<li class="category-parent menu-item menu-item-type-taxonomy menu-item-object-product_cat"><a href="https://klbtheme.com/partdo/product-category/tires-wheels/light-truck/">Light Truck</a></li>
-															<li class="category-parent menu-item menu-item-type-taxonomy menu-item-object-product_cat"><a href="https://klbtheme.com/partdo/product-category/tires-wheels/lug-nut/">Lug Nut</a></li>
-															<li class="category-parent menu-item menu-item-type-taxonomy menu-item-object-product_cat"><a href="https://klbtheme.com/partdo/product-category/tires-wheels/passenger-car/">Passenger Car</a></li>
-															<li class="category-parent menu-item menu-item-type-taxonomy menu-item-object-product_cat"><a href="https://klbtheme.com/partdo/product-category/tires-wheels/summer-tires/">Summer Tires</a></li>
-															<li class="category-parent menu-item menu-item-type-taxonomy menu-item-object-product_cat"><a href="https://klbtheme.com/partdo/product-category/tires-wheels/suv-cuv/">SUV/CUV</a></li>
-															<li class="category-parent menu-item menu-item-type-taxonomy menu-item-object-product_cat"><a href="https://klbtheme.com/partdo/product-category/tires-wheels/tire-repair-kit/">Tire Repair Kit</a></li>
-															<li class="category-parent menu-item menu-item-type-taxonomy menu-item-object-product_cat"><a href="https://klbtheme.com/partdo/product-category/tires-wheels/truck-bus/">Truck &amp; Bus</a></li>
-														</ul>
-													</li>
-												</ul>
-											</li>
-											<li class="category-parent menu-item menu-item-type-taxonomy menu-item-object-product_cat"><a href="https://klbtheme.com/partdo/product-category/tools-equipment/"> <span class="menu-icon"><i class="klbth-icon-car-tools"></i></span> Tools &amp; Equipment</a></li>
-											<li class="category-parent menu-item menu-item-type-taxonomy menu-item-object-product_cat"><a href="https://klbtheme.com/partdo/product-category/auto-safety-security/"> <span class="menu-icon"><i class="klbth-icon-car-key"></i></span> Auto Safety &amp; Security</a></li>
-											<li class="category-parent menu-item menu-item-type-taxonomy menu-item-object-product_cat"><a href="https://klbtheme.com/partdo/product-category/garage-tools/"> <span class="menu-icon"><i class="klbth-icon-car-garage-empty"></i></span> Garage Tools</a></li>
-											<li class="category-parent menu-item menu-item-type-taxonomy menu-item-object-product_cat"><a href="https://klbtheme.com/partdo/product-category/original-battery-tools/"> <span class="menu-icon"><i class="klbth-icon-phone-charge"></i></span> Original Battery Tools</a></li>
-											<li class="category-parent menu-item menu-item-type-taxonomy menu-item-object-product_cat"><a href="https://klbtheme.com/partdo/product-category/phone-displays/"> <span class="menu-icon"><i class="klbth-icon-phone-wipe"></i></span> Phone Displays</a></li>
-											<li class="category-parent menu-item menu-item-type-taxonomy menu-item-object-product_cat"><a href="https://klbtheme.com/partdo/product-category/battery-and-adhesives/"> <span class="menu-icon"><i class="klbth-icon-phone-charge-cable"></i></span> Battery and adhesives</a></li>
-											<li class="category-parent menu-item menu-item-type-custom menu-item-object-custom"><a href="https://klbtheme.com/partdo/shop/?orderby=popularity">Partdo Best Seller</a></li>
-											<li class="category-parent menu-item menu-item-type-custom menu-item-object-custom"><a href="https://klbtheme.com/partdo/shop/?featured=yes">Top 100 Offers on Sale</a></li>
-											<li class="category-parent menu-item menu-item-type-custom menu-item-object-custom"><a href="https://klbtheme.com/partdo/shop/?ft=load-more">New Arrivals<span class="badge rounded-pill theme-secondary large">new</span></a></li>
-										</ul>
+										<ul class="klbth-menu" id="category-menu"> 
+											@{
+
+												foreach(var siradaki in Model.anaSektorler)
+												{
+													<li class="category-parent menu-item menu-item-type-taxonomy menu-item-object-product_cat"><a href="@siradaki._sektorUrl"> <span class="menu-icon"><i class="klbth-icon-car-tools"></i></span> @siradaki.sektorAdi  </a></li>
+
+												}
+
+											}
+
+											 			</ul>
 									</nav>
 								</div>
 							</div>
@@ -1352,131 +1255,11 @@
 						<div class="column left align-center">
 							<nav class="klbth-menu-wrapper horizontal primary shadow-enable">
 								<ul class="klbth-menu" id="primary-menu">
-									<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-40 current_page_item current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-3847" id="menu-item-3847">
-										<a href="https://klbtheme.com/partdo/">Home</a>
-										<ul class="sub-menu">
-											<li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-3671" id="menu-item-3671"><a href="https://klbtheme.com/partdo/">Home Tools 1</a></li>
-											<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3837" id="menu-item-3837"><a href="https://klbtheme.com/partdo/home-2/">Home Tools 2</a></li>
-											<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3838" id="menu-item-3838"><a href="https://klbtheme.com/partdo/home-3/">Home Tools 3</a></li>
-											<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4464" id="menu-item-4464"><a href="https://klbtheme.com/partdo/phone/">Home Phone 1</a></li>
-											<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4465" id="menu-item-4465"><a href="https://klbtheme.com/partdo/phone/home-2/">Home Phone 2</a></li>
-											<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4466" id="menu-item-4466"><a href="https://klbtheme.com/partdo/phone/home-3/">Home Phone 3</a></li>
-										</ul>
-									</li>
-									<li class="mega-menu menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-3836" id="menu-item-3836">
-										<a href="https://klbtheme.com/partdo/shop/">Shop</a>
-										<ul class="sub-menu">
-											<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-3845" id="menu-item-3845">
-												<a href="https://klbtheme.com/partdo/shop/">Shop Lists</a>
-												<ul class="sub-menu">
-													<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3846" id="menu-item-3846"><a href="https://klbtheme.com/partdo/shop/">Shop Default</a></li>
-													<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3675" id="menu-item-3675"><a href="https://klbtheme.com/partdo/shop/?opt=right-sidebar">Shop Right Sidebar</a></li>
-													<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3676" id="menu-item-3676"><a href="https://klbtheme.com/partdo/shop/?column=5&amp;opt=wide">Shop Wide</a></li>
-													<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3677" id="menu-item-3677"><a href="https://klbtheme.com/partdo/shop/?column=5&amp;opt=full-width">Filters Area</a></li>
-													<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3678" id="menu-item-3678"><a href="https://klbtheme.com/partdo/shop/?shop_view=list_view">List Left Sidebar</a></li>
-													<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3679" id="menu-item-3679"><a href="https://klbtheme.com/partdo/shop/?ft=load-more">Load More Button</a></li>
-													<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3680" id="menu-item-3680"><a href="https://klbtheme.com/partdo/shop/?ft=infinite">Infinite Scrolling</a></li>
-													<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5175" id="menu-item-5175"><a href="https://klbtheme.com/partdo/shop/?ft=box_variable">Product Box Variable</a></li>
-													<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5190" id="menu-item-5190"><a href="https://klbtheme.com/partdo/shop/?opt=catalogmode">Catalog Mode</a></li>
-													<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5191" id="menu-item-5191"><a href="https://klbtheme.com/partdo/shop/?ft=box_sku">Product SKU</a></li>
-													<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5192" id="menu-item-5192"><a href="https://klbtheme.com/partdo/shop/?ft=product_attributes">Additional Information</a></li>
-												</ul>
-											</li>
-											<li class="menu-item menu-item-type-post_type menu-item-object-product menu-item-has-children menu-item-3848" id="menu-item-3848">
-												<a href="https://klbtheme.com/partdo/product/4000xs-drilled-and-slotted-brake-rotor-more-details-on/">Product Detail</a>
-												<ul class="sub-menu">
-													<li class="menu-item menu-item-type-post_type menu-item-object-product menu-item-3849" id="menu-item-3849"><a href="https://klbtheme.com/partdo/product/4000xs-drilled-and-slotted-brake-rotor-more-details-on/">Product Default</a></li>
-													<li class="menu-item menu-item-type-post_type menu-item-object-product menu-item-3850" id="menu-item-3850"><a href="https://klbtheme.com/partdo/product/fuel-d771-twitch-1pc-candy-red-with-milled-accents/">Product Variable</a></li>
-													<li class="menu-item menu-item-type-post_type menu-item-object-product menu-item-3851" id="menu-item-3851"><a href="https://klbtheme.com/partdo/product/general-altimax-365aw/">Product Grouped</a></li>
-													<li class="menu-item menu-item-type-post_type menu-item-object-product menu-item-4114" id="menu-item-4114"><a href="https://klbtheme.com/partdo/product/ironman-imove-gen-3-as/">Product External</a></li>
-													<li class="menu-item menu-item-type-post_type menu-item-object-product menu-item-3853" id="menu-item-3853"><a href="https://klbtheme.com/partdo/product/cg-projector-headlights/">Product Downloadable</a></li>
-													<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3681" id="menu-item-3681"><a href="https://klbtheme.com/partdo/product/factory-radio-am-fm-radio-cd-player/">Zoom Image</a></li>
-													<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3682" id="menu-item-3682"><a href="https://klbtheme.com/partdo/product/car-charger-ainope-smallest-4-8a/">Product With Video</a></li>
-													<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5193" id="menu-item-5193"><a href="https://klbtheme.com/partdo/product/technaxx-car-alarm-with-charging-function-tx-100/?ft=vertical">Thumbnails Left</a></li>
-													<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5176" id="menu-item-5176"><a href="https://klbtheme.com/partdo/product/technaxx-car-alarm-with-charging-function-tx-100/?ft=1column">Gallery 1 Column</a></li>
-													<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5177" id="menu-item-5177"><a href="https://klbtheme.com/partdo/product/technaxx-car-alarm-with-charging-function-tx-100/?ft=2columns">Gallery 2 Columns</a></li>
-													<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5178" id="menu-item-5178"><a href="https://klbtheme.com/partdo/product/technaxx-car-alarm-with-charging-function-tx-100/?ft=carousel2columns">Carousel 2 Columns</a></li>
-												</ul>
-											</li>
-											<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-5181" id="menu-item-5181">
-												<a href="#">Product Features</a>
-												<ul class="sub-menu">
-													<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5180" id="menu-item-5180"><a href="https://klbtheme.com/partdo/product/technaxx-car-alarm-with-charging-function-tx-100/?ft=orderonwhatsapp">Order on WhatsApp</a></li>
-													<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5182" id="menu-item-5182"><a href="https://klbtheme.com/partdo/product/technaxx-car-alarm-with-charging-function-tx-100/?ft=buynow">Buy Now Button</a></li>
-													<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5183" id="menu-item-5183"><a href="https://klbtheme.com/partdo/product/technaxx-car-alarm-with-charging-function-tx-100/?ft=stickycart">Sticky Add to Cart</a></li>
-													<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5184" id="menu-item-5184"><a href="https://klbtheme.com/partdo/product/technaxx-car-alarm-with-charging-function-tx-100/?ft=stickytitles">Sticky Tab Titles</a></li>
-													<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5185" id="menu-item-5185"><a href="https://klbtheme.com/partdo/product/technaxx-car-alarm-with-charging-function-tx-100/?ft=movereviewtab">Reviews Without Tab</a></li>
-													<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5186" id="menu-item-5186"><a href="https://klbtheme.com/partdo/product/technaxx-car-alarm-with-charging-function-tx-100/?opt=wide">Product Full Width</a></li>
-													<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5187" id="menu-item-5187"><a href="https://klbtheme.com/partdo/product/technaxx-car-alarm-with-charging-function-tx-100/?ft=vertical_tab">Vertical Tabs</a></li>
-													<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5188" id="menu-item-5188"><a href="https://klbtheme.com/partdo/product/technaxx-car-alarm-with-charging-function-tx-100/?ft=accordion_tab">Accordion Tabs</a></li>
-													<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5189" id="menu-item-5189"><a href="https://klbtheme.com/partdo/product/technaxx-car-alarm-with-charging-function-tx-100/?ft=accordion_tab_content">Accordion in Content</a></li>
-													<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5179" id="menu-item-5179"><a href="https://klbtheme.com/partdo/product/technaxx-car-alarm-with-charging-function-tx-100/">Low Stock Alert</a></li>
-												</ul>
-											</li>
-											<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-3683" id="menu-item-3683">
-												<a href="#">Shop Pages</a>
-												<ul class="sub-menu">
-													<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3856" id="menu-item-3856"><a href="https://klbtheme.com/partdo/cart/">Cart</a></li>
-													<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3855" id="menu-item-3855"><a href="https://klbtheme.com/partdo/checkout/">Checkout</a></li>
-													<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3854" id="menu-item-3854"><a href="https://klbtheme.com/partdo/my-account/">My account</a></li>
-													<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3857" id="menu-item-3857"><a href="https://klbtheme.com/partdo/wishlist/">Wishlist</a></li>
-													<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3858" id="menu-item-3858"><a href="https://klbtheme.com/partdo/order-tracking/">Order Tracking</a></li>
-													<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3685" id="menu-item-3685"><a href="https://klbtheme.com/partdo/shop/?orderby=popularity">Best Selling Products</a></li>
-													<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5358" id="menu-item-5358"><a href="https://klbtheme.com/partdo/shop-by-brand/">Shop by Brand</a></li>
-												</ul>
-											</li>
-											<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-3686" id="menu-item-3686">
-												<a href="#">Shop Layouts</a>
-												<ul class="sub-menu">
-													<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3687" id="menu-item-3687"><a href="https://klbtheme.com/partdo/shop/?column=2">Two Columns</a></li>
-													<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3698" id="menu-item-3698"><a href="https://klbtheme.com/partdo/shop/?column=3">Three Columns</a></li>
-													<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3699" id="menu-item-3699"><a href="https://klbtheme.com/partdo/shop/?column=3&amp;opt=wide">Three Columns Wide</a></li>
-													<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3700" id="menu-item-3700"><a href="https://klbtheme.com/partdo/shop/?column=4">Four Columns</a></li>
-													<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3701" id="menu-item-3701"><a href="https://klbtheme.com/partdo/shop/?column=4&amp;opt=wide">Four Columns Wide</a></li>
-													<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3702" id="menu-item-3702"><a href="https://klbtheme.com/partdo/shop/?column=5&amp;opt=wide">Five Columns Wide</a></li>
-													<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3703" id="menu-item-3703"><a href="https://klbtheme.com/partdo/shop/?column=6&amp;opt=wide">Six Columns Wide</a></li>
-												</ul>
-											</li>
-										</ul>
-									</li>
-									<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-3673" id="menu-item-3673"><a href="https://klbtheme.com/partdo/product-category/tires-wheels/">Tires &amp; Wheels</a></li>
-									<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-3674" id="menu-item-3674"><a href="https://klbtheme.com/partdo/product-category/interior-accessories/">Interior Accessories</a></li>
-									<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3843" id="menu-item-3843"><a href="https://klbtheme.com/partdo/blog/">Blog</a></li>
-									<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3844" id="menu-item-3844"><a href="https://klbtheme.com/partdo/contact/">Contact</a></li>
+								
+									@Html.Raw(Genel.menuHtml)
 								</ul>
 							</nav>
-							<div class="mega-items">
-								<div class="mega-item">
-									<a href="#">
-										<span class="menu-icon">
-											<i class="klbth-icon-ecommerce-discount-black"></i>
-										</span>Top Offers
-									</a>
-									<div class="sub-item">
-										<div class="discount-products-header">
-											<h4 class="entry-title">Items on sale this week</h4>
-											<p>Top picks this week. Up to 50% off the best selling products.</p>
-										</div><!-- discount-products-header -->
-										<div class="products column-5">
-											<div class="product">
-												<div class="product-wrapper"><div class="product-content"><div class="thumbnail-wrapper entry-media"><a href="https://klbtheme.com/partdo/product/vision-147-daytona-hyper-silver/"><img alt="VISION® – 147 DAYTONA Hyper Silver" src="~/SiteAssets/partdo/wp-content/uploads/2022/10/1-37-500x500.jpg" /></a></div><!-- thumbnail-wrapper --><div class="content-wrapper"><h3 class="product-title"> <a href="https://klbtheme.com/partdo/product/vision-147-daytona-hyper-silver/">VISION® – 147 DAYTONA Hyper Silver</a></h3><div class="product-rating"><div aria-label="Rated 5.00 out of 5" class="star-rating" role="img"><span style="width:100%">Rated <strong class="rating">5.00</strong> out of 5</span></div><div class="rating-count"> <span class="count-text">1 review</span></div></div><span class="price"><del aria-hidden="true"><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">$</span>254.00</bdi></span></del> <span class="screen-reader-text">Original price was: $254.00.</span><ins aria-hidden="true"><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">$</span>209.00</bdi></span></ins><span class="screen-reader-text">Current price is: $209.00.</span></span><!-- price --></div><!-- content-wrapper --></div><!-- product-content --></div>
-											</div>
-											<div class="product">
-												<div class="product-wrapper"><div class="product-content"><div class="thumbnail-wrapper entry-media"><a href="https://klbtheme.com/partdo/product/thinkware-f770-dash-cam-dual-channel-wifi-gps-16gb/"><img alt="Thinkware F770 Dash Cam Dual Channel Wifi" src="~/SiteAssets/partdo/wp-content/uploads/2022/10/1-36-500x500.jpg" /></a></div><!-- thumbnail-wrapper --><div class="content-wrapper"><h3 class="product-title"> <a href="https://klbtheme.com/partdo/product/thinkware-f770-dash-cam-dual-channel-wifi-gps-16gb/">Thinkware F770 Dash Cam Dual Channel Wifi</a></h3><div class="product-rating"><div aria-label="Rated 3.00 out of 5" class="star-rating" role="img"><span style="width:60%">Rated <strong class="rating">3.00</strong> out of 5</span></div><div class="rating-count"> <span class="count-text">1 review</span></div></div><span class="price"><del aria-hidden="true"><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">$</span>268.99</bdi></span></del> <span class="screen-reader-text">Original price was: $268.99.</span><ins aria-hidden="true"><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">$</span>249.99</bdi></span></ins><span class="screen-reader-text">Current price is: $249.99.</span></span><!-- price --></div><!-- content-wrapper --></div><!-- product-content --></div>
-											</div>
-											<div class="product">
-												<div class="product-wrapper"><div class="product-content"><div class="thumbnail-wrapper entry-media"><a href="https://klbtheme.com/partdo/product/technaxx-car-alarm-with-charging-function-tx-100/"><img alt="Technaxx car Alarm with Charging Function" src="~/SiteAssets/partdo/wp-content/uploads/2022/10/1-35-500x500.jpg" /></a></div><!-- thumbnail-wrapper --><div class="content-wrapper"><h3 class="product-title"> <a href="https://klbtheme.com/partdo/product/technaxx-car-alarm-with-charging-function-tx-100/">Technaxx car Alarm with Charging Function</a></h3><div class="product-rating"><div aria-label="Rated 5.00 out of 5" class="star-rating" role="img"><span style="width:100%">Rated <strong class="rating">5.00</strong> out of 5</span></div><div class="rating-count"> <span class="count-text">1 review</span></div></div><span class="price"><del aria-hidden="true"><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">$</span>51.99</bdi></span></del> <span class="screen-reader-text">Original price was: $51.99.</span><ins aria-hidden="true"><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">$</span>47.99</bdi></span></ins><span class="screen-reader-text">Current price is: $47.99.</span></span><!-- price --></div><!-- content-wrapper --></div><!-- product-content --></div>
-											</div>
-											<div class="product">
-												<div class="product-wrapper"><div class="product-content"><div class="thumbnail-wrapper entry-media"><a href="https://klbtheme.com/partdo/product/spyder-projector-headlights/"><img alt="Spyder® – Projector Headlights" src="~/SiteAssets/partdo/wp-content/uploads/2022/10/1-34-500x500.jpg" /></a></div><!-- thumbnail-wrapper --><div class="content-wrapper"><h3 class="product-title"> <a href="https://klbtheme.com/partdo/product/spyder-projector-headlights/">Spyder® – Projector Headlights</a></h3><div class="product-rating"><div aria-label="Rated 5.00 out of 5" class="star-rating" role="img"><span style="width:100%">Rated <strong class="rating">5.00</strong> out of 5</span></div><div class="rating-count"> <span class="count-text">1 review</span></div></div><span class="price"><del aria-hidden="true"><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">$</span>582.99</bdi></span></del> <span class="screen-reader-text">Original price was: $582.99.</span><ins aria-hidden="true"><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">$</span>521.89</bdi></span></ins><span class="screen-reader-text">Current price is: $521.89.</span></span><!-- price --></div><!-- content-wrapper --></div><!-- product-content --></div>
-											</div>
-											<div class="product">
-												<div class="product-wrapper"><div class="product-content"><div class="thumbnail-wrapper entry-media"><a href="https://klbtheme.com/partdo/product/spec-d-projector-headlights/"><img alt="Spec-D® – Projector Headlights" src="~/SiteAssets/partdo/wp-content/uploads/2022/10/1-33-500x500.jpg" /></a></div><!-- thumbnail-wrapper --><div class="content-wrapper"><h3 class="product-title"> <a href="https://klbtheme.com/partdo/product/spec-d-projector-headlights/">Spec-D® – Projector Headlights</a></h3><div class="product-rating"><div aria-label="Rated 4.00 out of 5" class="star-rating" role="img"><span style="width:80%">Rated <strong class="rating">4.00</strong> out of 5</span></div><div class="rating-count"> <span class="count-text">1 review</span></div></div><span class="price"><del aria-hidden="true"><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">$</span>364.86</bdi></span></del> <span class="screen-reader-text">Original price was: $364.86.</span><ins aria-hidden="true"><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">$</span>279.02</bdi></span></ins><span class="screen-reader-text">Current price is: $279.02.</span></span><!-- price --></div><!-- content-wrapper --></div><!-- product-content --></div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
+						 
 							<div class="notice-button">
 								<a class="notice-link" href="https://klbtheme.com/partdo/contact"> <span class="notice-icon"> <i class="klbth-icon-circle-info-fill"></i></span><span class="notice-text">Help Center</span></a>
 							</div>
@@ -1540,8 +1323,28 @@
 								<div class="elementor-widget-wrap elementor-element-populated">
 									<div class="elementor-element elementor-element-4170b68 elementor-widget elementor-widget-partdo-home-slider" data-element_type="widget" data-id="4170b68" data-widget_type="partdo-home-slider.default">
 										<div class="elementor-widget-container">
-											<div class="klbth-module klbth-module-slider"><div class="klbth-module-body"><div class="klbth-slider-wrapper"> <div class="klbth-slider-loader"><div class="klbth-loader size-md color-primary border-sm"></div></div><div class="klbth-slider arrows-center arrow-size-lg arrows-light arrows-animate dots-style-filled dots-align-right slider-overflow slider-radius width-default" data-arrows="true" data-autoplay="false" data-autospeed="" data-autostop="true" data-css="cubic-bezier(.48,0,.12,1)" data-dots="true" data-items="1" data-margin="0" data-mobileitems="1" data-speed="600" data-tabletitems="1"><div class="slider-item"> <div class="klbth-banner style-inner color-scheme-light space-xlg align-center justify-start hover-no-hover"><div class="entry-wrapper overlay-25-dark-max768 dump"><div class="entry-inner w-60"><div class="entry-heading slider-heading"><h4 class="entry-subtitle">This Week Only for World Premier</h4><h2 class="entry-title font-large-md">When Buying Parts With Installation</h2></div><div class="entry-excerpt font-xlg weight-300"><p>Installation of parts in the services of, our partners. Limited time offer for only new customer, also get free shipping on orders.  </p></div><div class="entry-footer vertical slider-footer"><span class="price"><del aria-hidden="true"><span class="woocommerce-Price-amount amount"><bdi> $139.00</bdi></span></del><ins><span class="woocommerce-Price-amount amount"><bdi> $109.00</bdi></span></ins></span><div class="banner-button"><button class="btn primary" href="https://klbtheme.com/partdo/shop/">  Buy Now  <i class="klbth-icon-arrow-right-long"></i></button></div></div></div></div><div class="entry-media overlay-15-dark-min768"><img alt="slider image" decoding="async" src="~/SiteAssets/partdo/wp-content/uploads/2022/11/slider-01.jpg" /></div><a class="link-mask" href="https://klbtheme.com/partdo/shop/"> </a></div></div><div class="slider-item"> <div class="klbth-banner style-inner color-scheme-light space-xlg align-center justify-start hover-no-hover"><div class="entry-wrapper overlay-25-dark-max768 dump"><div class="entry-inner w-60"><div class="entry-heading slider-heading"><h4 class="entry-subtitle">Get The Best Auto Parts</h4><h2 class="entry-title font-large-md">We Make Car Repair Hassle Free</h2></div><div class="entry-excerpt font-xlg weight-300"><p>Installation of parts in the services of, our partners. Limited time offer for only new customer, also get free shipping on orders.  </p></div><div class="entry-footer vertical slider-footer"><span class="price"><del aria-hidden="true"><span class="woocommerce-Price-amount amount"><bdi> $259.00</bdi></span></del><ins><span class="woocommerce-Price-amount amount"><bdi> $209.00</bdi></span></ins></span><div class="banner-button"><button class="btn primary" href="https://klbtheme.com/partdo/shop/?column=4&amp;opt=wide">  Buy Now  <i class="klbth-icon-arrow-right-long"></i></button></div></div></div></div><div class="entry-media overlay-15-dark-min768"><img alt="slider image" decoding="async" src="~/SiteAssets/partdo/wp-content/uploads/2022/10/slider-02.jpg" /></div><a class="link-mask" href="https://klbtheme.com/partdo/shop/?column=4&amp;opt=wide"> </a></div></div><div class="slider-item"> <div class="klbth-banner style-inner color-scheme-light space-xlg align-center justify-start hover-no-hover"><div class="entry-wrapper overlay-25-dark-max768 dump"><div class="entry-inner w-60"><div class="entry-heading slider-heading"><h4 class="entry-subtitle">This Week Only for World Premier</h4><h2 class="entry-title font-large-md">We Have The Parts You Need</h2></div><div class="entry-excerpt font-xlg weight-300"><p>Installation of parts in the services of, our partners. Limited time offer for only new customer, also get free shipping on orders.  </p></div><div class="entry-footer vertical slider-footer"><span class="price"><del aria-hidden="true"><span class="woocommerce-Price-amount amount"><bdi> $179.00</bdi></span></del><ins><span class="woocommerce-Price-amount amount"><bdi> $159.00</bdi></span></ins></span><div class="banner-button"><button class="btn primary" href="https://klbtheme.com/partdo/shop/?column=3&amp;opt=wide">  Buy Now  <i class="klbth-icon-arrow-right-long"></i></button></div></div></div></div><div class="entry-media overlay-15-dark-min768"><img alt="slider image" decoding="async" src="~/SiteAssets/partdo/wp-content/uploads/2022/10/slider-03.jpg" /></div><a class="link-mask" href="https://klbtheme.com/partdo/shop/?column=3&amp;opt=wide"> </a></div></div></div></div></div></div>
-										</div>
+											<div class="klbth-module klbth-module-slider"><div class="klbth-module-body"><div class="klbth-slider-wrapper"> <div class="klbth-slider-loader"><div class="klbth-loader size-md color-primary border-sm"></div></div><div class="klbth-slider arrows-center arrow-size-lg arrows-light arrows-animate dots-style-filled dots-align-right slider-overflow slider-radius width-default" data-arrows="true" data-autoplay="false" data-autospeed="" data-autostop="true" data-css="cubic-bezier(.48,0,.12,1)" data-dots="true" data-items="1" data-margin="0" data-mobileitems="1" data-speed="600" data-tabletitems="1">
+											 
+											@{
+												foreach(var siradaki   in Model.mansetler)
+												{
+													<div class="slider-item"> 
+													<div class="klbth-banner style-inner color-scheme-light space-xlg align-center justify-start hover-no-hover">
+													<div class="entry-wrapper overlay-25-dark-max768 dump">
+													<div class="entry-inner w-60"><div class="entry-heading slider-heading"><h4 class="entry-subtitle">
+													@siradaki.baslikUst
+													</h4>
+													<h2 class="entry-title font-large-md">
+													@siradaki.baslikOrta
+													</h2></div><div class="entry-excerpt font-xlg weight-300"><p>
+													
+													@siradaki.altYazi
+													</p></div><div class="entry-footer vertical slider-footer"><span class="price"><del aria-hidden="true">
+													<span class="woocommerce-Price-amount amount"><bdi> </bdi></span></del><ins><span class="woocommerce-Price-amount amount"><bdi>   </bdi></span></ins></span><div class="banner-button"><button class="btn primary" href="@siradaki.hedefUrl">    Ayrıntılar   <i class="klbth-icon-arrow-right-long"></i></button></div></div></div></div><div class="entry-media overlay-15-dark-min768"><img alt="slider image" decoding="async" src="@siradaki.fotosu" /></div><a class="link-mask" href="@siradaki.hedefUrl"> </a></div></div>
+
+												}
+											}
+											</div>
 									</div>
 								</div>
 							</div>
@@ -1677,33 +1480,31 @@
 					</section>
 					<section class="elementor-section elementor-top-section elementor-element elementor-element-8afc3d4 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-element_type="section" data-id="8afc3d4">
 						<div class="elementor-container elementor-column-gap-extended">
-							<div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-653b971" data-element_type="column" data-id="653b971">
-								<div class="elementor-widget-wrap elementor-element-populated">
-									<div class="elementor-element elementor-element-4cfa146 elementor-widget elementor-widget-partdo-banner-box" data-element_type="widget" data-id="4cfa146" data-widget_type="partdo-banner-box.default">
-										<div class="elementor-widget-container">
-											<div class="klbth-banner style-inner color-scheme-light space-sm align-center justify-start hover-zoom"><div class="entry-wrapper overlay-25-dark-max768 dump"><div class="entry-inner w-80"><div class="entry-heading banner-heading"><span class="badge">On Sale This Week</span><h2 class="entry-title font-banner-sm">The World's Best Engine Oils for Your Car</h2></div><div class="entry-footer vertical banner-footer"><div class="banner-button"><button class="btn link" href="https://klbtheme.com/partdo/shop/?filter_cat=37"> Shop Now <i class="klbth-icon-arrow-right-long"></i></button></div></div></div></div><div class="entry-media overlay-15-dark-min768"><img alt="slider image" decoding="async" src="~/SiteAssets/partdo/wp-content/uploads/2022/11/banner-01.jpg" /></div><a class="link-mask" href="https://klbtheme.com/partdo/shop/?filter_cat=37"> </a></div>
+							
+							@{
+
+								foreach(var siradaki in Model.reklamKusagi1)
+								{
+
+								<div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-653b971" data-element_type="column" data-id="653b971">
+									<div class="elementor-widget-wrap elementor-element-populated">
+										<div class="elementor-element elementor-element-4cfa146 elementor-widget elementor-widget-partdo-banner-box" data-element_type="widget" data-id="4cfa146" data-widget_type="partdo-banner-box.default">
+											<div class="elementor-widget-container">
+												<div class="klbth-banner style-inner color-scheme-light space-sm align-center justify-start hover-zoom"><div class="entry-wrapper overlay-25-dark-max768 dump"><div class="entry-inner w-80"><div class="entry-heading banner-heading"><span class="badge">  
+												
+												@siradaki.baslik
+												</span><h2 class="entry-title font-banner-sm">
+												
+												@siradaki.metin
+												</h2></div><div class="entry-footer vertical banner-footer"><div class="banner-button"><button class="btn link" href="https://klbtheme.com/partdo/shop/?filter_cat=37"> Ayrıntılar   <i class="klbth-icon-arrow-right-long"></i></button></div></div></div></div><div class="entry-media overlay-15-dark-min768"><img alt="slider image" decoding="async" src="@siradaki.fotosu" /></div><a class="link-mask" href="@siradaki.hedefUrl"> </a></div>
+											</div>
 										</div>
 									</div>
 								</div>
-							</div>
-							<div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-e89718b" data-element_type="column" data-id="e89718b">
-								<div class="elementor-widget-wrap elementor-element-populated">
-									<div class="elementor-element elementor-element-29f5cf5 elementor-widget elementor-widget-partdo-banner-box" data-element_type="widget" data-id="29f5cf5" data-widget_type="partdo-banner-box.default">
-										<div class="elementor-widget-container">
-											<div class="klbth-banner style-inner color-scheme-light space-sm align-center justify-start hover-zoom"><div class="entry-wrapper overlay-25-dark-max768 dump"><div class="entry-inner w-80"><div class="entry-heading banner-heading"><span class="badge">On Sale This Week</span><h2 class="entry-title font-banner-sm">Change Tires for Winter Ensure Your Safety</h2></div><div class="entry-footer vertical banner-footer"><div class="banner-button"><button class="btn link" href="https://klbtheme.com/partdo/shop/?filter_cat=49"> Shop Now <i class="klbth-icon-arrow-right-long"></i></button></div></div></div></div><div class="entry-media overlay-15-dark-min768"><img alt="slider image" decoding="async" src="~/SiteAssets/partdo/wp-content/uploads/2022/10/banner-02.jpg" /></div><a class="link-mask" href="https://klbtheme.com/partdo/shop/?filter_cat=49"> </a></div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-1fa921e" data-element_type="column" data-id="1fa921e">
-								<div class="elementor-widget-wrap elementor-element-populated">
-									<div class="elementor-element elementor-element-9bc0eab elementor-widget elementor-widget-partdo-banner-box" data-element_type="widget" data-id="9bc0eab" data-widget_type="partdo-banner-box.default">
-										<div class="elementor-widget-container">
-											<div class="klbth-banner style-inner color-scheme-light space-sm align-center justify-start hover-zoom"><div class="entry-wrapper overlay-25-dark-max768 dump"><div class="entry-inner w-80"><div class="entry-heading banner-heading"><span class="badge">On Sale This Week</span><h2 class="entry-title font-banner-sm">Unleash The True Potential Of Your Vehicle</h2></div><div class="entry-footer vertical banner-footer"><div class="banner-button"><button class="btn link" href="https://klbtheme.com/partdo/shop/"> Shop Now <i class="klbth-icon-arrow-right-long"></i></button></div></div></div></div><div class="entry-media overlay-15-dark-min768"><img alt="slider image" decoding="async" src="~/SiteAssets/partdo/wp-content/uploads/2022/10/banner-03.jpg" /></div><a class="link-mask" href="https://klbtheme.com/partdo/shop/"> </a></div>
-										</div>
-									</div>
-								</div>
-							</div>
+							}
+							}
+					
+						 
 						</div>
 					</section>
 					<section class="elementor-section elementor-top-section elementor-element elementor-element-f914c42 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-element_type="section" data-id="f914c42">
@@ -2458,82 +2259,7 @@
 								<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4466"><a href="https://klbtheme.com/partdo/phone/home-3/">Home Phone 3</a></li>
 							</ul>
 						</li>
-						<li class="mega-menu menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-3836">
-							<a href="https://klbtheme.com/partdo/shop/">Shop</a>
-							<ul class="sub-menu">
-								<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-3845">
-									<a href="https://klbtheme.com/partdo/shop/">Shop Lists</a>
-									<ul class="sub-menu">
-										<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3846"><a href="https://klbtheme.com/partdo/shop/">Shop Default</a></li>
-										<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3675"><a href="https://klbtheme.com/partdo/shop/?opt=right-sidebar">Shop Right Sidebar</a></li>
-										<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3676"><a href="https://klbtheme.com/partdo/shop/?column=5&amp;opt=wide">Shop Wide</a></li>
-										<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3677"><a href="https://klbtheme.com/partdo/shop/?column=5&amp;opt=full-width">Filters Area</a></li>
-										<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3678"><a href="https://klbtheme.com/partdo/shop/?shop_view=list_view">List Left Sidebar</a></li>
-										<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3679"><a href="https://klbtheme.com/partdo/shop/?ft=load-more">Load More Button</a></li>
-										<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3680"><a href="https://klbtheme.com/partdo/shop/?ft=infinite">Infinite Scrolling</a></li>
-										<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5175"><a href="https://klbtheme.com/partdo/shop/?ft=box_variable">Product Box Variable</a></li>
-										<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5190"><a href="https://klbtheme.com/partdo/shop/?opt=catalogmode">Catalog Mode</a></li>
-										<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5191"><a href="https://klbtheme.com/partdo/shop/?ft=box_sku">Product SKU</a></li>
-										<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5192"><a href="https://klbtheme.com/partdo/shop/?ft=product_attributes">Additional Information</a></li>
-									</ul>
-								</li>
-								<li class="menu-item menu-item-type-post_type menu-item-object-product menu-item-has-children menu-item-3848">
-									<a href="https://klbtheme.com/partdo/product/4000xs-drilled-and-slotted-brake-rotor-more-details-on/">Product Detail</a>
-									<ul class="sub-menu">
-										<li class="menu-item menu-item-type-post_type menu-item-object-product menu-item-3849"><a href="https://klbtheme.com/partdo/product/4000xs-drilled-and-slotted-brake-rotor-more-details-on/">Product Default</a></li>
-										<li class="menu-item menu-item-type-post_type menu-item-object-product menu-item-3850"><a href="https://klbtheme.com/partdo/product/fuel-d771-twitch-1pc-candy-red-with-milled-accents/">Product Variable</a></li>
-										<li class="menu-item menu-item-type-post_type menu-item-object-product menu-item-3851"><a href="https://klbtheme.com/partdo/product/general-altimax-365aw/">Product Grouped</a></li>
-										<li class="menu-item menu-item-type-post_type menu-item-object-product menu-item-4114"><a href="https://klbtheme.com/partdo/product/ironman-imove-gen-3-as/">Product External</a></li>
-										<li class="menu-item menu-item-type-post_type menu-item-object-product menu-item-3853"><a href="https://klbtheme.com/partdo/product/cg-projector-headlights/">Product Downloadable</a></li>
-										<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3681"><a href="https://klbtheme.com/partdo/product/factory-radio-am-fm-radio-cd-player/">Zoom Image</a></li>
-										<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3682"><a href="https://klbtheme.com/partdo/product/car-charger-ainope-smallest-4-8a/">Product With Video</a></li>
-										<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5193"><a href="https://klbtheme.com/partdo/product/technaxx-car-alarm-with-charging-function-tx-100/?ft=vertical">Thumbnails Left</a></li>
-										<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5176"><a href="https://klbtheme.com/partdo/product/technaxx-car-alarm-with-charging-function-tx-100/?ft=1column">Gallery 1 Column</a></li>
-										<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5177"><a href="https://klbtheme.com/partdo/product/technaxx-car-alarm-with-charging-function-tx-100/?ft=2columns">Gallery 2 Columns</a></li>
-										<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5178"><a href="https://klbtheme.com/partdo/product/technaxx-car-alarm-with-charging-function-tx-100/?ft=carousel2columns">Carousel 2 Columns</a></li>
-									</ul>
-								</li>
-								<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-5181">
-									<a href="#">Product Features</a>
-									<ul class="sub-menu">
-										<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5180"><a href="https://klbtheme.com/partdo/product/technaxx-car-alarm-with-charging-function-tx-100/?ft=orderonwhatsapp">Order on WhatsApp</a></li>
-										<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5182"><a href="https://klbtheme.com/partdo/product/technaxx-car-alarm-with-charging-function-tx-100/?ft=buynow">Buy Now Button</a></li>
-										<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5183"><a href="https://klbtheme.com/partdo/product/technaxx-car-alarm-with-charging-function-tx-100/?ft=stickycart">Sticky Add to Cart</a></li>
-										<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5184"><a href="https://klbtheme.com/partdo/product/technaxx-car-alarm-with-charging-function-tx-100/?ft=stickytitles">Sticky Tab Titles</a></li>
-										<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5185"><a href="https://klbtheme.com/partdo/product/technaxx-car-alarm-with-charging-function-tx-100/?ft=movereviewtab">Reviews Without Tab</a></li>
-										<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5186"><a href="https://klbtheme.com/partdo/product/technaxx-car-alarm-with-charging-function-tx-100/?opt=wide">Product Full Width</a></li>
-										<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5187"><a href="https://klbtheme.com/partdo/product/technaxx-car-alarm-with-charging-function-tx-100/?ft=vertical_tab">Vertical Tabs</a></li>
-										<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5188"><a href="https://klbtheme.com/partdo/product/technaxx-car-alarm-with-charging-function-tx-100/?ft=accordion_tab">Accordion Tabs</a></li>
-										<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5189"><a href="https://klbtheme.com/partdo/product/technaxx-car-alarm-with-charging-function-tx-100/?ft=accordion_tab_content">Accordion in Content</a></li>
-										<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5179"><a href="https://klbtheme.com/partdo/product/technaxx-car-alarm-with-charging-function-tx-100/">Low Stock Alert</a></li>
-									</ul>
-								</li>
-								<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-3683">
-									<a href="#">Shop Pages</a>
-									<ul class="sub-menu">
-										<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3856"><a href="https://klbtheme.com/partdo/cart/">Cart</a></li>
-										<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3855"><a href="https://klbtheme.com/partdo/checkout/">Checkout</a></li>
-										<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3854"><a href="https://klbtheme.com/partdo/my-account/">My account</a></li>
-										<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3857"><a href="https://klbtheme.com/partdo/wishlist/">Wishlist</a></li>
-										<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3858"><a href="https://klbtheme.com/partdo/order-tracking/">Order Tracking</a></li>
-										<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3685"><a href="https://klbtheme.com/partdo/shop/?orderby=popularity">Best Selling Products</a></li>
-										<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5358"><a href="https://klbtheme.com/partdo/shop-by-brand/">Shop by Brand</a></li>
-									</ul>
-								</li>
-								<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-3686">
-									<a href="#">Shop Layouts</a>
-									<ul class="sub-menu">
-										<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3687"><a href="https://klbtheme.com/partdo/shop/?column=2">Two Columns</a></li>
-										<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3698"><a href="https://klbtheme.com/partdo/shop/?column=3">Three Columns</a></li>
-										<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3699"><a href="https://klbtheme.com/partdo/shop/?column=3&amp;opt=wide">Three Columns Wide</a></li>
-										<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3700"><a href="https://klbtheme.com/partdo/shop/?column=4">Four Columns</a></li>
-										<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3701"><a href="https://klbtheme.com/partdo/shop/?column=4&amp;opt=wide">Four Columns Wide</a></li>
-										<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3702"><a href="https://klbtheme.com/partdo/shop/?column=5&amp;opt=wide">Five Columns Wide</a></li>
-										<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3703"><a href="https://klbtheme.com/partdo/shop/?column=6&amp;opt=wide">Six Columns Wide</a></li>
-									</ul>
-								</li>
-							</ul>
-						</li>
+					 
 						<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-3673"><a href="https://klbtheme.com/partdo/product-category/tires-wheels/">Tires &amp; Wheels</a></li>
 						<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-3674"><a href="https://klbtheme.com/partdo/product-category/interior-accessories/">Interior Accessories</a></li>
 						<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3843"><a href="https://klbtheme.com/partdo/blog/">Blog</a></li>

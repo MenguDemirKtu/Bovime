@@ -1,25 +1,25 @@
 using Microsoft.AspNetCore.Mvc;
 namespace Bovime.Controllers
 {
-    public class ReklamKusagi2Controller : Sayfa
+    public class MansetController : Sayfa
     {
-        public async Task<ActionResult> Cek(Models.ReklamKusagi2Model modeli)
+        public async Task<ActionResult> Cek(Models.MansetModel modeli)
         {
             var nedir = await modeli.ayrintiliAraKos(this);
-            return basariBildirimi("/ReklamKusagi2?id=" + nedir.kodu);
+            return basariBildirimi("/Manset?id=" + nedir.kodu);
         }
         public async Task<ActionResult> Index(string id)
         {
             try
             {
                 string tanitim = "...";
-                tanitim = await Genel.dokumKisaAciklamaKos(this, "ReklamKusagi2");
-                gorunumAyari("", "", "Ana Sayfa", "/", "/ReklamKusagi2/", tanitim);
+                tanitim = await Genel.dokumKisaAciklamaKos(this, "Manset");
+                gorunumAyari("", "", "Ana Sayfa", "/", "/Manset/", tanitim);
                 if (!oturumAcildimi())
                     return OturumAcilmadi();
                 if (await yetkiVarmiKos())
                 {
-                    Models.ReklamKusagi2Model modeli = new Models.ReklamKusagi2Model();
+                    Models.MansetModel modeli = new Models.MansetModel();
                     if (string.IsNullOrEmpty(id))
                         await modeli.veriCekKos(mevcutKullanici());
                     else
@@ -43,12 +43,12 @@ namespace Bovime.Controllers
                 if (!oturumAcildimi())
                     return OturumAcilmadi();
                 string tanitim = "....";
-                tanitim = await Genel.dokumKisaAciklamaKos(this, "ReklamKusagi2");
-                gorunumAyari("Reklam Kuşağı 2 Kartı", "Reklam Kuşağı 2 Kartı", "Ana Sayfa", "/", "/ReklamKusagi2/", tanitim);
+                tanitim = await Genel.dokumKisaAciklamaKos(this, "Manset");
+                gorunumAyari("Manşet Kartı", "Manşet Kartı", "Ana Sayfa", "/", "/Manset/", tanitim);
                 enumref_YetkiTuru yetkiTuru = yetkiTuruBelirle(id);
-                if (await yetkiVarmiKos("ReklamKusagi2", yetkiTuru))
+                if (await yetkiVarmiKos("Manset", yetkiTuru))
                 {
-                    Models.ReklamKusagi2Model modeli = new Models.ReklamKusagi2Model();
+                    Models.MansetModel modeli = new Models.MansetModel();
                     await modeli.veriCekKos(mevcutKullanici(), id);
                     return View(modeli);
                 }
@@ -73,7 +73,7 @@ namespace Bovime.Controllers
                     uyariVer(Ikazlar.hicKayitSecilmemis(dilKimlik));
                 if (await yetkiVarmiKos("Ogrenci", enumref_YetkiTuru.Silme))
                 {
-                    Models.ReklamKusagi2Model modeli = new Models.ReklamKusagi2Model();
+                    Models.MansetModel modeli = new Models.MansetModel();
                     await modeli.silKos(this, id ?? "", mevcutKullanici());
                     await modeli.veriCekKos(mevcutKullanici());
                     return basariBildirimi(Ikazlar.basariylaSilindi(dilKimlik));
@@ -89,7 +89,7 @@ namespace Bovime.Controllers
             }
         }
         [HttpPost]
-        public async Task<ActionResult> Kaydet(Models.ReklamKusagi2Model gelen)
+        public async Task<ActionResult> Kaydet(Models.MansetModel gelen)
         {
             try
             {

@@ -3,10 +3,10 @@ using System.Linq.Expressions;
 
 namespace Bovime.veri
 {
-    public partial class SiteMenu : Bilesen
+    public partial class Manset : Bilesen
     {
 
-        public SiteMenu()
+        public Manset()
         {
             _varSayilan();
         }
@@ -24,23 +24,23 @@ namespace Bovime.veri
 
         public override string _tanimi()
         {
-            return bossaDoldur(siteMenuAdi);
+            return bossaDoldur(baslikUst);
         }
 
 
 
-        public async static Task<SiteMenu?> olusturKos(Varlik vari, object deger)
+        public async static Task<Manset?> olusturKos(Varlik vari, object deger)
         {
             Int64 kimlik = Convert.ToInt64(deger);
             if (kimlik <= 0)
             {
-                SiteMenu sonuc = new SiteMenu();
+                Manset sonuc = new Manset();
                 sonuc._varSayilan();
                 return sonuc;
             }
             else
             {
-                return await vari.SiteMenus.FirstOrDefaultAsync(p => p.siteMenukimlik == kimlik && p.varmi == true);
+                return await vari.Mansets.FirstOrDefaultAsync(p => p.mansetkimlik == kimlik && p.varmi == true);
             }
         }
 
@@ -50,12 +50,12 @@ namespace Bovime.veri
             if (varmi == null)
                 varmi = true;
             bicimlendir(vari);
-            await veriTabani.SiteMenuCizelgesi.kaydetKos(this, vari, yedeklensinmi);
+            await veriTabani.MansetCizelgesi.kaydetKos(this, vari, yedeklensinmi);
         }
         public async Task silKos(veri.Varlik vari, params bool[] yedeklensinmi)
         {
             varmi = false;
-            await veriTabani.SiteMenuCizelgesi.silKos(this, vari, yedeklensinmi);
+            await veriTabani.MansetCizelgesi.silKos(this, vari, yedeklensinmi);
         }
 
 
@@ -68,17 +68,16 @@ namespace Bovime.veri
         public override void _varSayilan()
         {
             this.varmi = true;
-            this.e_altMenuMu = true;
-            this.varmi = true;
+            this.e_yayindami = true;
         }
 
-        public static async Task<List<SiteMenu>> ara(params Expression<Func<SiteMenu, bool>>[] kosullar)
+        public static async Task<List<Manset>> ara(params Expression<Func<Manset, bool>>[] kosullar)
         {
-            return await veriTabani.SiteMenuCizelgesi.ara(kosullar);
+            return await veriTabani.MansetCizelgesi.ara(kosullar);
         }
-        public static async Task<List<SiteMenu>> ara(veri.Varlik vari, params Expression<Func<SiteMenu, bool>>[] kosullar)
+        public static async Task<List<Manset>> ara(veri.Varlik vari, params Expression<Func<Manset, bool>>[] kosullar)
         {
-            return await veriTabani.SiteMenuCizelgesi.ara(vari, kosullar);
+            return await veriTabani.MansetCizelgesi.ara(vari, kosullar);
         }
 
 
@@ -87,23 +86,23 @@ namespace Bovime.veri
 
         public override string _cizelgeAdi()
         {
-            return "SiteMenu";
+            return "Manset";
         }
 
 
         public override string _turkceAdi()
         {
-            return "Site Menü";
+            return "Manşet";
         }
         public override string _birincilAnahtarAdi()
         {
-            return "siteMenukimlik";
+            return "mansetkimlik";
         }
 
 
         public override long _birincilAnahtar()
         {
-            return this.siteMenukimlik;
+            return this.mansetkimlik;
         }
 
 

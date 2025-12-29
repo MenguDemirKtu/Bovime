@@ -1,12 +1,15 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Bovime.Models;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Bovime.Controllers
 {
     public class SiteAnaSayfaController : Controller
     {
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            SiteAnaSayfaModel model = new SiteAnaSayfaModel();
+            await model.asdasd();
+            return View(model);
         }
     }
 }

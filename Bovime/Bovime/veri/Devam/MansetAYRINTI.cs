@@ -1,20 +1,12 @@
 using Microsoft.EntityFrameworkCore;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq.Expressions;
 
 namespace Bovime.veri
 {
-    public partial class SektorAYRINTI : Bilesen
+    public partial class MansetAYRINTI : Bilesen
     {
-        [NotMapped]
-        public string _sektorUrl
-        {
-            get
-            {
-                return "#";
-            }
-        }
-        public SektorAYRINTI()
+
+        public MansetAYRINTI()
         {
             _varSayilan();
         }
@@ -32,23 +24,23 @@ namespace Bovime.veri
 
         public override string _tanimi()
         {
-            return bossaDoldur(sektorAdi);
+            return bossaDoldur(baslikUst);
         }
 
 
 
-        public async static Task<SektorAYRINTI?> olusturKos(Varlik vari, object deger)
+        public async static Task<MansetAYRINTI?> olusturKos(Varlik vari, object deger)
         {
             Int64 kimlik = Convert.ToInt64(deger);
             if (kimlik <= 0)
             {
-                SektorAYRINTI sonuc = new SektorAYRINTI();
+                MansetAYRINTI sonuc = new MansetAYRINTI();
                 sonuc._varSayilan();
                 return sonuc;
             }
             else
             {
-                return await vari.SektorAYRINTIs.FirstOrDefaultAsync(p => p.sektorkimlik == kimlik && p.varmi == true);
+                return await vari.MansetAYRINTIs.FirstOrDefaultAsync(p => p.mansetkimlik == kimlik && p.varmi == true);
             }
         }
 
@@ -64,13 +56,13 @@ namespace Bovime.veri
             this.varmi = true;
         }
 
-        public static async Task<List<SektorAYRINTI>> ara(params Expression<Func<SektorAYRINTI, bool>>[] kosullar)
+        public static async Task<List<MansetAYRINTI>> ara(params Expression<Func<MansetAYRINTI, bool>>[] kosullar)
         {
-            return await veriTabani.SektorAYRINTICizelgesi.ara(kosullar);
+            return await veriTabani.MansetAYRINTICizelgesi.ara(kosullar);
         }
-        public static async Task<List<SektorAYRINTI>> ara(veri.Varlik vari, params Expression<Func<SektorAYRINTI, bool>>[] kosullar)
+        public static async Task<List<MansetAYRINTI>> ara(veri.Varlik vari, params Expression<Func<MansetAYRINTI, bool>>[] kosullar)
         {
-            return await veriTabani.SektorAYRINTICizelgesi.ara(vari, kosullar);
+            return await veriTabani.MansetAYRINTICizelgesi.ara(vari, kosullar);
         }
 
 
@@ -79,23 +71,23 @@ namespace Bovime.veri
 
         public override string _cizelgeAdi()
         {
-            return "SektorAYRINTI";
+            return "MansetAYRINTI";
         }
 
 
         public override string _turkceAdi()
         {
-            return "Sektor";
+            return "Manset";
         }
         public override string _birincilAnahtarAdi()
         {
-            return "sektorkimlik";
+            return "mansetkimlik";
         }
 
 
         public override long _birincilAnahtar()
         {
-            return this.sektorkimlik;
+            return this.mansetkimlik;
         }
 
 
