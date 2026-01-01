@@ -1326,6 +1326,34 @@
 							</div>
 						</div>
 					</section>
+
+						<section class="elementor-section elementor-top-section elementor-element elementor-element-0a663ba elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-element_type="section" data-id="0a663ba">
+						<div class="elementor-container elementor-column-gap-extended">
+							
+							@{
+
+								foreach(var siradaki in Model.reklamKusagi0)
+								{
+							 <div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-af404f4" data-element_type="column" data-id="af404f4">
+								<div class="elementor-widget-wrap elementor-element-populated">
+									<div class="elementor-element elementor-element-acb07a8 elementor-widget elementor-widget-partdo-banner-box" data-element_type="widget" data-id="acb07a8" data-widget_type="partdo-banner-box.default">
+										<div class="elementor-widget-container">
+											<div class="klbth-banner style-inner color-scheme-light space-sm align-center justify-start hover-zoom"><div class="entry-wrapper overlay-25-dark-max768 dump"><div class="entry-inner w-70"><div class="entry-heading banner-heading"><span class="badge"> @siradaki.baslik      </span><h2 class="entry-title font-banner-xlg">@siradaki.metin</h2></div><div class="entry-excerpt font-sm weight-300"><p>
+											.</p></div><div class="entry-footer vertical banner-footer"><div class="banner-button"><button class="btn link" href="@siradaki.hefefUrl"> Ayrıntılar <i class="klbth-icon-arrow-right-long"></i></button></div></div></div></div><div class="entry-media overlay-15-dark-min768"><img alt="slider image" decoding="async" src="@siradaki.fotosu" /></div><a class="link-mask" href="@siradaki.hefefUrl"> </a></div>
+										</div>
+									</div>
+								</div>
+							</div>									
+								}
+							}
+							
+						 
+
+							 
+						</div>
+					</section>
+
+
 					<section class="elementor-section elementor-top-section elementor-element elementor-element-3802851 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-element_type="section" data-id="3802851">
 						<div class="elementor-container elementor-column-gap-extended">
 							<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-a4353c5" data-element_type="column" data-id="a4353c5">
@@ -1334,7 +1362,40 @@
 										<div class="elementor-widget-container">
 											<div class="klbth-module klbth-module-carousel">
 												<div class="klbth-module-header with-border color-default counter-deactive align-default">
-													<h3 class="entry-title">Featured Products</h3><nav class="klbt-module-tab-links style-1"><ul><li class="tab-item active"><a class="tab-link" href="#auto-safety-security" id="24">Auto Safety &amp; Security</a></li><li class="tab-item"><a class="tab-link" href="#interior-accessories" id="32">Interior Accessories</a></li><li class="tab-item"><a class="tab-link" href="#motor-oils" id="70">Motor Oils</a></li><li class="tab-item"><a class="tab-link" href="#tires-wheels" id="49">Tires &amp; Wheels</a></li></ul></nav><a class="btn link" href="https://klbtheme.com/partdo/shop/?featured=yes"> View All<i class="klbth-icon-arrow-right-long"></i></a>
+												
+
+													<h3 class="entry-title">
+    Featured Products
+</h3>
+
+<nav class="klbt-module-tab-links style-1">
+    <ul>
+
+															@{
+
+																foreach(var siradaki in Model.firmaGruplari)
+																{
+																	string hedef = "#auto-safety-" + siradaki._url;
+																	<li class="tab-item">
+																		<a class="tab-link" href="@hedef" id="@siradaki.firmaGrubukimlik">
+																			 @siradaki.firmaGrupAdi
+																		</a>
+																	</li>
+																}
+
+		}
+
+   
+
+      
+    </ul>
+</nav>
+
+<a class="btn link" href="https://klbtheme.com/partdo/shop/?featured=yes">
+    View All
+    <i class="klbth-icon-arrow-right-long"></i>
+</a>
+												
 												</div>
 												<div class="tab-view klbth-module-body">
 													<div class="klb-products-tab klbth-slider-wrapper">
@@ -1483,327 +1544,12 @@
 						 
 						</div>
 					</section>
-					<section class="elementor-section elementor-top-section elementor-element elementor-element-f914c42 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-element_type="section" data-id="f914c42">
-						<div class="elementor-container elementor-column-gap-extended">
-							<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-1c9c891" data-element_type="column" data-id="1c9c891">
-								<div class="elementor-widget-wrap elementor-element-populated">
-									<div class="elementor-element elementor-element-245b931 elementor-widget elementor-widget-partdo-deals-product" data-element_type="widget" data-id="245b931" data-widget_type="partdo-deals-product.default">
-										<div class="elementor-widget-container">
-											<div class="klbth-module klbth-module-deals"><div class="klbth-module-header with-border color-default counter-deactive align-default"><h3 class="entry-title">Latest Deals for This Week</h3><div class="entry-description"><p>Dont miss out on this weeks deals</p></div><a class="btn link" href="https://klbtheme.com/partdo/shop/?orderby=popularity"> View All <i class="klbth-icon-arrow-right-long"></i></a></div><div class="klbth-module-body"><div class="row"><div class="col col-12 col-md-6"><div class="deal-item"><div class="product-badges"><span class="badge style-1 sale">6%</span></div><div class="product type-product post-339 status-publish first instock product_cat-auto-safety-security product_cat-interior-accessories product_cat-vehicle-backup-cameras has-post-thumbnail sale shipping-taxable purchasable product-type-simple"> <div class="product-wrapper"><div class="product-content"><div class="thumbnail-wrapper entry-media"><a href="https://klbtheme.com/partdo/product/5_-monitor-with-1080p-backup-camera/"><img alt="5″ Monitor with 1080P Backup Camera for Truck" decoding="async" src="~/SiteAssets/partdo/wp-content/uploads/2022/10/1-1-500x500.jpg" /></a><div class="product-buttons"><div class="wishlist-button"><a class="klbwl-btn klbwl-btn-339" data-product_id="339" data-product_title='5" Monitor with 1080P Backup Camera for Truck' href="https://klbtheme.com/partdo/wishlist/">Add to wishlist</a></div><!-- wishlist-button --><a class="klbcp-btn klbcp-btn-339" data-id="339" data-product_image="https://klbtheme.com/partdo/wp-content/uploads/2022/10/1-1-150x150.jpg" data-product_name='5" Monitor with 1080P Backup Camera for Truck' href="?add-to-compare=339">Compare</a><a class="detail-bnt quickview" data-product_id="339"><i class="klbth-icon-eye-empty"></i></a></div></div><div class="content-wrapper"><h3 class="product-title"> <a href="https://klbtheme.com/partdo/product/5_-monitor-with-1080p-backup-camera/">5″ Monitor with 1080P Backup Camera for Truck</a></h3><div class="product-rating"><div aria-label="Rated 4.00 out of 5" class="star-rating" role="img"><span style="width:80%">Rated <strong class="rating">4.00</strong> out of 5</span></div><div class="rating-count"> <span class="count-text">1 review</span></div></div><span class="price"> <del aria-hidden="true"><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">$</span>88.99</bdi></span></del> <span class="screen-reader-text">Original price was: $88.99.</span><ins aria-hidden="true"><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">$</span>83.99</bdi></span></ins><span class="screen-reader-text">Current price is: $83.99.</span></span><div class="product-progress-wrapper"><div class="product-progress"> <span class="progress" style="width:97%"> </span><span class="not-progress"></span></div><div class="product-progress-count"> <div class="available">Available:<strong>39</strong></div><div class="sold">Sold: <strong>38</strong></div></div></div></div></div></div></div></div></div><div class="col col-12 col-md-6"><div class="deal-item"><div class="product-badges"><span class="badge sale">23%</span></div><div class="product type-product post-3050 status-publish instock product_cat-fog-lights product_cat-headlights-lighting product_cat-rear-fog-lights has-post-thumbnail sale shipping-taxable purchasable product-type-simple"> <div class="product-wrapper"><div class="product-content"><div class="thumbnail-wrapper entry-media"><a href="https://klbtheme.com/partdo/product/lumen-custom-sealed-beam-led-headlights/"><img alt="Lumen® – Custom Sealed Beam LED Headlights" decoding="async" src="~/SiteAssets/partdo/wp-content/uploads/2022/10/1-17-500x500.jpg" /></a><div class="product-buttons"><div class="wishlist-button"><a class="klbwl-btn klbwl-btn-3050" data-product_id="3050" data-product_title="Lumen® - Custom Sealed Beam LED Headlights" href="https://klbtheme.com/partdo/wishlist/">Add to wishlist</a></div><!-- wishlist-button --><a class="klbcp-btn klbcp-btn-3050" data-id="3050" data-product_image="https://klbtheme.com/partdo/wp-content/uploads/2022/10/1-17-150x150.jpg" data-product_name="Lumen® - Custom Sealed Beam LED Headlights" href="?add-to-compare=3050">Compare</a><a class="detail-bnt quickview" data-product_id="3050"><i class="klbth-icon-eye-empty"></i></a></div></div><div class="content-wrapper"><h3 class="product-title"> <a href="https://klbtheme.com/partdo/product/lumen-custom-sealed-beam-led-headlights/">Lumen® – Custom Sealed Beam LED Headlights</a></h3><div class="product-rating"><div aria-label="Rated 5.00 out of 5" class="star-rating" role="img"><span style="width:100%">Rated <strong class="rating">5.00</strong> out of 5</span></div><div class="rating-count"> <span class="count-text">1 review</span></div></div><span class="price"> <del aria-hidden="true"><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">$</span>89.99</bdi></span></del> <span class="screen-reader-text">Original price was: $89.99.</span><ins aria-hidden="true"><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">$</span>69.99</bdi></span></ins><span class="screen-reader-text">Current price is: $69.99.</span></span><div class="product-progress-wrapper"><div class="product-progress"> <span class="progress" style="width:56%"> </span><span class="not-progress"></span></div><div class="product-progress-count"> <div class="available">Available:<strong>65</strong></div><div class="sold">Sold: <strong>37</strong></div></div></div></div></div></div></div></div></div></div></div></div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</section>
-					<section class="elementor-section elementor-top-section elementor-element elementor-element-40e2807 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-element_type="section" data-id="40e2807">
-						<div class="elementor-container elementor-column-gap-extended">
-							<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-d5ccd5e" data-element_type="column" data-id="d5ccd5e">
-								<div class="elementor-widget-wrap elementor-element-populated">
-									<div class="elementor-element elementor-element-6990784 elementor-widget elementor-widget-partdo-text-banner" data-element_type="widget" data-id="6990784" data-widget_type="partdo-text-banner.default">
-										<div class="elementor-widget-container">
-											<div class="klbth-coupon-banner style-1"><a class="coupon-wrapper" href=""><div class="coupon-sale">-39<span>%</span></div><div class="text-wrap"><div class="coupon-title">Super discount for your first purchase</div><div class="coupon-description">Use discount code in checkout page.</div></div><div class="sale-overflow">-39<span>%</span></div><div class="coupon-code">FREE15FIRST</div></a></div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</section>
-					<section class="elementor-section elementor-top-section elementor-element elementor-element-1a06808 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-element_type="section" data-id="1a06808">
-						<div class="elementor-container elementor-column-gap-extended">
-							<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-e3d84a3" data-element_type="column" data-id="e3d84a3">
-								<div class="elementor-widget-wrap elementor-element-populated">
-									<div class="elementor-element elementor-element-d60202e elementor-widget elementor-widget-partdo-category-banner" data-element_type="widget" data-id="d60202e" data-widget_type="partdo-category-banner.default">
-										<div class="elementor-widget-container">
-											<div class="klbth-module klbth-module-category-products style-1">
-												<div class="klbth-module-body">
-													<div class="klbth-module-wrapper image-dump">
-														<div class="block-column banner-column"> <div class="klbth-banner style-inner color-scheme-light space-sm align-start justify-start hover-zoom"><div class="entry-wrapper overlay-25-dark-max768 dump"><div class="entry-inner w-100"><div class="entry-heading banner-heading"><div class="entry-sale-percentage">-35%<span>%</span></div><div class="entry-small">Only This Week</div><h2 class="entry-title font-banner-sm">Tools &amp; Equipment</h2></div><div class="entry-excerpt font-xs weight-300"><p>Nis telesa, laber. Mytonomi bedessade miheten. Pokura rengen, lulurat. Niren nunade håd. Sest berade. </p></div><div class="entry-footer vertical banner-footer"><div class="banner-button"><button class="btn link" href="https://klbtheme.com/partdo/shop/?featured=yes"> Shop Now<i class="klbth-icon-arrow-right-long"></i></button></div></div></div></div><div class="entry-media overlay-15-dark-min768"><img alt="" decoding="async" src="~/SiteAssets/partdo/wp-content/uploads/2022/11/banner-04.jpg" /></div><a class="link-mask" href="https://klbtheme.com/partdo/shop/?featured=yes"> </a></div></div><div class="block-column products-column">
-															<div class="products gutter-0 column-4 mobile-2">
-																<div class="column-item product type-product post-3132 status-publish instock product_cat-alloy-wheels product_cat-tires-wheels has-post-thumbnail sale shipping-taxable purchasable product-type-simple">
-																	<div class="product product-type-1">
-																		<div class="product-wrapper">
-																			<div class="product-content"><div class="thumbnail-wrapper entry-media"> <div class="product-badges"><span class="badge style-1 sale">18%</span></div><a class="product-thumbnail" href="https://klbtheme.com/partdo/product/vision-147-daytona-hyper-silver/"><img alt="VISION® – 147 DAYTONA Hyper Silver" data-hover-slides="https://klbtheme.com/partdo/wp-content/uploads/2022/10/2-36-500x500.jpg,https://klbtheme.com/partdo/wp-content/uploads/2022/10/3-30-500x500.jpg" data-options='{"touch": "end", "preloadImages": true }' decoding="async" src="~/SiteAssets/partdo/wp-content/uploads/2022/10/1-37-500x500.jpg" /></a><div class="product-buttons"> <div class="wishlist-button"><a class="klbwl-btn klbwl-btn-3132" data-product_id="3132" data-product_title="VISION® - 147 DAYTONA Hyper Silver" href="https://klbtheme.com/partdo/wishlist/">Add to wishlist</a></div><!-- wishlist-button --><a class="klbcp-btn klbcp-btn-3132" data-id="3132" data-product_image="https://klbtheme.com/partdo/wp-content/uploads/2022/10/1-37-150x150.jpg" data-product_name="VISION® - 147 DAYTONA Hyper Silver" href="?add-to-compare=3132">Compare</a><a class="detail-bnt quickview" data-product_id="3132"><i class="klbth-icon-eye-empty"></i></a> </div> </div><div class="content-wrapper"><h3 class="product-title"> <a href="https://klbtheme.com/partdo/product/vision-147-daytona-hyper-silver/">VISION® – 147 DAYTONA Hyper Silver</a></h3><div class="product-rating"><div aria-label="Rated 5.00 out of 5" class="star-rating" role="img"><span style="width:100%">Rated <strong class="rating">5.00</strong> out of 5</span></div><div class="rating-count"> <span class="count-text">1 review</span></div></div><span class="price"><del aria-hidden="true"><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">$</span>254.00</bdi></span></del> <span class="screen-reader-text">Original price was: $254.00.</span><ins aria-hidden="true"><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">$</span>209.00</bdi></span></ins><span class="screen-reader-text">Current price is: $209.00.</span></span><div class="product-stock in-stock"> <i class="klbth-icon-ecommerce-package-ready"></i><span>In Stock</span></div></div></div><div class="product-footer">
-																				<div class="product-footer-inner">
-																					<div class="product-footer-details">
-																						<ul>
-																							<li>Best-in-class all-around performance</li>
-																							<li>Confident driving in all weather conditions</li>
-																							<li>Visual Alignment Indicators</li>
-																						</ul>
-																					</div><a aria-describedby="woocommerce_loop_add_to_cart_link_describedby_3132" aria-label="Add to cart: “VISION® - 147 DAYTONA Hyper Silver”" class="primary button product_type_simple add_to_cart_button ajax_add_to_cart" data-product_id="3132" data-product_sku="AG3KO9ED" data-quantity="1" data-success_message="“VISION® - 147 DAYTONA Hyper Silver” has been added to your cart" href="/partdo/?add-to-cart=3132" rel="nofollow" role="button">Add to cart <i class="klbth-icon-shopping-bag"></i></a> <span class="screen-reader-text" id="woocommerce_loop_add_to_cart_link_describedby_3132">
-																					</span>
-																				</div>
-																			</div>
-																		</div><div class="product-content-fade"></div>
-																	</div>
-																</div><div class="column-item product type-product post-3128 status-publish last instock product_cat-auto-safety-security product_cat-interior-accessories product_cat-vehicle-backup-cameras has-post-thumbnail sale shipping-taxable purchasable product-type-simple">
-																	<div class="product product-type-1">
-																		<div class="product-wrapper">
-																			<div class="product-content"><div class="thumbnail-wrapper entry-media"> <div class="product-badges"><span class="badge style-1 sale">8%</span></div><a class="product-thumbnail" href="https://klbtheme.com/partdo/product/thinkware-f770-dash-cam-dual-channel-wifi-gps-16gb/"><img alt="Thinkware F770 Dash Cam Dual Channel Wifi" data-hover-slides="https://klbtheme.com/partdo/wp-content/uploads/2022/10/2-35-500x500.jpg,https://klbtheme.com/partdo/wp-content/uploads/2022/10/3-29-500x500.jpg" data-options='{"touch": "end", "preloadImages": true }' decoding="async" src="~/SiteAssets/partdo/wp-content/uploads/2022/10/1-36-500x500.jpg" /></a><div class="product-buttons"> <div class="wishlist-button"><a class="klbwl-btn klbwl-btn-3128" data-product_id="3128" data-product_title="Thinkware F770 Dash Cam Dual Channel Wifi" href="https://klbtheme.com/partdo/wishlist/">Add to wishlist</a></div><!-- wishlist-button --><a class="klbcp-btn klbcp-btn-3128" data-id="3128" data-product_image="https://klbtheme.com/partdo/wp-content/uploads/2022/10/1-36-150x150.jpg" data-product_name="Thinkware F770 Dash Cam Dual Channel Wifi" href="?add-to-compare=3128">Compare</a><a class="detail-bnt quickview" data-product_id="3128"><i class="klbth-icon-eye-empty"></i></a> </div> </div><div class="content-wrapper"><h3 class="product-title"> <a href="https://klbtheme.com/partdo/product/thinkware-f770-dash-cam-dual-channel-wifi-gps-16gb/">Thinkware F770 Dash Cam Dual Channel Wifi</a></h3><div class="product-rating"><div aria-label="Rated 3.00 out of 5" class="star-rating" role="img"><span style="width:60%">Rated <strong class="rating">3.00</strong> out of 5</span></div><div class="rating-count"> <span class="count-text">1 review</span></div></div><span class="price"><del aria-hidden="true"><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">$</span>268.99</bdi></span></del> <span class="screen-reader-text">Original price was: $268.99.</span><ins aria-hidden="true"><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">$</span>249.99</bdi></span></ins><span class="screen-reader-text">Current price is: $249.99.</span></span><div class="product-stock in-stock"> <i class="klbth-icon-ecommerce-package-ready"></i><span>In Stock</span></div></div></div><div class="product-footer">
-																				<div class="product-footer-inner">
-																					<div class="product-footer-details">
-																						<ul>
-																							<li>Best-in-class all-around performance</li>
-																							<li>Confident driving in all weather conditions</li>
-																							<li>Visual Alignment Indicators</li>
-																						</ul>
-																					</div><a aria-describedby="woocommerce_loop_add_to_cart_link_describedby_3128" aria-label="Add to cart: “Thinkware F770 Dash Cam Dual Channel Wifi”" class="primary button product_type_simple add_to_cart_button ajax_add_to_cart" data-product_id="3128" data-product_sku="B5UKO9ET" data-quantity="1" data-success_message="“Thinkware F770 Dash Cam Dual Channel Wifi” has been added to your cart" href="/partdo/?add-to-cart=3128" rel="nofollow" role="button">Add to cart <i class="klbth-icon-shopping-bag"></i></a> <span class="screen-reader-text" id="woocommerce_loop_add_to_cart_link_describedby_3128">
-																					</span>
-																				</div>
-																			</div>
-																		</div><div class="product-content-fade"></div>
-																	</div>
-																</div><div class="column-item product type-product post-3123 status-publish first instock product_cat-alarm-systems product_cat-auto-safety-security product_cat-interior-accessories has-post-thumbnail sale shipping-taxable purchasable product-type-simple">
-																	<div class="product product-type-1">
-																		<div class="product-wrapper">
-																			<div class="product-content"><div class="thumbnail-wrapper entry-media"> <div class="product-badges"><span class="badge style-1" style="background-color: #ff5c00;">Super Price</span></div><a class="product-thumbnail" href="https://klbtheme.com/partdo/product/technaxx-car-alarm-with-charging-function-tx-100/"><img alt="Technaxx car Alarm with Charging Function" data-hover-slides="https://klbtheme.com/partdo/wp-content/uploads/2022/10/4-9-500x500.jpg,https://klbtheme.com/partdo/wp-content/uploads/2022/10/3-28-500x500.jpg,https://klbtheme.com/partdo/wp-content/uploads/2022/10/2-34-500x500.jpg" data-options='{"touch": "end", "preloadImages": true }' decoding="async" src="~/SiteAssets/partdo/wp-content/uploads/2022/10/1-35-500x500.jpg" /></a><div class="product-buttons"> <div class="wishlist-button"><a class="klbwl-btn klbwl-btn-3123" data-product_id="3123" data-product_title="Technaxx car Alarm with Charging Function" href="https://klbtheme.com/partdo/wishlist/">Add to wishlist</a></div><!-- wishlist-button --><a class="klbcp-btn klbcp-btn-3123" data-id="3123" data-product_image="https://klbtheme.com/partdo/wp-content/uploads/2022/10/1-35-150x150.jpg" data-product_name="Technaxx car Alarm with Charging Function" href="?add-to-compare=3123">Compare</a><a class="detail-bnt quickview" data-product_id="3123"><i class="klbth-icon-eye-empty"></i></a> </div> </div><div class="content-wrapper"><h3 class="product-title"> <a href="https://klbtheme.com/partdo/product/technaxx-car-alarm-with-charging-function-tx-100/">Technaxx car Alarm with Charging Function</a></h3><div class="product-rating"><div aria-label="Rated 5.00 out of 5" class="star-rating" role="img"><span style="width:100%">Rated <strong class="rating">5.00</strong> out of 5</span></div><div class="rating-count"> <span class="count-text">1 review</span></div></div><span class="price"><del aria-hidden="true"><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">$</span>51.99</bdi></span></del> <span class="screen-reader-text">Original price was: $51.99.</span><ins aria-hidden="true"><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">$</span>47.99</bdi></span></ins><span class="screen-reader-text">Current price is: $47.99.</span></span><div class="product-stock in-stock"> <i class="klbth-icon-ecommerce-package-ready"></i><span>In Stock</span></div></div></div><div class="product-footer">
-																				<div class="product-footer-inner">
-																					<div class="product-footer-details">
-																						<ul>
-																							<li>Best-in-class all-around performance</li>
-																							<li>Confident driving in all weather conditions</li>
-																							<li>Visual Alignment Indicators</li>
-																						</ul>
-																					</div><a aria-describedby="woocommerce_loop_add_to_cart_link_describedby_3123" aria-label="Add to cart: “Technaxx car Alarm with Charging Function”" class="primary button product_type_simple add_to_cart_button ajax_add_to_cart" data-product_id="3123" data-product_sku="AE3KGO9T" data-quantity="1" data-success_message="“Technaxx car Alarm with Charging Function” has been added to your cart" href="/partdo/?add-to-cart=3123" rel="nofollow" role="button">Add to cart <i class="klbth-icon-shopping-bag"></i></a> <span class="screen-reader-text" id="woocommerce_loop_add_to_cart_link_describedby_3123">
-																					</span>
-																				</div>
-																			</div>
-																		</div><div class="product-content-fade"></div>
-																	</div>
-																</div><div class="column-item product type-product post-3119 status-publish instock product_cat-headlights-lighting product_cat-stop-tail-lights has-post-thumbnail sale shipping-taxable purchasable product-type-simple">
-																	<div class="product product-type-1">
-																		<div class="product-wrapper">
-																			<div class="product-content"><div class="thumbnail-wrapper entry-media"> <div class="product-badges"><span class="badge style-1 sale">11%</span></div><a class="product-thumbnail" href="https://klbtheme.com/partdo/product/spyder-projector-headlights/"><img alt="Spyder® – Projector Headlights" data-hover-slides="https://klbtheme.com/partdo/wp-content/uploads/2022/10/2-33-500x500.jpg,https://klbtheme.com/partdo/wp-content/uploads/2022/10/3-27-500x500.jpg" data-options='{"touch": "end", "preloadImages": true }' decoding="async" src="~/SiteAssets/partdo/wp-content/uploads/2022/10/1-34-500x500.jpg" /></a><div class="product-buttons"> <div class="wishlist-button"><a class="klbwl-btn klbwl-btn-3119" data-product_id="3119" data-product_title="Spyder® - Projector Headlights" href="https://klbtheme.com/partdo/wishlist/">Add to wishlist</a></div><!-- wishlist-button --><a class="klbcp-btn klbcp-btn-3119" data-id="3119" data-product_image="https://klbtheme.com/partdo/wp-content/uploads/2022/10/1-34-150x150.jpg" data-product_name="Spyder® - Projector Headlights" href="?add-to-compare=3119">Compare</a><a class="detail-bnt quickview" data-product_id="3119"><i class="klbth-icon-eye-empty"></i></a> </div> </div><div class="content-wrapper"><h3 class="product-title"> <a href="https://klbtheme.com/partdo/product/spyder-projector-headlights/">Spyder® – Projector Headlights</a></h3><div class="product-rating"><div aria-label="Rated 5.00 out of 5" class="star-rating" role="img"><span style="width:100%">Rated <strong class="rating">5.00</strong> out of 5</span></div><div class="rating-count"> <span class="count-text">1 review</span></div></div><span class="price"><del aria-hidden="true"><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">$</span>582.99</bdi></span></del> <span class="screen-reader-text">Original price was: $582.99.</span><ins aria-hidden="true"><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">$</span>521.89</bdi></span></ins><span class="screen-reader-text">Current price is: $521.89.</span></span><div class="product-stock in-stock"> <i class="klbth-icon-ecommerce-package-ready"></i><span>In Stock</span></div></div></div><div class="product-footer">
-																				<div class="product-footer-inner">
-																					<div class="product-footer-details">
-																						<ul>
-																							<li>Best-in-class all-around performance</li>
-																							<li>Confident driving in all weather conditions</li>
-																							<li>Visual Alignment Indicators</li>
-																						</ul>
-																					</div><a aria-describedby="woocommerce_loop_add_to_cart_link_describedby_3119" aria-label="Add to cart: “Spyder® - Projector Headlights”" class="primary button product_type_simple add_to_cart_button ajax_add_to_cart" data-product_id="3119" data-product_sku="EWH8KTUE" data-quantity="1" data-success_message="“Spyder® - Projector Headlights” has been added to your cart" href="/partdo/?add-to-cart=3119" rel="nofollow" role="button">Add to cart <i class="klbth-icon-shopping-bag"></i></a> <span class="screen-reader-text" id="woocommerce_loop_add_to_cart_link_describedby_3119">
-																					</span>
-																				</div>
-																			</div>
-																		</div><div class="product-content-fade"></div>
-																	</div>
-																</div><div class="column-item product type-product post-3115 status-publish instock product_cat-daytime-running-lights product_cat-headlights-lighting product_cat-turn-signal-lights has-post-thumbnail sale shipping-taxable purchasable product-type-simple">
-																	<div class="product product-type-1">
-																		<div class="product-wrapper">
-																			<div class="product-content"><div class="thumbnail-wrapper entry-media"> <div class="product-badges"><span class="badge sale">24%</span></div><a class="product-thumbnail" href="https://klbtheme.com/partdo/product/spec-d-projector-headlights/"><img alt="Spec-D® – Projector Headlights" data-hover-slides="https://klbtheme.com/partdo/wp-content/uploads/2022/10/2-32-500x500.jpg,https://klbtheme.com/partdo/wp-content/uploads/2022/10/3-26-500x500.jpg" data-options='{"touch": "end", "preloadImages": true }' decoding="async" src="~/SiteAssets/partdo/wp-content/uploads/2022/10/1-33-500x500.jpg" /></a><div class="product-buttons"> <div class="wishlist-button"><a class="klbwl-btn klbwl-btn-3115" data-product_id="3115" data-product_title="Spec-D® - Projector Headlights" href="https://klbtheme.com/partdo/wishlist/">Add to wishlist</a></div><!-- wishlist-button --><a class="klbcp-btn klbcp-btn-3115" data-id="3115" data-product_image="https://klbtheme.com/partdo/wp-content/uploads/2022/10/1-33-150x150.jpg" data-product_name="Spec-D® - Projector Headlights" href="?add-to-compare=3115">Compare</a><a class="detail-bnt quickview" data-product_id="3115"><i class="klbth-icon-eye-empty"></i></a> </div> </div><div class="content-wrapper"><h3 class="product-title"> <a href="https://klbtheme.com/partdo/product/spec-d-projector-headlights/">Spec-D® – Projector Headlights</a></h3><div class="product-rating"><div aria-label="Rated 4.00 out of 5" class="star-rating" role="img"><span style="width:80%">Rated <strong class="rating">4.00</strong> out of 5</span></div><div class="rating-count"> <span class="count-text">1 review</span></div></div><span class="price"><del aria-hidden="true"><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">$</span>364.86</bdi></span></del> <span class="screen-reader-text">Original price was: $364.86.</span><ins aria-hidden="true"><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">$</span>279.02</bdi></span></ins><span class="screen-reader-text">Current price is: $279.02.</span></span><div class="product-stock in-stock"> <i class="klbth-icon-ecommerce-package-ready"></i><span>In Stock</span></div></div></div><div class="product-footer">
-																				<div class="product-footer-inner">
-																					<div class="product-footer-details">
-																						<ul>
-																							<li>Best-in-class all-around performance</li>
-																							<li>Confident driving in all weather conditions</li>
-																							<li>Visual Alignment Indicators</li>
-																						</ul>
-																					</div><a aria-describedby="woocommerce_loop_add_to_cart_link_describedby_3115" aria-label="Add to cart: “Spec-D® - Projector Headlights”" class="primary button product_type_simple add_to_cart_button ajax_add_to_cart" data-product_id="3115" data-product_sku="S8EY01DE" data-quantity="1" data-success_message="“Spec-D® - Projector Headlights” has been added to your cart" href="/partdo/?add-to-cart=3115" rel="nofollow" role="button">Add to cart <i class="klbth-icon-shopping-bag"></i></a> <span class="screen-reader-text" id="woocommerce_loop_add_to_cart_link_describedby_3115">
-																					</span>
-																				</div>
-																			</div>
-																		</div><div class="product-content-fade"></div>
-																	</div>
-																</div><div class="column-item product type-product post-3109 status-publish last instock product_cat-battery-and-adhesives product_cat-tools-equipment has-post-thumbnail sale shipping-taxable purchasable product-type-simple">
-																	<div class="product product-type-1">
-																		<div class="product-wrapper">
-																			<div class="product-content"><div class="thumbnail-wrapper entry-media"> <div class="product-badges"><span class="badge style-1" style="background-color: #00a046;">Top Product</span></div><a class="product-thumbnail" href="https://klbtheme.com/partdo/product/snowyfox-rv-15amp-to-50amp-adapter-15male/"><img alt="SnowyFox RV 15Amp to 50Amp Adapter – 15Male" data-hover-slides="https://klbtheme.com/partdo/wp-content/uploads/2022/10/2-31-500x500.jpg,https://klbtheme.com/partdo/wp-content/uploads/2022/10/5-1-500x500.jpg,https://klbtheme.com/partdo/wp-content/uploads/2022/10/4-8-500x500.jpg,https://klbtheme.com/partdo/wp-content/uploads/2022/10/3-25-500x500.jpg" data-options='{"touch": "end", "preloadImages": true }' decoding="async" src="~/SiteAssets/partdo/wp-content/uploads/2022/10/1-32-500x500.jpg" /></a><div class="product-buttons"> <div class="wishlist-button"><a class="klbwl-btn klbwl-btn-3109" data-product_id="3109" data-product_title="SnowyFox RV 15Amp to 50Amp Adapter - 15Male" href="https://klbtheme.com/partdo/wishlist/">Add to wishlist</a></div><!-- wishlist-button --><a class="klbcp-btn klbcp-btn-3109" data-id="3109" data-product_image="https://klbtheme.com/partdo/wp-content/uploads/2022/10/1-32-150x150.jpg" data-product_name="SnowyFox RV 15Amp to 50Amp Adapter - 15Male" href="?add-to-compare=3109">Compare</a><a class="detail-bnt quickview" data-product_id="3109"><i class="klbth-icon-eye-empty"></i></a> </div> </div><div class="content-wrapper"><h3 class="product-title"> <a href="https://klbtheme.com/partdo/product/snowyfox-rv-15amp-to-50amp-adapter-15male/">SnowyFox RV 15Amp to 50Amp Adapter – 15Male</a></h3><div class="product-rating"><div aria-label="Rated 5.00 out of 5" class="star-rating" role="img"><span style="width:100%">Rated <strong class="rating">5.00</strong> out of 5</span></div><div class="rating-count"> <span class="count-text">1 review</span></div></div><span class="price"><del aria-hidden="true"><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">$</span>25.98</bdi></span></del> <span class="screen-reader-text">Original price was: $25.98.</span><ins aria-hidden="true"><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">$</span>23.88</bdi></span></ins><span class="screen-reader-text">Current price is: $23.88.</span></span><div class="product-stock in-stock"> <i class="klbth-icon-ecommerce-package-ready"></i><span>In Stock</span></div></div></div><div class="product-footer">
-																				<div class="product-footer-inner">
-																					<div class="product-footer-details">
-																						<ul>
-																							<li>Best-in-class all-around performance</li>
-																							<li>Confident driving in all weather conditions</li>
-																							<li>Visual Alignment Indicators</li>
-																						</ul>
-																					</div><a aria-describedby="woocommerce_loop_add_to_cart_link_describedby_3109" aria-label="Add to cart: “SnowyFox RV 15Amp to 50Amp Adapter - 15Male”" class="primary button product_type_simple add_to_cart_button ajax_add_to_cart" data-product_id="3109" data-product_sku="SY78EW4K" data-quantity="1" data-success_message="“SnowyFox RV 15Amp to 50Amp Adapter - 15Male” has been added to your cart" href="/partdo/?add-to-cart=3109" rel="nofollow" role="button">Add to cart <i class="klbth-icon-shopping-bag"></i></a> <span class="screen-reader-text" id="woocommerce_loop_add_to_cart_link_describedby_3109">
-																					</span>
-																				</div>
-																			</div>
-																		</div><div class="product-content-fade"></div>
-																	</div>
-																</div><div class="column-item product type-product post-3106 status-publish first instock product_cat-motor-oils product_cat-oils-fluids has-post-thumbnail sale shipping-taxable purchasable product-type-simple">
-																	<div class="product product-type-1">
-																		<div class="product-wrapper">
-																			<div class="product-content"><div class="thumbnail-wrapper entry-media"> <div class="product-badges"><span class="badge style-1 sale">29%</span></div><a class="product-thumbnail" href="https://klbtheme.com/partdo/product/shell-rotella-t1-sae-30-conventional-heavy-duty/"><img alt="Shell Rotella T1 SAE 30 Conventional Heavy Duty" data-hover-slides="https://klbtheme.com/partdo/wp-content/uploads/2022/10/2-30-500x500.jpg" data-options='{"touch": "end", "preloadImages": true }' decoding="async" src="~/SiteAssets/partdo/wp-content/uploads/2022/10/1-31-500x500.jpg" /></a><div class="product-buttons"> <div class="wishlist-button"><a class="klbwl-btn klbwl-btn-3106" data-product_id="3106" data-product_title="Shell Rotella T1 SAE 30 Conventional Heavy Duty" href="https://klbtheme.com/partdo/wishlist/">Add to wishlist</a></div><!-- wishlist-button --><a class="klbcp-btn klbcp-btn-3106" data-id="3106" data-product_image="https://klbtheme.com/partdo/wp-content/uploads/2022/10/1-31-150x150.jpg" data-product_name="Shell Rotella T1 SAE 30 Conventional Heavy Duty" href="?add-to-compare=3106">Compare</a><a class="detail-bnt quickview" data-product_id="3106"><i class="klbth-icon-eye-empty"></i></a> </div> </div><div class="content-wrapper"><h3 class="product-title"> <a href="https://klbtheme.com/partdo/product/shell-rotella-t1-sae-30-conventional-heavy-duty/">Shell Rotella T1 SAE 30 Conventional Heavy Duty</a></h3><div class="product-rating"><div aria-label="Rated 4.00 out of 5" class="star-rating" role="img"><span style="width:80%">Rated <strong class="rating">4.00</strong> out of 5</span></div><div class="rating-count"> <span class="count-text">1 review</span></div></div><span class="price"><del aria-hidden="true"><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">$</span>24.85</bdi></span></del> <span class="screen-reader-text">Original price was: $24.85.</span><ins aria-hidden="true"><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">$</span>17.85</bdi></span></ins><span class="screen-reader-text">Current price is: $17.85.</span></span><div class="product-stock in-stock"> <i class="klbth-icon-ecommerce-package-ready"></i><span>In Stock</span></div></div></div><div class="product-footer">
-																				<div class="product-footer-inner">
-																					<div class="product-footer-details">
-																						<ul>
-																							<li>Best-in-class all-around performance</li>
-																							<li>Confident driving in all weather conditions</li>
-																							<li>Visual Alignment Indicators</li>
-																						</ul>
-																					</div><a aria-describedby="woocommerce_loop_add_to_cart_link_describedby_3106" aria-label="Add to cart: “Shell Rotella T1 SAE 30 Conventional Heavy Duty”" class="primary button product_type_simple add_to_cart_button ajax_add_to_cart" data-product_id="3106" data-product_sku="D04FED7H" data-quantity="1" data-success_message="“Shell Rotella T1 SAE 30 Conventional Heavy Duty” has been added to your cart" href="/partdo/?add-to-cart=3106" rel="nofollow" role="button">Add to cart <i class="klbth-icon-shopping-bag"></i></a> <span class="screen-reader-text" id="woocommerce_loop_add_to_cart_link_describedby_3106">
-																					</span>
-																				</div>
-																			</div>
-																		</div><div class="product-content-fade"></div>
-																	</div>
-																</div><div class="column-item product type-product post-3102 status-publish instock product_cat-garage-tools product_cat-tools-equipment has-post-thumbnail sale shipping-taxable purchasable product-type-simple">
-																	<div class="product product-type-1">
-																		<div class="product-wrapper">
-																			<div class="product-content"><div class="thumbnail-wrapper entry-media"> <div class="product-badges"><span class="badge sale">34%</span></div><a class="product-thumbnail" href="https://klbtheme.com/partdo/product/schumacher-125-chrome-fan-12v/"><img alt="Schumacher 125 Chrome Fan 12V" data-hover-slides="https://klbtheme.com/partdo/wp-content/uploads/2022/10/2-29-500x500.jpg,https://klbtheme.com/partdo/wp-content/uploads/2022/10/3-24-500x500.jpg" data-options='{"touch": "end", "preloadImages": true }' decoding="async" src="~/SiteAssets/partdo/wp-content/uploads/2022/10/1-30-500x500.jpg" /></a><div class="product-buttons"> <div class="wishlist-button"><a class="klbwl-btn klbwl-btn-3102" data-product_id="3102" data-product_title="Schumacher 125 Chrome Fan 12V" href="https://klbtheme.com/partdo/wishlist/">Add to wishlist</a></div><!-- wishlist-button --><a class="klbcp-btn klbcp-btn-3102" data-id="3102" data-product_image="https://klbtheme.com/partdo/wp-content/uploads/2022/10/1-30-150x150.jpg" data-product_name="Schumacher 125 Chrome Fan 12V" href="?add-to-compare=3102">Compare</a><a class="detail-bnt quickview" data-product_id="3102"><i class="klbth-icon-eye-empty"></i></a> </div> </div><div class="content-wrapper"><h3 class="product-title"> <a href="https://klbtheme.com/partdo/product/schumacher-125-chrome-fan-12v/">Schumacher 125 Chrome Fan 12V</a></h3><div class="product-rating"><div aria-label="Rated 4.00 out of 5" class="star-rating" role="img"><span style="width:80%">Rated <strong class="rating">4.00</strong> out of 5</span></div><div class="rating-count"> <span class="count-text">1 review</span></div></div><span class="price"><del aria-hidden="true"><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">$</span>45.99</bdi></span></del> <span class="screen-reader-text">Original price was: $45.99.</span><ins aria-hidden="true"><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">$</span>30.54</bdi></span></ins><span class="screen-reader-text">Current price is: $30.54.</span></span><div class="product-stock in-stock"> <i class="klbth-icon-ecommerce-package-ready"></i><span>In Stock</span></div></div></div><div class="product-footer">
-																				<div class="product-footer-inner">
-																					<div class="product-footer-details">
-																						<ul>
-																							<li>Best-in-class all-around performance</li>
-																							<li>Confident driving in all weather conditions</li>
-																							<li>Visual Alignment Indicators</li>
-																						</ul>
-																					</div><a aria-describedby="woocommerce_loop_add_to_cart_link_describedby_3102" aria-label="Add to cart: “Schumacher 125 Chrome Fan 12V”" class="primary button product_type_simple add_to_cart_button ajax_add_to_cart" data-product_id="3102" data-product_sku="EWQ02GY7" data-quantity="1" data-success_message="“Schumacher 125 Chrome Fan 12V” has been added to your cart" href="/partdo/?add-to-cart=3102" rel="nofollow" role="button">Add to cart <i class="klbth-icon-shopping-bag"></i></a> <span class="screen-reader-text" id="woocommerce_loop_add_to_cart_link_describedby_3102">
-																					</span>
-																				</div>
-																			</div>
-																		</div><div class="product-content-fade"></div>
-																	</div>
-																</div>
-															</div>
-														</div><!-- column -->
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</section>
-					<section class="elementor-section elementor-top-section elementor-element elementor-element-0a663ba elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-element_type="section" data-id="0a663ba">
-						<div class="elementor-container elementor-column-gap-extended">
-							<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-af404f4" data-element_type="column" data-id="af404f4">
-								<div class="elementor-widget-wrap elementor-element-populated">
-									<div class="elementor-element elementor-element-acb07a8 elementor-widget elementor-widget-partdo-banner-box" data-element_type="widget" data-id="acb07a8" data-widget_type="partdo-banner-box.default">
-										<div class="elementor-widget-container">
-											<div class="klbth-banner style-inner color-scheme-light space-sm align-center justify-start hover-zoom"><div class="entry-wrapper overlay-25-dark-max768 dump"><div class="entry-inner w-70"><div class="entry-heading banner-heading"><span class="badge">On Sale This Week</span><h2 class="entry-title font-banner-xlg">Genuine Auto Parts You Can Find at Affordable Prices</h2></div><div class="entry-excerpt font-sm weight-300"><p>Plakrore maheten. Astronens ultranirad. Dod.</p></div><div class="entry-footer vertical banner-footer"><div class="banner-button"><button class="btn link" href="https://klbtheme.com/partdo/shop/?ft=load-more">Shop Now<i class="klbth-icon-arrow-right-long"></i></button></div></div></div></div><div class="entry-media overlay-15-dark-min768"><img alt="slider image" decoding="async" src="~/SiteAssets/partdo/wp-content/uploads/2022/10/banner-05.jpg" /></div><a class="link-mask" href="https://klbtheme.com/partdo/shop/?ft=load-more"> </a></div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-52498d5" data-element_type="column" data-id="52498d5">
-								<div class="elementor-widget-wrap elementor-element-populated">
-									<div class="elementor-element elementor-element-4063084 elementor-widget elementor-widget-partdo-banner-box" data-element_type="widget" data-id="4063084" data-widget_type="partdo-banner-box.default">
-										<div class="elementor-widget-container">
-											<div class="klbth-banner style-inner color-scheme-light space-sm align-center justify-start hover-zoom">
-												<div class="entry-wrapper overlay-25-dark-max768 dump">
-													<div class="entry-inner w-70">
-														<div class="entry-heading banner-heading">
-															<span class="badge">On Sale This Week</span><h2 class="entry-title font-banner-xlg">
-																Wide Range Of Genuine  Auto Parts at Premium Pricing
-															</h2>
-														</div><div class="entry-excerpt font-sm weight-300"><p>Plakrore maheten. Astronens ultranirad. Dod.</p></div><div class="entry-footer vertical banner-footer"><div class="banner-button"><button class="btn link" href="https://klbtheme.com/partdo/shop/?column=2">Shop Now<i class="klbth-icon-arrow-right-long"></i></button></div></div>
-													</div>
-												</div><div class="entry-media overlay-15-dark-min768"><img alt="slider image" decoding="async" src="~/SiteAssets/partdo/wp-content/uploads/2022/10/banner-06.jpg" /></div><a class="link-mask" href="https://klbtheme.com/partdo/shop/?column=2"> </a>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</section>
-					<section class="elementor-section elementor-top-section elementor-element elementor-element-78e1d6e elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-element_type="section" data-id="78e1d6e">
-						<div class="elementor-container elementor-column-gap-extended">
-							<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-f909ef4" data-element_type="column" data-id="f909ef4">
-								<div class="elementor-widget-wrap elementor-element-populated">
-									<div class="elementor-element elementor-element-0d75b79 elementor-widget elementor-widget-partdo-product-grid" data-element_type="widget" data-id="0d75b79" data-widget_type="partdo-product-grid.default">
-										<div class="elementor-widget-container">
-											<div class="klbth-module klbth-module-product-grid dumps">
-												<div class="klbth-module-header with-border color-danger counter-active align-default"><h3 class="entry-title">Latest Deals for This Week</h3><div class="klbth-countdown-wrapper"><div class="kblth-countdown" data-date="2026/03/12"><div class="count-item days"></div><span class="separator">:</span><div class="count-item hours"></div><span class="separator">:</span><div class="count-item minutes"></div><span class="separator">:</span><div class="count-item second"></div></div><p class="countdown-description">Remains until the end of the offer</p></div><a class="btn link" href="https://klbtheme.com/partdo/shop/?ft=load-more"> View All <i class="klbth-icon-arrow-right-long"></i></a></div><div class="module-wrapper">
-													<div class="products gutter-30 column-5 mobile-2 total-5">
-														<div class="column-item product type-product post-3132 status-publish instock product_cat-alloy-wheels product_cat-tires-wheels has-post-thumbnail sale shipping-taxable purchasable product-type-simple">
-															<div class="product product-type-1">
-																<div class="product-wrapper">
-																	<div class="product-content"><div class="thumbnail-wrapper entry-media"> <div class="product-badges"><span class="badge style-1 sale">18%</span></div><a class="product-thumbnail" href="https://klbtheme.com/partdo/product/vision-147-daytona-hyper-silver/"><img alt="VISION® – 147 DAYTONA Hyper Silver" data-hover-slides="https://klbtheme.com/partdo/wp-content/uploads/2022/10/2-36-500x500.jpg,https://klbtheme.com/partdo/wp-content/uploads/2022/10/3-30-500x500.jpg" data-options='{"touch": "end", "preloadImages": true }' decoding="async" src="~/SiteAssets/partdo/wp-content/uploads/2022/10/1-37-500x500.jpg" /></a><div class="product-buttons"> <div class="wishlist-button"><a class="klbwl-btn klbwl-btn-3132" data-product_id="3132" data-product_title="VISION® - 147 DAYTONA Hyper Silver" href="https://klbtheme.com/partdo/wishlist/">Add to wishlist</a></div><!-- wishlist-button --><a class="klbcp-btn klbcp-btn-3132" data-id="3132" data-product_image="https://klbtheme.com/partdo/wp-content/uploads/2022/10/1-37-150x150.jpg" data-product_name="VISION® - 147 DAYTONA Hyper Silver" href="?add-to-compare=3132">Compare</a><a class="detail-bnt quickview" data-product_id="3132"><i class="klbth-icon-eye-empty"></i></a> </div> </div><div class="content-wrapper"><h3 class="product-title"> <a href="https://klbtheme.com/partdo/product/vision-147-daytona-hyper-silver/">VISION® – 147 DAYTONA Hyper Silver</a></h3><div class="product-rating"><div aria-label="Rated 5.00 out of 5" class="star-rating" role="img"><span style="width:100%">Rated <strong class="rating">5.00</strong> out of 5</span></div><div class="rating-count"> <span class="count-text">1 review</span></div></div><span class="price"><del aria-hidden="true"><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">$</span>254.00</bdi></span></del> <span class="screen-reader-text">Original price was: $254.00.</span><ins aria-hidden="true"><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">$</span>209.00</bdi></span></ins><span class="screen-reader-text">Current price is: $209.00.</span></span><div class="product-stock in-stock"> <i class="klbth-icon-ecommerce-package-ready"></i><span>In Stock</span></div></div></div><div class="product-footer">
-																		<div class="product-footer-inner">
-																			<div class="product-footer-details">
-																				<ul>
-																					<li>Best-in-class all-around performance</li>
-																					<li>Confident driving in all weather conditions</li>
-																					<li>Visual Alignment Indicators</li>
-																				</ul>
-																			</div><a aria-describedby="woocommerce_loop_add_to_cart_link_describedby_3132" aria-label="Add to cart: “VISION® - 147 DAYTONA Hyper Silver”" class="primary button product_type_simple add_to_cart_button ajax_add_to_cart" data-product_id="3132" data-product_sku="AG3KO9ED" data-quantity="1" data-success_message="“VISION® - 147 DAYTONA Hyper Silver” has been added to your cart" href="/partdo/?add-to-cart=3132" rel="nofollow" role="button">Add to cart <i class="klbth-icon-shopping-bag"></i></a> <span class="screen-reader-text" id="woocommerce_loop_add_to_cart_link_describedby_3132">
-																			</span>
-																		</div>
-																	</div>
-																</div><div class="product-content-fade"></div>
-															</div>
-														</div><div class="column-item product type-product post-3128 status-publish last instock product_cat-auto-safety-security product_cat-interior-accessories product_cat-vehicle-backup-cameras has-post-thumbnail sale shipping-taxable purchasable product-type-simple">
-															<div class="product product-type-1">
-																<div class="product-wrapper">
-																	<div class="product-content"><div class="thumbnail-wrapper entry-media"> <div class="product-badges"><span class="badge style-1 sale">8%</span></div><a class="product-thumbnail" href="https://klbtheme.com/partdo/product/thinkware-f770-dash-cam-dual-channel-wifi-gps-16gb/"><img alt="Thinkware F770 Dash Cam Dual Channel Wifi" data-hover-slides="https://klbtheme.com/partdo/wp-content/uploads/2022/10/2-35-500x500.jpg,https://klbtheme.com/partdo/wp-content/uploads/2022/10/3-29-500x500.jpg" data-options='{"touch": "end", "preloadImages": true }' decoding="async" src="~/SiteAssets/partdo/wp-content/uploads/2022/10/1-36-500x500.jpg" /></a><div class="product-buttons"> <div class="wishlist-button"><a class="klbwl-btn klbwl-btn-3128" data-product_id="3128" data-product_title="Thinkware F770 Dash Cam Dual Channel Wifi" href="https://klbtheme.com/partdo/wishlist/">Add to wishlist</a></div><!-- wishlist-button --><a class="klbcp-btn klbcp-btn-3128" data-id="3128" data-product_image="https://klbtheme.com/partdo/wp-content/uploads/2022/10/1-36-150x150.jpg" data-product_name="Thinkware F770 Dash Cam Dual Channel Wifi" href="?add-to-compare=3128">Compare</a><a class="detail-bnt quickview" data-product_id="3128"><i class="klbth-icon-eye-empty"></i></a> </div> </div><div class="content-wrapper"><h3 class="product-title"> <a href="https://klbtheme.com/partdo/product/thinkware-f770-dash-cam-dual-channel-wifi-gps-16gb/">Thinkware F770 Dash Cam Dual Channel Wifi</a></h3><div class="product-rating"><div aria-label="Rated 3.00 out of 5" class="star-rating" role="img"><span style="width:60%">Rated <strong class="rating">3.00</strong> out of 5</span></div><div class="rating-count"> <span class="count-text">1 review</span></div></div><span class="price"><del aria-hidden="true"><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">$</span>268.99</bdi></span></del> <span class="screen-reader-text">Original price was: $268.99.</span><ins aria-hidden="true"><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">$</span>249.99</bdi></span></ins><span class="screen-reader-text">Current price is: $249.99.</span></span><div class="product-stock in-stock"> <i class="klbth-icon-ecommerce-package-ready"></i><span>In Stock</span></div></div></div><div class="product-footer">
-																		<div class="product-footer-inner">
-																			<div class="product-footer-details">
-																				<ul>
-																					<li>Best-in-class all-around performance</li>
-																					<li>Confident driving in all weather conditions</li>
-																					<li>Visual Alignment Indicators</li>
-																				</ul>
-																			</div><a aria-describedby="woocommerce_loop_add_to_cart_link_describedby_3128" aria-label="Add to cart: “Thinkware F770 Dash Cam Dual Channel Wifi”" class="primary button product_type_simple add_to_cart_button ajax_add_to_cart" data-product_id="3128" data-product_sku="B5UKO9ET" data-quantity="1" data-success_message="“Thinkware F770 Dash Cam Dual Channel Wifi” has been added to your cart" href="/partdo/?add-to-cart=3128" rel="nofollow" role="button">Add to cart <i class="klbth-icon-shopping-bag"></i></a> <span class="screen-reader-text" id="woocommerce_loop_add_to_cart_link_describedby_3128">
-																			</span>
-																		</div>
-																	</div>
-																</div><div class="product-content-fade"></div>
-															</div>
-														</div><div class="column-item product type-product post-3123 status-publish first instock product_cat-alarm-systems product_cat-auto-safety-security product_cat-interior-accessories has-post-thumbnail sale shipping-taxable purchasable product-type-simple">
-															<div class="product product-type-1">
-																<div class="product-wrapper">
-																	<div class="product-content"><div class="thumbnail-wrapper entry-media"> <div class="product-badges"><span class="badge style-1" style="background-color: #ff5c00;">Super Price</span></div><a class="product-thumbnail" href="https://klbtheme.com/partdo/product/technaxx-car-alarm-with-charging-function-tx-100/"><img alt="Technaxx car Alarm with Charging Function" data-hover-slides="https://klbtheme.com/partdo/wp-content/uploads/2022/10/4-9-500x500.jpg,https://klbtheme.com/partdo/wp-content/uploads/2022/10/3-28-500x500.jpg,https://klbtheme.com/partdo/wp-content/uploads/2022/10/2-34-500x500.jpg" data-options='{"touch": "end", "preloadImages": true }' decoding="async" src="~/SiteAssets/partdo/wp-content/uploads/2022/10/1-35-500x500.jpg" /></a><div class="product-buttons"> <div class="wishlist-button"><a class="klbwl-btn klbwl-btn-3123" data-product_id="3123" data-product_title="Technaxx car Alarm with Charging Function" href="https://klbtheme.com/partdo/wishlist/">Add to wishlist</a></div><!-- wishlist-button --><a class="klbcp-btn klbcp-btn-3123" data-id="3123" data-product_image="https://klbtheme.com/partdo/wp-content/uploads/2022/10/1-35-150x150.jpg" data-product_name="Technaxx car Alarm with Charging Function" href="?add-to-compare=3123">Compare</a><a class="detail-bnt quickview" data-product_id="3123"><i class="klbth-icon-eye-empty"></i></a> </div> </div><div class="content-wrapper"><h3 class="product-title"> <a href="https://klbtheme.com/partdo/product/technaxx-car-alarm-with-charging-function-tx-100/">Technaxx car Alarm with Charging Function</a></h3><div class="product-rating"><div aria-label="Rated 5.00 out of 5" class="star-rating" role="img"><span style="width:100%">Rated <strong class="rating">5.00</strong> out of 5</span></div><div class="rating-count"> <span class="count-text">1 review</span></div></div><span class="price"><del aria-hidden="true"><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">$</span>51.99</bdi></span></del> <span class="screen-reader-text">Original price was: $51.99.</span><ins aria-hidden="true"><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">$</span>47.99</bdi></span></ins><span class="screen-reader-text">Current price is: $47.99.</span></span><div class="product-stock in-stock"> <i class="klbth-icon-ecommerce-package-ready"></i><span>In Stock</span></div></div></div><div class="product-footer">
-																		<div class="product-footer-inner">
-																			<div class="product-footer-details">
-																				<ul>
-																					<li>Best-in-class all-around performance</li>
-																					<li>Confident driving in all weather conditions</li>
-																					<li>Visual Alignment Indicators</li>
-																				</ul>
-																			</div><a aria-describedby="woocommerce_loop_add_to_cart_link_describedby_3123" aria-label="Add to cart: “Technaxx car Alarm with Charging Function”" class="primary button product_type_simple add_to_cart_button ajax_add_to_cart" data-product_id="3123" data-product_sku="AE3KGO9T" data-quantity="1" data-success_message="“Technaxx car Alarm with Charging Function” has been added to your cart" href="/partdo/?add-to-cart=3123" rel="nofollow" role="button">Add to cart <i class="klbth-icon-shopping-bag"></i></a> <span class="screen-reader-text" id="woocommerce_loop_add_to_cart_link_describedby_3123">
-																			</span>
-																		</div>
-																	</div>
-																</div><div class="product-content-fade"></div>
-															</div>
-														</div><div class="column-item product type-product post-3109 status-publish instock product_cat-battery-and-adhesives product_cat-tools-equipment has-post-thumbnail sale shipping-taxable purchasable product-type-simple">
-															<div class="product product-type-1">
-																<div class="product-wrapper">
-																	<div class="product-content"><div class="thumbnail-wrapper entry-media"> <div class="product-badges"><span class="badge style-1" style="background-color: #00a046;">Top Product</span></div><a class="product-thumbnail" href="https://klbtheme.com/partdo/product/snowyfox-rv-15amp-to-50amp-adapter-15male/"><img alt="SnowyFox RV 15Amp to 50Amp Adapter – 15Male" data-hover-slides="https://klbtheme.com/partdo/wp-content/uploads/2022/10/2-31-500x500.jpg,https://klbtheme.com/partdo/wp-content/uploads/2022/10/5-1-500x500.jpg,https://klbtheme.com/partdo/wp-content/uploads/2022/10/4-8-500x500.jpg,https://klbtheme.com/partdo/wp-content/uploads/2022/10/3-25-500x500.jpg" data-options='{"touch": "end", "preloadImages": true }' decoding="async" src="~/SiteAssets/partdo/wp-content/uploads/2022/10/1-32-500x500.jpg" /></a><div class="product-buttons"> <div class="wishlist-button"><a class="klbwl-btn klbwl-btn-3109" data-product_id="3109" data-product_title="SnowyFox RV 15Amp to 50Amp Adapter - 15Male" href="https://klbtheme.com/partdo/wishlist/">Add to wishlist</a></div><!-- wishlist-button --><a class="klbcp-btn klbcp-btn-3109" data-id="3109" data-product_image="https://klbtheme.com/partdo/wp-content/uploads/2022/10/1-32-150x150.jpg" data-product_name="SnowyFox RV 15Amp to 50Amp Adapter - 15Male" href="?add-to-compare=3109">Compare</a><a class="detail-bnt quickview" data-product_id="3109"><i class="klbth-icon-eye-empty"></i></a> </div> </div><div class="content-wrapper"><h3 class="product-title"> <a href="https://klbtheme.com/partdo/product/snowyfox-rv-15amp-to-50amp-adapter-15male/">SnowyFox RV 15Amp to 50Amp Adapter – 15Male</a></h3><div class="product-rating"><div aria-label="Rated 5.00 out of 5" class="star-rating" role="img"><span style="width:100%">Rated <strong class="rating">5.00</strong> out of 5</span></div><div class="rating-count"> <span class="count-text">1 review</span></div></div><span class="price"><del aria-hidden="true"><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">$</span>25.98</bdi></span></del> <span class="screen-reader-text">Original price was: $25.98.</span><ins aria-hidden="true"><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">$</span>23.88</bdi></span></ins><span class="screen-reader-text">Current price is: $23.88.</span></span><div class="product-stock in-stock"> <i class="klbth-icon-ecommerce-package-ready"></i><span>In Stock</span></div></div></div><div class="product-footer">
-																		<div class="product-footer-inner">
-																			<div class="product-footer-details">
-																				<ul>
-																					<li>Best-in-class all-around performance</li>
-																					<li>Confident driving in all weather conditions</li>
-																					<li>Visual Alignment Indicators</li>
-																				</ul>
-																			</div><a aria-describedby="woocommerce_loop_add_to_cart_link_describedby_3109" aria-label="Add to cart: “SnowyFox RV 15Amp to 50Amp Adapter - 15Male”" class="primary button product_type_simple add_to_cart_button ajax_add_to_cart" data-product_id="3109" data-product_sku="SY78EW4K" data-quantity="1" data-success_message="“SnowyFox RV 15Amp to 50Amp Adapter - 15Male” has been added to your cart" href="/partdo/?add-to-cart=3109" rel="nofollow" role="button">Add to cart <i class="klbth-icon-shopping-bag"></i></a> <span class="screen-reader-text" id="woocommerce_loop_add_to_cart_link_describedby_3109">
-																			</span>
-																		</div>
-																	</div>
-																</div><div class="product-content-fade"></div>
-															</div>
-														</div><div class="column-item product type-product post-3106 status-publish instock product_cat-motor-oils product_cat-oils-fluids has-post-thumbnail sale shipping-taxable purchasable product-type-simple">
-															<div class="product product-type-1">
-																<div class="product-wrapper">
-																	<div class="product-content"><div class="thumbnail-wrapper entry-media"> <div class="product-badges"><span class="badge style-1 sale">29%</span></div><a class="product-thumbnail" href="https://klbtheme.com/partdo/product/shell-rotella-t1-sae-30-conventional-heavy-duty/"><img alt="Shell Rotella T1 SAE 30 Conventional Heavy Duty" data-hover-slides="https://klbtheme.com/partdo/wp-content/uploads/2022/10/2-30-500x500.jpg" data-options='{"touch": "end", "preloadImages": true }' decoding="async" src="~/SiteAssets/partdo/wp-content/uploads/2022/10/1-31-500x500.jpg" /></a><div class="product-buttons"> <div class="wishlist-button"><a class="klbwl-btn klbwl-btn-3106" data-product_id="3106" data-product_title="Shell Rotella T1 SAE 30 Conventional Heavy Duty" href="https://klbtheme.com/partdo/wishlist/">Add to wishlist</a></div><!-- wishlist-button --><a class="klbcp-btn klbcp-btn-3106" data-id="3106" data-product_image="https://klbtheme.com/partdo/wp-content/uploads/2022/10/1-31-150x150.jpg" data-product_name="Shell Rotella T1 SAE 30 Conventional Heavy Duty" href="?add-to-compare=3106">Compare</a><a class="detail-bnt quickview" data-product_id="3106"><i class="klbth-icon-eye-empty"></i></a> </div> </div><div class="content-wrapper"><h3 class="product-title"> <a href="https://klbtheme.com/partdo/product/shell-rotella-t1-sae-30-conventional-heavy-duty/">Shell Rotella T1 SAE 30 Conventional Heavy Duty</a></h3><div class="product-rating"><div aria-label="Rated 4.00 out of 5" class="star-rating" role="img"><span style="width:80%">Rated <strong class="rating">4.00</strong> out of 5</span></div><div class="rating-count"> <span class="count-text">1 review</span></div></div><span class="price"><del aria-hidden="true"><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">$</span>24.85</bdi></span></del> <span class="screen-reader-text">Original price was: $24.85.</span><ins aria-hidden="true"><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">$</span>17.85</bdi></span></ins><span class="screen-reader-text">Current price is: $17.85.</span></span><div class="product-stock in-stock"> <i class="klbth-icon-ecommerce-package-ready"></i><span>In Stock</span></div></div></div><div class="product-footer">
-																		<div class="product-footer-inner">
-																			<div class="product-footer-details">
-																				<ul>
-																					<li>Best-in-class all-around performance</li>
-																					<li>Confident driving in all weather conditions</li>
-																					<li>Visual Alignment Indicators</li>
-																				</ul>
-																			</div><a aria-describedby="woocommerce_loop_add_to_cart_link_describedby_3106" aria-label="Add to cart: “Shell Rotella T1 SAE 30 Conventional Heavy Duty”" class="primary button product_type_simple add_to_cart_button ajax_add_to_cart" data-product_id="3106" data-product_sku="D04FED7H" data-quantity="1" data-success_message="“Shell Rotella T1 SAE 30 Conventional Heavy Duty” has been added to your cart" href="/partdo/?add-to-cart=3106" rel="nofollow" role="button">Add to cart <i class="klbth-icon-shopping-bag"></i></a> <span class="screen-reader-text" id="woocommerce_loop_add_to_cart_link_describedby_3106">
-																			</span>
-																		</div>
-																	</div>
-																</div><div class="product-content-fade"></div>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</section>
+ 
+				 
+				
+
+
+					 
 					<section class="elementor-section elementor-top-section elementor-element elementor-element-7e06a9d elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-element_type="section" data-id="7e06a9d">
 						<div class="elementor-container elementor-column-gap-extended">
 							<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-23b6c17" data-element_type="column" data-id="23b6c17">
@@ -1823,138 +1569,74 @@
 								<div class="elementor-widget-wrap elementor-element-populated">
 									<div class="elementor-element elementor-element-5860d73 elementor-widget elementor-widget-partdo-product-categories" data-element_type="widget" data-id="5860d73" data-widget_type="partdo-product-categories.default">
 										<div class="elementor-widget-container">
-											<div class="klbth-module klbth-module-categories style-1"><div class="klbth-module-header with-border color-default counter-deactive align-default"><h3 class="entry-title">Our Good Categories</h3><div class="entry-description"><p>Dont miss out on this weeks deals</p></div><a class="btn link" href="https://klbtheme.com/partdo/shop/"> View All  <i class="klbth-icon-arrow-right-long"></i></a></div><!-- module-header --><div class="klbth-module-body"><div class="categories grid-style column-6"><div class="category-item"><a class="category-inner" href="https://klbtheme.com/partdo/product-category/auto-safety-security/"><div class="entry-media"><img alt="Auto Safety &amp; Security" decoding="async" src="~/SiteAssets/partdo/wp-content/uploads/2022/10/category-electrics.png" /></div><div class="entry-content"> <h3 class="category-name">Auto Safety &amp; Security</h3><span class="counter">8 items</span></div></a></div><div class="category-item"><a class="category-inner" href="https://klbtheme.com/partdo/product-category/garage-tools/"><div class="entry-media"><img alt="Garage Tools" decoding="async" src="~/SiteAssets/partdo/wp-content/uploads/2022/10/category-brakes.png" /></div><div class="entry-content"> <h3 class="category-name">Garage Tools</h3><span class="counter">1 item</span></div></a></div><div class="category-item"><a class="category-inner" href="https://klbtheme.com/partdo/product-category/headlights-lighting/"><div class="entry-media"><img alt="Headlights &amp; Lighting" decoding="async" src="~/SiteAssets/partdo/wp-content/uploads/2022/10/category-glowplug.png" /></div><div class="entry-content"> <h3 class="category-name">Headlights &amp; Lighting</h3><span class="counter">5 items</span></div></a></div><div class="category-item"><a class="category-inner" href="https://klbtheme.com/partdo/product-category/interior-accessories/"><div class="entry-media"><img alt="Interior Accessories" decoding="async" src="~/SiteAssets/partdo/wp-content/uploads/2022/10/category-car-care.png" /></div><div class="entry-content"> <h3 class="category-name">Interior Accessories</h3><span class="counter">9 items</span></div></a></div><div class="category-item"><a class="category-inner" href="https://klbtheme.com/partdo/product-category/tires-wheels/"><div class="entry-media"><img alt="Tires &amp; Wheels" decoding="async" src="~/SiteAssets/partdo/wp-content/uploads/2022/10/category-tyres.png" /></div><div class="entry-content"> <h3 class="category-name">Tires &amp; Wheels</h3><span class="counter">13 items</span></div></a></div><div class="category-item"><a class="category-inner" href="https://klbtheme.com/partdo/product-category/tools-equipment/"><div class="entry-media"><img alt="Tools &amp; Equipment" decoding="async" src="~/SiteAssets/partdo/wp-content/uploads/2022/10/category-filters.png" /></div><div class="entry-content"> <h3 class="category-name">Tools &amp; Equipment</h3><span class="counter">8 items</span></div></a></div></div></div></div><!-- module -->
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</section>
-					<section class="elementor-section elementor-top-section elementor-element elementor-element-c22ce48 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-element_type="section" data-id="c22ce48">
-						<div class="elementor-container elementor-column-gap-extended">
-							<div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-e2698c3" data-element_type="column" data-id="e2698c3">
-								<div class="elementor-widget-wrap elementor-element-populated">
-									<div class="elementor-element elementor-element-7e3d8be elementor-widget elementor-widget-partdo-banner-box" data-element_type="widget" data-id="7e3d8be" data-widget_type="partdo-banner-box.default">
-										<div class="elementor-widget-container">
-											<div class="klbth-banner style-inner color-scheme-dark space-sm align-center justify-start hover-zoom"><div class="entry-wrapper overlay-15-dark-max768 dump"><div class="entry-inner w-70"><div class="entry-heading banner-heading"><span class="badge">On Sale This Week</span><h2 class="entry-title font-banner-sm">Proud Supplier Of Quality Vehicle  </h2></div><div class="entry-excerpt font-sm weight-300"><p>Plakrore maheten. Astronens ...</p></div><div class="entry-footer vertical banner-footer"><div class="banner-button"><button class="btn link" href="https://klbtheme.com/partdo/product/fuel-d771-twitch-1pc-candy-red-with-milled-accents/"> Shop Now<i class="klbth-icon-arrow-right-long"></i></button></div></div></div></div><div class="entry-media"><img alt="slider image" decoding="async" src="~/SiteAssets/partdo/wp-content/uploads/2022/10/banner-08.jpg" /></div><a class="link-mask" href="https://klbtheme.com/partdo/product/fuel-d771-twitch-1pc-candy-red-with-milled-accents/"> </a></div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-361ed04" data-element_type="column" data-id="361ed04">
-								<div class="elementor-widget-wrap elementor-element-populated">
-									<div class="elementor-element elementor-element-ec7fda4 elementor-widget elementor-widget-partdo-banner-box" data-element_type="widget" data-id="ec7fda4" data-widget_type="partdo-banner-box.default">
-										<div class="elementor-widget-container">
-											<div class="klbth-banner style-inner color-scheme-dark space-sm align-center justify-start hover-zoom"><div class="entry-wrapper overlay-15-dark-max768 dump"><div class="entry-inner w-70"><div class="entry-heading banner-heading"><span class="badge">On Sale This Week</span><h2 class="entry-title font-banner-sm">Your Trusted Car Parts Store </h2></div><div class="entry-excerpt font-sm weight-300"><p>Plakrore maheten. Astronens ...</p></div><div class="entry-footer vertical banner-footer"><div class="banner-button"><button class="btn link" href="https://klbtheme.com/partdo/product/general-altimax-365aw/"> Shop Now<i class="klbth-icon-arrow-right-long"></i></button></div></div></div></div><div class="entry-media"><img alt="slider image" decoding="async" src="~/SiteAssets/partdo/wp-content/uploads/2022/10/banner-09.jpg" /></div><a class="link-mask" href="https://klbtheme.com/partdo/product/general-altimax-365aw/"> </a></div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-e90134e" data-element_type="column" data-id="e90134e">
-								<div class="elementor-widget-wrap elementor-element-populated">
-									<div class="elementor-element elementor-element-43f76a5 elementor-widget elementor-widget-partdo-banner-box" data-element_type="widget" data-id="43f76a5" data-widget_type="partdo-banner-box.default">
-										<div class="elementor-widget-container">
-											<div class="klbth-banner style-inner color-scheme-dark space-sm align-center justify-start hover-zoom"><div class="entry-wrapper overlay-15-dark-max768 dump"><div class="entry-inner w-70"><div class="entry-heading banner-heading"><span class="badge">On Sale This Week</span><h2 class="entry-title font-banner-sm">Different Type Of Tires Available </h2></div><div class="entry-excerpt font-sm weight-300"><p>Plakrore maheten. Astronens ...</p></div><div class="entry-footer vertical banner-footer"><div class="banner-button"><button class="btn link" href="https://klbtheme.com/partdo/product/radar-dimax-as-8-215_55r17-94v/"> Shop Now<i class="klbth-icon-arrow-right-long"></i></button></div></div></div></div><div class="entry-media"><img alt="slider image" decoding="async" src="~/SiteAssets/partdo/wp-content/uploads/2022/10/banner-10.jpg" /></div><a class="link-mask" href="https://klbtheme.com/partdo/product/radar-dimax-as-8-215_55r17-94v/"> </a></div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</section>
-					<section class="elementor-section elementor-top-section elementor-element elementor-element-5142773 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-element_type="section" data-id="5142773">
-						<div class="elementor-container elementor-column-gap-extended">
-							<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-755bb8d" data-element_type="column" data-id="755bb8d">
-								<div class="elementor-widget-wrap elementor-element-populated">
-									<div class="elementor-element elementor-element-e6123e4 elementor-widget elementor-widget-partdo-custom-title" data-element_type="widget" data-id="e6123e4" data-widget_type="partdo-custom-title.default">
-										<div class="elementor-widget-container">
-											<div class="klb-custom-title klbth-module-header without-border color-default counter-deactive align-center"><h3 class="entry-title">Our Good Customers</h3><div class="entry-description"><p>Sagt väsade. Nun. Sms-anställning muna. Nihuktiga fande. El. Bett tegisk. Speplangen åde. Gigara megadesade gevis. Sulig klimatsmart. Besam gosening.</p></div></div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</section>
-					<section class="elementor-section elementor-top-section elementor-element elementor-element-4829821 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-element_type="section" data-id="4829821">
-						<div class="elementor-container elementor-column-gap-extended">
-							<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-ff9e61c" data-element_type="column" data-id="ff9e61c">
-								<div class="elementor-widget-wrap elementor-element-populated">
-									<div class="elementor-element elementor-element-8790924 elementor-widget elementor-widget-partdo-testimonial-carousel" data-element_type="widget" data-id="8790924" data-widget_type="partdo-testimonial-carousel.default">
-										<div class="elementor-widget-container">
-											<div class="klbth-module klbth-module-testimonial style-1"><div class="klbth-module-body"><div class="klbth-slider-wrapper"> <div class="klbth-slider-loader"><div class="klbth-loader size-md color-primary border-sm"></div></div><div class="klbth-slider" data-arrows="" data-autoplay="true" data-autospeed="1600" data-dots="" data-items="3" data-mobileitems="1" data-tabletitems="2"><div class="slider-item testimonial"><div class="testimonial-inner"><div class="customer-avatar"> <img alt="Testimonial" decoding="async" src="~/SiteAssets/partdo/wp-content/uploads/2022/11/avatar-01.jpg" /></div><div class="customer-detail"> <div class="stars"> <i class="klbth-icon-star"></i><i class="klbth-icon-star"></i><i class="klbth-icon-star"></i><i class="klbth-icon-star"></i><i class="klbth-icon-star"></i></div><div class="customer-name">Tina Mcdonnell</div><div class="customer-mission">Bounverse Co-Founder</div><div class="customer-description"> <p>Astropons intimitetskoordinator podiktigt. Egons nytons. Intrapomiheten krofyl. Lalanade bedade i vatreng e-krona. </p></div></div></div></div><div class="slider-item testimonial"><div class="testimonial-inner"><div class="customer-avatar"> <img alt="Testimonial" decoding="async" src="~/SiteAssets/partdo/wp-content/uploads/2022/10/avatar-02.jpg" /></div><div class="customer-detail"> <div class="stars"> <i class="klbth-icon-star"></i><i class="klbth-icon-star"></i><i class="klbth-icon-star"></i><i class="klbth-icon-star"></i><i class="klbth-icon-star"></i></div><div class="customer-name">Jessica Lindström</div><div class="customer-mission">Sales Manager</div><div class="customer-description"> <p>Astropons intimitetskoordinator podiktigt. Egons nytons. Intrapomiheten krofyl. Lalanade bedade i vatreng e-krona. </p></div></div></div></div><div class="slider-item testimonial"><div class="testimonial-inner"><div class="customer-avatar"> <img alt="Testimonial" decoding="async" src="~/SiteAssets/partdo/wp-content/uploads/2022/10/avatar-03.jpg" /></div><div class="customer-detail"> <div class="stars"> <i class="klbth-icon-star"></i><i class="klbth-icon-star"></i><i class="klbth-icon-star"></i><i class="klbth-icon-star"></i><i class="klbth-icon-star"></i></div><div class="customer-name">Teresa Holland</div><div class="customer-mission">Business Manager</div><div class="customer-description"> <p>Astropons intimitetskoordinator podiktigt. Egons nytons. Intrapomiheten krofyl. Lalanade bedade i vatreng e-krona. </p></div></div></div></div><div class="slider-item testimonial"><div class="testimonial-inner"><div class="customer-avatar"> <img alt="Testimonial" decoding="async" src="~/SiteAssets/partdo/wp-content/uploads/2022/10/avatar-04.jpg" /></div><div class="customer-detail"> <div class="stars"> <i class="klbth-icon-star"></i><i class="klbth-icon-star"></i><i class="klbth-icon-star"></i><i class="klbth-icon-star"></i><i class="klbth-icon-star"></i></div><div class="customer-name">Scarlett Edwards</div><div class="customer-mission">Computer Engineer</div><div class="customer-description"> <p>Astropons intimitetskoordinator podiktigt. Egons nytons. Intrapomiheten krofyl. Lalanade bedade i vatreng e-krona. </p></div></div></div></div></div></div></div></div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</section>
-					<section class="elementor-section elementor-top-section elementor-element elementor-element-02e9dfe elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-element_type="section" data-id="02e9dfe">
-						<div class="elementor-container elementor-column-gap-extended">
-							<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-b6a1a8a" data-element_type="column" data-id="b6a1a8a">
-								<div class="elementor-widget-wrap elementor-element-populated">
-									<div class="elementor-element elementor-element-395ea25 elementor-widget elementor-widget-partdo-text-banner" data-element_type="widget" data-id="395ea25" data-widget_type="partdo-text-banner.default">
-										<div class="elementor-widget-container">
-											<div class="klbth-coupon-banner style-2"><a class="coupon-wrapper" href=""><div class="coupon-title">Super discount for your first purchase</div><div class="coupon-code">PRT45023</div><div class="coupon-description">Use discount code in checkout page.</div></a></div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</section>
-					<section class="elementor-section elementor-top-section elementor-element elementor-element-fb33384 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-element_type="section" data-id="fb33384">
-						<div class="elementor-container elementor-column-gap-extended">
-							<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-1183f21" data-element_type="column" data-id="1183f21">
-								<div class="elementor-widget-wrap elementor-element-populated">
-									<div class="elementor-element elementor-element-f23ae1a elementor-widget elementor-widget-partdo-latest-blog" data-element_type="widget" data-id="f23ae1a" data-widget_type="partdo-latest-blog.default">
-										<div class="elementor-widget-container">
-											<div class="klbth-module klbth-module-grid grid-4"><div class="klbth-module-header with-border color-default counter-deactive align-default"><h3 class="entry-title">Our Latest News</h3><div class="entry-description"><p>Don't miss out on this week's deals</p></div><a class="btn link" href="https://klbtheme.com/partdo/blog/"> View All  <i class="klbth-icon-arrow-right-long"></i></a></div><div class="klbth-module-body"><div class="blog-posts"><div class="post"><div class="entry-media"><div class="entry-categories"><a href="https://klbtheme.com/partdo/blog/buying-cheap-used-transmissions-isnt-as-risky-as-you-think/">Auto Repair</a></div><a href="https://klbtheme.com/partdo/blog/buying-cheap-used-transmissions-isnt-as-risky-as-you-think/"><img alt="BUYING CHEAP USED TRANSMISSIONS ISN’T AS RISKY AS YOU THINK" decoding="async" src="~/SiteAssets/partdo/wp-content/uploads/2022/10/blog-04-384x287.jpg" /></a></div><div class="entry-wrapper"> <div class="entry-published"> <a href="https://klbtheme.com/partdo/blog/buying-cheap-used-transmissions-isnt-as-risky-as-you-think/">13 Oct 2022</a></div><div class="entry-title"> <a href="https://klbtheme.com/partdo/blog/buying-cheap-used-transmissions-isnt-as-risky-as-you-think/">BUYING CHEAP USED TRANSMISSIONS ISN’T AS RISKY AS YOU THINK</a></div><div class="entry-excerpt"><p>Bilmålvakt treskade i nibel den mobilmissbruk deren jyn nöning osk heterostik i rel ultran.</p></div><div class="entry-meta"><div class="meta-item"> <span>author </span><a class="author" href="https://klbtheme.com/partdo/blog/buying-cheap-used-transmissions-isnt-as-risky-as-you-think/"> <span>by </span>sinan</a></div><div class="meta-item"> <span>comment </span><a href="https://klbtheme.com/partdo/blog/buying-cheap-used-transmissions-isnt-as-risky-as-you-think/">3 comments</a></div></div></div></div><div class="post"><div class="entry-media"><div class="entry-categories"><a href="https://klbtheme.com/partdo/blog/does-toyota-really-make-the-most-reliable-engines/">Automotive Tips</a></div><a href="https://klbtheme.com/partdo/blog/does-toyota-really-make-the-most-reliable-engines/"><img alt="DOES TOYOTA REALLY MAKE THE MOST RELIABLE ENGINES?" decoding="async" src="~/SiteAssets/partdo/wp-content/uploads/2022/10/blog-03-384x287.jpg" /></a></div><div class="entry-wrapper"> <div class="entry-published"> <a href="https://klbtheme.com/partdo/blog/does-toyota-really-make-the-most-reliable-engines/">13 Oct 2022</a></div><div class="entry-title"> <a href="https://klbtheme.com/partdo/blog/does-toyota-really-make-the-most-reliable-engines/">DOES TOYOTA REALLY MAKE THE MOST RELIABLE ENGINES?</a></div><div class="entry-excerpt"><p>Bilmålvakt treskade i nibel den mobilmissbruk deren jyn nöning osk heterostik i rel ultran.</p></div><div class="entry-meta"><div class="meta-item"> <span>author </span><a class="author" href="https://klbtheme.com/partdo/blog/does-toyota-really-make-the-most-reliable-engines/"> <span>by </span>sinan</a></div><div class="meta-item"> <span>comment </span><a href="https://klbtheme.com/partdo/blog/does-toyota-really-make-the-most-reliable-engines/">3 comments</a></div></div></div></div><div class="post"><div class="entry-media"><div class="entry-categories"><a href="https://klbtheme.com/partdo/blog/signs-your-car-needs-a-new-ac-compressor/">Auto Parts</a></div><a href="https://klbtheme.com/partdo/blog/signs-your-car-needs-a-new-ac-compressor/"><img alt="SIGNS YOUR CAR NEEDS A NEW AC COMPRESSOR" decoding="async" src="~/SiteAssets/partdo/wp-content/uploads/2022/10/blog-02-384x287.jpg" /></a></div><div class="entry-wrapper"> <div class="entry-published"> <a href="https://klbtheme.com/partdo/blog/signs-your-car-needs-a-new-ac-compressor/">13 Oct 2022</a></div><div class="entry-title"> <a href="https://klbtheme.com/partdo/blog/signs-your-car-needs-a-new-ac-compressor/">SIGNS YOUR CAR NEEDS A NEW AC COMPRESSOR</a></div><div class="entry-excerpt"><p>Bilmålvakt treskade i nibel den mobilmissbruk deren jyn nöning osk heterostik i rel ultran.</p></div><div class="entry-meta"><div class="meta-item"> <span>author </span><a class="author" href="https://klbtheme.com/partdo/blog/signs-your-car-needs-a-new-ac-compressor/"> <span>by </span>sinan</a></div><div class="meta-item"> <span>comment </span><a href="https://klbtheme.com/partdo/blog/signs-your-car-needs-a-new-ac-compressor/">3 comments</a></div></div></div></div><div class="post"><div class="entry-media"><div class="entry-categories"><a href="https://klbtheme.com/partdo/blog/sul-getreng-seligt-askanka-niliga-kol-reatt-decide-trumpifiering/">Car Engines</a></div><a href="https://klbtheme.com/partdo/blog/sul-getreng-seligt-askanka-niliga-kol-reatt-decide-trumpifiering/"><img alt="HOW TO FIND A QUALITY USED ENGINE FOR SALE" decoding="async" src="~/SiteAssets/partdo/wp-content/uploads/2022/10/blog-01-384x287.jpg" /></a></div><div class="entry-wrapper"> <div class="entry-published"> <a href="https://klbtheme.com/partdo/blog/sul-getreng-seligt-askanka-niliga-kol-reatt-decide-trumpifiering/">13 Oct 2022</a></div><div class="entry-title"> <a href="https://klbtheme.com/partdo/blog/sul-getreng-seligt-askanka-niliga-kol-reatt-decide-trumpifiering/">HOW TO FIND A QUALITY USED ENGINE FOR SALE</a></div><div class="entry-excerpt"><p>Bilmålvakt treskade i nibel den mobilmissbruk deren jyn nöning osk heterostik i rel ultran.</p></div><div class="entry-meta"><div class="meta-item"> <span>author </span><a class="author" href="https://klbtheme.com/partdo/blog/sul-getreng-seligt-askanka-niliga-kol-reatt-decide-trumpifiering/"> <span>by </span>sinan</a></div><div class="meta-item"> <span>comment </span><a href="https://klbtheme.com/partdo/blog/sul-getreng-seligt-askanka-niliga-kol-reatt-decide-trumpifiering/">3 comments</a></div></div></div></div><div class="col-12"></div></div></div></div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</section>
-					<section class="elementor-section elementor-top-section elementor-element elementor-element-2f32dc7 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-element_type="section" data-id="2f32dc7">
-						<div class="elementor-container elementor-column-gap-extended">
-							<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-a3d8b41" data-element_type="column" data-id="a3d8b41">
-								<div class="elementor-widget-wrap elementor-element-populated">
-									<div class="elementor-element elementor-element-dec2c0e elementor-widget-divider--view-line elementor-widget elementor-widget-divider" data-element_type="widget" data-id="dec2c0e" data-widget_type="divider.default">
-										<div class="elementor-widget-container">
-											<div class="elementor-divider">
-												<span class="elementor-divider-separator">
-												</span>
+						
+
+											<div class="klbth-module klbth-module-categories style-1">
+
+												<!-- HEADER -->
+												<div class="klbth-module-header with-border color-default counter-deactive align-default">
+													<h3 class="entry-title"> 
+														Sektörlerimiz
+													</h3>
+
+													<div class="entry-description">
+														<p>    
+												 Sektörlerimize tıklayarak bilgi alabilirsiniz.			
+													</p>
+													</div>
+
+													<a class="btn link" href="https://klbtheme.com/partdo/shop/">
+													Tamamını Görün
+														<i class="klbth-icon-arrow-right-long"></i>
+													</a>
+												</div>
+												<!-- /HEADER -->
+												<!-- BODY -->
+												<div class="klbth-module-body">
+													<div class="categories grid-style column-6">
+
+
+														@{
+
+															foreach(var siradaki in Model.anaSektorler)
+															{
+
+																<div class="category-item">
+																	<a class="category-inner" href="https://klbtheme.com/partdo/product-category/auto-safety-security/">
+																		<div class="entry-media">
+																			<img src="@siradaki.fotosu"
+																				 alt="@siradaki.sektorAdi">
+																		</div>
+																		<div class="entry-content">
+																			<h3 class="category-name">@siradaki.sektorAdi </h3> 
+
+																		</div>
+																	</a>
+																</div>
+															}
+
+														}
+
+														   
+
+													</div>
+												</div>
+												<!-- /BODY -->
+
 											</div>
+											<!-- /MODULE -->
+
+										
 										</div>
 									</div>
 								</div>
 							</div>
 						</div>
 					</section>
-					<section class="elementor-section elementor-top-section elementor-element elementor-element-792c924 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-element_type="section" data-id="792c924">
-						<div class="elementor-container elementor-column-gap-extended">
-							<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-86917a8" data-element_type="column" data-id="86917a8">
-								<div class="elementor-widget-wrap elementor-element-populated">
-									<div class="elementor-element elementor-element-c1c59e3 elementor-widget elementor-widget-partdo-custom-title" data-element_type="widget" data-id="c1c59e3" data-widget_type="partdo-custom-title.default">
-										<div class="elementor-widget-container">
-											<div class="klb-custom-title klbth-module-header without-border color-default counter-deactive align-center"><h3 class="entry-title">Our Business Partners</h3><div class="entry-description"><p>Sagt väsade. Nun. Sms-anställning muna. Nihuktiga fande. El. Bett tegisk. Speplangen åde. Gigara megadesade gevis. Sulig klimatsmart. Besam gosening.</p></div></div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</section>
-					<section class="elementor-section elementor-top-section elementor-element elementor-element-ba1ee85 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-element_type="section" data-id="ba1ee85">
-						<div class="elementor-container elementor-column-gap-extended">
-							<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-a196628" data-element_type="column" data-id="a196628">
-								<div class="elementor-widget-wrap elementor-element-populated">
-									<div class="elementor-element elementor-element-3459c87 elementor-widget elementor-widget-partdo-client-carousel" data-element_type="widget" data-id="3459c87" data-widget_type="partdo-client-carousel.default">
-										<div class="elementor-widget-container">
-											<div class="klbth-module klbth-module-logos grayscale-enable"><div class="klbth-module-body"><div class="logos-wrapper"><div class="klbth-slider-wrapper"> <div class="klbth-slider-loader"><div class="klbth-loader size-md color-primary border-sm"></div></div><div class="klbth-slider" data-arrows="false" data-autoplay="false" data-autospeed="" data-dots="false" data-items="6" data-mobileitems="3" data-tabletitems="2"><div class="logo-item"> <a href=""><img decoding="async" src="~/SiteAssets/partdo/wp-content/uploads/2022/10/logo-8.png" /></a></div><div class="logo-item"> <a href=""><img decoding="async" src="~/SiteAssets/partdo/wp-content/uploads/2022/10/logo-7.png" /></a></div><div class="logo-item"> <a href=""><img decoding="async" src="~/SiteAssets/partdo/wp-content/uploads/2022/10/logo-6.png" /></a></div><div class="logo-item"> <a href=""><img decoding="async" src="~/SiteAssets/partdo/wp-content/uploads/2022/10/logo-5.png" /></a></div><div class="logo-item"> <a href=""><img decoding="async" src="~/SiteAssets/partdo/wp-content/uploads/2022/10/logo-4.png" /></a></div><div class="logo-item"> <a href=""><img decoding="async" src="~/SiteAssets/partdo/wp-content/uploads/2022/10/logo-3.png" /></a></div><div class="logo-item"> <a href=""><img decoding="async" src="~/SiteAssets/partdo/wp-content/uploads/2022/10/logo-2.png" /></a></div><div class="logo-item"> <a href=""><img decoding="async" src="~/SiteAssets/partdo/wp-content/uploads/2022/11/logo-1.png" /></a></div></div></div></div></div></div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</section>
+					 
+				 
+					 
+			 
 				</div>
 			</div><!-- site-content -->
 		</div><!-- site-primary -->
@@ -2026,11 +1708,15 @@
 													</div>
 												</div>
 												<div class="company-content">
-													<h3 class="entry-title">Völogi deledes ponade eujäjurtad</h3>
+													<h3 class="entry-title">@Genel.hakkimizda.firmaAdi</h3>
 													<div class="entry-description">
-														<p>Autoseligen syr. Nek diarask fröbomba. Nör antipol kynoda nynat. Pressa fåmoska. Aposkop redelingar nede, sektigt.</p>
+														<p>
+
+															@Genel.hakkimizda.kisaTanitim
+
+														</p>
 													</div>
-													<p><a class="mail" href="/cdn-cgi/l/email-protection#3d54535b527d4d5c4f4959524e49524f58135e5250"><span class="__cf_email__" data-cfemail="4c25222a230c29342d213c2029622f2321">[email protected]</span></a></p>
+													<p><a class="mail" href=@Genel.hakkimizda.ePosta"><span class="__cf_email__" data-cfemail="@Genel.hakkimizda.ePosta">[email protected]</span></a></p>
 												</div>
 											</div>
 										</div>
@@ -2043,13 +1729,10 @@
 										<div class="klbfooterwidget widget widget_text">
 											<div class="textwidget">
 												<div class="widget_contact">
-													<h4 class="widget-title">Need Help?</h4>
+													<h4 class="widget-title">İletişim</h4>
 													<div class="widget-body">
-														<div class="company-phone">(+800) 1234 5678 90</div>
-														<div class="company-works">
-															<p>Monday – Friday: 9:00-20:00</p>
-															<p>Saturady: 11:00 – 15:00</p>
-														</div>
+														<div class="company-phone"> @Genel.hakkimizda.telefon </div>
+													 
 														<p><a class="company-mail" href="/cdn-cgi/l/email-protection#a9dadcd9d9c6dbdde9d9c8dbddcdc6daddc6dbcc87cac6c4"><span class="__cf_email__" data-cfemail="c5b6b0b5b5aab7b185a0bda4a8b5a9a0eba6aaa8">[email protected]</span></a></p>
 														<div class="company-social"></div>
 													</div>
@@ -2059,31 +1742,27 @@
 									</div><!-- col -->
 									<div class="col col-12 col-lg-3">
 										<div class="klbfooterwidget widget widget_nav_menu">
-											<h4 class="widget-title">Customer Service</h4><div class="menu-customer-service-container">
+											<h4 class="widget-title">   Hızlı Erişim </h4><div class="menu-customer-service-container">
 												<ul class="menu" id="menu-customer-service">
-													<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3663" id="menu-item-3663"><a href="https://klbtheme.com/partdo/contact/">Help Center</a></li>
-													<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3832" id="menu-item-3832"><a href="https://klbtheme.com/partdo/my-account/">My account</a></li>
-													<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3833" id="menu-item-3833"><a href="https://klbtheme.com/partdo/order-tracking/">Track Products</a></li>
-													<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3664" id="menu-item-3664"><a href="https://klbtheme.com/partdo/my-account/orders/">My Orders</a></li>
-													<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3834" id="menu-item-3834"><a href="https://klbtheme.com/partdo/wishlist/">Your Wishlist</a></li>
-													<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3842" id="menu-item-3842"><a href="https://klbtheme.com/partdo/refund_returns/">Return Policy</a></li>
-													<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3672" id="menu-item-3672"><a href="https://klbtheme.com/partdo/shop">Buy Gift Cards</a></li>
+													@{
+														foreach(var siradaki in Genel.ustler)
+														{ 
+															<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3663" ><a href="@siradaki.menuUrl"> @siradaki.siteMenuAdi  </a></li>
+														}
+
+													} 
 												</ul>
 											</div>
 										</div>
 									</div><!-- col -->
 									<div class="col col-12 col-lg-3">
 										<div class="klbfooterwidget widget widget_nav_menu">
-											<h4 class="widget-title">Store Information</h4><div class="menu-store-information-container">
+											<h4 class="widget-title">  Hukuki İşlemler </h4><div class="menu-store-information-container">
 												<ul class="menu" id="menu-store-information">
-													<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3835" id="menu-item-3835"><a href="https://klbtheme.com/partdo/about-us/">About Partdo Store</a></li>
-													<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3665" id="menu-item-3665"><a href="https://klbtheme.com/partdo/shop/?orderby=popularity&amp;paged=1">Bestsellers</a></li>
-													<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3666" id="menu-item-3666"><a href="https://klbtheme.com/partdo/shop/?orderby=date&amp;paged=1">Latest Products</a></li>
-													<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3667" id="menu-item-3667"><a href="https://klbtheme.com/partdo/shop/?orderby=price&amp;paged=1">New Discounts</a></li>
-													<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3668" id="menu-item-3668"><a href="https://klbtheme.com/partdo/shop">Sale Products</a></li>
-													<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3669" id="menu-item-3669"><a href="https://klbtheme.com/partdo/shop">Affiliate Program</a></li>
-													<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3670" id="menu-item-3670"><a href="https://klbtheme.com/partdo/shop">Sell on Partdo</a></li>
-												</ul>
+													<li class="menu-item menu-item-type-post_type menu-item-object-page" ><a href="#">  About1    </a></li> 
+													<li class="menu-item menu-item-type-post_type menu-item-object-page" ><a href="#">  About2    </a></li> 
+													<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="#">  About3    </a></li>
+													<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="#">  About4    </a></li>
 											</div>
 										</div>
 									</div><!-- col -->
@@ -2093,66 +1772,8 @@
 					</div>
 				</div>
 			</div>
-			<div class="footer-row subfooter border-boxed custom-background-light dark">
-				<div class="container">
-					<div class="footer-inner">
-						<div class="sub-banners">
-							<ul>
-								<li>
-									-5% for all order in this week Shop now
-								</li>
-								<li>
-									Free delivery for all orders over $200
 
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="footer-row footer-copyright border-boxed custom-background-light dark">
-				<div class="container">
-					<div class="footer-inner">
-						<div class="copyright-row">
-							<nav class="footer-menu">
-								<ul class="menu" id="menu-footer-menu">
-									<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-privacy-policy menu-item-3865" id="menu-item-3865"><a href="https://klbtheme.com/partdo/privacy-policy/" rel="privacy-policy">Privacy Policy</a></li>
-									<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3863" id="menu-item-3863"><a href="https://klbtheme.com/partdo/order-tracking/">Order Tracking</a></li>
-									<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4116" id="menu-item-4116"><a href="https://klbtheme.com/partdo/terms-and-conditions/">Terms and Conditions</a></li>
-									<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3864" id="menu-item-3864"><a href="https://klbtheme.com/partdo/refund_returns/">Refund and Returns Policy</a></li>
-								</ul>
-							</nav>
-						</div>
-						<div class="copyright-row">
-							<div class="column">
-								<div class="site-copyright">
-									<p>Copyright 2025 © Partdo WordPress Theme. All right reserved. Powered by KLBTheme.</p>
-								</div>
-							</div>
-							<div class="column">
-								<div class="card-icons">
-									<a href="">
-										<img alt="payment" class="credit-cards" src="~/SiteAssets/partdo/wp-content/uploads/2022/10/credit-cards.png" />
-									</a>
-								</div>
-							</div>
-						</div>
-						<div class="copyright-row">
-							<div class="mobile-app-content">
-								<span>Download App on Mobile </span>
-								<div class="buttons">
-									<a class="apple-store" href="#">
-										<img alt="app" src="~/SiteAssets/partdo/wp-content/uploads/2022/10/app-store.png" />
-									</a>
-									<a class="apple-store" href="#">
-										<img alt="app" src="~/SiteAssets/partdo/wp-content/uploads/2022/10/google-play.png" />
-									</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
+		 
 		</div>
 	</div>
 	<div class="site-mask"></div>

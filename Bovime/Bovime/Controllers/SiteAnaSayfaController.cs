@@ -8,7 +8,7 @@ namespace Bovime.Controllers
         public async Task<IActionResult> Index()
         {
             SiteAnaSayfaModel model = new SiteAnaSayfaModel();
-            await model.asdasd();
+            await model.veriCek();
             return View(model);
         }
     }

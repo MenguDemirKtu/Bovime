@@ -15,45 +15,35 @@ namespace Bovime
         public static string mobilMenuHtml { get; set; }
 
 
+        public static HakkimizdaAYRINTI hakkimizda { get; set; }
+
+
+        public Genel()
+        {
+            menuHtml = "";
+            mobilMenuHtml = "";
+            hakkimizda = new HakkimizdaAYRINTI();
+            ustler = new List<SiteMenuAYRINTI>();
+        }
+
 
         public async static Task yenile(veri.Varlik vari)
         {
             if (yenilensinmi == true)
             {
                 await menuOlustur(vari);
+                hakkimizda = await vari.HakkimizdaAYRINTIs.FirstOrDefaultAsync() ?? new HakkimizdaAYRINTI();
                 yenilensinmi = false;
             }
         }
 
 
+        public static List<SiteMenuAYRINTI> ustler { get; set; }
 
         private static void alt(List<SiteMenuAYRINTI> menuler)
         {
-            /*
-             
-             
-            		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-40 current_page_item current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-3847">
-							<a href="https://klbtheme.com/partdo/">Home</a>
-							<ul class="sub-menu">
-								<li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home"><a href="https://klbtheme.com/partdo/">Home Tools 1</a></li>
-								<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://klbtheme.com/partdo/home-2/">Home Tools 2</a></li>
-								<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://klbtheme.com/partdo/home-3/">Home Tools 3</a></li>
-								<li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="https://klbtheme.com/partdo/phone/">Home Phone 1</a></li>
-								<li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="https://klbtheme.com/partdo/phone/home-2/">Home Phone 2</a></li>
-								<li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="https://klbtheme.com/partdo/phone/home-3/">Home Phone 3</a></li>
-							</ul>
-						</li>
-					 
-						<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat"><a href="https://klbtheme.com/partdo/product-category/tires-wheels/">Tires &amp; Wheels</a></li>
-						<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat"><a href="https://klbtheme.com/partdo/product-category/interior-accessories/">Interior Accessories</a></li>
-						<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://klbtheme.com/partdo/blog/">Blog</a></li>
-						<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://klbtheme.com/partdo/contact/">Contact</a></li>
-					 
 
-
-             */
-
-            List<SiteMenuAYRINTI> ustler = menuler.Where(p => p.e_altMenuMu == false).OrderBy(p => p.sirasi).ToList();
+            ustler = menuler.Where(p => p.e_altMenuMu == false).OrderBy(p => p.sirasi).ToList();
             mobilMenuHtml = "";
             for (int i = 0; i < ustler.Count; i++)
             {
@@ -85,7 +75,7 @@ namespace Bovime
         public static async Task<string> menuOlustur(veri.Varlik vari)
         {
             List<SiteMenuAYRINTI> menuler = await vari.SiteMenuAYRINTIs.ToListAsync();
-            List<SiteMenuAYRINTI> ustler = menuler.Where(p => p.e_altMenuMu == false).OrderBy(p => p.sirasi).ToList();
+            ustler = menuler.Where(p => p.e_altMenuMu == false).OrderBy(p => p.sirasi).ToList();
 
 
             alt(menuler);
