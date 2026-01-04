@@ -22,6 +22,21 @@
 	</style>
 	<style id="wp-emoji-styles-inline-css" type="text/css">
 
+
+		.koyu 
+		{
+			font-weight: bold !important;
+			font-size: 16px !important;  
+			color: black;
+		}
+
+		.category-parent.koyu,
+		.category-parent.koyu a {
+			font-size: 14px !important;
+			line-height: 17px !important;
+			padding: 4px 8px;
+			font-weight: bold !important;
+		}
 		img.wp-smiley, img.emoji {
 			display: inline !important;
 			border: none !important;
@@ -1209,7 +1224,7 @@
 						<div class="column left align-center col-md-3">
 							<div class="dropdown-cats dropdown">
 								<a class="dropdown-toggle" href="#">
-									<span class="text">All Categories</span>
+									<span class="text"> Tüm Sektörler  </span>
 									<span class="icon"> <i class="klbth-icon-caret-down"></i></span>
 								</a>
 								<div class="dropdown-menu collapse show">
@@ -1219,7 +1234,14 @@
 
 												foreach(var siradaki in Model.anaSektorler)
 												{
-													<li class="category-parent menu-item menu-item-type-taxonomy menu-item-object-product_cat"><a href="@siradaki._sektorUrl"> <span class="menu-icon"><i class="klbth-icon-car-tools"></i></span> @siradaki.sektorAdi  </a></li>
+													<li class="category-parent menu-item menu-item-type-taxonomy  koyu "><a href="@siradaki._sektorUrl"> <span class="menu-icon">
+													
+ 
+																	<img src="@siradaki.fotosu" style="width:20px !important; height: 20px !important;" />
+													
+													</span>
+																		
+													@siradaki.sektorAdi  </a></li>
 
 												}
 
@@ -1354,167 +1376,79 @@
 					</section>
 
 
-					<section class="elementor-section elementor-top-section elementor-element elementor-element-3802851 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-element_type="section" data-id="3802851">
+					<section class="elementor-section elementor-top-section elementor-element elementor-element-0854c79 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-element_type="section" data-id="0854c79">
 						<div class="elementor-container elementor-column-gap-extended">
-							<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-a4353c5" data-element_type="column" data-id="a4353c5">
+							<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-db88e0a" data-element_type="column" data-id="db88e0a">
 								<div class="elementor-widget-wrap elementor-element-populated">
-									<div class="elementor-element elementor-element-d1fe7a2 elementor-widget elementor-widget-partdo-product-tab-carousel" data-element_type="widget" data-id="d1fe7a2" data-widget_type="partdo-product-tab-carousel.default">
+									<div class="elementor-element elementor-element-5860d73 elementor-widget elementor-widget-partdo-product-categories" data-element_type="widget" data-id="5860d73" data-widget_type="partdo-product-categories.default">
 										<div class="elementor-widget-container">
-											<div class="klbth-module klbth-module-carousel">
+
+
+											<div class="klbth-module klbth-module-categories style-1">
+
+												<!-- HEADER -->
 												<div class="klbth-module-header with-border color-default counter-deactive align-default">
-												
-
 													<h3 class="entry-title">
-    Featured Products
-</h3>
+														Sektörlerimiz
+													</h3>
 
-<nav class="klbt-module-tab-links style-1">
-    <ul>
+													<div class="entry-description">
+														<p>
+															Sektörlerimize tıklayarak bilgi alabilirsiniz.
+														</p>
+													</div>
 
-															@{
-
-																foreach(var siradaki in Model.firmaGruplari)
-																{
-																	string hedef = "#auto-safety-" + siradaki._url;
-																	<li class="tab-item">
-																		<a class="tab-link" href="@hedef" id="@siradaki.firmaGrubukimlik">
-																			 @siradaki.firmaGrupAdi
-																		</a>
-																	</li>
-																}
-
-		}
-
-   
-
-      
-    </ul>
-</nav>
-
-<a class="btn link" href="https://klbtheme.com/partdo/shop/?featured=yes">
-    View All
-    <i class="klbth-icon-arrow-right-long"></i>
-</a>
-												
+													<a class="btn link" href="https://klbtheme.com/partdo/shop/">
+														Tamamını Görün
+														<i class="klbth-icon-arrow-right-long"></i>
+													</a>
 												</div>
-												<div class="tab-view klbth-module-body">
-													<div class="klb-products-tab klbth-slider-wrapper">
-														<div class="klbth-slider-loader"><div class="klbth-loader size-md color-primary border-sm"></div></div><div class="klbth-slider klbth-carousel arrows-center arrow-size-def arrows-light arrows-animate dots-style-def dots-align-def slider-noflow slider-no-radius products" data-arrows="true" data-autoplay="false" data-autospeed="" data-autostop="true" data-css="cubic-bezier(.48,0,.12,1)" data-dots="true" data-items="5" data-margin="30" data-mobileitems="2" data-speed="600" data-tabletitems="3">
-															<div class="slider-item">
-																<div class="product type-product post-3128 status-publish first instock product_cat-auto-safety-security product_cat-interior-accessories product_cat-vehicle-backup-cameras has-post-thumbnail sale shipping-taxable purchasable product-type-simple">
-																	<div class="product-wrapper product-type-2">
-																		<div class="product-content">
-																			<div class="thumbnail-wrapper entry-media"> <div class="product-badges"><span class="badge style-1 sale">8%</span></div><a class="product-thumbnail" href="https://klbtheme.com/partdo/product/thinkware-f770-dash-cam-dual-channel-wifi-gps-16gb/"><img alt="Thinkware F770 Dash Cam Dual Channel Wifi" data-hover-slides="https://klbtheme.com/partdo/wp-content/uploads/2022/10/2-35-500x500.jpg,https://klbtheme.com/partdo/wp-content/uploads/2022/10/3-29-500x500.jpg" data-options='{"touch": "end", "preloadImages": true }' decoding="async" src="~/SiteAssets/partdo/wp-content/uploads/2022/10/1-36-500x500.jpg" /></a><div class="product-buttons"> <div class="wishlist-button"><a class="klbwl-btn klbwl-btn-3128" data-product_id="3128" data-product_title="Thinkware F770 Dash Cam Dual Channel Wifi" href="https://klbtheme.com/partdo/wishlist/">Add to wishlist</a></div><!-- wishlist-button --><a class="klbcp-btn klbcp-btn-3128" data-id="3128" data-product_image="https://klbtheme.com/partdo/wp-content/uploads/2022/10/1-36-150x150.jpg" data-product_name="Thinkware F770 Dash Cam Dual Channel Wifi" href="?add-to-compare=3128">Compare</a><a class="detail-bnt quickview" data-product_id="3128"><i class="klbth-icon-eye-empty"></i></a> </div> </div><div class="content-wrapper">
-																				<h3 class="product-title"> <a href="https://klbtheme.com/partdo/product/thinkware-f770-dash-cam-dual-channel-wifi-gps-16gb/">Thinkware F770 Dash Cam Dual Channel Wifi</a></h3><div class="product-rating"><div aria-label="Rated 3.00 out of 5" class="star-rating" role="img"><span style="width:60%">Rated <strong class="rating">3.00</strong> out of 5</span></div><div class="rating-count"> <span class="count-text">1 review</span></div></div><div class="product-cart-form">
-																					<span class="price"><del aria-hidden="true"><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">$</span>268.99</bdi></span></del> <span class="screen-reader-text">Original price was: $268.99.</span><ins aria-hidden="true"><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">$</span>249.99</bdi></span></ins><span class="screen-reader-text">Current price is: $249.99.</span></span><a aria-describedby="woocommerce_loop_add_to_cart_link_describedby_3128" aria-label="Add to cart: “Thinkware F770 Dash Cam Dual Channel Wifi”" class="primary button product_type_simple add_to_cart_button ajax_add_to_cart" data-product_id="3128" data-product_sku="B5UKO9ET" data-quantity="1" data-success_message="“Thinkware F770 Dash Cam Dual Channel Wifi” has been added to your cart" href="/partdo/?add-to-cart=3128" rel="nofollow" role="button">Add to cart <i class="klbth-icon-shopping-bag"></i></a> <span class="screen-reader-text" id="woocommerce_loop_add_to_cart_link_describedby_3128">
-																					</span>
-																				</div><div class="product-stock in-stock"> <i class="klbth-icon-ecommerce-package-ready"></i><span>In Stock</span></div>
-																			</div>
+												<!-- /HEADER -->
+												<!-- BODY -->
+												<div class="klbth-module-body">
+													<div class="categories grid-style column-6">
+
+
+														@{
+
+															foreach (var siradaki in Model.anaSektorler)
+															{
+
+																<div class="category-item">
+																	<a class="category-inner" href="https://klbtheme.com/partdo/product-category/auto-safety-security/">
+																		<div class="entry-media">
+																			<img src="@siradaki.fotosu"
+																				 alt="@siradaki.sektorAdi">
 																		</div>
-																	</div>
-																</div>
-															</div><div class="slider-item">
-																<div class="product type-product post-3123 status-publish instock product_cat-alarm-systems product_cat-auto-safety-security product_cat-interior-accessories has-post-thumbnail sale shipping-taxable purchasable product-type-simple">
-																	<div class="product-wrapper product-type-2">
-																		<div class="product-content">
-																			<div class="thumbnail-wrapper entry-media"> <div class="product-badges"><span class="badge style-1" style="background-color: #ff5c00;">Super Price</span></div><a class="product-thumbnail" href="https://klbtheme.com/partdo/product/technaxx-car-alarm-with-charging-function-tx-100/"><img alt="Technaxx car Alarm with Charging Function" data-hover-slides="https://klbtheme.com/partdo/wp-content/uploads/2022/10/4-9-500x500.jpg,https://klbtheme.com/partdo/wp-content/uploads/2022/10/3-28-500x500.jpg,https://klbtheme.com/partdo/wp-content/uploads/2022/10/2-34-500x500.jpg" data-options='{"touch": "end", "preloadImages": true }' decoding="async" src="~/SiteAssets/partdo/wp-content/uploads/2022/10/1-35-500x500.jpg" /></a><div class="product-buttons"> <div class="wishlist-button"><a class="klbwl-btn klbwl-btn-3123" data-product_id="3123" data-product_title="Technaxx car Alarm with Charging Function" href="https://klbtheme.com/partdo/wishlist/">Add to wishlist</a></div><!-- wishlist-button --><a class="klbcp-btn klbcp-btn-3123" data-id="3123" data-product_image="https://klbtheme.com/partdo/wp-content/uploads/2022/10/1-35-150x150.jpg" data-product_name="Technaxx car Alarm with Charging Function" href="?add-to-compare=3123">Compare</a><a class="detail-bnt quickview" data-product_id="3123"><i class="klbth-icon-eye-empty"></i></a> </div> </div><div class="content-wrapper">
-																				<h3 class="product-title"> <a href="https://klbtheme.com/partdo/product/technaxx-car-alarm-with-charging-function-tx-100/">Technaxx car Alarm with Charging Function</a></h3><div class="product-rating"><div aria-label="Rated 5.00 out of 5" class="star-rating" role="img"><span style="width:100%">Rated <strong class="rating">5.00</strong> out of 5</span></div><div class="rating-count"> <span class="count-text">1 review</span></div></div><div class="product-cart-form">
-																					<span class="price"><del aria-hidden="true"><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">$</span>51.99</bdi></span></del> <span class="screen-reader-text">Original price was: $51.99.</span><ins aria-hidden="true"><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">$</span>47.99</bdi></span></ins><span class="screen-reader-text">Current price is: $47.99.</span></span><a aria-describedby="woocommerce_loop_add_to_cart_link_describedby_3123" aria-label="Add to cart: “Technaxx car Alarm with Charging Function”" class="primary button product_type_simple add_to_cart_button ajax_add_to_cart" data-product_id="3123" data-product_sku="AE3KGO9T" data-quantity="1" data-success_message="“Technaxx car Alarm with Charging Function” has been added to your cart" href="/partdo/?add-to-cart=3123" rel="nofollow" role="button">Add to cart <i class="klbth-icon-shopping-bag"></i></a> <span class="screen-reader-text" id="woocommerce_loop_add_to_cart_link_describedby_3123">
-																					</span>
-																				</div><div class="product-stock in-stock"> <i class="klbth-icon-ecommerce-package-ready"></i><span>In Stock</span></div>
-																			</div>
+																		<div class="entry-content">
+																			<h3 class="category-name">@siradaki.sektorAdi </h3>
+
 																		</div>
-																	</div>
+																	</a>
 																</div>
-															</div><div class="slider-item">
-																<div class="product type-product post-3097 status-publish instock product_cat-auto-safety-security product_cat-tools-equipment has-post-thumbnail sale shipping-taxable purchasable product-type-simple">
-																	<div class="product-wrapper product-type-2">
-																		<div class="product-content">
-																			<div class="thumbnail-wrapper entry-media"> <div class="product-badges"><span class="badge style-1 sale">21%</span></div><a class="product-thumbnail" href="https://klbtheme.com/partdo/product/right-stuff-drilled-and-slotted-brake-rotor/"><img alt="Right Stuff® – Drilled and Slotted Brake Rotor" data-hover-slides="https://klbtheme.com/partdo/wp-content/uploads/2022/10/2-28-500x500.jpg,https://klbtheme.com/partdo/wp-content/uploads/2022/10/4-7-500x500.jpg,https://klbtheme.com/partdo/wp-content/uploads/2022/10/3-23-500x500.jpg" data-options='{"touch": "end", "preloadImages": true }' decoding="async" src="~/SiteAssets/partdo/wp-content/uploads/2022/10/1-29-500x500.jpg" /></a><div class="product-buttons"> <div class="wishlist-button"><a class="klbwl-btn klbwl-btn-3097" data-product_id="3097" data-product_title="Right Stuff® - Drilled and Slotted Brake Rotor" href="https://klbtheme.com/partdo/wishlist/">Add to wishlist</a></div><!-- wishlist-button --><a class="klbcp-btn klbcp-btn-3097" data-id="3097" data-product_image="https://klbtheme.com/partdo/wp-content/uploads/2022/10/1-29-150x150.jpg" data-product_name="Right Stuff® - Drilled and Slotted Brake Rotor" href="?add-to-compare=3097">Compare</a><a class="detail-bnt quickview" data-product_id="3097"><i class="klbth-icon-eye-empty"></i></a> </div> </div><div class="content-wrapper">
-																				<h3 class="product-title"> <a href="https://klbtheme.com/partdo/product/right-stuff-drilled-and-slotted-brake-rotor/">Right Stuff® – Drilled and Slotted Brake Rotor</a></h3><div class="product-rating"><div aria-label="Rated 5.00 out of 5" class="star-rating" role="img"><span style="width:100%">Rated <strong class="rating">5.00</strong> out of 5</span></div><div class="rating-count"> <span class="count-text">1 review</span></div></div><div class="product-cart-form">
-																					<span class="price"><del aria-hidden="true"><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">$</span>199.37</bdi></span></del> <span class="screen-reader-text">Original price was: $199.37.</span><ins aria-hidden="true"><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">$</span>157.99</bdi></span></ins><span class="screen-reader-text">Current price is: $157.99.</span></span><a aria-describedby="woocommerce_loop_add_to_cart_link_describedby_3097" aria-label="Add to cart: “Right Stuff® - Drilled and Slotted Brake Rotor”" class="primary button product_type_simple add_to_cart_button ajax_add_to_cart" data-product_id="3097" data-product_sku="D9WKO9EK" data-quantity="1" data-success_message="“Right Stuff® - Drilled and Slotted Brake Rotor” has been added to your cart" href="/partdo/?add-to-cart=3097" rel="nofollow" role="button">Add to cart <i class="klbth-icon-shopping-bag"></i></a> <span class="screen-reader-text" id="woocommerce_loop_add_to_cart_link_describedby_3097">
-																					</span>
-																				</div><div class="product-stock in-stock"> <i class="klbth-icon-ecommerce-package-ready"></i><span>In Stock</span></div>
-																			</div>
-																		</div>
-																	</div>
-																</div>
-															</div><div class="slider-item">
-																<div class="product type-product post-3090 status-publish last instock product_cat-auto-safety-security product_cat-tools-equipment has-post-thumbnail sale shipping-taxable purchasable product-type-simple">
-																	<div class="product-wrapper product-type-2">
-																		<div class="product-content">
-																			<div class="thumbnail-wrapper entry-media"> <div class="product-badges"><span class="badge sale">15%</span></div><a class="product-thumbnail" href="https://klbtheme.com/partdo/product/r1-concepts-eline-series-plain-brake-rotors/"><img alt="R1 Concepts® – eLINE Series Plain Brake Rotors" data-hover-slides="https://klbtheme.com/partdo/wp-content/uploads/2022/10/2-26-500x500.jpg" data-options='{"touch": "end", "preloadImages": true }' decoding="async" src="~/SiteAssets/partdo/wp-content/uploads/2022/10/1-27-500x500.jpg" /></a><div class="product-buttons"> <div class="wishlist-button"><a class="klbwl-btn klbwl-btn-3090" data-product_id="3090" data-product_title="R1 Concepts® - eLINE Series Plain Brake Rotors" href="https://klbtheme.com/partdo/wishlist/">Add to wishlist</a></div><!-- wishlist-button --><a class="klbcp-btn klbcp-btn-3090" data-id="3090" data-product_image="https://klbtheme.com/partdo/wp-content/uploads/2022/10/1-27-150x150.jpg" data-product_name="R1 Concepts® - eLINE Series Plain Brake Rotors" href="?add-to-compare=3090">Compare</a><a class="detail-bnt quickview" data-product_id="3090"><i class="klbth-icon-eye-empty"></i></a> </div> </div><div class="content-wrapper">
-																				<h3 class="product-title"> <a href="https://klbtheme.com/partdo/product/r1-concepts-eline-series-plain-brake-rotors/">R1 Concepts® – eLINE Series Plain Brake Rotors</a></h3><div class="product-rating"><div aria-label="Rated 3.00 out of 5" class="star-rating" role="img"><span style="width:60%">Rated <strong class="rating">3.00</strong> out of 5</span></div><div class="rating-count"> <span class="count-text">1 review</span></div></div><div class="product-cart-form">
-																					<span class="price"><del aria-hidden="true"><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">$</span>219.60</bdi></span></del> <span class="screen-reader-text">Original price was: $219.60.</span><ins aria-hidden="true"><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">$</span>187.60</bdi></span></ins><span class="screen-reader-text">Current price is: $187.60.</span></span><a aria-describedby="woocommerce_loop_add_to_cart_link_describedby_3090" aria-label="Add to cart: “R1 Concepts® - eLINE Series Plain Brake Rotors”" class="primary button product_type_simple add_to_cart_button ajax_add_to_cart" data-product_id="3090" data-product_sku="W8FKO7ET" data-quantity="1" data-success_message="“R1 Concepts® - eLINE Series Plain Brake Rotors” has been added to your cart" href="/partdo/?add-to-cart=3090" rel="nofollow" role="button">Add to cart <i class="klbth-icon-shopping-bag"></i></a> <span class="screen-reader-text" id="woocommerce_loop_add_to_cart_link_describedby_3090">
-																					</span>
-																				</div><div class="product-stock in-stock"> <i class="klbth-icon-ecommerce-package-ready"></i><span>In Stock</span></div>
-																			</div>
-																		</div>
-																	</div>
-																</div>
-															</div><div class="slider-item">
-																<div class="product type-product post-3085 status-publish first instock product_cat-auto-safety-security product_cat-tools-equipment has-post-thumbnail sale shipping-taxable purchasable product-type-simple">
-																	<div class="product-wrapper product-type-2">
-																		<div class="product-content">
-																			<div class="thumbnail-wrapper entry-media"> <div class="product-badges"><span class="badge style-1 sale">5%</span></div><a class="product-thumbnail" href="https://klbtheme.com/partdo/product/power-stop-evolution-drilled-and-slotted/"><img alt="Power Stop® – Evolution Drilled and Slotted" data-hover-slides="https://klbtheme.com/partdo/wp-content/uploads/2022/10/2-25-500x500.jpg,https://klbtheme.com/partdo/wp-content/uploads/2022/10/4-6-500x500.jpg,https://klbtheme.com/partdo/wp-content/uploads/2022/10/3-21-500x500.jpg" data-options='{"touch": "end", "preloadImages": true }' decoding="async" src="~/SiteAssets/partdo/wp-content/uploads/2022/10/1-26-500x500.jpg" /></a><div class="product-buttons"> <div class="wishlist-button"><a class="klbwl-btn klbwl-btn-3085" data-product_id="3085" data-product_title="Power Stop® - Evolution Drilled and Slotted" href="https://klbtheme.com/partdo/wishlist/">Add to wishlist</a></div><!-- wishlist-button --><a class="klbcp-btn klbcp-btn-3085" data-id="3085" data-product_image="https://klbtheme.com/partdo/wp-content/uploads/2022/10/1-26-150x150.jpg" data-product_name="Power Stop® - Evolution Drilled and Slotted" href="?add-to-compare=3085">Compare</a><a class="detail-bnt quickview" data-product_id="3085"><i class="klbth-icon-eye-empty"></i></a> </div> </div><div class="content-wrapper">
-																				<h3 class="product-title"> <a href="https://klbtheme.com/partdo/product/power-stop-evolution-drilled-and-slotted/">Power Stop® – Evolution Drilled and Slotted</a></h3><div class="product-rating"><div aria-label="Rated 5.00 out of 5" class="star-rating" role="img"><span style="width:100%">Rated <strong class="rating">5.00</strong> out of 5</span></div><div class="rating-count"> <span class="count-text">1 review</span></div></div><div class="product-cart-form">
-																					<span class="price"><del aria-hidden="true"><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">$</span>162.99</bdi></span></del> <span class="screen-reader-text">Original price was: $162.99.</span><ins aria-hidden="true"><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">$</span>154.89</bdi></span></ins><span class="screen-reader-text">Current price is: $154.89.</span></span><a aria-describedby="woocommerce_loop_add_to_cart_link_describedby_3085" aria-label="Add to cart: “Power Stop® - Evolution Drilled and Slotted”" class="primary button product_type_simple add_to_cart_button ajax_add_to_cart" data-product_id="3085" data-product_sku="C01SE8GV" data-quantity="1" data-success_message="“Power Stop® - Evolution Drilled and Slotted” has been added to your cart" href="/partdo/?add-to-cart=3085" rel="nofollow" role="button">Add to cart <i class="klbth-icon-shopping-bag"></i></a> <span class="screen-reader-text" id="woocommerce_loop_add_to_cart_link_describedby_3085">
-																					</span>
-																				</div><div class="product-stock in-stock"> <i class="klbth-icon-ecommerce-package-ready"></i><span>In Stock</span></div>
-																			</div>
-																		</div>
-																	</div>
-																</div>
-															</div><div class="slider-item">
-																<div class="product type-product post-376 status-publish instock product_cat-auto-safety-security product_cat-tires-wheels product_tag-envato product_tag-klbtheme has-post-thumbnail shipping-taxable purchasable product-type-simple">
-																	<div class="product-wrapper product-type-2">
-																		<div class="product-content">
-																			<div class="thumbnail-wrapper entry-media"> <a class="product-thumbnail" href="https://klbtheme.com/partdo/product/4000xs-drilled-and-slotted-brake-rotor-more-details-on/"><img alt="4000XS Drilled and Slotted Brake Rotor more details on" data-hover-slides="https://klbtheme.com/partdo/wp-content/uploads/2022/10/2-8-500x500.jpg,https://klbtheme.com/partdo/wp-content/uploads/2022/10/3-7-500x500.jpg" data-options='{"touch": "end", "preloadImages": true }' decoding="async" src="~/SiteAssets/partdo/wp-content/uploads/2022/10/1-8-500x500.jpg" /></a><div class="product-buttons"> <div class="wishlist-button"><a class="klbwl-btn klbwl-btn-376" data-product_id="376" data-product_title="4000XS Drilled and Slotted Brake Rotor more details on" href="https://klbtheme.com/partdo/wishlist/">Add to wishlist</a></div><!-- wishlist-button --><a class="klbcp-btn klbcp-btn-376" data-id="376" data-product_image="https://klbtheme.com/partdo/wp-content/uploads/2022/10/1-8-150x150.jpg" data-product_name="4000XS Drilled and Slotted Brake Rotor more details on" href="?add-to-compare=376">Compare</a><a class="detail-bnt quickview" data-product_id="376"><i class="klbth-icon-eye-empty"></i></a> </div> </div><div class="content-wrapper">
-																				<h3 class="product-title"> <a href="https://klbtheme.com/partdo/product/4000xs-drilled-and-slotted-brake-rotor-more-details-on/">4000XS Drilled and Slotted Brake Rotor more details on</a></h3><div class="product-rating"><div aria-label="Rated 5.00 out of 5" class="star-rating" role="img"><span style="width:100%">Rated <strong class="rating">5.00</strong> out of 5</span></div><div class="rating-count"> <span class="count-text">1 review</span></div></div><div class="product-cart-form">
-																					<span class="price"><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">$</span>125.59</bdi></span></span><a aria-describedby="woocommerce_loop_add_to_cart_link_describedby_376" aria-label="Add to cart: “4000XS Drilled and Slotted Brake Rotor more details on”" class="primary button product_type_simple add_to_cart_button ajax_add_to_cart" data-product_id="376" data-product_sku="ZU49VOR" data-quantity="1" data-success_message="“4000XS Drilled and Slotted Brake Rotor more details on” has been added to your cart" href="/partdo/?add-to-cart=376" rel="nofollow" role="button">Add to cart <i class="klbth-icon-shopping-bag"></i></a> <span class="screen-reader-text" id="woocommerce_loop_add_to_cart_link_describedby_376">
-																					</span>
-																				</div><div class="product-stock in-stock"> <i class="klbth-icon-ecommerce-package-ready"></i><span>In Stock</span></div>
-																			</div>
-																		</div>
-																	</div>
-																</div>
-															</div><div class="slider-item">
-																<div class="product type-product post-354 status-publish instock product_cat-auto-safety-security product_cat-interior-accessories product_cat-vehicle-backup-cameras has-post-thumbnail sale shipping-taxable purchasable product-type-simple">
-																	<div class="product-wrapper product-type-2">
-																		<div class="product-content">
-																			<div class="thumbnail-wrapper entry-media"> <div class="product-badges"><span class="badge style-1 sale">6%</span></div><a class="product-thumbnail" href="https://klbtheme.com/partdo/product/auto-vox-cs-2-wireless-backup-camera-kit/"><img alt="AUTO-VOX CS-2 Wireless Backup Camera Kit" data-hover-slides="https://klbtheme.com/partdo/wp-content/uploads/2022/10/2-3-500x500.jpg,https://klbtheme.com/partdo/wp-content/uploads/2022/10/6-500x500.jpg,https://klbtheme.com/partdo/wp-content/uploads/2022/10/5-500x500.jpg,https://klbtheme.com/partdo/wp-content/uploads/2022/10/4-2-500x500.jpg,https://klbtheme.com/partdo/wp-content/uploads/2022/10/3-3-500x500.jpg" data-options='{"touch": "end", "preloadImages": true }' decoding="async" src="~/SiteAssets/partdo/wp-content/uploads/2022/10/1-3-500x500.jpg" /></a><div class="product-buttons"> <div class="wishlist-button"><a class="klbwl-btn klbwl-btn-354" data-product_id="354" data-product_title="AUTO-VOX CS-2 Wireless Backup Camera Kit" href="https://klbtheme.com/partdo/wishlist/">Add to wishlist</a></div><!-- wishlist-button --><a class="klbcp-btn klbcp-btn-354" data-id="354" data-product_image="https://klbtheme.com/partdo/wp-content/uploads/2022/10/1-3-150x150.jpg" data-product_name="AUTO-VOX CS-2 Wireless Backup Camera Kit" href="?add-to-compare=354">Compare</a><a class="detail-bnt quickview" data-product_id="354"><i class="klbth-icon-eye-empty"></i></a> </div> </div><div class="content-wrapper">
-																				<h3 class="product-title"> <a href="https://klbtheme.com/partdo/product/auto-vox-cs-2-wireless-backup-camera-kit/">AUTO-VOX CS-2 Wireless Backup Camera Kit</a></h3><div class="product-rating"><div aria-label="Rated 4.00 out of 5" class="star-rating" role="img"><span style="width:80%">Rated <strong class="rating">4.00</strong> out of 5</span></div><div class="rating-count"> <span class="count-text">1 review</span></div></div><div class="product-cart-form">
-																					<span class="price"><del aria-hidden="true"><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">$</span>189.99</bdi></span></del> <span class="screen-reader-text">Original price was: $189.99.</span><ins aria-hidden="true"><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">$</span>179.99</bdi></span></ins><span class="screen-reader-text">Current price is: $179.99.</span></span><a aria-describedby="woocommerce_loop_add_to_cart_link_describedby_354" aria-label="Add to cart: “AUTO-VOX CS-2 Wireless Backup Camera Kit”" class="primary button product_type_simple add_to_cart_button ajax_add_to_cart" data-product_id="354" data-product_sku="RL03AF5" data-quantity="1" data-success_message="“AUTO-VOX CS-2 Wireless Backup Camera Kit” has been added to your cart" href="/partdo/?add-to-cart=354" rel="nofollow" role="button">Add to cart <i class="klbth-icon-shopping-bag"></i></a> <span class="screen-reader-text" id="woocommerce_loop_add_to_cart_link_describedby_354">
-																					</span>
-																				</div><div class="product-stock in-stock"> <i class="klbth-icon-ecommerce-package-ready"></i><span>In Stock</span></div>
-																			</div>
-																		</div>
-																	</div>
-																</div>
-															</div><div class="slider-item">
-																<div class="product type-product post-339 status-publish last instock product_cat-auto-safety-security product_cat-interior-accessories product_cat-vehicle-backup-cameras has-post-thumbnail sale shipping-taxable purchasable product-type-simple">
-																	<div class="product-wrapper product-type-2">
-																		<div class="product-content">
-																			<div class="thumbnail-wrapper entry-media"> <div class="product-badges"><span class="badge style-1 sale">6%</span></div><a class="product-thumbnail" href="https://klbtheme.com/partdo/product/5_-monitor-with-1080p-backup-camera/"><img alt="5″ Monitor with 1080P Backup Camera for Truck" data-hover-slides="https://klbtheme.com/partdo/wp-content/uploads/2022/10/3-1-500x500.jpg,https://klbtheme.com/partdo/wp-content/uploads/2022/10/4-500x500.jpg,https://klbtheme.com/partdo/wp-content/uploads/2022/10/2-1-500x500.jpg" data-options='{"touch": "end", "preloadImages": true }' decoding="async" src="~/SiteAssets/partdo/wp-content/uploads/2022/10/1-1-500x500.jpg" /></a><div class="product-buttons"> <div class="wishlist-button"><a class="klbwl-btn klbwl-btn-339" data-product_id="339" data-product_title='5" Monitor with 1080P Backup Camera for Truck' href="https://klbtheme.com/partdo/wishlist/">Add to wishlist</a></div><!-- wishlist-button --><a class="klbcp-btn klbcp-btn-339" data-id="339" data-product_image="https://klbtheme.com/partdo/wp-content/uploads/2022/10/1-1-150x150.jpg" data-product_name='5" Monitor with 1080P Backup Camera for Truck' href="?add-to-compare=339">Compare</a><a class="detail-bnt quickview" data-product_id="339"><i class="klbth-icon-eye-empty"></i></a> </div> </div><div class="content-wrapper">
-																				<h3 class="product-title"> <a href="https://klbtheme.com/partdo/product/5_-monitor-with-1080p-backup-camera/">5″ Monitor with 1080P Backup Camera for Truck</a></h3><div class="product-rating"><div aria-label="Rated 4.00 out of 5" class="star-rating" role="img"><span style="width:80%">Rated <strong class="rating">4.00</strong> out of 5</span></div><div class="rating-count"> <span class="count-text">1 review</span></div></div><div class="product-cart-form">
-																					<span class="price"><del aria-hidden="true"><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">$</span>88.99</bdi></span></del> <span class="screen-reader-text">Original price was: $88.99.</span><ins aria-hidden="true"><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">$</span>83.99</bdi></span></ins><span class="screen-reader-text">Current price is: $83.99.</span></span><a aria-describedby="woocommerce_loop_add_to_cart_link_describedby_339" aria-label='Add to cart: “5" Monitor with 1080P Backup Camera for Truck”' class="primary button product_type_simple add_to_cart_button ajax_add_to_cart" data-product_id="339" data-product_sku="UYR4JK74" data-quantity="1" data-success_message='“5" Monitor with 1080P Backup Camera for Truck” has been added to your cart' href="/partdo/?add-to-cart=339" rel="nofollow" role="button">Add to cart <i class="klbth-icon-shopping-bag"></i></a> <span class="screen-reader-text" id="woocommerce_loop_add_to_cart_link_describedby_339">
-																					</span>
-																				</div><div class="product-stock in-stock"> <i class="klbth-icon-ecommerce-package-ready"></i><span>In Stock</span></div>
-																			</div>
-																		</div>
-																	</div>
-																</div>
-															</div>
-														</div>
+															}
+
+														}
+
+
+
 													</div>
 												</div>
+												<!-- /BODY -->
+
 											</div>
+											<!-- /MODULE -->
+
+
 										</div>
 									</div>
 								</div>
 							</div>
 						</div>
 					</section>
+
+
+
 					<section class="elementor-section elementor-top-section elementor-element elementor-element-8afc3d4 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-element_type="section" data-id="8afc3d4">
 						<div class="elementor-container elementor-column-gap-extended">
 							
@@ -1547,22 +1481,32 @@
  
 				 
 				
-
-
-					 
 					<section class="elementor-section elementor-top-section elementor-element elementor-element-7e06a9d elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-element_type="section" data-id="7e06a9d">
-						<div class="elementor-container elementor-column-gap-extended">
-							<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-23b6c17" data-element_type="column" data-id="23b6c17">
-								<div class="elementor-widget-wrap elementor-element-populated">
-									<div class="elementor-element elementor-element-499b0b9 elementor-widget elementor-widget-partdo-banner-box" data-element_type="widget" data-id="499b0b9" data-widget_type="partdo-banner-box.default">
-										<div class="elementor-widget-container">
-											<div class="klbth-banner style-inner color-scheme-light space-md align-center justify-start hover-zoom"><div class="entry-wrapper overlay-25-dark-max768 dump"><div class="entry-inner w-50"><div class="entry-heading banner-heading"><span class="badge">On Sale This Week</span><h2 class="entry-title font-banner-xlg">Get the Right Part at the Right Price for the Comfort of Your Vehicle</h2></div><div class="entry-excerpt font-sm weight-300"><p>Plakrore maheten. Astronens ultranirad. Dod.</p></div><div class="entry-footer vertical banner-footer"><div class="banner-button"><button class="btn link" href="https://klbtheme.com/partdo/shop/?orderby=popularity"> Shop Now <i class="klbth-icon-arrow-right-long"></i></button></div></div></div></div><div class="entry-media overlay-15-dark-min768"><img alt="slider image" decoding="async" src="~/SiteAssets/partdo/wp-content/uploads/2022/10/banner-07.jpg" /></div><a class="link-mask" href="https://klbtheme.com/partdo/shop/?orderby=popularity"> </a></div>
+
+
+					@{
+
+						foreach(var siradaki in Model.reklamKusagi2)
+						{
+
+								<div class="elementor-container elementor-column-gap-extended">
+									<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-23b6c17" data-element_type="column" data-id="23b6c17">
+										<div class="elementor-widget-wrap elementor-element-populated">
+											<div class="elementor-element elementor-element-499b0b9 elementor-widget elementor-widget-partdo-banner-box" data-element_type="widget" data-id="499b0b9" data-widget_type="partdo-banner-box.default">
+												<div class="elementor-widget-container">
+													<div class="klbth-banner style-inner color-scheme-light space-md align-center justify-start hover-zoom"><div class="entry-wrapper overlay-25-dark-max768 dump"><div class="entry-inner w-50"><div class="entry-heading banner-heading"><span class="badge">On Sale This Week</span><h2 class="entry-title font-banner-xlg">Get the Right Part at the Right Price for the Comfort of Your Vehicle</h2></div><div class="entry-excerpt font-sm weight-300"><p>Plakrore maheten. Astronens ultranirad. Dod.</p></div><div class="entry-footer vertical banner-footer"><div class="banner-button"><button class="btn link" href="https://klbtheme.com/partdo/shop/?orderby=popularity"> Shop Now <i class="klbth-icon-arrow-right-long"></i></button></div></div></div></div><div class="entry-media overlay-15-dark-min768"><img alt="slider image" decoding="async" src="@siradaki.fotosu" /></div><a class="link-mask" href="https://klbtheme.com/partdo/shop/?orderby=popularity"> </a></div>
+												</div>
+											</div>
 										</div>
 									</div>
 								</div>
-							</div>
-						</div>
+						}
+					}
+					 
 					</section>
+
+
+
 					<section class="elementor-section elementor-top-section elementor-element elementor-element-0854c79 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-element_type="section" data-id="0854c79">
 						<div class="elementor-container elementor-column-gap-extended">
 							<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-db88e0a" data-element_type="column" data-id="db88e0a">
