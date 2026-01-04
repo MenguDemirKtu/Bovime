@@ -2,18 +2,18 @@
 @using Bovime.veri;
 @model Bovime.Models.SiteAnaSayfaModel
 
-<html lang="en-US">
+<html lang="tr-TR">
 <head>
 	<meta charset="utf-8" />
 	<meta content="IE=edge" http-equiv="X-UA-Compatible" />
 	<meta content="width=device-width, initial-scale=1.0" name="viewport" />
-	<title>Partdo – Tools Shop eCommerce Theme</title>
+	<title>@Model.title </title>
 	<meta content="noindex, nofollow" name="robots">
 	<link href="//fonts.googleapis.com" rel="dns-prefetch" />
-	<link href="https://klbtheme.com/partdo/feed/" rel="alternate" title="Partdo - Tools Shop eCommerce Theme » Feed" type="application/rss+xml" />
+@* 	<link href="https://klbtheme.com/partdo/feed/" rel="alternate" title="Partdo - Tools Shop eCommerce Theme » Feed" type="application/rss+xml" />
 	<link href="https://klbtheme.com/partdo/comments/feed/" rel="alternate" title="Partdo - Tools Shop eCommerce Theme » Comments Feed" type="application/rss+xml" />
 	<link href="https://klbtheme.com/partdo/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fklbtheme.com%2Fpartdo%2F" rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" />
-	<link href="https://klbtheme.com/partdo/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fklbtheme.com%2Fpartdo%2F&amp;format=xml" rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" />
+	<link href="https://klbtheme.com/partdo/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fklbtheme.com%2Fpartdo%2F&amp;format=xml" rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" /> *@
 	<style id="wp-img-auto-sizes-contain-inline-css" type="text/css">
 		img:is([sizes=auto i],[sizes^="auto," i]) {
 			contain-intrinsic-size: 3000px 1500px
@@ -21,6 +21,9 @@
 		/*# sourceURL=wp-img-auto-sizes-contain-inline-css */
 	</style>
 	<style id="wp-emoji-styles-inline-css" type="text/css">
+
+
+
 
 
 		.koyu 
@@ -1494,7 +1497,7 @@
 										<div class="elementor-widget-wrap elementor-element-populated">
 											<div class="elementor-element elementor-element-499b0b9 elementor-widget elementor-widget-partdo-banner-box" data-element_type="widget" data-id="499b0b9" data-widget_type="partdo-banner-box.default">
 												<div class="elementor-widget-container">
-													<div class="klbth-banner style-inner color-scheme-light space-md align-center justify-start hover-zoom"><div class="entry-wrapper overlay-25-dark-max768 dump"><div class="entry-inner w-50"><div class="entry-heading banner-heading"><span class="badge">On Sale This Week</span><h2 class="entry-title font-banner-xlg">Get the Right Part at the Right Price for the Comfort of Your Vehicle</h2></div><div class="entry-excerpt font-sm weight-300"><p>Plakrore maheten. Astronens ultranirad. Dod.</p></div><div class="entry-footer vertical banner-footer"><div class="banner-button"><button class="btn link" href="https://klbtheme.com/partdo/shop/?orderby=popularity"> Shop Now <i class="klbth-icon-arrow-right-long"></i></button></div></div></div></div><div class="entry-media overlay-15-dark-min768"><img alt="slider image" decoding="async" src="@siradaki.fotosu" /></div><a class="link-mask" href="https://klbtheme.com/partdo/shop/?orderby=popularity"> </a></div>
+													<div class="klbth-banner style-inner color-scheme-light space-md align-center justify-start hover-zoom"><div class="entry-wrapper overlay-25-dark-max768 dump"><div class="entry-inner w-50"><div class="entry-heading banner-heading"><span class="badge">@siradaki.baslik</span><h2 class="entry-title font-banner-xlg">@siradaki.metin </h2></div><div class="entry-excerpt font-sm weight-300"></div><div class="entry-footer vertical banner-footer"><div class="banner-button"><button class="btn link" href="@siradaki.hedefUrl">  Ayrıntılar   <i class="klbth-icon-arrow-right-long"></i></button></div></div></div></div><div class="entry-media overlay-15-dark-min768"><img alt="slider image" decoding="async" src="@siradaki.fotosu" /></div><a class="link-mask" href="@siradaki.hedefUrl"> </a></div>
 												</div>
 											</div>
 										</div>

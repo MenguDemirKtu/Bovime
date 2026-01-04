@@ -7,6 +7,7 @@ namespace Bovime.Controllers
         public async Task<IActionResult> Index()
         {
             Models.YenileModel model = new Models.YenileModel();
+            Genel.yenilensinmi = true;
             await model.yenileKos();
             return RedirectToAction("Index", "AnaSayfa");
         }

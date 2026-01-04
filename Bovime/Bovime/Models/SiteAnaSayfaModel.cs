@@ -1,10 +1,12 @@
-﻿using Bovime.veri;
+﻿using Bovime.Controllers;
+using Bovime.veri;
 using Microsoft.EntityFrameworkCore;
 
 namespace Bovime.Models
 {
-    public class SiteAnaSayfaModel
+    public class SiteAnaSayfaModel : SiteModeli
     {
+        public string title { get; set; }
         public List<MansetAYRINTI> mansetler { get; set; }
         public List<ReklamKusagi1AYRINTI> reklamKusagi1 { get; set; }
 
@@ -23,10 +25,13 @@ namespace Bovime.Models
             firmaGruplari = new List<FirmaGrubuAYRINTI>();
             reklamKusagi2 = new List<ReklamKusagi3AYRINTI>();
         }
-        public async Task veriCek()
+
+
+        public async Task veriCek(SiteSayfasi sa)
         {
             using (veri.Varlik vari = new veri.Varlik())
             {
+                title = await aramaMotoruIslemleri(vari, sa);
                 mansetler = await vari.MansetAYRINTIs.Where(p => p.e_yayindami == true).OrderBy(p => p.sirasi).ToListAsync();
                 reklamKusagi1 = await vari.ReklamKusagi1AYRINTIs.ToListAsync();
                 anaSektorler = await vari.SektorAYRINTIs.OrderBy(p => p.sektorAdi).ToListAsync();

@@ -76,6 +76,7 @@ namespace Bovime.Controllers
                     Models.SiteMenuModel modeli = new Models.SiteMenuModel();
                     await modeli.silKos(this, id ?? "", mevcutKullanici());
                     await modeli.veriCekKos(mevcutKullanici());
+                    Genel.yenilensinmi = true;
                     return basariBildirimi(Ikazlar.basariylaSilindi(dilKimlik));
                 }
                 else
@@ -97,6 +98,7 @@ namespace Bovime.Controllers
                     return OturumAcilmadi();
                 await gelen.yetkiKontrolu(this);
                 await gelen.kaydetKos(this);
+                Genel.yenilensinmi = true;
                 return basariBildirimi(gelen.kartVerisi, dilKimlik);
             }
             catch (Exception istisna)

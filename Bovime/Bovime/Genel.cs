@@ -88,7 +88,10 @@ namespace Bovime
 
                 if (altlari.Count == 0)
                 {
-                    string siradaki = "<li class=\"menu-item menu-item-type-post_type menu-item-object-page\"  ><a href=\"https://klbtheme.com/partdo/contact/\">İletişim</a></li>";
+                    string siradaki = "<li class=\"menu-item menu-item-type-post_type menu-item-object-page\"  ><a href=\"https://klbtheme.com/partdo/contact/\">" + ustler[i].siteMenuAdi + "</a></li>";
+
+                    siradaki = siradaki.Replace("https://klbtheme.com/partdo/contact/", ustler[i].menuUrl);
+
                     tamami += siradaki;
                 }
                 else
@@ -96,13 +99,18 @@ namespace Bovime
 
                     string ara = @"	<li class=""menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-40 current_page_item current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children""  >
 										<a href=""https://klbtheme.com/partdo/"">" + ustler[i].siteMenuAdi + "</a> ";
+
+                    ara = ara.Replace("https://klbtheme.com/partdo/", "#");
+
                     ara += "\t<ul class=\"sub-menu\">";
 
                     tamami += ara;
                     for (int k = 0; k < altlari.Count; k++)
                     {
 
-                        tamami += " <li class=\"menu-item menu-item-type-post_type menu-item-object-page\"><a href=\"https://klbtheme.com/partdo/home-3/\">   " + altlari[k].siteMenuAdi + "  </a></li> ";
+                        string yeni = " <li class=\"menu-item menu-item-type-post_type menu-item-object-page\"><a href=\"https://klbtheme.com/partdo/home-3/\">   " + altlari[k].siteMenuAdi + "  </a></li> ";
+                        yeni = yeni.Replace("https://klbtheme.com/partdo/home-3/", altlari[k].menuUrl);
+                        tamami += yeni;
                     }
 
                     tamami += "\t\t</ul>\r\n\t\t\t\t\t\t\t\t\t</li>";
