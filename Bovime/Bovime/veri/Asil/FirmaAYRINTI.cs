@@ -68,5 +68,9 @@ namespace Bovime.veri
         [Display(Name = ".")]
         public bool? varmi { get; set; }
 
+        [Display(Name = ".")]
+        [Column(TypeName = "nvarchar(150)")]
+        public string? firmaUrl { get; set; }
+
     }
 }

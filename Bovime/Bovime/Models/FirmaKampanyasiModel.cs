@@ -14,18 +14,18 @@ using Bovime.veriTabani;
   using Microsoft.EntityFrameworkCore;
 namespace Bovime.Models 
 { 
-   public class SektorModel : ModelTabani 
+   public class FirmaKampanyasiModel : ModelTabani 
    { 
-       public Sektor kartVerisi { get; set; } 
-       public List<SektorAYRINTI> dokumVerisi { get; set; } 
-       public SektorAYRINTIArama aramaParametresi { get; set; }
+       public FirmaKampanyasi kartVerisi { get; set; } 
+       public List<FirmaKampanyasiAYRINTI> dokumVerisi { get; set; } 
+       public FirmaKampanyasiAYRINTIArama aramaParametresi { get; set; }
 
 
-public SektorModel()
+public FirmaKampanyasiModel()
 {
- this.kartVerisi = new Sektor(); 
- this.dokumVerisi = new  List<SektorAYRINTI>(); 
- this.aramaParametresi = new SektorAYRINTIArama();
+ this.kartVerisi = new FirmaKampanyasi(); 
+ this.dokumVerisi = new  List<FirmaKampanyasiAYRINTI>(); 
+ this.aramaParametresi = new FirmaKampanyasiAYRINTIArama();
 }
 
 
@@ -49,14 +49,14 @@ using (veri.Varlik vari = new veri.Varlik())
     List<string> kayitlar = id.Split(',').ToList();
  for (int i = 0; i < kayitlar.Count; i++)
  {
-   Sektor? silinecek = await Sektor.olusturKos(vari, kayitlar[i]); 
+   FirmaKampanyasi? silinecek = await FirmaKampanyasi.olusturKos(vari, kayitlar[i]); 
  if (silinecek == null)
     continue;
 silinecek._sayfaAta(sayfasi); 
    await silinecek.silKos(vari); 
  }
  }
-  Models.SektorModel modeli = new Models.SektorModel();
+  Models.FirmaKampanyasiModel modeli = new Models.FirmaKampanyasiModel();
    await modeli.veriCekKos(silen); 
  }
  public async Task  yetkiKontrolu(Sayfa sayfasi)
@@ -71,7 +71,7 @@ silinecek._sayfaAta(sayfasi);
 
 
 
-      public async Task<Sektor> kaydetKos(Sayfa sayfasi)
+      public async Task<FirmaKampanyasi> kaydetKos(Sayfa sayfasi)
   {
     using(veri.Varlik vari = new veri.Varlik())
   {
@@ -94,25 +94,25 @@ public async Task veriCekKos(Yonetici kime, long kimlik)
    yenimiBelirle(kimlik); 
    using (veri.Varlik vari = new Varlik()) 
  { 
-    var kart = await Sektor.olusturKos(vari, kimlik); 
+    var kart = await FirmaKampanyasi.olusturKos(vari, kimlik); 
    if (kart != null) 
        kartVerisi = kart; 
-    dokumVerisi = new List<SektorAYRINTI>(); 
+    dokumVerisi = new List<FirmaKampanyasiAYRINTI>(); 
  await baglilariCek(vari, kime);
     await fotoAyariBelirle(vari, kartVerisi._cizelgeAdi());
  } 
  } 
 
- public async Task baglilariCek(veri.Varlik vari, Yonetici kim) {}
+ public List<FirmaAYRINTI> _ayFirmaAYRINTI { get; set; } public async Task baglilariCek(veri.Varlik vari, Yonetici kim) {   _ayFirmaAYRINTI = await FirmaAYRINTI.ara(vari);}
 
   public async Task veriCekKos(Yonetici kime) 
   { 
     this.kullanan = kime; 
  using (veri.Varlik vari = new Varlik()) 
  { 
-     SektorAYRINTIArama kosul = new SektorAYRINTIArama(); 
+     FirmaKampanyasiAYRINTIArama kosul = new FirmaKampanyasiAYRINTIArama(); 
      kosul.varmi = true; 
-     kartVerisi = new Sektor();  
+     kartVerisi = new FirmaKampanyasi();  
      dokumVerisi = await kosul.cek(vari); 
  await baglilariCek(vari, kime); 
    }  
@@ -125,9 +125,9 @@ public async Task veriCekKos(Yonetici kime, long kimlik)
     var talep = vari.AramaTalebis.FirstOrDefault(p => p.kodu == id);          
     if (talep != null)          
     {           
-        SektorAYRINTIArama kosul = JsonConvert.DeserializeObject<SektorAYRINTIArama>(talep.talepAyrintisi?? "" )?? new SektorAYRINTIArama  ();       
+        FirmaKampanyasiAYRINTIArama kosul = JsonConvert.DeserializeObject<FirmaKampanyasiAYRINTIArama>(talep.talepAyrintisi?? "" )?? new FirmaKampanyasiAYRINTIArama  ();       
        dokumVerisi = await kosul.cek(vari);      
-      kartVerisi = new Sektor();           
+      kartVerisi = new FirmaKampanyasi();           
  await baglilariCek(vari, kime); 
       aramaParametresi = kosul;           
      }          

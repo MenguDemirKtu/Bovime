@@ -4,9 +4,8 @@ using System.Linq.Expressions;
 
 namespace Bovime.veri
 {
-    public partial class FirmaAYRINTI : Bilesen
+    public partial class FirmaKampanyasiAYRINTI : Bilesen
     {
-
         [NotMapped]
         public string _URL
         {
@@ -15,7 +14,7 @@ namespace Bovime.veri
                 return string.Format("/UyeFirma/Goster/{0}", this.firmaUrl ?? "");
             }
         }
-        public FirmaAYRINTI()
+        public FirmaKampanyasiAYRINTI()
         {
             _varSayilan();
         }
@@ -28,8 +27,8 @@ namespace Bovime.veri
 
         public void _icDenetim(int dilKimlik, veri.Varlik vari)
         {
+            uyariVerInt32(i_firmaKimlik, ".", dilKimlik);
             uyariVerInt32(i_firmaDurumuKimlik, ".", dilKimlik);
-            uyariVerString(FirmaDurumuAdi, ".", dilKimlik);
         }
 
 
@@ -51,23 +50,23 @@ namespace Bovime.veri
 
         public override string _tanimi()
         {
-            return bossaDoldur(firmaAdi);
+            return bossaDoldur(i_firmaKimlik);
         }
 
 
 
-        public async static Task<FirmaAYRINTI?> olusturKos(Varlik vari, object deger)
+        public async static Task<FirmaKampanyasiAYRINTI?> olusturKos(Varlik vari, object deger)
         {
             Int64 kimlik = Convert.ToInt64(deger);
             if (kimlik <= 0)
             {
-                FirmaAYRINTI sonuc = new FirmaAYRINTI();
+                FirmaKampanyasiAYRINTI sonuc = new FirmaKampanyasiAYRINTI();
                 sonuc._varSayilan();
                 return sonuc;
             }
             else
             {
-                return await vari.FirmaAYRINTIs.FirstOrDefaultAsync(p => p.firmakimlik == kimlik && p.varmi == true);
+                return await vari.FirmaKampanyasiAYRINTIs.FirstOrDefaultAsync(p => p.firmaKampanyasikimlik == kimlik && p.varmi == true);
             }
         }
 
@@ -83,17 +82,17 @@ namespace Bovime.veri
             this.varmi = true;
         }
 
-        public static async Task<List<FirmaAYRINTI>> ara(params Expression<Func<FirmaAYRINTI, bool>>[] kosullar)
+        public static async Task<List<FirmaKampanyasiAYRINTI>> ara(params Expression<Func<FirmaKampanyasiAYRINTI, bool>>[] kosullar)
         {
-            return await veriTabani.FirmaAYRINTICizelgesi.ara(kosullar);
+            return await veriTabani.FirmaKampanyasiAYRINTICizelgesi.ara(kosullar);
         }
-        public static async Task<List<FirmaAYRINTI>> ara(veri.Varlik vari, params Expression<Func<FirmaAYRINTI, bool>>[] kosullar)
+        public static async Task<List<FirmaKampanyasiAYRINTI>> ara(veri.Varlik vari, params Expression<Func<FirmaKampanyasiAYRINTI, bool>>[] kosullar)
         {
-            return await veriTabani.FirmaAYRINTICizelgesi.ara(vari, kosullar);
+            return await veriTabani.FirmaKampanyasiAYRINTICizelgesi.ara(vari, kosullar);
         }
-        public static async Task<FirmaAYRINTI?> bul(veri.Varlik vari, params Expression<Func<FirmaAYRINTI, bool>>[] kosullar)
+        public static async Task<FirmaKampanyasiAYRINTI?> bul(veri.Varlik vari, params Expression<Func<FirmaKampanyasiAYRINTI, bool>>[] kosullar)
         {
-            return await veriTabani.FirmaAYRINTICizelgesi.bul(vari, kosullar);
+            return await veriTabani.FirmaKampanyasiAYRINTICizelgesi.bul(vari, kosullar);
         }
 
 
@@ -102,23 +101,23 @@ namespace Bovime.veri
 
         public override string _cizelgeAdi()
         {
-            return "FirmaAYRINTI";
+            return "FirmaKampanyasiAYRINTI";
         }
 
 
         public override string _turkceAdi()
         {
-            return "Firma";
+            return "FirmaKampanyasiAYRINTI";
         }
         public override string _birincilAnahtarAdi()
         {
-            return "firmakimlik";
+            return "firmaKampanyasikimlik";
         }
 
 
         public override long _birincilAnahtar()
         {
-            return this.firmakimlik;
+            return this.firmaKampanyasikimlik;
         }
 
 

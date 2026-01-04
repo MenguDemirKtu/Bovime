@@ -11,5 +11,12 @@ namespace Bovime.Controllers
             await model.veriCek(this);
             return View(model);
         }
+
+        public async Task<ActionResult> yeni()
+        {
+            SiteAnaSayfaModel model = new SiteAnaSayfaModel();
+            await model.veriCek(this);
+            return View(model);
+        }
     }
 }

@@ -15,7 +15,8 @@ namespace Bovime.veri
 
         public void bicimlendir(veri.Varlik vari)
         {
-
+            if (string.IsNullOrEmpty(this.firmaUrl))
+                this.firmaUrl = Genel.urlDuzenle(firmaAdi);
         }
 
         public void _icDenetim(int dilKimlik, veri.Varlik vari)
@@ -96,6 +97,10 @@ namespace Bovime.veri
         public static async Task<List<Firma>> ara(veri.Varlik vari, params Expression<Func<Firma, bool>>[] kosullar)
         {
             return await veriTabani.FirmaCizelgesi.ara(vari, kosullar);
+        }
+        public static async Task<Firma?> bul(veri.Varlik vari, params Expression<Func<Firma, bool>>[] kosullar)
+        {
+            return await veriTabani.FirmaCizelgesi.bul(vari, kosullar);
         }
 
 

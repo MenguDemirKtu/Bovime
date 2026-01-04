@@ -74,6 +74,10 @@ this.varmi = true;
        {
    return await veriTabani.AramaMotoruZiyaretAYRINTICizelgesi.ara(vari,kosullar);
   }
+ public static async Task<AramaMotoruZiyaretAYRINTI ?> bul(veri.Varlik vari, params Expression<Func<AramaMotoruZiyaretAYRINTI, bool>>[] kosullar)
+  {
+     return await veriTabani.AramaMotoruZiyaretAYRINTICizelgesi.bul(vari, kosullar);
+ }
 
 
     #region ozluk

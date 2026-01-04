@@ -22,6 +22,7 @@ namespace Bovime.veriTabani
         public Int32? puani { get; set; }
         public string? aciklama { get; set; }
         public bool? varmi { get; set; }
+        public string? firmaUrl { get; set; }
         public FirmaArama()
         {
             this.varmi = true;
@@ -58,6 +59,8 @@ namespace Bovime.veriTabani
                 predicate = predicate.And(x => x.aciklama != null && x.aciklama.Contains(aciklama));
             if (varmi != null)
                 predicate = predicate.And(x => x.varmi == varmi);
+            if (firmaUrl != null)
+                predicate = predicate.And(x => x.firmaUrl != null && x.firmaUrl.Contains(firmaUrl));
             return predicate;
 
         }
@@ -103,6 +106,11 @@ namespace Bovime.veriTabani
             return await vari.Firmas
                             .Where(kosul).OrderByDescending(p => p.firmakimlik)
                    .ToListAsync();
+        }
+        public static async Task<Firma?> bul(veri.Varlik vari, params Expression<Func<Firma, bool>>[] kosullar)
+        {
+            var kosul = Vt.Birlestir(kosullar);
+            return await vari.Firmas.FirstOrDefaultAsync(kosul);
         }
 
 

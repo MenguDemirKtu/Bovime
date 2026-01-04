@@ -14,6 +14,8 @@ namespace Bovime.veriTabani
         public string? fotosu { get; set; }
         public string? tanitim { get; set; }
         public bool? varmi { get; set; }
+        public string? sektorUrl { get; set; }
+        public bool? e_anaSayfaGorunsunmu { get; set; }
         public SektorAYRINTIArama()
         {
             this.varmi = true;
@@ -34,6 +36,10 @@ namespace Bovime.veriTabani
                 predicate = predicate.And(x => x.tanitim != null && x.tanitim.Contains(tanitim));
             if (varmi != null)
                 predicate = predicate.And(x => x.varmi == varmi);
+            if (sektorUrl != null)
+                predicate = predicate.And(x => x.sektorUrl != null && x.sektorUrl.Contains(sektorUrl));
+            if (e_anaSayfaGorunsunmu != null)
+                predicate = predicate.And(x => x.e_anaSayfaGorunsunmu == e_anaSayfaGorunsunmu);
             return predicate;
 
         }
@@ -78,8 +84,13 @@ namespace Bovime.veriTabani
         {
             var kosul = Vt.Birlestir(kosullar);
             return await vari.SektorAYRINTIs
-                            .Where(kosul).OrderByDescending(p => p.sektorkimlik)
+                            .Where(kosul).OrderBy(p => p.sektorAdi)
                    .ToListAsync();
+        }
+        public static async Task<SektorAYRINTI?> bul(veri.Varlik vari, params Expression<Func<SektorAYRINTI, bool>>[] kosullar)
+        {
+            var kosul = Vt.Birlestir(kosullar);
+            return await vari.SektorAYRINTIs.FirstOrDefaultAsync(kosul);
         }
 
 

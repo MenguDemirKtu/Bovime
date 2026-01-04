@@ -11,24 +11,24 @@ using System.Linq;
 using Bovime.veri;
 namespace Bovime.Controllers
 {
- public class SektorController : Sayfa
+ public class FirmaKampanyasiController : Sayfa
     {
-public async Task<ActionResult> Cek( Models.SektorModel modeli)
+public async Task<ActionResult> Cek( Models.FirmaKampanyasiModel modeli)
                             {
                                 var nedir = await modeli.ayrintiliAraKos(this);
-                                return basariBildirimi("/Sektor?id=" + nedir.kodu);
+                                return basariBildirimi("/FirmaKampanyasi?id=" + nedir.kodu);
                             }
     public async Task<ActionResult> Index(string id)
         {
 try{
             string tanitim = "...";
-   tanitim = await Genel.dokumKisaAciklamaKos(this, "Sektor"); 
- gorunumAyari("", "", "Ana Sayfa", "/", "/Sektor/", tanitim); 
+   tanitim = await Genel.dokumKisaAciklamaKos(this, "FirmaKampanyasi"); 
+ gorunumAyari("", "", "Ana Sayfa", "/", "/FirmaKampanyasi/", tanitim); 
             if (!oturumAcildimi())
                 return OturumAcilmadi();
             if (await yetkiVarmiKos())
             {
-   Models.SektorModel modeli = new Models.SektorModel();
+   Models.FirmaKampanyasiModel modeli = new Models.FirmaKampanyasiModel();
                 if (string.IsNullOrEmpty(id))
   	await	   modeli.veriCekKos(mevcutKullanici());
 	 else
@@ -51,12 +51,12 @@ try{
             if (!oturumAcildimi())
                 return OturumAcilmadi();
             string tanitim = "....";
-   tanitim = await Genel.dokumKisaAciklamaKos(this, "Sektor"); 
- gorunumAyari("Sektör Kartı", "Sektör Kartı", "Ana Sayfa", "/", "/Sektor/", tanitim); 
+   tanitim = await Genel.dokumKisaAciklamaKos(this, "FirmaKampanyasi"); 
+ gorunumAyari("Firma Kampanyası Kartı", "Firma Kampanyası Kartı", "Ana Sayfa", "/", "/FirmaKampanyasi/", tanitim); 
             enumref_YetkiTuru yetkiTuru = yetkiTuruBelirle(id);
-if (await yetkiVarmiKos("Sektor", yetkiTuru))
+if (await yetkiVarmiKos("FirmaKampanyasi", yetkiTuru))
             {
-  Models.SektorModel modeli = new Models.SektorModel(); 
+  Models.FirmaKampanyasiModel modeli = new Models.FirmaKampanyasiModel(); 
                   await   modeli.veriCekKos(mevcutKullanici(), id);
                 return View(modeli);
             }
@@ -81,7 +81,7 @@ public async Task<ActionResult> Sil(string id)
                     uyariVer(Ikazlar.hicKayitSecilmemis(dilKimlik));
                 if (await yetkiVarmiKos("Ogrenci", enumref_YetkiTuru.Silme))
                 {
-Models.SektorModel modeli = new Models.SektorModel();
+Models.FirmaKampanyasiModel modeli = new Models.FirmaKampanyasiModel();
               await       modeli.silKos(this, id??"", mevcutKullanici());
                  await       modeli.veriCekKos(mevcutKullanici()); 
                     return basariBildirimi(Ikazlar.basariylaSilindi(dilKimlik));
@@ -97,7 +97,7 @@ Models.SektorModel modeli = new Models.SektorModel();
             }
         }
         [HttpPost]
-   public async Task<ActionResult> Kaydet(Models.SektorModel gelen)
+   public async Task<ActionResult> Kaydet(Models.FirmaKampanyasiModel gelen)
         {
             try
             { 

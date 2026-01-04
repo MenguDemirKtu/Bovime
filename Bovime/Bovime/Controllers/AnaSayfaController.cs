@@ -7,6 +7,8 @@ namespace Bovime.Controllers
     {
         public async Task<IActionResult> Index(string id)
         {
+
+
             if (!oturumAcildimi())
                 return OturumAcilmadi();
             //string tanitim = await Genel.dokumKisaAciklamaKos(this, "Ana Sayfa");

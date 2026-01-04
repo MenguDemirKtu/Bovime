@@ -32,5 +32,9 @@ using System.ComponentModel.DataAnnotations.Schema;
       [Display(Name = ".")] 
  public   bool  ? varmi {get;set;}
 
+      [Display(Name = ".")] 
+[ Column(TypeName = "date")]
+ public   DateTime   ? gun {get;set;}
+
  } 
  }

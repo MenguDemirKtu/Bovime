@@ -6,6 +6,7 @@ namespace Bovime.Models
 {
     public class SiteModeli
     {
+        public string title { get; set; }
         public async Task<string> aramaMotoruIslemleri(veri.Varlik vari, SiteSayfasi sayfa)
         {
             string adres = sayfa.sayfaninAdresi();

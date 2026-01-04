@@ -1,19 +1,11 @@
 using Microsoft.EntityFrameworkCore;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq.Expressions;
 
 namespace Bovime.veri
 {
     public partial class SektorAYRINTI : Bilesen
     {
-        [NotMapped]
-        public string _sektorUrl
-        {
-            get
-            {
-                return "#";
-            }
-        }
+
         public SektorAYRINTI()
         {
             _varSayilan();
@@ -71,6 +63,10 @@ namespace Bovime.veri
         public static async Task<List<SektorAYRINTI>> ara(veri.Varlik vari, params Expression<Func<SektorAYRINTI, bool>>[] kosullar)
         {
             return await veriTabani.SektorAYRINTICizelgesi.ara(vari, kosullar);
+        }
+        public static async Task<SektorAYRINTI?> bul(veri.Varlik vari, params Expression<Func<SektorAYRINTI, bool>>[] kosullar)
+        {
+            return await veriTabani.SektorAYRINTICizelgesi.bul(vari, kosullar);
         }
 
 

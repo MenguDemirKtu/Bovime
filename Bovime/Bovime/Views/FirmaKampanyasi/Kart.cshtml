@@ -4,7 +4,7 @@ Layout = "~/Views/_ana.cshtml";
 }
 @using Bovime
 @using Bovime.veri
-@model Bovime.Models.FirmaModel
+@model Bovime.Models.FirmaKampanyasiModel
 <script src="~/assets/js/jquery.dataTables.min.js"></script>
 <form id="formKayit" name="formKayit" autocomplete="off">
 @{
@@ -15,19 +15,14 @@ int   dilKimlik = Model.gecerliDil();
 @Html.HiddenFor(model => model.fotoKonumu)
 <div class=@Ayar.yariGenislik>
                 <div class="@Ayar.formGrup">
-                    <label  class="@Ayar.labelBicim"> @Ayar.sozcuk("Firma Adı", dilKimlik)  </label>
-                    @Html.TextBoxFor(m => m.kartVerisi.firmaAdi, new { @class = @Ayar.textBoxBicim(), maxlength = "400" ,   placeholder = @Ayar.sozcuk("Firma Adı", dilKimlik) }) 
+                    <label  class="@Ayar.labelBicim"> @Ayar.sozcuk("Firma", dilKimlik)  </label>
+                    @Html.DropDownListFor(m => m.kartVerisi.i_firmaKimlik, Bilesen.doldur(Model._ayFirmaAYRINTI) ,  @Ayar.sozcuk("Lütfen Seçiniz", dilKimlik), new { @class = "form-control select2" })
                 </div>
             </div>
-       @Html.HiddenFor(model => model.kartVerisi.firmakimlik) 
+       @Html.HiddenFor(model => model.kartVerisi.firmaKampanyasikimlik)
+       @Html.HiddenFor(model => model.kartVerisi.firmaKampanyasikimlik)
        @Html.HiddenFor(model => model.kartVerisi.i_fotoKimlik)
        @Html.HiddenFor(model => model.kartVerisi.varmi)
-<div class=@Ayar.yariGenislik>
-                <div class="@Ayar.formGrup">
-                    <label  class="@Ayar.labelBicim"> @Ayar.sozcuk("Firma Durumu", dilKimlik)  </label>
-                    @Html.DropDownListFor(m => m.kartVerisi.i_firmaDurumuKimlik, Bilesen.doldur(Model._ayref_FirmaDurumu) ,  @Ayar.sozcuk("Lütfen Seçiniz", dilKimlik), new { @class = "form-control select2" })
-                </div>
-            </div>
 <div class=@Ayar.yariGenislik>
                 <div class="@Ayar.formGrup">
 
@@ -38,38 +33,38 @@ int   dilKimlik = Model.gecerliDil();
             </div>
 <div class=@Ayar.yariGenislik>
                 <div class="@Ayar.formGrup">
-                    <label  class="@Ayar.labelBicim"> @Ayar.sozcuk("Telefon", dilKimlik)  </label>
-                    @Html.TextBoxFor(m => m.kartVerisi.telefon, new { @class = @Ayar.textBoxBicim(), maxlength = "12" ,   placeholder = @Ayar.sozcuk("Telefon", dilKimlik) }) 
+                    <label  class="@Ayar.labelBicim"> @Ayar.sozcuk("Açıklama", dilKimlik)  </label>
+                    @Html.TextBoxFor(m => m.kartVerisi.aciklama, new { @class = @Ayar.textBoxBicim(), maxlength = "500" ,   placeholder = @Ayar.sozcuk("Açıklama", dilKimlik) }) 
                 </div>
             </div>
 <div class=@Ayar.yariGenislik>
                 <div class="@Ayar.formGrup">
-                    <label  class="@Ayar.labelBicim"> @Ayar.sozcuk("Telefon2", dilKimlik)  </label>
-                    @Html.TextBoxFor(m => m.kartVerisi.telefon2, new { @class = @Ayar.textBoxBicim(), maxlength = "12" ,   placeholder = @Ayar.sozcuk("Telefon2", dilKimlik) }) 
+                    <label  class="@Ayar.labelBicim"> @Ayar.sozcuk("Yayın Başlangıç", dilKimlik)  </label>
+				 @Html.TextBoxFor(m => m.kartVerisi.yayinBaslangic, "{0:yyyy-MM-dd}", new { type = "date", @class = "form-control" })
                 </div>
             </div>
 <div class=@Ayar.yariGenislik>
                 <div class="@Ayar.formGrup">
-                    <label  class="@Ayar.labelBicim"> @Ayar.sozcuk("E Posta", dilKimlik)  </label>
-                    @Html.TextBoxFor(m => m.kartVerisi.ePosta, new { @class = @Ayar.textBoxBicim(), maxlength = "150" ,   placeholder = @Ayar.sozcuk("E Posta", dilKimlik) }) 
+                    <label  class="@Ayar.labelBicim"> @Ayar.sozcuk("Yayın Bitiş", dilKimlik)  </label>
+				 @Html.TextBoxFor(m => m.kartVerisi.yayinBitis, "{0:yyyy-MM-dd}", new { type = "date", @class = "form-control" })
                 </div>
             </div>
 <div class=@Ayar.yariGenislik>
                 <div class="@Ayar.formGrup">
-                    <label  class="@Ayar.labelBicim"> @Ayar.sozcuk("Adres", dilKimlik)  </label>
-                    @Html.TextBoxFor(m => m.kartVerisi.adres, new { @class = @Ayar.textBoxBicim(), maxlength = "150" ,   placeholder = @Ayar.sozcuk("Adres", dilKimlik) }) 
+                    <label  class="@Ayar.labelBicim"> @Ayar.sozcuk("Onaylandı mı", dilKimlik)  </label>
+                    @Html.DropDownListFor(m => m.kartVerisi.e_onaylandiMi, Model.evetHayirCek() ,  @Ayar.sozcuk("Lütfen Seçiniz", dilKimlik), new { @class = "form-control select2" })
                 </div>
             </div>
 <div class=@Ayar.yariGenislik>
                 <div class="@Ayar.formGrup">
-                    <label  class="@Ayar.labelBicim"> @Ayar.sozcuk("Tanıtım", dilKimlik)  </label>
-                    @Html.TextBoxFor(m => m.kartVerisi.tanitim, new { @class = @Ayar.textBoxBicim(), maxlength = "500" ,   placeholder = @Ayar.sozcuk("Tanıtım", dilKimlik) }) 
+                    <label  class="@Ayar.labelBicim"> @Ayar.sozcuk("Hedef Url", dilKimlik)  </label>
+                    @Html.TextBoxFor(m => m.kartVerisi.hedefUrl, new { @class = @Ayar.textBoxBicim(), maxlength = "400" ,   placeholder = @Ayar.sozcuk("Hedef Url", dilKimlik) }) 
                 </div>
             </div>
 <div class=@Ayar.yariGenislik>
                 <div class="@Ayar.formGrup">
-                    <label  class="@Ayar.labelBicim"> @Ayar.sozcuk("Konum", dilKimlik)  </label>
-                    @Html.TextBoxFor(m => m.kartVerisi.konum, new { @class = @Ayar.textBoxBicim(), maxlength = "200" ,   placeholder = @Ayar.sozcuk("Konum", dilKimlik) }) 
+                    <label  class="@Ayar.labelBicim"> @Ayar.sozcuk("Ön Kod", dilKimlik)  </label>
+                    @Html.TextBoxFor(m => m.kartVerisi.onKod, new { @class = @Ayar.textBoxBicim(), maxlength = "5" ,   placeholder = @Ayar.sozcuk("Ön Kod", dilKimlik) }) 
                 </div>
             </div>
 <div class=@Ayar.yariGenislik>
@@ -80,25 +75,14 @@ int   dilKimlik = Model.gecerliDil();
             </div>
 <div class=@Ayar.yariGenislik>
                 <div class="@Ayar.formGrup">
-                    <label  class="@Ayar.labelBicim"> @Ayar.sozcuk("Puanı", dilKimlik)  </label>
-                    @Html.TextBoxFor(m => m.kartVerisi.puani, new { @class = @Ayar.textBoxBicim(),   placeholder = @Ayar.sozcuk("Puanı", dilKimlik) }) 
-                </div>
-            </div>
-<div class=@Ayar.tamGenislik>
-                <br />
-                <div class="card table-card">
-                    <div class="card-header pb-0">
-                        <h4> 
-              @Ayar.sozcuk("Açıklama", dilKimlik)  
-</h4>
-                    </div> 
-                    @Html.TextAreaFor(m => m.kartVerisi.aciklama, new { @id = "elm1", name = "elm1" })
+                    <label  class="@Ayar.labelBicim"> @Ayar.sozcuk("Yayında mı", dilKimlik)  </label>
+                    @Html.DropDownListFor(m => m.kartVerisi.e_yayindaMi, Model.evetHayirCek() ,  @Ayar.sozcuk("Lütfen Seçiniz", dilKimlik), new { @class = "form-control select2" })
                 </div>
             </div>
 <div class=@Ayar.yariGenislik>
                 <div class="@Ayar.formGrup">
-                    <label  class="@Ayar.labelBicim"> @Ayar.sozcuk("Firma URL", dilKimlik)  </label>
-                    @Html.TextBoxFor(m => m.kartVerisi.firmaUrl, new { @class = @Ayar.textBoxBicim(), maxlength = "150" ,   placeholder = @Ayar.sozcuk(".", dilKimlik) }) 
+                    <label  class="@Ayar.labelBicim"> @Ayar.sozcuk("Başlık", dilKimlik)  </label>
+                    @Html.TextBoxFor(m => m.kartVerisi.baslik, new { @class = @Ayar.textBoxBicim(), maxlength = "200" ,   placeholder = @Ayar.sozcuk("Başlık", dilKimlik) }) 
                 </div>
             </div>
 @Html.HiddenFor(model => model.yenimi)
@@ -109,16 +93,14 @@ int   dilKimlik = Model.gecerliDil();
 </button>
 </div>
 </form>
-<script>
-    @Html.Raw(Ayar.yukleyiciIfadesi())
-</script>
+
 <script>
 function ekle() {
-tinyMCE.triggerSave();
+
 var valdata = $("#formKayit").serialize();
 console.table(valdata);
 $.ajax({
-url: "/Firma/Kaydet/",
+url: "/FirmaKampanyasi/Kaydet/",
 type: "Post",
 data: valdata,
 contentType: "application/x-www-form-urlencoded; charset=UTF-8",

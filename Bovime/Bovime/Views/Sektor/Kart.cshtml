@@ -37,6 +37,18 @@ int   dilKimlik = Model.gecerliDil();
                     @Html.TextBoxFor(m => m.kartVerisi.tanitim, new { @class = @Ayar.textBoxBicim(), maxlength = "500" ,   placeholder = @Ayar.sozcuk("Tanıtım", dilKimlik) }) 
                 </div>
             </div>
+<div class=@Ayar.yariGenislik>
+                <div class="@Ayar.formGrup">
+                    <label  class="@Ayar.labelBicim"> @Ayar.sozcuk("Sektör URL", dilKimlik)  </label>
+                    @Html.TextBoxFor(m => m.kartVerisi.sektorUrl, new { @class = @Ayar.textBoxBicim(), maxlength = "50" ,   placeholder = @Ayar.sozcuk("Sektör URL", dilKimlik) }) 
+                </div>
+            </div>
+<div class=@Ayar.yariGenislik>
+                <div class="@Ayar.formGrup">
+                    <label  class="@Ayar.labelBicim"> @Ayar.sozcuk("Ana Sayfada Görünsün mü", dilKimlik)  </label>
+                    @Html.DropDownListFor(m => m.kartVerisi.e_anaSayfaGorunsunmu, Model.evetHayirCek() ,  @Ayar.sozcuk("Lütfen Seçiniz", dilKimlik), new { @class = "form-control select2" })
+                </div>
+            </div>
 @Html.HiddenFor(model => model.yenimi)
 </div>
 <hr />

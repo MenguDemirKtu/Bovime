@@ -3,7 +3,7 @@
 }
 @using Bovime 
 @using Bovime.veri;
-@model Bovime.Models.SektorModel
+@model Bovime.Models.FirmaKampanyasiModel
     <script src="~/assets/js/jquery.dataTables.min.js"></script>
     <form id="formKayit" name="formKayit" autocomplete="off">
         @{
@@ -15,7 +15,7 @@
                 {
                     <button type="button" class="btn btn-success btn-rounded waves-effect waves-light " onclick="kartAc(0);return false;">
                         <i class="mdi mdi-plus me-1"></i>
-   @Ikazlar.yeniKayitEkle("Sektör", dilKimlik) 
+   @Ikazlar.yeniKayitEkle("Firma Kampanyası", dilKimlik) 
                     </button>
                 }
                 else
@@ -43,18 +43,24 @@
                 <thead>
                     <tr>
                         <th> </th>
-    <th> @Ayar.sozcuk( "Sektör Adı", dilKimlik)</th>
+    <th> @Ayar.sozcuk( "Firma", dilKimlik)</th>
     <th> @Ayar.sozcuk( "Foto", dilKimlik)</th>
-    <th> @Ayar.sozcuk( "Tanıtım", dilKimlik)</th>
-    <th> @Ayar.sozcuk( "Sektör URL", dilKimlik)</th>
-    <th> @Ayar.sozcuk( "Ana Sayfada Görünsün mü", dilKimlik)</th>
+    <th> @Ayar.sozcuk( "Açıklama", dilKimlik)</th>
+    <th> @Ayar.sozcuk( "Yayın Başlangıç", dilKimlik)</th>
+    <th> @Ayar.sozcuk( "Yayın Bitiş", dilKimlik)</th>
+    <th> @Ayar.sozcuk( "Onaylandı mı", dilKimlik)</th>
+    <th> @Ayar.sozcuk( "Hedef Url", dilKimlik)</th>
+    <th> @Ayar.sozcuk( "Ön Kod", dilKimlik)</th>
+    <th> @Ayar.sozcuk( "Sırası", dilKimlik)</th>
+    <th> @Ayar.sozcuk( "Yayında mı", dilKimlik)</th>
+    <th> @Ayar.sozcuk( "Başlık", dilKimlik)</th>
                         <th>
                              @Ayar.sozcuk("Güncelle", dilKimlik)
                         </th>
                     </tr>
                 </thead>
                 <tbody>
-  @{    List<SektorAYRINTI> veri = Model.dokumVerisi;
+  @{    List<FirmaKampanyasiAYRINTI> veri = Model.dokumVerisi;
                         foreach (var satir in veri)
                         {
                             <tr row_id="@satir._birincilAnahtar().ToString()">
@@ -62,15 +68,21 @@
                                     <input type="checkbox" class="checkBox"
                                            value="@satir._birincilAnahtar()" />
                                 </td>
-<td>@satir.sektorAdi</td>
+<td>@satir.i_firmaKimlik</td>
 <td>   
 <a href="@String.Format("/ResimAyari/Duzenle?id={0}",  satir.i_fotoKimlik)"> 
    <img  src="@satir.fotosu" width="60" height="45" />
    </a>
 </td>
-<td>@satir.tanitim</td>
-<td>@satir.sektorUrl</td>
-<td>@satir.e_anaSayfaGorunsunmu</td>
+<td>@satir.aciklama</td>
+<td>@satir.yayinBaslangic</td>
+<td>@satir.yayinBitis</td>
+<td>@satir.e_onaylandiMi</td>
+<td>@satir.hedefUrl</td>
+<td>@satir.onKod</td>
+<td>@satir.sirasi</td>
+<td>@satir.e_yayindaMi</td>
+<td>@satir.baslik</td>
                                 <td>
                                     <a class="btn btn-outline-secondary btn-sm edit" onclick="kartAc(@satir._birincilAnahtar()); return false;" style="color: #ffffff !important; background-color: #ffae00; border-color: #ffae00; " title="Edit">
                                         <i class="fas fa-pencil-alt"></i>
@@ -83,7 +95,7 @@
     </form>
     <script>
         function kartAc(id) {
-window.location.href = "/Sektor/Kart/"+id;
+window.location.href = "/FirmaKampanyasi/Kart/"+id;
         }
         function sil() {
             var selectedIDs = new Array();
@@ -97,7 +109,7 @@ window.location.href = "/Sektor/Kart/"+id;
                 return;
             }
             var options = {};
-options.url = "/Sektor/Sil?id=" + selectedIDs;
+options.url = "/FirmaKampanyasi/Sil?id=" + selectedIDs;
             options.type = "POST";
             options.data = JSON.stringify(selectedIDs);
             options.contentType = "application/json";
@@ -125,7 +137,7 @@ options.url = "/Sektor/Sil?id=" + selectedIDs;
         var valdata = $("#formKayit").serialize();
         console.table(valdata);
         $.ajax({
- url: "/Sektor/Cek/", 
+ url: "/FirmaKampanyasi/Cek/", 
             type: "Post",
             data: valdata,
             contentType: "application/x-www-form-urlencoded; charset=UTF-8",

@@ -14,6 +14,14 @@ namespace Bovime.veri
 
         public void bicimlendir(veri.Varlik vari)
         {
+            if (string.IsNullOrEmpty(this.sektorUrl))
+                this.sektorUrl = Genel.urlDuzenle(sektorAdi ?? "");
+
+            if (vari == null)
+                varmi = true;
+
+            if (e_anaSayfaGorunsunmu == null)
+                e_anaSayfaGorunsunmu = true;
 
         }
 
@@ -68,7 +76,7 @@ namespace Bovime.veri
         public override void _varSayilan()
         {
             this.varmi = true;
-            this.varmi = true;
+            this.e_anaSayfaGorunsunmu = true;
         }
 
         public static async Task<List<Sektor>> ara(params Expression<Func<Sektor, bool>>[] kosullar)
@@ -78,6 +86,10 @@ namespace Bovime.veri
         public static async Task<List<Sektor>> ara(veri.Varlik vari, params Expression<Func<Sektor, bool>>[] kosullar)
         {
             return await veriTabani.SektorCizelgesi.ara(vari, kosullar);
+        }
+        public static async Task<Sektor?> bul(veri.Varlik vari, params Expression<Func<Sektor, bool>>[] kosullar)
+        {
+            return await veriTabani.SektorCizelgesi.bul(vari, kosullar);
         }
 
 

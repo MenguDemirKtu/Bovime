@@ -1,0 +1,164 @@
+﻿ 
+@using Bovime
+@using Bovime.veri;
+@model Bovime.Models.UyeFirmaModel
+
+@{
+
+    Layout = "~/Views/_genel.cshtml";
+}
+ 
+
+
+<div class="cell product-gallery col-lg-7">
+
+	<div class="woocommerce-product-gallery woocommerce-product-gallery--with-images woocommerce-product-gallery--columns-7 images"
+		 data-columns="7"
+		 style="opacity: 0; transition: opacity .25s ease-in-out;">
+
+		<div class="product-badges">
+			<span class="badge style-1" style="background-color: #ff5c00;">
+				Super Price
+			</span>
+		</div>
+
+		<div class="woocommerce-product-gallery__wrapper">
+
+			@{
+				foreach(var siradaki in Model.kampanyalar)
+				{
+					<div class="woocommerce-product-gallery__image"
+						 data-thumb="https://klbtheme.com/partdo/wp-content/uploads/2022/10/1-35-150x150.jpg">
+						<a href="#">
+							<img class="wp-post-image"
+								 src="@siradaki.fotosu"
+								 alt="@Model.firmasi.firmaAdi"
+								 width="600"
+								 height="600">
+						</a>
+					</div>
+				}
+			}
+
+		
+
+			 
+
+		</div>
+	</div>
+
+</div>
+
+
+
+<div class="cell product-detail col-lg-5">
+	<h1 class="product_title entry-title"> @Model.firmasi.firmaAdi </h1>
+	<div class="product-meta product_meta">
+		<div class="woocommerce-product-rating product-rating">
+			<div aria-label="Rated 5.00 out of 5" class="star-rating" role="img"><span style="width:100%">Rated <strong class="rating">5.00</strong> out of 5 based on <span class="rating">1</span> customer rating</span></div> <a class="woocommerce-review-link" href="#reviews" rel="nofollow"><span class="count">1</span> customer review</a>
+		</div>
+		<div class="product-sku">
+			<span>SKU:</span>
+			<span class="sku">AE3KGO9T</span>
+		</div>
+		<div class="klb-single-stock">
+			<div class="product-stock stock in-stock">In Stock</div>
+		</div>
+	</div>
+	<div class="woocommerce-product-details__short-description">
+		<ul> 
+
+			@{
+
+				foreach(var siradaki in Model.kampanyalar)
+				{
+					<li>
+					@siradaki.aciklama
+					</li>
+				}
+
+			}
+		</ul>
+	</div>
+	<div class="product-stock stock in-stock">In Stock</div>
+ 
+	<div class="product-wishlist"> <p>Did you like this product? Add to favorites now and follow the product.</p><div class="wishlist-button"><a class="klbwl-btn klbwl-btn-3123" data-product_id="3123" data-product_title="@Model.firmasi.firmaAdi" href="https://klbtheme.com/partdo/wishlist/"></a><span>Add to wishlist</span></div><!-- wishlist-button --></div><div class="product-assistant"><div class="assistant-avatar"> <img src="~/SiteAssets/partdo/wp-content/uploads/2022/10/avatar-04.jpg" /></div><div class="assistant-content"> <span> Have a Question? Ask a Specialist</span><p>  (+800) 1234 5678 90 <a href="tel:(+800) 1234 5678 90">Start Live Chat</a></p></div></div><div class="product-iconboxes"><div class="iconbox"><div class="icon"> <i class="klbth-icon-ecommerce-dollar-symbol"></i></div><div class="detail"> <h5 class="entry-title">Low Prices</h5> <p>Price match guarantee</p></div></div><div class="iconbox"><div class="icon"> <i class="klbth-icon-check"></i></div><div class="detail"> <h5 class="entry-title">Guaranteed Fitment.</h5> <p>Always the correct part</p></div></div><div class="iconbox"><div class="icon"> <i class="klbth-icon-ecommerce-headphones"></i></div><div class="detail"> <h5 class="entry-title">In-House Experts.</h5> <p>We know our products</p></div></div><div class="iconbox"><div class="icon"> <i class="klbth-icon-redo"></i></div><div class="detail"> <h5 class="entry-title">Easy Returns.</h5> <p>Quick &amp; Hassle Free</p></div></div></div><div class="product-meta bottom product_meta">
+		<div class="product-categories posted_in"><span>Categories:</span> <a href="https://klbtheme.com/partdo/product-category/interior-accessories/alarm-systems/" rel="tag">Alarm Systems</a>, <a href="https://klbtheme.com/partdo/product-category/auto-safety-security/" rel="tag">Auto Safety &amp; Security</a>, <a href="https://klbtheme.com/partdo/product-category/interior-accessories/" rel="tag">Interior Accessories</a></div>
+	</div>
+	<div class="product-share entry-social"><ul class="social-media social-container social-share colored"><li><a class="facebook" href="#"><i class="klbth-icon-facebook"></i></a></li><li><a class="twitter" href="#"><i class="klbth-icon-twitter"></i></a></li><li><a class="pinterest" href="#"><i class="klbth-icon-pinterest"></i></a></li><li><a class="linkedin" href="#"><i class="klbth-icon-linkedin"></i></a></li><li><a class="whatsapp" href="#"><i class="klbth-icon-whatsapp"></i></a></li></ul></div>
+</div>
+</div>
+<div class="woocommerce-tabs wc-tabs-wrapper">
+	<ul class="tabs wc-tabs" role="tablist">
+		<li class="description_tab" id="tab-title-description" role="presentation">
+			<a aria-controls="tab-description" href="#tab-description" role="tab">
+				Firma Tanıtımı
+			</a>
+		</li>
+		<li class="reviews_tab" id="tab-title-reviews" role="presentation">
+			<a aria-controls="tab-reviews" href="#tab-reviews" role="tab">
+				Reviews (1)
+			</a>
+		</li>
+	</ul>
+	<div aria-labelledby="tab-title-description" class="woocommerce-Tabs-panel woocommerce-Tabs-panel--description panel entry-content wc-tab" id="tab-description" role="tabpanel">
+		<h2>Description</h2>
+		<p><span style="vertical-align: inherit;">  
+			@Html.Raw(Model.firmasi.aciklama)
+
+		</span></p>
+	
+	</div>
+	<div aria-labelledby="tab-title-reviews" class="woocommerce-Tabs-panel woocommerce-Tabs-panel--reviews panel entry-content wc-tab" id="tab-reviews" role="tabpanel">
+		<div class="woocommerce-Reviews" id="reviews">
+			<div id="comments">
+				<h2 class="woocommerce-Reviews-title">
+					1 review for <span>@Model.firmasi.firmaAdi</span>
+				</h2>
+				<ol class="commentlist">
+					<li class="review byuser comment-author-sinan bypostauthor even thread-even depth-1" id="li-comment-43">
+						<div class="comment_container" id="comment-43">
+							<img alt="" class="avatar avatar-60 photo" decoding="async" height="60" src="~/SiteAssets/avatar/6b9c65833b765410a0a2b10d37a4dd3e5e552d84ebf8b50a540e389ad270fea8" width="60">
+							<div class="comment-text">
+								<div aria-label="Rated 5 out of 5" class="star-rating" role="img"><span style="width:100%">Rated <strong class="rating">5</strong> out of 5</span></div>
+								<p class="meta">
+									<strong class="woocommerce-review__author">admin </strong>
+									<span class="woocommerce-review__dash">–</span> <time class="woocommerce-review__published-date" datetime="2022-11-02T07:34:54+00:00">November 2, 2022</time>
+								</p>
+								<div class="description">
+									<p>Sed perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
+								</div>
+							</div>
+							</img>
+						</div>
+					</li><!-- #comment-## -->
+				</ol>
+			</div>
+			<div id="review_form_wrapper">
+				<div id="review_form">
+					<div class="comment-respond" id="respond">
+						<span aria-level="3" class="comment-reply-title" id="reply-title" role="heading">Add a review <small><a href="/partdo/product/technaxx-car-alarm-with-charging-function-tx-100/#respond" id="cancel-comment-reply-link" rel="nofollow" style="display:none;">Cancel reply</a></small></span><form action="https://klbtheme.com/partdo/wp-comments-post.php" class="comment-form" id="commentform" method="post">
+							<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> <span class="required-field-message">Required fields are marked <span class="required">*</span></span></p><div class="comment-form-rating">
+								<label for="rating" id="comment-form-rating-label">Your rating <span class="required">*</span></label><select id="rating" name="rating" required="">
+									<option value="">Rate…</option>
+									<option value="5">Perfect</option>
+									<option value="4">Good</option>
+									<option value="3">Average</option>
+									<option value="2">Not that bad</option>
+									<option value="1">Very poor</option>
+								</select>
+							</div><p class="comment-form-comment"><label for="comment">Your review <span class="required">*</span></label><textarea cols="45" id="comment" name="comment" required="" rows="8"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label><input autocomplete="name" id="author" name="author" required="" size="30" type="text" value="" /></p>
+							<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label><input autocomplete="email" id="email" name="email" required="" size="30" type="email" value="" /></p>
+							<p class="comment-form-cookies-consent"><input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes" /> <label for="wp-comment-cookies-consent">Save my name, email, and website in this browser for the next time I comment.</label></p>
+							<p class="form-submit">
+								<input class="submit" id="submit" name="submit" type="submit" value="Submit" /> <input id="comment_post_ID" name="comment_post_ID" type="hidden" value="3123" />
+								<input id="comment_parent" name="comment_parent" type="hidden" value="0" />
+							</p><p style="display: none;"><input id="akismet_comment_nonce" name="akismet_comment_nonce" type="hidden" value="11c1797ca3" /></p><p class="akismet-fields-container" data-prefix="ak_" style="display: none !important;"><label>Δ<textarea cols="45" maxlength="100" name="ak_hp_textarea" rows="8"></textarea></label><input id="ak_js_1" name="ak_js" type="hidden" value="223" /><script type="1a18d98887230957f6a6eec6-text/javascript">document.getElementById( "ak_js_1" ).setAttribute( "value", ( new Date() ).getTime() );</script></p>
+						</form>
+					</div><!-- #respond -->
+				</div>
+			</div>
+			<div class="clear"></div>
+		</div>
+	</div>
+</div>

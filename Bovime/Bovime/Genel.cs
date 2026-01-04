@@ -436,8 +436,10 @@ namespace Bovime
                 return @Math.Round((decimal)ucret, 2).ToString();
         }
 
-        public static string urlDuzenle(string ifade)
+        public static string urlDuzenle(string? ifade)
         {
+            if (ifade == null)
+                ifade = "";
             ifade = ifade.Replace(' ', '-');
             ifade = ifade.Replace(' ', '-');
             ifade = ifade.ToLower();
@@ -458,6 +460,7 @@ namespace Bovime
                     sonuc += siradaki;
 
             }
+            sonuc = sonuc.Trim();
             return sonuc.ToString();
         }
         public static string cinsiyetIfadesi(byte? cinsiyet)

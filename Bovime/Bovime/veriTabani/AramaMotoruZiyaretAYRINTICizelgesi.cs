@@ -23,6 +23,7 @@ public class AramaMotoruZiyaretAYRINTIArama
  public  DateTime  ?  tarih {get;set;}
  public  string  ?  ipAdresi {get;set;}
  public  bool  ?  varmi {get;set;}
+ public  DateTime   ?  gun {get;set;}
  public AramaMotoruZiyaretAYRINTIArama()
 {
 this.varmi = true;
@@ -43,6 +44,8 @@ this.varmi = true;
                predicate = predicate.And( x => x.ipAdresi != null &&    x.ipAdresi .Contains(ipAdresi));
  if (varmi  != null)
  predicate = predicate.And(x => x.varmi == varmi ); 
+ if (gun  != null)
+ predicate = predicate.And(x => x.gun == gun ); 
 return  predicate;
  
 }
@@ -90,6 +93,11 @@ public static async Task<List<AramaMotoruZiyaretAYRINTI>> ara(veri.Varlik vari, 
                   .Where(kosul).OrderByDescending(p => p.aramaMotoruZiyaretkimlik) 
          .ToListAsync(); 
 } 
+      public static async Task< AramaMotoruZiyaretAYRINTI ?> bul(veri.Varlik vari, params Expression<Func<AramaMotoruZiyaretAYRINTI, bool>>[] kosullar)
+    {
+      var kosul = Vt.Birlestir(kosullar);
+       return await vari.AramaMotoruZiyaretAYRINTIs.FirstOrDefaultAsync(kosul);
+   }
 
 
 

@@ -26,5 +26,12 @@ namespace Bovime.veri
         [Display(Name = "varmi")]
         public bool? varmi { get; set; }
 
+        [Display(Name = "Sektör URL")]
+        [Column(TypeName = "nvarchar(50)")]
+        public string? sektorUrl { get; set; }
+
+        [Display(Name = "Ana Sayfada Görünsün mü")]
+        public bool? e_anaSayfaGorunsunmu { get; set; }
+
     }
 }
