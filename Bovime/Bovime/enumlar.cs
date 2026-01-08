@@ -202,6 +202,14 @@ namespace Bovime
         Uye_iptal_etti = 3
 
     }
+    public enum enumref_KampanyaDurumu
+    {
+        Firma_Girdi_Bekliyor = 1,
+        Reddedildi = 3,
+        Suresi_Doldu = 5,
+        Yayinda = 2,
+        Yayinda_Degil = 4
+    }
     public enum enumref_BelgeDurumu
     {
         Onaylandi = 3,
@@ -211,6 +219,7 @@ namespace Bovime
 
     }
 }
+
 
 
 

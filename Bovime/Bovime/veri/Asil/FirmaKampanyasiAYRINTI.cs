@@ -40,9 +40,6 @@ namespace Bovime.veri
         public DateTime? yayinBitis { get; set; }
 
         [Display(Name = ".")]
-        public bool? e_onaylandiMi { get; set; }
-
-        [Display(Name = ".")]
         [Column(TypeName = "nvarchar(400)")]
         public string? hedefUrl { get; set; }
 
@@ -52,9 +49,6 @@ namespace Bovime.veri
 
         [Display(Name = ".")]
         public Int32? sirasi { get; set; }
-
-        [Display(Name = ".")]
-        public bool? e_yayindaMi { get; set; }
 
         [Display(Name = ".")]
         public bool? varmi { get; set; }
@@ -73,6 +67,20 @@ namespace Bovime.veri
 
         [Display(Name = ".")]
         public Int32? firmaPuani { get; set; }
+
+        [Display(Name = ".")]
+        [Column(TypeName = "text")]
+        public string? metin { get; set; }
+
+        [Display(Name = ".")]
+        public Int32? y_firmaKampanyaTalebiKimlik { get; set; }
+
+        [Display(Name = ".")]
+        public Int32? i_kampanyaDurumuKimlik { get; set; }
+
+        [Display(Name = ".")]
+        [Required, Column(TypeName = "nvarchar(200)")]
+        public string KampanyaDurumuAdi { get; set; }
 
     }
 }

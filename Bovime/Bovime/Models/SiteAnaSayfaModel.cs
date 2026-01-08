@@ -45,7 +45,7 @@ namespace Bovime.Models
                 reklamKusagi0 = await vari.ReklamKusagi2AYRINTIs.OrderBy(p => p.sirasi).ToListAsync();
                 firmaGruplari = await FirmaGrubuAYRINTI.ara(vari);
                 reklamKusagi2 = await ReklamKusagi3AYRINTI.ara(vari);
-                kampanyalar = await FirmaKampanyasiAYRINTI.ara(p => p.e_onaylandiMi == true && p.e_yayindaMi == true);
+                kampanyalar = await FirmaKampanyasiAYRINTI.ara(p => p.i_kampanyaDurumuKimlik == (int)enumref_KampanyaDurumu.Yayinda);
                 await Genel.yenile(vari);
             }
         }

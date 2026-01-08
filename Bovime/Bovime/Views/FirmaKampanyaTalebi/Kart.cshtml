@@ -4,7 +4,7 @@ Layout = "~/Views/_ana.cshtml";
 }
 @using Bovime
 @using Bovime.veri
-@model Bovime.Models.FirmaKampanyasiModel
+@model Bovime.Models.FirmaKampanyaTalebiModel
 <script src="~/assets/js/jquery.dataTables.min.js"></script>
 <form id="formKayit" name="formKayit" autocomplete="off">
 @{
@@ -18,12 +18,20 @@ int   dilKimlik = Model.gecerliDil();
                     <label  class="@Ayar.labelBicim"> @Ayar.sozcuk("Firma", dilKimlik)  </label>
                     @Html.DropDownListFor(m => m.kartVerisi.i_firmaKimlik, Bilesen.doldur(Model._ayFirmaAYRINTI) ,  @Ayar.sozcuk("Lütfen Seçiniz", dilKimlik), new { @class = "form-control select2" })
                 </div>
+            </div> 
+<div class=@Ayar.yariGenislik>
+                <div class="@Ayar.formGrup">
+                    <label  class="@Ayar.labelBicim"> @Ayar.sozcuk("Başlık", dilKimlik)  </label>
+                    @Html.TextBoxFor(m => m.kartVerisi.baslik, new { @class = @Ayar.textBoxBicim(), maxlength = "200" ,   placeholder = @Ayar.sozcuk("Başlık", dilKimlik) }) 
+                </div>
             </div>
-       @Html.HiddenFor(model => model.kartVerisi.firmaKampanyasikimlik)
-       @Html.HiddenFor(model => model.kartVerisi.firmaKampanyasikimlik)
+
+       @Html.HiddenFor(model => model.kartVerisi.firmaKampanyaTalebikimlik) 
        @Html.HiddenFor(model => model.kartVerisi.i_fotoKimlik)
+       @Html.HiddenFor(model => model.kartVerisi.e_gorulduMu)
        @Html.HiddenFor(model => model.kartVerisi.varmi)
-       @Html.HiddenFor(model => model.kartVerisi.y_firmaKampanyaTalebiKimlik)
+       @Html.HiddenFor(model => model.kartVerisi.girisTarihi)
+       @Html.HiddenFor(model => model.kartVerisi.i_kampanyaDurumuKimlik) 
 <div class=@Ayar.yariGenislik>
                 <div class="@Ayar.formGrup">
 
@@ -34,32 +42,8 @@ int   dilKimlik = Model.gecerliDil();
             </div>
 <div class=@Ayar.yariGenislik>
                 <div class="@Ayar.formGrup">
-                    <label  class="@Ayar.labelBicim"> @Ayar.sozcuk("Açıklama", dilKimlik)  </label>
-                    @Html.TextBoxFor(m => m.kartVerisi.aciklama, new { @class = @Ayar.textBoxBicim(), maxlength = "500" ,   placeholder = @Ayar.sozcuk("Açıklama", dilKimlik) }) 
-                </div>
-            </div>
-<div class=@Ayar.yariGenislik>
-                <div class="@Ayar.formGrup">
-                    <label  class="@Ayar.labelBicim"> @Ayar.sozcuk("Yayın Başlangıç", dilKimlik)  </label>
-				 @Html.TextBoxFor(m => m.kartVerisi.yayinBaslangic, "{0:yyyy-MM-dd}", new { type = "date", @class = "form-control" })
-                </div>
-            </div>
-<div class=@Ayar.yariGenislik>
-                <div class="@Ayar.formGrup">
-                    <label  class="@Ayar.labelBicim"> @Ayar.sozcuk("Yayın Bitiş", dilKimlik)  </label>
-				 @Html.TextBoxFor(m => m.kartVerisi.yayinBitis, "{0:yyyy-MM-dd}", new { type = "date", @class = "form-control" })
-                </div>
-            </div>
-<div class=@Ayar.yariGenislik>
-                <div class="@Ayar.formGrup">
-                    <label  class="@Ayar.labelBicim"> @Ayar.sozcuk("Hedef Url", dilKimlik)  </label>
-                    @Html.TextBoxFor(m => m.kartVerisi.hedefUrl, new { @class = @Ayar.textBoxBicim(), maxlength = "400" ,   placeholder = @Ayar.sozcuk("Hedef Url", dilKimlik) }) 
-                </div>
-            </div>
-<div class=@Ayar.yariGenislik>
-                <div class="@Ayar.formGrup">
-                    <label  class="@Ayar.labelBicim"> @Ayar.sozcuk("Ön Kod", dilKimlik)  </label>
-                    @Html.TextBoxFor(m => m.kartVerisi.onKod, new { @class = @Ayar.textBoxBicim(), maxlength = "5" ,   placeholder = @Ayar.sozcuk("Ön Kod", dilKimlik) }) 
+                    <label  class="@Ayar.labelBicim"> @Ayar.sozcuk("Metin", dilKimlik)  </label>
+                    @Html.TextBoxFor(m => m.kartVerisi.metin, new { @class = @Ayar.textBoxBicim(), maxlength = "500" ,   placeholder = @Ayar.sozcuk("Metin", dilKimlik) }) 
                 </div>
             </div>
 <div class=@Ayar.yariGenislik>
@@ -68,47 +52,51 @@ int   dilKimlik = Model.gecerliDil();
                     @Html.TextBoxFor(m => m.kartVerisi.sirasi, new { @class = @Ayar.textBoxBicim(),   placeholder = @Ayar.sozcuk("Sırası", dilKimlik) }) 
                 </div>
             </div>
-<div class=@Ayar.yariGenislik>
-                <div class="@Ayar.formGrup">
-                    <label  class="@Ayar.labelBicim"> @Ayar.sozcuk("Başlık", dilKimlik)  </label>
-                    @Html.TextBoxFor(m => m.kartVerisi.baslik, new { @class = @Ayar.textBoxBicim(), maxlength = "200" ,   placeholder = @Ayar.sozcuk("Başlık", dilKimlik) }) 
-                </div>
-            </div>
-<div class=@Ayar.tamGenislik>
-                <br />
-                <div class="card table-card">
-                    <div class="card-header pb-0">
-                        <h4> 
-              @Ayar.sozcuk("Metin", dilKimlik)  
-</h4>
-                    </div> 
-                    @Html.TextAreaFor(m => m.kartVerisi.metin, new { @id = "elm1", name = "elm1" })
-                </div>
-            </div>
-<div class=@Ayar.yariGenislik>
-                <div class="@Ayar.formGrup">
-                    <label  class="@Ayar.labelBicim"> @Ayar.sozcuk("Durum", dilKimlik)  </label>
-                    @Html.DropDownListFor(m => m.kartVerisi.i_kampanyaDurumuKimlik, Bilesen.doldur(Model._ayref_KampanyaDurumu) ,  @Ayar.sozcuk("Lütfen Seçiniz", dilKimlik), new { @class = "form-control select2" })
-                </div>
-            </div>
 @Html.HiddenFor(model => model.yenimi)
 </div>
 <hr />
-<button type="button" onclick="ekle(); return false;" id="btnKaydet" class="btn btn-success" data-bs-toggle="modal">
+        @{
+            if(Model.kullanan._KullaniciTuru == enumref_KullaniciTuru.Yazilimci || 
+    Model.kullanan._KullaniciTuru == enumref_KullaniciTuru.Sistem_Yoneticisi)
+            {
+
+                 
+                                <button type="button" onclick="onayla(); return false;" style="width:100%;" id="btnKaydet" class="@Ayar.btnEkle" data-bs-toggle="modal">
+@Ayar.sozcuk("Onayla", dilKimlik)
+</button>
+
+<br />
+<br />
+
+                                <button type="button" onclick="reddet(); return false;"  style="width:100%;"  id="btnReddet" class="@Ayar.btnSil" data-bs-toggle="modal">
+@Ayar.sozcuk("Reddet", dilKimlik)
+</button>
+
+
+
+            }
+            else
+            {
+                <button type="button" onclick="ekle(); return false;" id="btnKaydet" class="btn btn-success" data-bs-toggle="modal">
 @Ayar.sozcuk("Kaydet", dilKimlik)
 </button>
+
+            }
+
+}
+
+
+
 </div>
 </form>
-<script>
-    @Html.Raw(Ayar.yukleyiciIfadesi())
-</script>
+
 <script>
 function ekle() {
-tinyMCE.triggerSave();
+
 var valdata = $("#formKayit").serialize();
 console.table(valdata);
 $.ajax({
-url: "/FirmaKampanyasi/Kaydet/",
+url: "/FirmaKampanyaTalebi/Kaydet/",
 type: "Post",
 data: valdata,
 contentType: "application/x-www-form-urlencoded; charset=UTF-8",
@@ -137,6 +125,80 @@ window.location.reload();
 }
 });
 }
+
+
+function onayla() {
+
+var valdata = $("#formKayit").serialize();
+console.table(valdata);
+$.ajax({
+url: "/FirmaKampanyaTalebi/Onayla/",
+type: "Post",
+data: valdata,
+contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+dataType: "json",
+success: function (response) {
+if (!response.success) {
+Swal.fire(
+'@Ayar.sozcuk("Hata", dilKimlik)',
+response.message,
+'error'        );
+return false;
+}
+else {
+Swal.fire(	'@Ayar.sozcuk("Başarılı", dilKimlik)',   response.message,
+'success'                    ).then(function () {
+if(response.yonlensinmi == true)
+{
+window.location.href= response.yonlenmeAdresi;
+}
+var deger = String(document.getElementById("yenimi").value);
+if (deger == "True") {
+window.location.reload();
+}
+})
+}
+}
+});
+}
+
+
+function reddet() {
+
+var valdata = $("#formKayit").serialize();
+console.table(valdata);
+$.ajax({
+url: "/FirmaKampanyaTalebi/Reddet/",
+type: "Post",
+data: valdata,
+contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+dataType: "json",
+success: function (response) {
+if (!response.success) {
+Swal.fire(
+'@Ayar.sozcuk("Hata", dilKimlik)',
+response.message,
+'error'        );
+return false;
+}
+else {
+Swal.fire(	'@Ayar.sozcuk("Başarılı", dilKimlik)',   response.message,
+'success'                    ).then(function () {
+if(response.yonlensinmi == true)
+{
+window.location.href= response.yonlenmeAdresi;
+}
+var deger = String(document.getElementById("yenimi").value);
+if (deger == "True") {
+window.location.reload();
+}
+})
+}
+}
+});
+}
+
+
                 function fotoYukle(inputId) {
                     var input = document.getElementById(inputId);
                     var files = input.files;

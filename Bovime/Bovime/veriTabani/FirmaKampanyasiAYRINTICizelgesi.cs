@@ -25,16 +25,18 @@ public class FirmaKampanyasiAYRINTIArama
  public  string  ?  aciklama {get;set;}
  public  DateTime  ?  yayinBaslangic {get;set;}
  public  DateTime  ?  yayinBitis {get;set;}
- public  bool  ?  e_onaylandiMi {get;set;}
  public  string  ?  hedefUrl {get;set;}
  public  string  ?  onKod {get;set;}
  public  Int32  ?  sirasi {get;set;}
- public  bool  ?  e_yayindaMi {get;set;}
  public  bool  ?  varmi {get;set;}
  public  string  ?  fotosu {get;set;}
  public  string  ?  baslik {get;set;}
  public  string  ?  firmaUrl {get;set;}
  public  Int32  ?  firmaPuani {get;set;}
+ public  string  ?  metin {get;set;}
+ public  Int32  ?  y_firmaKampanyaTalebiKimlik {get;set;}
+ public  Int32  ?  i_kampanyaDurumuKimlik {get;set;}
+ public  string  ?  KampanyaDurumuAdi {get;set;}
  public FirmaKampanyasiAYRINTIArama()
 {
 this.varmi = true;
@@ -59,16 +61,12 @@ this.varmi = true;
  predicate = predicate.And(x => x.yayinBaslangic == yayinBaslangic ); 
  if (yayinBitis  != null)
  predicate = predicate.And(x => x.yayinBitis == yayinBitis ); 
- if (e_onaylandiMi  != null)
- predicate = predicate.And(x => x.e_onaylandiMi == e_onaylandiMi ); 
  if (hedefUrl  != null)
                predicate = predicate.And( x => x.hedefUrl != null &&    x.hedefUrl .Contains(hedefUrl));
  if (onKod  != null)
                predicate = predicate.And( x => x.onKod != null &&    x.onKod .Contains(onKod));
  if (sirasi  != null)
  predicate = predicate.And(x => x.sirasi == sirasi ); 
- if (e_yayindaMi  != null)
- predicate = predicate.And(x => x.e_yayindaMi == e_yayindaMi ); 
  if (varmi  != null)
  predicate = predicate.And(x => x.varmi == varmi ); 
  if (fotosu  != null)
@@ -79,6 +77,14 @@ this.varmi = true;
                predicate = predicate.And( x => x.firmaUrl != null &&    x.firmaUrl .Contains(firmaUrl));
  if (firmaPuani  != null)
  predicate = predicate.And(x => x.firmaPuani == firmaPuani ); 
+ if (metin  != null)
+               predicate = predicate.And( x => x.metin != null &&    x.metin .Contains(metin));
+ if (y_firmaKampanyaTalebiKimlik  != null)
+ predicate = predicate.And(x => x.y_firmaKampanyaTalebiKimlik == y_firmaKampanyaTalebiKimlik ); 
+ if (i_kampanyaDurumuKimlik  != null)
+ predicate = predicate.And(x => x.i_kampanyaDurumuKimlik == i_kampanyaDurumuKimlik ); 
+ if (KampanyaDurumuAdi  != null)
+               predicate = predicate.And( x => x.KampanyaDurumuAdi != null &&    x.KampanyaDurumuAdi .Contains(KampanyaDurumuAdi));
 return  predicate;
  
 }

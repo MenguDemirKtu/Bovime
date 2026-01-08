@@ -3,24 +3,21 @@
 }
 @using Bovime 
 @using Bovime.veri;
-@model Bovime.Models.FirmaKampanyasiModel
+@model Bovime.Models.FirmaKampanyaTalebiModel
     <script src="~/assets/js/jquery.dataTables.min.js"></script>
     <form id="formKayit" name="formKayit" autocomplete="off">
         @{
         int dilKimlik = Model.gecerliDil();
+
                <div class="card-body border-bottom" style="background-color: @Ayar.aramaKutusuArkaPlan;">
             <div class="row g-3"><div class="@Ayar.aramaSutunGenislik">@Html.DropDownListFor(m => m.aramaParametresi.i_firmaKimlik, Bilesen.doldur(Model._ayFirmaAYRINTI) ,  @Ayar.sozcuk("Firma", dilKimlik), new { @class = "form-control select2" })</div>
-                <div class="@Ayar.aramaSutunGenislik">@Html.TextBoxFor(m => m.aramaParametresi.baslik, new { @class = @Ayar.textBoxBicim(), maxlength = "200", placeholder = @Ayar.sozcuk("Başlık", dilKimlik) })</div>
-<div class="@Ayar.aramaSutunGenislik">@Html.TextBoxFor(m => m.aramaParametresi.yayinBaslangic, "{0:yyyy-MM-dd}", new { type = "date", @class = "form-control" })</div>
-<div class="@Ayar.aramaSutunGenislik">@Html.TextBoxFor(m => m.aramaParametresi.yayinBitis, "{0:yyyy-MM-dd}", new { type = "date", @class = "form-control" })</div>
-<div class="@Ayar.aramaSutunGenislik">@Html.TextBoxFor(m => m.aramaParametresi.onKod, new { @class = @Ayar.textBoxBicim(), maxlength = "5" ,   placeholder = @Ayar.sozcuk("Ön Kod", dilKimlik) })</div>
+<div class="@Ayar.aramaSutunGenislik">@Html.TextBoxFor(m => m.aramaParametresi.metin, new { @class = @Ayar.textBoxBicim(), maxlength = "500" ,   placeholder = @Ayar.sozcuk("Metin", dilKimlik) })</div>
 <div class="@Ayar.aramaSutunGenislik">@Html.TextBoxFor(m => m.aramaParametresi.sirasi, new { @class = @Ayar.textBoxBicim(),   placeholder = @Ayar.sozcuk("Sırası", dilKimlik) })</div>
-<div class="@Ayar.aramaSutunGenislik">@Html.DropDownListFor(m => m.aramaParametresi.i_kampanyaDurumuKimlik, Bilesen.doldur(Model._ayref_KampanyaDurumu) ,  @Ayar.sozcuk("Durum", dilKimlik), new { @class = "form-control select2" })</div>
+<div class="@Ayar.aramaSutunGenislik">@Html.TextBoxFor(m => m.aramaParametresi.baslik, new { @class = @Ayar.textBoxBicim(), maxlength = "200" ,   placeholder = @Ayar.sozcuk("Başlık", dilKimlik) })</div>
  <div class="col-xxl-2 col-lg-4">
                     <button type="button" class="btn btn-soft-secondary w-100" style="background-color:#e5f4ff;" onclick="cek(); return false;"><i class="mdi mdi-filter-outline align-middle"></i>@Ayar.sozcuk("Ayrıntılı Ara", dilKimlik)  </button>
  </div>     </div>
         </div> <hr/>  <br/>
-
 
             bool eklemeIzniVarmi = (bool)ViewBag.eklemeIznivar;
             bool silmeIzniVarmi = (bool)ViewBag.silmeIznivar;
@@ -29,7 +26,7 @@
                 {
                     <button type="button" class="btn btn-success btn-rounded waves-effect waves-light " onclick="kartAc(0);return false;">
                         <i class="mdi mdi-plus me-1"></i>
-   @Ikazlar.yeniKayitEkle("Firma Kampanyası", dilKimlik) 
+                         @Ikazlar.yeniKayitEkle("Firma Kampanya Talebi", dilKimlik) 
                     </button>
                 }
                 else
@@ -57,21 +54,19 @@
                 <thead>
                     <tr>
                         <th> </th>
-                    <th> @Ayar.sozcuk("Firma", dilKimlik)</th>
-                    <th> @Ayar.sozcuk("Başlık", dilKimlik)</th>
-    <th> @Ayar.sozcuk( "Foto", dilKimlik)</th> 
-    <th> @Ayar.sozcuk( "Yayın Süresi", dilKimlik)</th> 
-    <th> @Ayar.sozcuk( "Hedef Url", dilKimlik)</th> 
-    <th> @Ayar.sozcuk( "Sırası", dilKimlik)</th>
-    <th> @Ayar.sozcuk( "Metin", dilKimlik)</th> 
-    <th> @Ayar.sozcuk( "Durum", dilKimlik)</th>
+                        <th> @Ayar.sozcuk( "Firma", dilKimlik)</th>
+                        <th> @Ayar.sozcuk( "Foto", dilKimlik)</th> 
+                        <th> @Ayar.sozcuk( "Sırası", dilKimlik)</th>
+                        <th> @Ayar.sozcuk( "Görüldü mü", dilKimlik)</th>
+                    <th> @Ayar.sozcuk("Giriş Tarihi", dilKimlik)</th>
+                    <th> @Ayar.sozcuk("Durum", dilKimlik)</th>
                         <th>
                              @Ayar.sozcuk("Güncelle", dilKimlik)
                         </th>
                     </tr>
                 </thead>
                 <tbody>
-  @{    List<FirmaKampanyasiAYRINTI> veri = Model.dokumVerisi;
+  @{    List<FirmaKampanyaTalebiAYRINTI> veri = Model.dokumVerisi;
                         foreach (var satir in veri)
                         {
                             <tr row_id="@satir._birincilAnahtar().ToString()">
@@ -80,17 +75,15 @@
                                            value="@satir._birincilAnahtar()" />
                                 </td>
 <td>@satir.firmaAdi</td>
-
-                            <td>@satir.baslik</td>
 <td>   
 <a href="@String.Format("/ResimAyari/Duzenle?id={0}",  satir.i_fotoKimlik)"> 
    <img  src="@satir.fotosu" width="60" height="45" />
    </a>
-</td>          <td>@satir.yayinBaslangic - @satir.yayinBitis</td> 
-<td>@satir.hedefUrl</td> 
+</td> 
 <td>@satir.sirasi</td>
-<td>@satir.metin</td> 
-<td>@satir.KampanyaDurumuAdi</td>
+                            <td>@Genel.evetHayirIfadesi(satir.e_gorulduMu)</td>
+                            <td>@satir.girisTarihi</td>
+                            <td>@satir.KampanyaDurumuAdi</td>
                                 <td>
                                     <a class="btn btn-outline-secondary btn-sm edit" onclick="kartAc(@satir._birincilAnahtar()); return false;" style="color: #ffffff !important; background-color: #ffae00; border-color: #ffae00; " title="Edit">
                                         <i class="fas fa-pencil-alt"></i>
@@ -103,7 +96,7 @@
     </form>
     <script>
         function kartAc(id) {
-window.location.href = "/FirmaKampanyasi/Kart/"+id;
+window.location.href = "/FirmaKampanyaTalebi/Kart/"+id;
         }
         function sil() {
             var selectedIDs = new Array();
@@ -117,7 +110,7 @@ window.location.href = "/FirmaKampanyasi/Kart/"+id;
                 return;
             }
             var options = {};
-options.url = "/FirmaKampanyasi/Sil?id=" + selectedIDs;
+options.url = "/FirmaKampanyaTalebi/Sil?id=" + selectedIDs;
             options.type = "POST";
             options.data = JSON.stringify(selectedIDs);
             options.contentType = "application/json";
@@ -145,7 +138,7 @@ options.url = "/FirmaKampanyasi/Sil?id=" + selectedIDs;
         var valdata = $("#formKayit").serialize();
         console.table(valdata);
         $.ajax({
- url: "/FirmaKampanyasi/Cek/", 
+ url: "/FirmaKampanyaTalebi/Cek/", 
             type: "Post",
             data: valdata,
             contentType: "application/x-www-form-urlencoded; charset=UTF-8",

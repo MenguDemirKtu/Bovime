@@ -6,6 +6,19 @@ namespace Bovime.veri
 {
     public partial class FirmaKampanyasiAYRINTI : Bilesen
     {
+
+        [NotMapped]
+        public string _foto2
+        {
+
+            get
+            {
+                return fotosu.Replace("FirmaKampanyasi\\", "FirmaKampanyasi\\Orta\\");
+            }
+
+        }
+
+
         [NotMapped]
         public string _URL
         {

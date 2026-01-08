@@ -3,20 +3,34 @@ using Bovime.veriTabani;
 using Newtonsoft.Json;
 namespace Bovime.Models
 {
-    public class FirmaKampanyasiModel : ModelTabani
+    public class FirmaKampanyaTalebiModel : ModelTabani
     {
-        public FirmaKampanyasi kartVerisi { get; set; }
-        public List<FirmaKampanyasiAYRINTI> dokumVerisi { get; set; }
-        public FirmaKampanyasiAYRINTIArama aramaParametresi { get; set; }
+        public FirmaKampanyaTalebi kartVerisi { get; set; }
+        public List<FirmaKampanyaTalebiAYRINTI> dokumVerisi { get; set; }
+        public FirmaKampanyaTalebiAYRINTIArama aramaParametresi { get; set; }
 
 
-        public FirmaKampanyasiModel()
+        public FirmaKampanyaTalebiModel()
         {
-            this.kartVerisi = new FirmaKampanyasi();
-            this.dokumVerisi = new List<FirmaKampanyasiAYRINTI>();
-            this.aramaParametresi = new FirmaKampanyasiAYRINTIArama();
+            this.kartVerisi = new FirmaKampanyaTalebi();
+            this.dokumVerisi = new List<FirmaKampanyaTalebiAYRINTI>();
+            this.aramaParametresi = new FirmaKampanyaTalebiAYRINTIArama();
         }
 
+
+        public async Task<long> kampanyayaCevir(veri.Varlik vari, FirmaKampanyaTalebi talep)
+        {
+            FirmaKampanyasi yeni = new FirmaKampanyasi();
+            yeni.baslik = talep.baslik;
+            yeni.metin = talep.metin;
+            yeni.aciklama = talep.metin;
+            yeni.i_firmaKimlik = talep.i_firmaKimlik;
+            yeni.i_fotoKimlik = talep.i_fotoKimlik;
+            yeni.i_kampanyaDurumuKimlik = (int)enumref_KampanyaDurumu.Firma_Girdi_Bekliyor;
+            yeni.y_firmaKampanyaTalebiKimlik = talep.firmaKampanyaTalebikimlik;
+            await yeni.kaydetKos(vari, false);
+            return yeni.firmaKampanyasikimlik;
+        }
 
         public async Task<AramaTalebi> ayrintiliAraKos(Sayfa sayfasi)
         {
@@ -31,10 +45,12 @@ namespace Bovime.Models
                 return talep;
             }
         }
-        private async Task ekkosulEkle(veri.Varlik vari, Yonetici kime, FirmaKampanyasiAYRINTIArama kosul)
+        private async Task ekkosulEkle(veri.Varlik vari, Yonetici kime, FirmaKampanyaTalebiAYRINTIArama kosul)
         {
             if (kime._KullaniciTuru == enumref_KullaniciTuru.Firma)
+            {
                 kosul.i_firmaKimlik = kime.i_firmaKimlik;
+            }
         }
         public async Task silKos(Sayfa sayfasi, string id, Yonetici silen)
         {
@@ -43,14 +59,14 @@ namespace Bovime.Models
                 List<string> kayitlar = id.Split(',').ToList();
                 for (int i = 0; i < kayitlar.Count; i++)
                 {
-                    FirmaKampanyasi? silinecek = await FirmaKampanyasi.olusturKos(vari, kayitlar[i]);
+                    FirmaKampanyaTalebi? silinecek = await FirmaKampanyaTalebi.olusturKos(vari, kayitlar[i]);
                     if (silinecek == null)
                         continue;
                     silinecek._sayfaAta(sayfasi);
                     await silinecek.silKos(vari);
                 }
             }
-            Models.FirmaKampanyasiModel modeli = new Models.FirmaKampanyasiModel();
+            Models.FirmaKampanyaTalebiModel modeli = new Models.FirmaKampanyaTalebiModel();
             await modeli.veriCekKos(silen);
         }
         public async Task yetkiKontrolu(Sayfa sayfasi)
@@ -65,7 +81,7 @@ namespace Bovime.Models
 
 
 
-        public async Task<FirmaKampanyasi> kaydetKos(Sayfa sayfasi)
+        public async Task<FirmaKampanyaTalebi> kaydetKos(Sayfa sayfasi)
         {
             using (veri.Varlik vari = new veri.Varlik())
             {
@@ -74,13 +90,48 @@ namespace Bovime.Models
                     kartVerisi.i_fotoKimlik = fk;
                 kullanan = sayfasi.mevcutKullanici();
                 kartVerisi._kontrolEt(sayfasi.dilKimlik, vari);
-                kartVerisi.metin = Sayfa.dosyaKonumDuzelt(kartVerisi.metin, Genel.yazilimAyari);
                 kartVerisi._sayfaAta(sayfasi);
                 await kartVerisi.kaydetKos(vari, true);
                 await fotoBicimlendirKos(vari, kartVerisi, kartVerisi.i_fotoKimlik);
                 return kartVerisi;
             }
         }
+
+        public async Task<long> kabulEtKos(Sayfa sayfasi)
+        {
+            using (veri.Varlik vari = new veri.Varlik())
+            {
+                long fk = 0;
+                if (long.TryParse(fotoKonumu, out fk))
+                    kartVerisi.i_fotoKimlik = fk;
+                kullanan = sayfasi.mevcutKullanici();
+                kartVerisi._kontrolEt(sayfasi.dilKimlik, vari);
+                kartVerisi._sayfaAta(sayfasi);
+                kartVerisi.i_kampanyaDurumuKimlik = (int)enumref_KampanyaDurumu.Yayinda;
+                await kartVerisi.kaydetKos(vari, true);
+                await fotoBicimlendirKos(vari, kartVerisi, kartVerisi.i_fotoKimlik);
+                long sonuc = await kampanyayaCevir(vari, kartVerisi);
+                return sonuc;
+            }
+        }
+
+        public async Task<FirmaKampanyaTalebi> reddetKos(Sayfa sayfasi)
+        {
+            using (veri.Varlik vari = new veri.Varlik())
+            {
+                long fk = 0;
+                if (long.TryParse(fotoKonumu, out fk))
+                    kartVerisi.i_fotoKimlik = fk;
+                kullanan = sayfasi.mevcutKullanici();
+                kartVerisi._kontrolEt(sayfasi.dilKimlik, vari);
+                kartVerisi._sayfaAta(sayfasi);
+                kartVerisi.i_kampanyaDurumuKimlik = (int)enumref_KampanyaDurumu.Reddedildi;
+                await kartVerisi.kaydetKos(vari, true);
+                await fotoBicimlendirKos(vari, kartVerisi, kartVerisi.i_fotoKimlik);
+                return kartVerisi;
+            }
+        }
+
 
 
         public async Task veriCekKos(Yonetici kime, long kimlik)
@@ -89,27 +140,37 @@ namespace Bovime.Models
             yenimiBelirle(kimlik);
             using (veri.Varlik vari = new Varlik())
             {
-                var kart = await FirmaKampanyasi.olusturKos(vari, kimlik);
+                var kart = await FirmaKampanyaTalebi.olusturKos(vari, kimlik);
                 if (kart != null)
                     kartVerisi = kart;
-                dokumVerisi = new List<FirmaKampanyasiAYRINTI>();
+
+                if (kartVerisi.firmaKampanyaTalebikimlik > 0)
+                {
+                    if (kime._KullaniciTuru == enumref_KullaniciTuru.Yazilimci || kime._KullaniciTuru == enumref_KullaniciTuru.Sistem_Yoneticisi)
+                    {
+                        kart.e_gorulduMu = true;
+                        await kartVerisi.kaydetKos(vari, false);
+                    }
+                }
+
+
+                dokumVerisi = new List<FirmaKampanyaTalebiAYRINTI>();
                 await baglilariCek(vari, kime);
                 await fotoAyariBelirle(vari, kartVerisi._cizelgeAdi());
+
+
             }
         }
 
         public List<FirmaAYRINTI> _ayFirmaAYRINTI { get; set; }
-        public List<ref_KampanyaDurumu> _ayref_KampanyaDurumu { get; set; }
         public async Task baglilariCek(veri.Varlik vari, Yonetici kim)
         {
             if (kim._KullaniciTuru == enumref_KullaniciTuru.Firma)
             {
                 _ayFirmaAYRINTI = await FirmaAYRINTI.ara(vari, p => p.firmakimlik == kim.i_firmaKimlik);
-                _ayref_KampanyaDurumu = await ref_KampanyaDurumu.ara(vari);
                 return;
             }
             _ayFirmaAYRINTI = await FirmaAYRINTI.ara(vari);
-            _ayref_KampanyaDurumu = await ref_KampanyaDurumu.ara(vari);
         }
 
         public async Task veriCekKos(Yonetici kime)
@@ -117,9 +178,9 @@ namespace Bovime.Models
             this.kullanan = kime;
             using (veri.Varlik vari = new Varlik())
             {
-                FirmaKampanyasiAYRINTIArama kosul = new FirmaKampanyasiAYRINTIArama();
+                FirmaKampanyaTalebiAYRINTIArama kosul = new FirmaKampanyaTalebiAYRINTIArama();
                 kosul.varmi = true;
-                kartVerisi = new FirmaKampanyasi();
+                kartVerisi = new FirmaKampanyaTalebi();
                 await ekkosulEkle(vari, kime, kosul);
                 dokumVerisi = await kosul.cek(vari);
                 await baglilariCek(vari, kime);
@@ -133,10 +194,10 @@ namespace Bovime.Models
                 var talep = vari.AramaTalebis.FirstOrDefault(p => p.kodu == id);
                 if (talep != null)
                 {
-                    FirmaKampanyasiAYRINTIArama kosul = JsonConvert.DeserializeObject<FirmaKampanyasiAYRINTIArama>(talep.talepAyrintisi ?? "") ?? new FirmaKampanyasiAYRINTIArama();
+                    FirmaKampanyaTalebiAYRINTIArama kosul = JsonConvert.DeserializeObject<FirmaKampanyaTalebiAYRINTIArama>(talep.talepAyrintisi ?? "") ?? new FirmaKampanyaTalebiAYRINTIArama();
                     await ekkosulEkle(vari, kime, kosul);
                     dokumVerisi = await kosul.cek(vari);
-                    kartVerisi = new FirmaKampanyasi();
+                    kartVerisi = new FirmaKampanyaTalebi();
                     await baglilariCek(vari, kime);
                     aramaParametresi = kosul;
                 }

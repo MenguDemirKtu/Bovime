@@ -1,25 +1,25 @@
 using Microsoft.AspNetCore.Mvc;
 namespace Bovime.Controllers
 {
-    public class FirmaKampanyasiController : Sayfa
+    public class FirmaKampanyaTalebiController : Sayfa
     {
-        public async Task<ActionResult> Cek(Models.FirmaKampanyasiModel modeli)
+        public async Task<ActionResult> Cek(Models.FirmaKampanyaTalebiModel modeli)
         {
             var nedir = await modeli.ayrintiliAraKos(this);
-            return basariBildirimi("/FirmaKampanyasi?id=" + nedir.kodu);
+            return basariBildirimi("/FirmaKampanyaTalebi?id=" + nedir.kodu);
         }
         public async Task<ActionResult> Index(string id)
         {
             try
             {
                 string tanitim = "...";
-                tanitim = await Genel.dokumKisaAciklamaKos(this, "FirmaKampanyasi");
-                gorunumAyari("", "", "Ana Sayfa", "/", "/FirmaKampanyasi/", tanitim);
+                tanitim = await Genel.dokumKisaAciklamaKos(this, "FirmaKampanyaTalebi");
+                gorunumAyari("", "", "Ana Sayfa", "/", "/FirmaKampanyaTalebi/", tanitim);
                 if (!oturumAcildimi())
                     return OturumAcilmadi();
                 if (await yetkiVarmiKos())
                 {
-                    Models.FirmaKampanyasiModel modeli = new Models.FirmaKampanyasiModel();
+                    Models.FirmaKampanyaTalebiModel modeli = new Models.FirmaKampanyaTalebiModel();
                     if (string.IsNullOrEmpty(id))
                         await modeli.veriCekKos(mevcutKullanici());
                     else
@@ -43,12 +43,12 @@ namespace Bovime.Controllers
                 if (!oturumAcildimi())
                     return OturumAcilmadi();
                 string tanitim = "....";
-                tanitim = await Genel.dokumKisaAciklamaKos(this, "FirmaKampanyasi");
-                gorunumAyari("Firma Kampanyası Kartı", "Firma Kampanyası Kartı", "Ana Sayfa", "/", "/FirmaKampanyasi/", tanitim);
+                tanitim = await Genel.dokumKisaAciklamaKos(this, "FirmaKampanyaTalebi");
+                gorunumAyari("Firma Kampanya Talebi Kartı", "Firma Kampanya Talebi Kartı", "Ana Sayfa", "/", "/FirmaKampanyaTalebi/", tanitim);
                 enumref_YetkiTuru yetkiTuru = yetkiTuruBelirle(id);
-                if (await yetkiVarmiKos("FirmaKampanyasi", yetkiTuru))
+                if (await yetkiVarmiKos("FirmaKampanyaTalebi", yetkiTuru))
                 {
-                    Models.FirmaKampanyasiModel modeli = new Models.FirmaKampanyasiModel();
+                    Models.FirmaKampanyaTalebiModel modeli = new Models.FirmaKampanyaTalebiModel();
                     await modeli.veriCekKos(mevcutKullanici(), id);
                     return View(modeli);
                 }
@@ -73,7 +73,7 @@ namespace Bovime.Controllers
                     uyariVer(Ikazlar.hicKayitSecilmemis(dilKimlik));
                 if (await yetkiVarmiKos("Ogrenci", enumref_YetkiTuru.Silme))
                 {
-                    Models.FirmaKampanyasiModel modeli = new Models.FirmaKampanyasiModel();
+                    Models.FirmaKampanyaTalebiModel modeli = new Models.FirmaKampanyaTalebiModel();
                     await modeli.silKos(this, id ?? "", mevcutKullanici());
                     await modeli.veriCekKos(mevcutKullanici());
                     return basariBildirimi(Ikazlar.basariylaSilindi(dilKimlik));
@@ -89,7 +89,7 @@ namespace Bovime.Controllers
             }
         }
         [HttpPost]
-        public async Task<ActionResult> Kaydet(Models.FirmaKampanyasiModel gelen)
+        public async Task<ActionResult> Kaydet(Models.FirmaKampanyaTalebiModel gelen)
         {
             try
             {
@@ -97,6 +97,42 @@ namespace Bovime.Controllers
                     return OturumAcilmadi();
                 await gelen.yetkiKontrolu(this);
                 await gelen.kaydetKos(this);
+                return basariBildirimi(gelen.kartVerisi, dilKimlik);
+            }
+            catch (Exception istisna)
+            {
+                return hataBildirimi(istisna);
+            }
+        }
+
+
+        [HttpPost]
+        public async Task<ActionResult> Onayla(Models.FirmaKampanyaTalebiModel gelen)
+        {
+            try
+            {
+                if (!oturumAcildimi())
+                    return OturumAcilmadi();
+                await gelen.yetkiKontrolu(this);
+                long kimlik = await gelen.kabulEtKos(this);
+                return basariBildirimi(gelen.kartVerisi, dilKimlik, "/FirmaKampanyasi/Kart/" + kimlik.ToString());
+            }
+            catch (Exception istisna)
+            {
+                return hataBildirimi(istisna);
+            }
+        }
+
+
+        [HttpPost]
+        public async Task<ActionResult> Reddet(Models.FirmaKampanyaTalebiModel gelen)
+        {
+            try
+            {
+                if (!oturumAcildimi())
+                    return OturumAcilmadi();
+                await gelen.yetkiKontrolu(this);
+                await gelen.reddetKos(this);
                 return basariBildirimi(gelen.kartVerisi, dilKimlik);
             }
             catch (Exception istisna)
