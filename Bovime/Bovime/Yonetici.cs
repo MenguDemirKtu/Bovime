@@ -13,6 +13,7 @@ namespace Bovime
         public string unvan { get; set; }
         public string yoneticiTuru { get; set; }
 
+        public int i_firmaKimlik { get; set; }
         public string ogrenciNo { get; set; }
 
         public string epostaAdresi { get; set; }

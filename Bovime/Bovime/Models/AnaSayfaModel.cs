@@ -116,11 +116,43 @@ namespace Bovime.Models
                 return new SimgeAYRINTI();
         }
 
+        public List<KampanyaSatisAYRINTI> kampanyaSatisRaporu { get; set; }
         public AnaSayfaModel()
         {
             varsayilan();
             baglantilar = new List<AnaSayfaBaglanti>();
         }
+        private async Task firmaIcinCek(veri.Varlik vari, Yonetici kime)
+        {
+            baslik1 = "Kampanya";
+            baslik2 = "Satış";
+            baslik3 = "Sektör";
+            baslik4 = "Durum";
+
+            deger1 = (await vari.FirmaKampanyasiAYRINTIs.Where(p => p.i_firmaKimlik == kime.i_firmaKimlik).CountAsync()).ToString();
+            deger2 = (await vari.SatisAYRINTIs.Where(p => p.i_firmaKimlik == kime.i_firmaKimlik && p.i_satisDurumuKimlik == (int)enumref_SatisDurumu.Gerceklesti).CountAsync()).ToString();
+            deger1 = (await vari.FirmaKampanyasiAYRINTIs.Where(p => p.i_firmaKimlik == kime.i_firmaKimlik).CountAsync()).ToString();
+            deger1 = (await vari.FirmaKampanyasiAYRINTIs.Where(p => p.i_firmaKimlik == kime.i_firmaKimlik).CountAsync()).ToString();
+            sonYirmiSatis = await vari.SatisAYRINTIs.Where(p => p.i_satisDurumuKimlik == (int)enumref_SatisDurumu.Gerceklesti && p.i_firmaKimlik == kime.i_firmaKimlik).Take(20).OrderByDescending(p => p.tarih).ToListAsync();
+            this.kampanyaSatisRaporu = await vari.KampanyaSatisAYRINTIs.Where(p => p.i_firmaKimlik == kime.i_firmaKimlik).ToListAsync();
+        }
+
+        private async Task yoneticiCek(veri.Varlik vari)
+        {
+
+            baslik1 = "Kampanya";
+            baslik2 = "Satış";
+            baslik3 = "Sektör";
+            baslik4 = "Durum";
+
+            deger1 = (await vari.FirmaKampanyasiAYRINTIs.CountAsync()).ToString();
+            deger2 = (await vari.SatisAYRINTIs.Where(p => p.i_satisDurumuKimlik == (int)enumref_SatisDurumu.Gerceklesti).CountAsync()).ToString();
+            deger1 = (await vari.SektorAYRINTIs.CountAsync()).ToString();
+            deger1 = "Güzel";
+            this.kampanyaSatisRaporu = await vari.KampanyaSatisAYRINTIs.ToListAsync();
+            sonYirmiSatis = await vari.SatisAYRINTIs.Where(p => p.i_satisDurumuKimlik == (int)enumref_SatisDurumu.Gerceklesti).Take(20).OrderByDescending(p => p.tarih).ToListAsync();
+        }
+        public List<SatisAYRINTI> sonYirmiSatis { get; set; }
         public async Task veriCekKosut(Yonetici kime)
         {
             using (veri.Varlik vari = new Varlik())
@@ -128,14 +160,10 @@ namespace Bovime.Models
                 varsayilan();
 
                 List<SimgeAYRINTI> resimler = await vari.SimgeAYRINTIs.Where(p => p.varmi == true).ToListAsync();
-                simge1 = simgeBul(resimler, "Araç");
-                simge2 = simgeBul(resimler, "Görev");
-                simge3 = simgeBul(resimler, "Personel");
-                simge4 = simgeBul(resimler, "Talep");
-                simge5 = simgeBul(resimler, "Araç");
-                simge6 = simgeBul(resimler, "Araç");
-                simge7 = simgeBul(resimler, "Araç");
-                simge8 = simgeBul(resimler, "Araç");
+                simge1 = simgeBul(resimler, "Kampanya");
+                simge2 = simgeBul(resimler, "Satış");
+                simge3 = simgeBul(resimler, "Sektör");
+                simge4 = simgeBul(resimler, "Durum");
 
 
                 duyurular = await vari.DuyuruRolBagiAYRINTIs.ToListAsync();
@@ -166,8 +194,18 @@ namespace Bovime.Models
                 kisiUnvani = kime.unvan;
                 kisiAdi = kime.gercekAdi;
                 yazilimAdi = Genel.yazilimAyari.yazilimAdi;
-                var turu = kime._turu();
 
+
+                if (kime._KullaniciTuru == enumref_KullaniciTuru.Firma)
+                {
+                    await firmaIcinCek(vari, kime);
+                }
+
+
+                if (kime._KullaniciTuru == enumref_KullaniciTuru.Yazilimci || kime._KullaniciTuru == enumref_KullaniciTuru.Sistem_Yoneticisi)
+                {
+                    await yoneticiCek(vari);
+                }
 
 
                 //if (turu == enumref_KullaniciTuru.Yazilimci)

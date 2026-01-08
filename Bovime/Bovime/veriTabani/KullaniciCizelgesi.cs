@@ -94,10 +94,7 @@ namespace Bovime.veriTabani
                 predicate = predicate.And(x => x.rolSayisi == rolSayisi);
             if (y_kisiKimlik != null)
                 predicate = predicate.And(x => x.y_kisiKimlik == y_kisiKimlik);
-            if (y_iskurOgrencisiKimlik != null)
-                predicate = predicate.And(x => x.y_iskurOgrencisiKimlik == y_iskurOgrencisiKimlik);
-            if (y_personelKimlik != null)
-                predicate = predicate.And(x => x.y_personelKimlik == y_personelKimlik);
+
             if (bysyeIlkGirisTarihi != null)
                 predicate = predicate.And(x => x.bysyeIlkGirisTarihi == bysyeIlkGirisTarihi);
             if (e_sifreDegisecekmi != null)

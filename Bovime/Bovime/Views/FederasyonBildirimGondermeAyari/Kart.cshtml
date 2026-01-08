@@ -11,8 +11,7 @@
         <div class="row">
             <div class=@Ayar.yariGenislik>
                 <div class="form-group">
-                    <label for="city" class="col-form-label">Kullanıcı</label>
-                    @Html.DropDownListFor(m => m.kartVerisi.i_kullaniciKimlik, Kullanici.doldur() , "Lütfen Seçiniz", new { @class = "form-control select2" })
+                    <label for="city" class="col-form-label">Kullanıcı</label> 
                 </div>
             </div>
             @Html.HiddenFor(model => model.kartVerisi.federasyonBildirimGondermeAyariKimlik) 

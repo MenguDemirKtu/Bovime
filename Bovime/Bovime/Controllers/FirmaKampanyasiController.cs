@@ -52,7 +52,7 @@ try{
                 return OturumAcilmadi();
             string tanitim = "....";
    tanitim = await Genel.dokumKisaAciklamaKos(this, "FirmaKampanyasi"); 
- gorunumAyari("Firma Kampanyası Kartı", "Firma Kampanyası Kartı", "Ana Sayfa", "/", "/FirmaKampanyasi/", tanitim); 
+ gorunumAyari("Kartı", "Kartı", "Ana Sayfa", "/", "/FirmaKampanyasi/", tanitim); 
             enumref_YetkiTuru yetkiTuru = yetkiTuruBelirle(id);
 if (await yetkiVarmiKos("FirmaKampanyasi", yetkiTuru))
             {

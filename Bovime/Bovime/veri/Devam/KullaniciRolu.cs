@@ -1,32 +1,40 @@
-using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
+using System.Linq.Expressions;
 
 namespace Bovime.veri
 {
     public partial class KullaniciRolu : Bilesen
     {
-        public static List<SelectListItem> doldur(Yonetici? kime)
+
+        public KullaniciRolu()
         {
-            List<KullaniciRoluAYRINTI> bilesenler = KullaniciRoluAYRINTI.ara();
-            return doldur2(bilesenler);
+            _varSayilan();
         }
-        public static List<SelectListItem> doldur()
+
+
+        public void bicimlendir(veri.Varlik vari)
         {
-            List<KullaniciRoluAYRINTI> bilesenler = KullaniciRoluAYRINTI.ara();
-            return doldur2(bilesenler);
+
         }
-        public override void _icDenetim(int dilKimlik, veri.Varlik vari)
+
+        public void _icDenetim(int dilKimlik, veri.Varlik vari)
         {
-            uyariVerInt32(i_kullaniciKimlik, "Kullanıcı", dilKimlik);
-            uyariVerInt32(i_rolKimlik, "Rol", dilKimlik);
-            uyariVerBool(e_gecerlimi, "Geçerli mi?", dilKimlik);
+            uyariVerInt32(i_kullaniciKimlik, "", dilKimlik);
+            uyariVerInt32(i_rolKimlik, "", dilKimlik);
+            uyariVerBool(e_gecerlimi, "", dilKimlik);
         }
+
+
         public override string _tanimi()
         {
-            return i_kullaniciKimlik.ToString();
+            return bossaDoldur(i_kullaniciKimlik);
         }
-        public static KullaniciRolu olustur(object deger)
+
+
+
+        public async static Task<KullaniciRolu?> olusturKos(Varlik vari, object deger)
         {
-            long kimlik = Convert.ToInt64(deger);
+            Int64 kimlik = Convert.ToInt64(deger);
             if (kimlik <= 0)
             {
                 KullaniciRolu sonuc = new KullaniciRolu();
@@ -35,66 +43,86 @@ namespace Bovime.veri
             }
             else
             {
-                using (veri.Varlik vari = new veri.Varlik()) { return veriTabani.KullaniciRoluCizelgesi.tekliCek(kimlik, vari); }
+                return await vari.KullaniciRolus.FirstOrDefaultAsync(p => p.kullaniciRoluKimlik == kimlik && p.varmi == true);
             }
         }
+
+
+        public async Task kaydetKos(veri.Varlik vari, params bool[] yedeklensinmi)
+        {
+            if (varmi == null)
+                varmi = true;
+            bicimlendir(vari);
+            await veriTabani.KullaniciRoluCizelgesi.kaydetKos(this, vari, yedeklensinmi);
+        }
+        public async Task silKos(veri.Varlik vari, params bool[] yedeklensinmi)
+        {
+            varmi = false;
+            await veriTabani.KullaniciRoluCizelgesi.silKos(this, vari, yedeklensinmi);
+        }
+
+
         public override void _kontrolEt(int dilKimlik, veri.Varlik vari)
         {
             _icDenetim(dilKimlik, vari);
         }
+
+
         public override void _varSayilan()
         {
+            this.varmi = true;
         }
+
         #region bu_sinifin_bagli_oldugu_sinif
         public Kullanici _KullaniciBilgisi()
         {
-            return Kullanici.olustur(i_kullaniciKimlik);
+            return Kullanici.olustur(this.i_kullaniciKimlik);
         }
+
         #endregion bu_sinifin_bagli_oldugu_sinif
-        public KullaniciRoluAYRINTI _ayrintisi()
+
+        public static async Task<List<KullaniciRolu>> ara(params Expression<Func<KullaniciRolu, bool>>[] kosullar)
         {
-            KullaniciRoluAYRINTI sonuc = KullaniciRoluAYRINTI.olustur(kullaniciRoluKimlik);
-            return sonuc;
+            return await veriTabani.KullaniciRoluCizelgesi.ara(kosullar);
         }
-        public void kaydet(params bool[] yedeklensinmi)
+        public static async Task<List<KullaniciRolu>> ara(veri.Varlik vari, params Expression<Func<KullaniciRolu, bool>>[] kosullar)
         {
-            if (varmi == null)
-                varmi = true;
-            using (veri.Varlik vari = new veri.Varlik()) { veriTabani.KullaniciRoluCizelgesi.kaydet(this, vari, yedeklensinmi); }
+            return await veriTabani.KullaniciRoluCizelgesi.ara(vari, kosullar);
+        }
+        public static async Task<KullaniciRolu?> bul(veri.Varlik vari, params Expression<Func<KullaniciRolu, bool>>[] kosullar)
+        {
+            return await veriTabani.KullaniciRoluCizelgesi.bul(vari, kosullar);
         }
 
-        public void kaydet(veri.Varlik vari, params bool[] yedeklensinmi)
-        {
-            if (varmi == null)
-                varmi = true;
-            veriTabani.KullaniciRoluCizelgesi.kaydet(this, vari, yedeklensinmi);
-        }
 
-        protected KullaniciRolu cek()
-        {
-            using (veri.Varlik vari = new veri.Varlik()) { return veriTabani.KullaniciRoluCizelgesi.tekliCek(kullaniciRoluKimlik, vari); }
-        }
-        public void sil()
-        {
-            using (veri.Varlik vari = new veri.Varlik()) { veriTabani.KullaniciRoluCizelgesi.sil(this, vari); }
-        }
         #region ozluk
+
+
         public override string _cizelgeAdi()
         {
             return "KullaniciRolu";
         }
+
+
         public override string _turkceAdi()
         {
-            return "Kullanıcı Rolü";
+            return "";
         }
         public override string _birincilAnahtarAdi()
         {
             return "kullaniciRoluKimlik";
         }
+
+
         public override long _birincilAnahtar()
         {
-            return kullaniciRoluKimlik;
+            return this.kullaniciRoluKimlik;
         }
+
+
         #endregion
+
+
     }
 }
+

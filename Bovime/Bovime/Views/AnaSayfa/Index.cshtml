@@ -220,113 +220,13 @@
         </div>
     </div><!--end col-->
 </div><!--end row-->
-@{
-    if (Model.duyurular != null)
-    {
-        if (Model.duyurular.Count > 0)
-        {
+ 
+ 
 
-            <div class="card">
-                <div class="alert alert-success" role="alert">
-                    <br />
-                    <h4 class="alert-heading">Dikkat 2</h4>
-                    <p>
-                        Aşağıdaki duyuruları dikkatle takip etmeniz tavsiye edilir.  Bu duyurularda bir eksiklik olduğunu düşünüyorsanız sistem yöneticinizle iletişime geçiniz.
-                    </p>
-                </div>
-                <div class="card-body">
+<div class="row">
 
 
-                    <div class="table-responsive">
-                        <table class="table align-middle table-nowrap mb-0">
-                            <tr>
-                                <th scope="col">Başlık</th>
-                                <th> Açıklama</th>
-                            </tr>
-                            <tbody>
-                                @{
-
-                                    if (Model.duyurular != null)
-                                    {
-                                        for (int i = 0; i < Model.duyurular.Count; i++)
-                                        {
-
-                                            <tr>
-                                                <td>
-                                                    <h5 class="font-size-13 text-truncate mb-1"><a href="@String.Format("{0}", Model.duyurular[i].baglanti)" class="text-dark"> @Model.duyurular[i].baslik</a></h5>
-                                                    <p class="text-muted mb-0">
-                                                        <a href="@String.Format("{0}", Model.duyurular[i].baglanti)">
-                                                            @{
-                                                                if (Model.duyurular[i] != null)
-                                                                {
-                                                                    @Model.duyurular[i].baslangic.ToShortDateString()
-
-                                                                }
-                                                            }
-                                                        </a>
-                                                    </p>
-                                                </td>
-                                                <td>
-                                                    <i class="bx bx-like align-middle me-1"></i>
-
-                                                    <a href="@String.Format("{0}", Model.duyurular[i].baglanti)">
-                                                        @Model.duyurular[i].tanitim
-                                                    </a>
-                                                </td>
-
-                                            </tr>
-                                        }
-                                    }
-                                }
-
-
-                            </tbody>
-                        </table>
-
-
-                    </div>
-                </div>
-            </div>
-        }
-    }
-}
-
-@* @{
-
-    if (Model.toplamGorevSonuclari.Count > 0)
-    {
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="d-flex">
-                    <h4 class="card-title mb-4 flex-grow-1">  Tamamlanan Görev Sonuçları    </h4>
-
-                </div>
-            </div>
-            @{
-                foreach (var siradaki in Model.toplamGorevSonuclari)
-                {
-                    <div class="col-lg-2">
-                        <div class="card">
-                            <div class="card-body p-4">
-                                <div class="text-center mb-3">
-                                    <img src="@siradaki.fotosu" alt="" class="avatar-sm">
-                                    <a href="job-details.html" class="text-body">
-                                        <h5 class="mt-4 mb-2 font-size-15" style="font-weight: bold;"> @siradaki.toplam</h5>
-                                    </a>
-                                    <p class="mb-0 text-muted"> @siradaki.olcuBirimAdi</p>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                }
-            }
-        </div>
-    }
-} *@
-
-
-<div class="@Ayar.tamGenislik">
+<div class="@Ayar.yariGenislik">
     @{
         if (Model.baglantilar.Count > 0)
         {
@@ -365,6 +265,7 @@
 
     @{
         if (kim._KullaniciTuru == enumref_KullaniciTuru.Yazilimci
+            || kim._KullaniciTuru == enumref_KullaniciTuru.Firma
         || kim._KullaniciTuru == enumref_KullaniciTuru.Sistem_Yoneticisi)
         {
             <div class="row">
@@ -373,45 +274,35 @@
                         <div class="table-responsive">
                             <table class="table align-middle table-nowrap mb-0">
                                 <tr>
-                                    <th scope="col" colspan="2">Süreç</th>
-                                    <th scope="col">Durum</th>
-                                    <th scope="col">Tamamlanma Oranı</th>
-                                    <th scope="col">Ayrıntılar</th>
+                                    <th scope="col">Müşteri Adı</th>
+                                        <th scope="col">Tarih</th>
+                                        <th scope="col">Kampanya</th>
+                                    <th scope="col">Firma</th>
                                 </tr>
                                 <tbody>
 
 
                                     @{
-                                        // for (int i = 0; i < Model.surecler.Count; i++)
-                                        // {
-                                        //     var siradaki = Model.surecler[i];
-                                        //     int oran = siradaki.tamamlanmaOrani ?? 0;
-                                        //     <tr>
-                                        //         <td style="width: 40px; height: 30px !important; "><img src="@siradaki.fotosu" alt="" width="40" height="30" style="height:30px !important;"></td>
-                                        //         <td>
-                                        //             <h5 class="font-size-13 text-truncate mb-1" style="font-weight: bold !important;">
-                                        //                 @siradaki.baslik
-                                        //             </h5>
-                                        //             @siradaki.gorevAdi
-                                        //         </td>
-                                        //         <td>
-                                        //             <i class="@siradaki._Icon"></i>
-                                        //             @siradaki.SurecDurumuAdi
-                                        //         </td>
-                                        //         <td>
-                                        //             <div class="progress animated-progess progress-sm">
-                                        //                 <div class="progress-bar bg-warning" role="progressbar" style="width: @oran%" aria-valuenow="@oran" aria-valuemin="0" aria-valuemax="100"></div>
-                                        //             </div>
+                                        for (int i = 0; i < Model.sonYirmiSatis.Count; i++)
+                                        {
+                                            var siradaki = Model.sonYirmiSatis[i]; 
+                                            <tr>
+                                                <td>
+                                                    @siradaki.adi @siradaki.soyadi
+                                                </td>
+                                                <td>
+                                                    @siradaki.tarih
+                                                </td>
+                                                    <td>
+                                                        @siradaki.kampanyaBasligi
+                                                    </td>
 
-                                        //             @siradaki.tamamlanmaOrani
-                                        //         </td>
-                                        //         <td>
-                                        //             <a href="@String.Format("/Surec/Kart/{0}", siradaki.sureckimlik)">
-                                        //                 Sayfası
-                                        //             </a>
-                                        //         </td>
-                                        //     </tr>
-                                        // }
+                                              <td>
+                                              @siradaki.firmaAdi
+                                              </td>
+                                         
+                                            </tr>
+                                        }
                                     }
                                 </tbody>
                             </table>
@@ -421,45 +312,70 @@
                     </div>
 
                 </div>
-                <div class="col-xl-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="d-flex align-items-start">
-                                <div class="me-2">
-                                    @{
-                                        // if (kim._KullaniciTuru == enumref_KullaniciTuru.Calisma_Birim_Gorevlisi)
-                                        // {
-                                        //     <h5 class="card-title mb-4">Son 10 Çalışan İşlemi</h5>
-                                        // }
-                                        // else
-                                        // {
-                                        //     <h5 class="card-title mb-4">Son 10 Araç İşlemi</h5>
-                                        // }
-                                    }
-                                </div>
-
-                            </div>
-                            <div data-simplebar class="mt-2" ">
-                                <ul class="verti-timeline list-unstyled">
-
-                                    @{
-                                   
-                                    }
-
-                                </ul>
-                            </div>
-
-                        </div>
-                    </div>
-                    <!-- end card -->
-                </div>
+                 
 
             </div>
         }
     }
 </div>
 
+<div class="@Ayar.yariGenislik"> 
+        <div class="card">
+            <h5>Kampanyalarınızın Satış Rakamları</h5>
+            <div id="kampanyaSatisGrafik"></div>
+        </div>
+</div>
+
+
+</div>
+
 <script>
+
+  document.addEventListener("DOMContentLoaded", function () {
+
+        var kampanyalar = @Html.Raw(
+            Newtonsoft.Json.JsonConvert.SerializeObject(
+                Model.kampanyaSatisRaporu.Select(x => x.kampanyaAdi)
+            )
+        );
+
+        var satislar = @Html.Raw(
+            Newtonsoft.Json.JsonConvert.SerializeObject(
+                                    Model.kampanyaSatisRaporu.Select(x => x.sayisi)
+            )
+        );
+
+        var options = {
+            chart: {
+                type: 'bar',
+                height: 350
+            },
+            series: [{
+                name: 'Satış Adedi',
+                data: satislar
+            }],
+            xaxis: {
+                categories: kampanyalar
+            },
+            plotOptions: {
+                bar: {
+                    distributed: true,
+                    borderRadius: 6
+                }
+            },
+            dataLabels: {
+                enabled: true
+            }
+        };
+
+        var chart = new ApexCharts(
+            document.querySelector("#kampanyaSatisGrafik"),
+            options
+        );
+
+        chart.render();
+    });
+
 
     function yonlendir(adres)
     {

@@ -190,7 +190,11 @@ namespace Bovime.Models
         {
             kullanan = kime;
             kartVerisi = new Kullanici();
-            dokumVerisi = KullaniciAYRINTI.ara();
+
+            using (veri.Varlik vari = new Varlik())
+            {
+                dokumVerisi = vari.KullaniciAYRINTIs.ToList();
+            }
         }
 
 

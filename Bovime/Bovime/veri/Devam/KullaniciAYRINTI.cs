@@ -1,5 +1,3 @@
-using Microsoft.AspNetCore.Mvc.Rendering;
-
 namespace Bovime.veri
 {
     public partial class KullaniciAYRINTI : Bilesen
@@ -8,18 +6,6 @@ namespace Bovime.veri
         public KullaniciAYRINTI()
         {
             _varSayilan();
-        }
-
-        public static List<SelectListItem> doldur(Yonetici? kime)
-        {
-            List<KullaniciAYRINTI> bilesenler = KullaniciAYRINTI.ara();
-            return doldur2(bilesenler);
-        }
-
-        public static List<SelectListItem> doldur()
-        {
-            List<KullaniciAYRINTI> bilesenler = KullaniciAYRINTI.ara();
-            return doldur2(bilesenler);
         }
 
         public void bicimlendir(veri.Varlik vari)
@@ -72,19 +58,6 @@ namespace Bovime.veri
         {
         }
 
-        #region bu_sinifina_bagli_siniflar
-        public List<KullaniciRolu> _KullaniciRoluBilgileri()
-        {
-            return veriTabani.KullaniciRoluCizelgesi.ara(p => p.i_kullaniciKimlik == kullaniciKimlik, p => p.varmi == true);
-        }
-
-
-        public List<KullaniciRoluAYRINTI> _KullaniciRoluAYRINTIBilgileri()
-        {
-            return veriTabani.KullaniciRoluAYRINTICizelgesi.ara(p => p.i_kullaniciKimlik == kullaniciKimlik);
-        }
-        #endregion bu_sinifina_bagli_siniflar
-
 
 
         /// <summary>
@@ -104,10 +77,7 @@ namespace Bovime.veri
                 return veriTabani.KullaniciAYRINTICizelgesi.tekliCek(kullaniciKimlik, vari);
             }
         }
-        public static List<KullaniciAYRINTI> ara(params Predicate<KullaniciAYRINTI>[] kosullar)
-        {
-            return veriTabani.KullaniciAYRINTICizelgesi.ara(kosullar);
-        }
+
 
 
         #region ozluk

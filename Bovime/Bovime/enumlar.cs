@@ -117,7 +117,8 @@ namespace Bovime
     public enum enumref_KullaniciTuru
     {
         Sistem_Yoneticisi = 0,
-        Yazilimci = 1
+        Yazilimci = 1,
+        Firma = 6
     }
     public enum enumref_SmsGonderimTuru
     {
@@ -193,6 +194,14 @@ namespace Bovime
         Faal_Uye = 2
 
     }
+    public enum enumref_SatisDurumu
+    {
+        Gerceklesti = 2,
+        Kullanici_iptal_etti = 4,
+        Olustu = 1,
+        Uye_iptal_etti = 3
+
+    }
     public enum enumref_BelgeDurumu
     {
         Onaylandi = 3,
@@ -202,6 +211,9 @@ namespace Bovime
 
     }
 }
+
+
+
 
 
 

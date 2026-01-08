@@ -253,6 +253,9 @@ namespace Bovime
                     yonetici.dilKimlik = 1;
 
 
+                    if (mevcut.i_firmaKimlik != null)
+                        yonetici.i_firmaKimlik = mevcut.i_firmaKimlik ?? 0;
+
 
                     if (mevcut.e_rolTabanlimi == null)
                         mevcut.e_rolTabanlimi = false;
@@ -285,7 +288,7 @@ namespace Bovime
                     else
                     {
                         yonetici.kisitliGosterimmi = true;
-                        List<KullaniciRoluAYRINTI> roller = KullaniciRoluAYRINTI.ara(p => p.i_kullaniciKimlik == yonetici.kullaniciKimlik).ToList();
+                        List<KullaniciRoluAYRINTI> roller = await KullaniciRoluAYRINTI.ara(p => p.i_kullaniciKimlik == yonetici.kullaniciKimlik);
                         if (roller.Count == 0)
                         {
                             List<Rol> varsayilanlar = Rol.ara(p => p.e_gecerlimi == true
@@ -298,9 +301,9 @@ namespace Bovime
                                 rolu.i_rolKimlik = siradaki.rolKimlik;
                                 rolu._varSayilan();
                                 rolu.e_gecerlimi = true;
-                                rolu.kaydet(false);
+                                await rolu.kaydetKos(vari, false);
                             }
-                            roller = KullaniciRoluAYRINTI.ara(p => p.i_kullaniciKimlik == yonetici.kullaniciKimlik).ToList();
+                            roller = await KullaniciRoluAYRINTI.ara(p => p.i_kullaniciKimlik == yonetici.kullaniciKimlik);
                         }
 
                         List<int> sa = new List<int>();

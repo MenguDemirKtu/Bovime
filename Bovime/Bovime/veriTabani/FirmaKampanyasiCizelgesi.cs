@@ -30,6 +30,7 @@ public class FirmaKampanyasiArama
  public  bool  ?  e_yayindaMi {get;set;}
  public  bool  ?  varmi {get;set;}
  public  string  ?  baslik {get;set;}
+ public  string  ?  metin {get;set;}
  public FirmaKampanyasiArama()
 {
 this.varmi = true;
@@ -64,6 +65,8 @@ this.varmi = true;
  predicate = predicate.And(x => x.varmi == varmi ); 
  if (baslik  != null)
                predicate = predicate.And( x => x.baslik != null &&    x.baslik .Contains(baslik));
+ if (metin  != null)
+               predicate = predicate.And( x => x.metin != null &&    x.metin .Contains(metin));
 return  predicate;
  
 }

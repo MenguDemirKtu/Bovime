@@ -85,6 +85,17 @@ int   dilKimlik = Model.gecerliDil();
                     @Html.TextBoxFor(m => m.kartVerisi.baslik, new { @class = @Ayar.textBoxBicim(), maxlength = "200" ,   placeholder = @Ayar.sozcuk("Başlık", dilKimlik) }) 
                 </div>
             </div>
+<div class=@Ayar.tamGenislik>
+                <br />
+                <div class="card table-card">
+                    <div class="card-header pb-0">
+                        <h4> 
+              @Ayar.sozcuk(".", dilKimlik)  
+</h4>
+                    </div> 
+                    @Html.TextAreaFor(m => m.kartVerisi.metin, new { @id = "elm1", name = "elm1" })
+                </div>
+            </div>
 @Html.HiddenFor(model => model.yenimi)
 </div>
 <hr />
@@ -93,10 +104,12 @@ int   dilKimlik = Model.gecerliDil();
 </button>
 </div>
 </form>
-
+<script>
+    @Html.Raw(Ayar.yukleyiciIfadesi())
+</script>
 <script>
 function ekle() {
-
+tinyMCE.triggerSave();
 var valdata = $("#formKayit").serialize();
 console.table(valdata);
 $.ajax({

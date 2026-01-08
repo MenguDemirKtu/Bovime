@@ -80,6 +80,7 @@ silinecek._sayfaAta(sayfasi);
       kartVerisi.i_fotoKimlik = fk;
      kullanan = sayfasi.mevcutKullanici();
      kartVerisi._kontrolEt(sayfasi.dilKimlik, vari );
+     kartVerisi.metin = Sayfa.dosyaKonumDuzelt(kartVerisi.metin, Genel.yazilimAyari);
      kartVerisi._sayfaAta(sayfasi);
     await kartVerisi.kaydetKos(vari,true);
       await           fotoBicimlendirKos(vari, kartVerisi, kartVerisi.i_fotoKimlik);
