@@ -31,9 +31,9 @@
 					<div class="woocommerce-product-gallery__image"
 						 data-thumb="@siradaki._foto2">
 						<a href="#">
-							<img class="wp-post-image"
+							<img class="wp-post-image" 
 								 src="@siradaki.fotosu"
-								 alt="@Model.firmasi.firmaAdi"
+								 alt="@siradaki.baslik"
 								 width="600"
 								 height="600">
 						</a>
@@ -55,13 +55,13 @@
 <div class="cell product-detail col-lg-5">
 	<h1 class="product_title entry-title"> @Model.firmasi.firmaAdi </h1>
 	<div class="product-meta product_meta">
-		<div class="woocommerce-product-rating product-rating">
-			<div aria-label="Rated 5.00 out of 5" class="star-rating" role="img"><span style="width:100%">Rated <strong class="rating">5.00</strong> out of 5 based on <span class="rating">1</span> customer rating</span></div> <a class="woocommerce-review-link" href="#reviews" rel="nofollow"><span class="count">1</span> customer review</a>
-		</div>
-		<div class="product-sku">
+	@* 	<div class="woocommerce-product-rating product-rating">
+			<div aria-label="Rated 5.00 out of 5" class="star-rating" role="img"><span style="width:100%">Rated <strong class="rating">@Model.firmasi.kullaniciOrtalamasi</strong> out of 5 based on <span class="rating">@Model.firmasi.kullaniciOrtalamasi </span> customer rating</span></div> <a class="woocommerce-review-link" href="#reviews" rel="nofollow"><span class="count"> 1 </span> customer review</a>
+		</div> *@
+	@* 	<div class="product-sku">
 			<span>SKU:</span>
 			<span class="sku">AE3KGO9T</span>
-		</div>
+		</div> *@
 	@* 	<div class="klb-single-stock">
 			<div class="product-stock stock in-stock">In Stock</div>
 		</div> *@
@@ -75,6 +75,10 @@
 				{
 					<li>
 					@Html.Raw(siradaki.metin)
+
+					<button> Bu Kampanyayı Kullan </button>
+					<br />
+
 					</li>
 				}
 
@@ -83,10 +87,21 @@
 	</div>
 	<div class="product-stock stock in-stock">In Stock</div>
  
-	<div class="product-wishlist"> <p>Did you like this product? Add to favorites now and follow the product.</p><div class="wishlist-button"><a class="klbwl-btn klbwl-btn-3123" data-product_id="3123" data-product_title="@Model.firmasi.firmaAdi" href="https://klbtheme.com/partdo/wishlist/"></a><span>Add to wishlist</span></div><!-- wishlist-button --></div><div class="product-assistant"><div class="assistant-avatar"> <img src="@Model.firmasi.fotosu" /></div><div class="assistant-content"> <span> Kampanya Sahibi</span><p>  @Model.firmasi.firmaAdi  </p></div></div><div class="product-iconboxes"><div class="iconbox"><div class="icon"> <i class="klbth-icon-ecommerce-dollar-symbol"></i></div><div class="detail"> <h5 class="entry-title">Düşük Fiyatlar</h5> <p> Firmamız düşük fiyata üstün hizmet sunar   </p></div></div><div class="iconbox"><div class="icon"> <i class="klbth-icon-check"></i></div><div class="detail"> <h5 class="entry-title"> Güvenli Ürünler  .</h5> <p> Firmamız güvenli hizmet sunar </p></div></div><div class="iconbox"><div class="icon"> <i class="klbth-icon-ecommerce-headphones"></i></div><div class="detail"> <h5 class="entry-title"> Uzman Servis.</h5> <p> Firmamız servisi uzaman olarak verir </p></div></div><div class="iconbox"><div class="icon"> <i class="klbth-icon-redo"></i></div><div class="detail"> <h5 class="entry-title"> Kolay Kullanım.</h5> <p>Ürünlerimiz hızlık ullanırib</p></div></div></div><div class="product-meta bottom product_meta">
-		<div class="product-categories posted_in"><span>Categories:</span> <a href="https://klbtheme.com/partdo/product-category/interior-accessories/alarm-systems/" rel="tag">Alarm Systems</a>, <a href="https://klbtheme.com/partdo/product-category/auto-safety-security/" rel="tag">Auto Safety &amp; Security</a>, <a href="https://klbtheme.com/partdo/product-category/interior-accessories/" rel="tag">Interior Accessories</a></div>
+	<div class="product-wishlist"> <p>Did you like this product? Add to favorites now and follow the product.</p><div class="wishlist-button"><a class="klbwl-btn klbwl-btn-3123" data-product_id="3123" data-product_title="@Model.firmasi.firmaAdi" href="https://klbtheme.com/partdo/wishlist/"></a><span>Add to wishlist</span></div><!-- wishlist-button --></div><div class="product-assistant"><div class="assistant-avatar"> <img src="@Model.firmasi.fotosu" /></div><div class="assistant-content"> <span> Kampanya Sahibi</span><p>  @Model.firmasi.firmaAdi  </p></div></div><div class="product-iconboxes"><div class="iconbox"><div class="icon"> <i class="klbth-icon-ecommerce-dollar-symbol"></i></div><div class="detail"> <h5 class="entry-title"> @Model.firmasi.sloganBaslik1  </h5> <p> @Model.firmasi.slogan1  </p></div></div><div class="iconbox"><div class="icon"> <i class="klbth-icon-check"></i></div><div class="detail"> <h5 class="entry-title">@Model.firmasi.sloganBaslik2  </h5> <p> @Model.firmasi.slogan2 </p></div></div><div class="iconbox"><div class="icon"> <i class="klbth-icon-ecommerce-headphones"></i></div><div class="detail"> <h5 class="entry-title">@Model.firmasi.sloganBaslik3 </h5> <p> @Model.firmasi.slogan3 </p></div></div><div class="iconbox"><div class="icon"> <i class="klbth-icon-redo"></i></div><div class="detail"> <h5 class="entry-title"> @Model.firmasi.sloganBaslik4 </h5> <p>  @Model.firmasi.slogan4  </p></div></div></div><div class="product-meta bottom product_meta">
+		<div class="product-categories posted_in"><span> Firma Sektörleri :</span>
+
+
+
+			@{
+
+				foreach(var siradaki in Model.sektorleri)
+				{ 
+			<a href="@siradaki._URL" rel="tag">@siradaki.sektorAdi</a> 
+		 
+				}
+			}
+			 
 	</div>
-	<div class="product-share entry-social"><ul class="social-media social-container social-share colored"><li><a class="facebook" href="#"><i class="klbth-icon-facebook"></i></a></li><li><a class="twitter" href="#"><i class="klbth-icon-twitter"></i></a></li><li><a class="pinterest" href="#"><i class="klbth-icon-pinterest"></i></a></li><li><a class="linkedin" href="#"><i class="klbth-icon-linkedin"></i></a></li><li><a class="whatsapp" href="#"><i class="klbth-icon-whatsapp"></i></a></li></ul></div>
 </div>
 </div>
 <div class="woocommerce-tabs wc-tabs-wrapper">

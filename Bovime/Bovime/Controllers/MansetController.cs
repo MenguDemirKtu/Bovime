@@ -24,6 +24,7 @@ namespace Bovime.Controllers
                         await modeli.veriCekKos(mevcutKullanici());
                     else
                         await modeli.kosulaGoreCek(mevcutKullanici(), id);
+                    modeli.dokumVerisi = modeli.dokumVerisi.OrderBy(p => p.sirasi).ToList();
                     return View(modeli);
                 }
                 else

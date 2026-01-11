@@ -4,7 +4,16 @@ namespace Bovime
 {
     public class SqlIslemi
     {
-
+        /// <summary>
+        /// Firmaya ait kampanya istatistiklerini günceller
+        /// </summary>
+        /// <param name="vari"></param>
+        /// <returns></returns>
+        public async Task firmaIstatistikDuzenle(veri.Varlik vari)
+        {
+            string sorgu = "exec dbo.firmaIstatistikDuzenle";
+            await islemYapKos(vari, sorgu);
+        }
         /// <summary>
         /// Bütün resmi tatil süresi için resmi tarih belirler.
         /// </summary>

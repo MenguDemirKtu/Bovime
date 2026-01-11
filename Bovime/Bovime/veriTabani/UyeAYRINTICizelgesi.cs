@@ -24,6 +24,11 @@ public class UyeAYRINTIArama
  public  string  ?  ePosta {get;set;}
  public  DateTime  ?  uyelikTarihi {get;set;}
  public  bool  ?  varmi {get;set;}
+ public  string  ?  kullaniciAdi {get;set;}
+ public  string  ?  sifre {get;set;}
+ public  string  ?  adres {get;set;}
+ public  Int32  ?  i_uyeDurumuKimlik {get;set;}
+ public  string  ?  UyeDurumuAdi {get;set;}
  public UyeAYRINTIArama()
 {
 this.varmi = true;
@@ -46,6 +51,16 @@ this.varmi = true;
  predicate = predicate.And(x => x.uyelikTarihi == uyelikTarihi ); 
  if (varmi  != null)
  predicate = predicate.And(x => x.varmi == varmi ); 
+ if (kullaniciAdi  != null)
+               predicate = predicate.And( x => x.kullaniciAdi != null &&    x.kullaniciAdi .Contains(kullaniciAdi));
+ if (sifre  != null)
+               predicate = predicate.And( x => x.sifre != null &&    x.sifre .Contains(sifre));
+ if (adres  != null)
+               predicate = predicate.And( x => x.adres != null &&    x.adres .Contains(adres));
+ if (i_uyeDurumuKimlik  != null)
+ predicate = predicate.And(x => x.i_uyeDurumuKimlik == i_uyeDurumuKimlik ); 
+ if (UyeDurumuAdi  != null)
+               predicate = predicate.And( x => x.UyeDurumuAdi != null &&    x.UyeDurumuAdi .Contains(UyeDurumuAdi));
 return  predicate;
  
 }

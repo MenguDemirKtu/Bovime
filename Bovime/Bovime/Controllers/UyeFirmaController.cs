@@ -16,9 +16,19 @@ namespace Bovime.Controllers
         [HttpGet("Goster/{url}")]
         public async Task<IActionResult> Goster(string url)
         {
-            UyeFirmaModel model = new UyeFirmaModel();
-            await model.veriCek(url);
-            return View(model);
+            try
+            {
+                UyeFirmaModel model = new UyeFirmaModel();
+                if (oturumAcildimi() == true)
+                    await model.veriCek(url, oturumAcan());
+                else
+                    await model.veriCek(url, null);
+                return View(model);
+            }
+            catch
+            {
+                return RedirectToAction("index", "SiteAnaSayfa");
+            }
         }
     }
 }

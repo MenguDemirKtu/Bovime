@@ -19,7 +19,8 @@ int   dilKimlik = Model.gecerliDil();
                     @Html.TextBoxFor(m => m.kartVerisi.firmaAdi, new { @class = @Ayar.textBoxBicim(), maxlength = "400" ,   placeholder = @Ayar.sozcuk("Firma Adı", dilKimlik) }) 
                 </div>
             </div>
-       @Html.HiddenFor(model => model.kartVerisi.firmakimlik) 
+       @Html.HiddenFor(model => model.kartVerisi.firmakimlik)
+       @Html.HiddenFor(model => model.kartVerisi.firmakimlik)
        @Html.HiddenFor(model => model.kartVerisi.i_fotoKimlik)
        @Html.HiddenFor(model => model.kartVerisi.varmi)
 <div class=@Ayar.yariGenislik>
@@ -84,6 +85,76 @@ int   dilKimlik = Model.gecerliDil();
                     @Html.TextBoxFor(m => m.kartVerisi.puani, new { @class = @Ayar.textBoxBicim(),   placeholder = @Ayar.sozcuk("Puanı", dilKimlik) }) 
                 </div>
             </div>
+
+
+
+            
+<div class=@Ayar.yariGenislik>
+                <div class="@Ayar.formGrup">
+                    <label  class="@Ayar.labelBicim"> @Ayar.sozcuk("Slogan Başlık 1", dilKimlik)  </label>
+                    @Html.TextBoxFor(m => m.kartVerisi.sloganBaslik1, new { @class = @Ayar.textBoxBicim(), maxlength = "100" ,   placeholder = @Ayar.sozcuk("", dilKimlik) }) 
+                </div>
+            </div>
+
+<div class=@Ayar.yariGenislik>
+                <div class="@Ayar.formGrup">
+                    <label  class="@Ayar.labelBicim"> @Ayar.sozcuk("Slogan 1", dilKimlik)  </label>
+                    @Html.TextBoxFor(m => m.kartVerisi.slogan1, new { @class = @Ayar.textBoxBicim(), maxlength = "500" ,   placeholder = @Ayar.sozcuk("", dilKimlik) }) 
+                </div>
+            </div>
+
+
+            
+            
+<div class=@Ayar.yariGenislik>
+                <div class="@Ayar.formGrup">
+                    <label  class="@Ayar.labelBicim"> @Ayar.sozcuk("Slogan Başlık 2", dilKimlik)  </label>
+                    @Html.TextBoxFor(m => m.kartVerisi.sloganBaslik2, new { @class = @Ayar.textBoxBicim(), maxlength = "100" ,   placeholder = @Ayar.sozcuk("", dilKimlik) }) 
+                </div>
+            </div>
+
+<div class=@Ayar.yariGenislik>
+                <div class="@Ayar.formGrup">
+                    <label  class="@Ayar.labelBicim"> @Ayar.sozcuk("Slogan 2", dilKimlik)  </label>
+                    @Html.TextBoxFor(m => m.kartVerisi.slogan2, new { @class = @Ayar.textBoxBicim(), maxlength = "500" ,   placeholder = @Ayar.sozcuk("", dilKimlik) }) 
+                </div>
+            </div>
+
+            
+            
+<div class=@Ayar.yariGenislik>
+                <div class="@Ayar.formGrup">
+                    <label  class="@Ayar.labelBicim"> @Ayar.sozcuk("Slogan Başlık 3", dilKimlik)  </label>
+                    @Html.TextBoxFor(m => m.kartVerisi.sloganBaslik3, new { @class = @Ayar.textBoxBicim(), maxlength = "100" ,   placeholder = @Ayar.sozcuk("", dilKimlik) }) 
+                </div>
+            </div>
+
+<div class=@Ayar.yariGenislik>
+                <div class="@Ayar.formGrup">
+                    <label  class="@Ayar.labelBicim"> @Ayar.sozcuk("Slogan 3", dilKimlik)  </label>
+                    @Html.TextBoxFor(m => m.kartVerisi.slogan3, new { @class = @Ayar.textBoxBicim(), maxlength = "500" ,   placeholder = @Ayar.sozcuk("", dilKimlik) }) 
+                </div>
+            </div>
+
+
+
+            <div class=@Ayar.yariGenislik>
+                <div class="@Ayar.formGrup">
+                    <label class="@Ayar.labelBicim"> @Ayar.sozcuk("Slogan Başlık 4", dilKimlik)  </label>
+                    @Html.TextBoxFor(m => m.kartVerisi.sloganBaslik4, new { @class = @Ayar.textBoxBicim(), maxlength = "100", placeholder = @Ayar.sozcuk("", dilKimlik) })
+                </div>
+            </div>
+
+            <div class=@Ayar.yariGenislik>
+                <div class="@Ayar.formGrup">
+                    <label class="@Ayar.labelBicim"> @Ayar.sozcuk("Slogan 4", dilKimlik)  </label>
+                    @Html.TextBoxFor(m => m.kartVerisi.slogan4, new { @class = @Ayar.textBoxBicim(), maxlength = "500", placeholder = @Ayar.sozcuk("", dilKimlik) })
+                </div>
+            </div>
+
+
+
+
 <div class=@Ayar.tamGenislik>
                 <br />
                 <div class="card table-card">
@@ -97,10 +168,33 @@ int   dilKimlik = Model.gecerliDil();
             </div>
 <div class=@Ayar.yariGenislik>
                 <div class="@Ayar.formGrup">
-                    <label  class="@Ayar.labelBicim"> @Ayar.sozcuk("Firma URL", dilKimlik)  </label>
-                    @Html.TextBoxFor(m => m.kartVerisi.firmaUrl, new { @class = @Ayar.textBoxBicim(), maxlength = "150" ,   placeholder = @Ayar.sozcuk(".", dilKimlik) }) 
+                    <label  class="@Ayar.labelBicim"> @Ayar.sozcuk("Firma Url", dilKimlik)  </label>
+                    @Html.TextBoxFor(m => m.kartVerisi.firmaUrl, new { @class = @Ayar.textBoxBicim(), maxlength = "150" ,   placeholder = @Ayar.sozcuk("Firma Url", dilKimlik) }) 
                 </div>
             </div>
+<div class=@Ayar.yariGenislik>
+                <div class="@Ayar.formGrup">
+                    <label  class="@Ayar.labelBicim"> @Ayar.sozcuk("Azami İlan Sayısı", dilKimlik)  </label>
+                    @Html.TextBoxFor(m => m.kartVerisi.azamiIlanSayisi, new { @class = @Ayar.textBoxBicim(),   placeholder = @Ayar.sozcuk("Azami İlan Sayısı", dilKimlik) }) 
+                </div>
+            </div>
+<div class=@Ayar.yariGenislik>
+                <div class="@Ayar.formGrup">
+                    <label  class="@Ayar.labelBicim"> @Ayar.sozcuk("Paket", dilKimlik)  </label>
+                    @Html.DropDownListFor(m => m.kartVerisi.i_paketKimlik, Bilesen.doldur(Model._ayPaketAYRINTI) ,  @Ayar.sozcuk("Lütfen Seçiniz", dilKimlik), new { @class = "form-control select2" })
+                </div>
+            </div>
+
+            
+<div class=@Ayar.yariGenislik>
+                <div class="@Ayar.formGrup">
+                    <label  class="@Ayar.labelBicim"> @Ayar.sozcuk("Sektörleri", dilKimlik)  </label>  
+                    @Html.Raw(Genel.cokluSecimHazirla("firmaSektorleri", "firmaSektorleri", Model.doldur(Model._aySektorAYRINTI, Model.firmaSektorleri)))
+
+                </div>
+            </div>
+
+
 @Html.HiddenFor(model => model.yenimi)
 </div>
 <hr />

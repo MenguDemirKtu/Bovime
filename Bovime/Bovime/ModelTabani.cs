@@ -32,9 +32,17 @@ namespace Bovime
         }
         public List<SelectListItem> doldur<T>(List<T> son, int[] secilenler) where T : Bilesen
         {
+            List<int> se = secilenler.ToList();
             List<SelectListItem> sonuc = new List<SelectListItem>();
             for (int i = 0; i < son.Count; i++)
-                sonuc.Add(new SelectListItem(son[i]._tanimi(), son[i]._birincilAnahtar().ToString()));
+            {
+                int yer = se.IndexOf(Convert.ToInt32(son[i]._birincilAnahtar()));
+                if (yer == -1)
+                    sonuc.Add(new SelectListItem(son[i]._tanimi(), son[i]._birincilAnahtar().ToString()));
+                else
+                    sonuc.Add(new SelectListItem(son[i]._tanimi(), son[i]._birincilAnahtar().ToString(), true));
+            }
+
             return sonuc;
         }
         protected async Task fotoAyariBelirle(veri.Varlik vari, string? cizelgeAdi = "Belirsiz")

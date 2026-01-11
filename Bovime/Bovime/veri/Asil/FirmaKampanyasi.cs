@@ -60,5 +60,9 @@ using System.ComponentModel.DataAnnotations.Schema;
       [Display(Name = "Durum")] 
  public   Int32  ? i_kampanyaDurumuKimlik {get;set;}
 
+      [Display(Name = ".")] 
+[ Column(TypeName = "nvarchar(40)")]
+ public   string  ? kampanyaKodu {get;set;}
+
  } 
  }

@@ -138,6 +138,37 @@ namespace Bovime.Models
                 }
 
 
+                List<int> secilenKimlikler = this.firmaSektorleri.ToList();
+                List<FirmaSektoru> kayitlilar = await FirmaSektoru.ara(vari, p => p.i_firmaKimlik == kartVerisi.firmakimlik, p => p.varmi == true);
+
+                for (int i = 0; i < kayitlilar.Count; i++)
+                {
+                    int yer = secilenKimlikler.IndexOf(kayitlilar[i].i_sektorKimlik);
+                    if (yer == -1)
+                    {
+                        await kayitlilar[i].silKos(vari, false);
+                    }
+                }
+
+                for (int i = 0; i < secilenKimlikler.Count; i++)
+                {
+                    var karsilik = kayitlilar.FirstOrDefault(p => p.i_sektorKimlik == secilenKimlikler[i]);
+                    if (karsilik == null)
+                    {
+                        // ekle 
+                        FirmaSektoru yeni = new FirmaSektoru();
+                        yeni.i_firmaKimlik = kartVerisi.firmakimlik;
+                        yeni.i_sektorKimlik = secilenKimlikler[i];
+                        await yeni.kaydetKos(vari, false);
+                    }
+                    else
+                    {
+                        // güncelle 
+                    }
+
+                }
+
+
 
                 return kartVerisi;
             }
@@ -156,11 +187,24 @@ namespace Bovime.Models
                 dokumVerisi = new List<FirmaAYRINTI>();
                 await baglilariCek(vari, kime);
                 await fotoAyariBelirle(vari, kartVerisi._cizelgeAdi());
+                List<FirmaSektoruAYRINTI> liste = await FirmaSektoruAYRINTI.ara(P => P.i_firmaKimlik == kimlik);
+                firmaSektorleri = liste.Select(p => p.i_sektorKimlik).ToArray();
             }
         }
 
         public List<ref_FirmaDurumu> _ayref_FirmaDurumu { get; set; }
-        public async Task baglilariCek(veri.Varlik vari, Yonetici kim) { _ayref_FirmaDurumu = await ref_FirmaDurumu.ara(vari); }
+        public List<SektorAYRINTI> _aySektorAYRINTI { get; set; }
+
+        public List<PaketAYRINTI> _ayPaketAYRINTI { get; set; }
+        public int[] firmaSektorleri { get; set; }
+
+        public async Task baglilariCek(veri.Varlik vari, Yonetici kim)
+        {
+            _ayref_FirmaDurumu = await ref_FirmaDurumu.ara(vari);
+            _aySektorAYRINTI = await SektorAYRINTI.ara(vari);
+            _ayPaketAYRINTI = await PaketAYRINTI.ara(vari);
+            firmaSektorleri = new int[0];
+        }
 
         public async Task veriCekKos(Yonetici kime)
         {

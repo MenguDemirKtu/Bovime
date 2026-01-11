@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq.Expressions;
 
 namespace Bovime.veri
@@ -9,6 +10,15 @@ namespace Bovime.veri
         public SektorAYRINTI()
         {
             _varSayilan();
+        }
+
+        [NotMapped]
+        public string _URL
+        {
+            get
+            {
+                return String.Format("/SiteSektoru/{0}", this.sektorUrl);
+            }
         }
 
 

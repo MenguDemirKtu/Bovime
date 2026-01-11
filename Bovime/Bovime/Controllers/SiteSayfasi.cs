@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Http.Extensions;
+﻿using Bovime.veri;
+using Microsoft.AspNetCore.Http.Extensions;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 
 namespace Bovime.Controllers
 {
@@ -8,6 +10,22 @@ namespace Bovime.Controllers
         public string ipAdresi()
         {
             return HttpContext.Connection.RemoteIpAddress?.ToString() ?? "";
+        }
+        protected bool oturumAcildimi()
+        {
+            if (HttpContext.Session.GetString("mevcutUye") == null)
+                return false;
+            else
+                return true;
+        }
+        protected UyeAYRINTI oturumAcan()
+        {
+            string kullanici = HttpContext.Session.GetString("mevcutUye") ?? "";
+            UyeAYRINTI? sonuc = JsonConvert.DeserializeObject<UyeAYRINTI>(kullanici ?? "");
+            if (sonuc == null)
+                throw new Exception("Oturum açılmamış");
+            else
+                return sonuc;
         }
 
         public string sayfaninAdresi()
