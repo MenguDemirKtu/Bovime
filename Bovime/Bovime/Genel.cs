@@ -52,17 +52,17 @@ namespace Bovime
 
                 if (altlari.Count == 0)
                 {
-                    mobilMenuHtml += String.Format(" <li class=\"menu-item menu-item-type-post_type menu-item-object-page\"><a href=\"https://klbtheme.com/partdo/contact/\"> {0} </a></li>", siradaki.siteMenuAdi);
+                    mobilMenuHtml += String.Format(" <li class=\"menu-item menu-item-type-post_type menu-item-object-page\"><a href=\"{1}\"> {0} </a></li>", siradaki.siteMenuAdi, siradaki.menuUrl);
                 }
                 else
                 {
 
-                    mobilMenuHtml += "\t\t<li class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-40 current_page_item current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-3847\">\r\n\t\t\t\t\t\t\t<a href=\"https://klbtheme.com/partdo/\"> " + siradaki.siteMenuAdi + " </a>\r\n\t\t\t\t\t\t\t<ul class=\"sub-menu\">";
+                    mobilMenuHtml += "\t\t<li class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-40 current_page_item current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-3847\">\r\n\t\t\t\t\t\t\t<a href=\"" + siradaki.menuUrl + "\"> " + siradaki.siteMenuAdi + " </a>\r\n\t\t\t\t\t\t\t<ul class=\"sub-menu\">";
 
 
                     for (int k = 0; k < altlari.Count; k++)
                     {
-                        mobilMenuHtml += String.Format("\t<li class=\"menu-item menu-item-type-post_type menu-item-object-page\"><a href=\"https://klbtheme.com/partdo/home-2/\">   " + altlari[k].siteMenuAdi + "  </a></li>\r\n\t\t\t\t\t\t\t");
+                        mobilMenuHtml += String.Format("\t<li class=\"menu-item menu-item-type-post_type menu-item-object-page\"><a href=\"" + altlari[k].menuUrl + "\">   " + altlari[k].siteMenuAdi + "  </a></li>\r\n\t\t\t\t\t\t\t");
 
                     }
 
