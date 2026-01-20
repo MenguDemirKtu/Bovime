@@ -1,0 +1,25 @@
+﻿ 
+@{
+}
+@using Bovime
+@model Bovime.Models.UyeFirmaModel
+ 
+
+
+<h5>@Model.kampanyasi.baslik</h5>
+@Html.Raw(Model.kampanyasi.metin)
+<hr />
+ 
+
+@{
+    if(Model.hataVarmi == false )
+    {
+        <h3> Bu kare kodu firma çalışanına gösteriniz ya da  </h3> 
+        <h3> Onay Kodu : @Model.satisi.kisaKod </h3>
+        <img src="data:image/png;base64,@Convert.ToBase64String(Model.qrBytes)" />
+    }
+    else
+    {
+        @Html.Raw(Model.hataAciklamasi)
+    }
+}

@@ -76,7 +76,7 @@
 					<li>
 					@Html.Raw(siradaki.metin)
 
-					<button> Bu Kampanyayı Kullan </button>
+					<button onclick="kampanyaKullan('@siradaki.kampanyaKodu'); return false;" > Bu Kampanyayı Kullan </button>
 					<br />
 
 					</li>
@@ -182,3 +182,47 @@
 		</div>
 	</div>
 </div>
+
+<div class="modal fade" id="kampanyamodal" tabindex="-1" aria-hidden="true">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content" style="z-index:9999;">
+
+			<div class="modal-header">
+				<h5 class="modal-title">Kampanya Bilgileri</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+			</div>
+
+			<div class="modal-body" id="kampanyamodalIcerik">
+				<!-- Partial buraya yüklenecek -->
+				<div class="text-center p-3">
+					<div class="spinner-border"></div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+						<script>
+							 function kampanyaKullan(kimlik) {
+	var modal = new bootstrap.Modal(document.getElementById('kampanyamodal'));
+	modal.show();
+
+	$("#kampanyamodalIcerik").html(`
+		<div class="text-center p-3">
+			<div class="spinner-border"></div>
+		</div>
+	`);
+
+		$.ajax({
+		url: "/Kampanya/KampanyaGoster",
+		data: { kim: kimlik },
+		type: "GET",
+		success: function (html) {
+			$("#kampanyamodalIcerik").html(html);
+		}
+	});
+
+							 }
+
+						</script>

@@ -1,99 +1,95 @@
-﻿@{
-
+﻿  
+@model Bovime.Models.UyeOlModel
+@{
     Layout = "~/Views/_genel.cshtml";
 }
 
+<div class="container">
+    <div class="card shadow login-card">
+        <div class="card-body p-4"> 
 
- 
+            <h4 class="text-center mb-4">Üye Ol</h4>
 
+            @Html.AntiForgeryToken()
 
-<div class="site-primary" id="main">
-	<div class="site-content" id="content">
+            <div id="hata" class="alert alert-danger d-none"></div>
+            <div id="basari" class="alert alert-success d-none"></div>
 
+            <div class="mb-3">
+                <label>Ad</label>
+                <input id="adi" class="form-control" />
+            </div>
 
-<div class="my-account-page shop-container shop-page-wrapper">
-	<div class="container">
-		<div class="woocommerce">
-			<div class="woocommerce-notices-wrapper"></div>
+            <div class="mb-3">
+                <label>Soyad</label>
+                <input id="soyadi" class="form-control" />
+            </div>
 
+            <div class="mb-3">
+                <label>Telefon</label>
+                <input id="telefon" class="form-control" />
+            </div>
 
-			<div class="site-login has-register">
-				<div class="site-login-container">
-					<div class="site-login-overflow">
-						<ul class="login-page-tab">
-							<li><a href="#" class="active">Login</a></li>
+            <div class="mb-3">
+                <label>E-Posta</label>
+                <input id="ePosta" type="email" class="form-control" />
+            </div>
 
-							<li><a href="#">Register</a></li>
-						</ul>
-						<div id="customer_login" class="login-form-container">
-							<div class="login-form">
-								<form class="woocommerce-form woocommerce-form-login login" method="post" novalidate>
+            <div class="mb-3">
+                <label>Kullanıcı Adı</label>
+                <input id="kullaniciAdi" class="form-control" />
+            </div>
 
+            <div class="mb-3">
+                <label>Şifre</label>
+                <input id="sifre" type="password" class="form-control" />
+            </div>
 
-									<p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
-										<label for="username">Username or email address&nbsp;<span class="required" aria-hidden="true">*</span><span class="screen-reader-text">Required</span></label>
-										<input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="username" id="username" autocomplete="username" value="" required aria-required="true" />
-									</p>
-									<p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
-										<label for="password">Password&nbsp;<span class="required" aria-hidden="true">*</span><span class="screen-reader-text">Required</span></label>
-										<input class="woocommerce-Input woocommerce-Input--text input-text" type="password" name="password" id="password" autocomplete="current-password" required aria-required="true" />
-									</p>
+            <button class="btn btn-success w-100" onclick="uyeOl()">
+                Üye Ol
+            </button>
 
-
-									<p class="form-row">
-										<label class="woocommerce-form__label woocommerce-form__label-for-checkbox woocommerce-form-login__rememberme">
-											<input class="woocommerce-form__input woocommerce-form__input-checkbox" name="rememberme" type="checkbox" id="rememberme" value="forever" /> <span>Remember me</span>
-										</label>
-										<input type="hidden" id="woocommerce-login-nonce" name="woocommerce-login-nonce" value="c01ad26c65" /><input type="hidden" name="_wp_http_referer" value="/partdo/my-account/" />								<button type="submit" class="woocommerce-button button woocommerce-form-login__submit" name="login" value="Log in">Log in</button>
-									</p>
-									<p class="woocommerce-LostPassword lost_password">
-										<a href="https://klbtheme.com/partdo/my-account/lost-password/">Lost your password?</a>
-									</p>
-
-									<div class="klb-social-login"><p class="social-divider"><span>Or login with</span></p><a class='klb-social-login-btn klb-btn-google' href='https://klbtheme.com/partdo/?klb_oauth=auth&#038;provider=google&#038;redirect_to=https%3A%2F%2Fklbtheme.com%2Fpartdo%2Fmy-account%2F' rel='nofollow noopener'>Google</a><a class='klb-social-login-btn klb-btn-facebook' href='https://klbtheme.com/partdo/?klb_oauth=auth&#038;provider=facebook&#038;redirect_to=https%3A%2F%2Fklbtheme.com%2Fpartdo%2Fmy-account%2F' rel='nofollow noopener'>Facebook</a></div>
-								</form>
-							</div>
-							<div class="register-form">
-								<form method="post" class="woocommerce-form woocommerce-form-register register">
-
-
-
-									<p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
-										<label for="reg_username">Username&nbsp;<span class="required" aria-hidden="true">*</span><span class="screen-reader-text">Required</span></label>
-												<input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="username2" id="reg_username2" autocomplete="username2" value="" required aria-required="true" />
-									</p>
-
-
-									<p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
-										<label for="reg_email">Email address&nbsp;<span class="required" aria-hidden="true">*</span><span class="screen-reader-text">Required</span></label>
-										<input type="email" class="woocommerce-Input woocommerce-Input--text input-text" name="email" id="reg_email" autocomplete="email" value="" required aria-required="true" />
-									</p>
-
-
-									<p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
-										<label for="reg_password">Password&nbsp;<span class="required" aria-hidden="true">*</span><span class="screen-reader-text">Required</span></label>
-										<input type="password" class="woocommerce-Input woocommerce-Input--text input-text" name="password" id="reg_password" autocomplete="new-password" required aria-required="true" />
-									</p>
-
-
-									<wc-order-attribution-inputs></wc-order-attribution-inputs><div class="woocommerce-privacy-policy-text">
-										<p>Your personal data will be used to support your experience throughout this website, to manage access to your account, and for other purposes described in our <a href="https://klbtheme.com/partdo/privacy-policy/" class="woocommerce-privacy-policy-link" target="_blank">privacy policy</a>.</p>
-									</div>
-									<p class="woocommerce-form-row form-row">
-										<input type="hidden" id="woocommerce-register-nonce" name="woocommerce-register-nonce" value="83f24f8b36" /><input type="hidden" name="_wp_http_referer" value="/partdo/my-account/" />									<button type="submit" class="woocommerce-Button woocommerce-button button woocommerce-form-register__submit" name="register" value="Register">Register</button>
-									</p>
-
-									<div class="klb-social-login"><p class="social-divider"><span>Or login with</span></p><a class='klb-social-login-btn klb-btn-google' href='https://klbtheme.com/partdo/?klb_oauth=auth&#038;provider=google&#038;redirect_to=https%3A%2F%2Fklbtheme.com%2Fpartdo%2Fmy-account%2F' rel='nofollow noopener'>Google</a><a class='klb-social-login-btn klb-btn-facebook' href='https://klbtheme.com/partdo/?klb_oauth=auth&#038;provider=facebook&#038;redirect_to=https%3A%2F%2Fklbtheme.com%2Fpartdo%2Fmy-account%2F' rel='nofollow noopener'>Facebook</a></div>
-								</form>
-							</div>
-						</div>
-					</div><!-- site-login-overflow -->
-				</div><!-- site-login-container -->
-			</div><!-- site-login -->
-
-		</div>
-	</div>
+        </div>
+    </div>
 </div>
 
-</div><!-- site-content -->
-</div><!-- site-primary -->
+<script>
+    function uyeOl() {
+
+        const data = {
+            adi: document.getElementById("adi").value,
+            soyadi: document.getElementById("soyadi").value,
+            telefon: document.getElementById("telefon").value,
+            ePosta: document.getElementById("ePosta").value,
+            kullaniciAdi: document.getElementById("kullaniciAdi").value,
+            sifre: document.getElementById("sifre").value
+        };
+
+        const token = document.querySelector('input[name="__RequestVerificationToken"]').value;
+
+        fetch('/UyeOl/UyeOlAjax', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'RequestVerificationToken': token
+            },
+            body: JSON.stringify(data)
+        })
+        .then(res => res.json())
+        .then(res => {
+
+            if (res.basarili) {
+                document.getElementById("basari").innerText = res.mesaj;
+                document.getElementById("basari").classList.remove("d-none");
+            } else {
+                document.getElementById("hata").innerText = res.mesaj;
+                document.getElementById("hata").classList.remove("d-none");
+            }
+
+        })
+        .catch(err => {
+            alert("Sunucu hatası");
+            console.error(err);
+        });
+    }
+</script>

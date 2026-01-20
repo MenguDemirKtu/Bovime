@@ -360,7 +360,7 @@ namespace Bovime
 
         }
 
-        public static string telNoBicimlendir(string telNo)
+        public static string telNoBicimlendir(string? telNo)
         {
             if (string.IsNullOrEmpty(telNo))
             {

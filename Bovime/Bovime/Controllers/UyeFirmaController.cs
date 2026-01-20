@@ -6,11 +6,18 @@ namespace Bovime.Controllers
     [Route("UyeFirma")]
     public class UyeFirmaController : SiteSayfasi
     {
+        [HttpGet("")]
         public async Task<IActionResult> Index()
         {
             return View();
         }
-
+        //[HttpGet("KampanyaGoster")]
+        //public async Task<IActionResult> KampanyaGoster(string kim)
+        //{
+        //    string nedir = kim;
+        //    UyeFirmaModel model = new UyeFirmaModel();
+        //    return PartialView("_KampanyaGoster", model);
+        //}
 
 
         [HttpGet("Goster/{url}")]

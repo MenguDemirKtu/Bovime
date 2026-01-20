@@ -130,6 +130,10 @@ namespace Bovime
 
             app.UseEndpoints(endpoints =>
             {
+
+
+                endpoints.MapControllers(); // 🔴 BU ŞART (ATTRIBUTE ROUTING)
+
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=SiteAnaSayfa}/{action=Index}/{id?}");

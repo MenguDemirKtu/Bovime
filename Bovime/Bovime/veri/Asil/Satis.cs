@@ -37,5 +37,13 @@ using System.ComponentModel.DataAnnotations.Schema;
 [ Column(TypeName = "datetime")]
  public   DateTime  ? tarih {get;set;}
 
+      [Display(Name = ".")] 
+[ Column(TypeName = "nvarchar(8)")]
+ public   string  ? kisaKod {get;set;}
+
+      [Display(Name = ".")] 
+[ Column(TypeName = "datetime")]
+ public   DateTime  ? kisaKodTarihi {get;set;}
+
  } 
  }

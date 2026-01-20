@@ -25,6 +25,11 @@ namespace Bovime
             await islemYapKos(vari, sorgu);
 
         }
+        public static async Task satisKoduBelirle(veri.Varlik vari)
+        {
+            string sorgu = "exec dbo.satisKoduBelirle";
+            await islemYapKos(vari, sorgu);
+        }
 
         /// <summary>
         /// İlgili kullanıcın son gün girişini belirler. Üst sınırı aşarsa kullanıcıya bilgi verir.

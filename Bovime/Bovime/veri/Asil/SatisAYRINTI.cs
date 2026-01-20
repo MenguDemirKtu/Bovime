@@ -57,5 +57,13 @@ using System.ComponentModel.DataAnnotations.Schema;
 [ Column(TypeName = "nvarchar(200)")]
  public   string  ? kampanyaBasligi {get;set;}
 
+      [Display(Name = ".")] 
+[ Column(TypeName = "nvarchar(8)")]
+ public   string  ? kisaKod {get;set;}
+
+      [Display(Name = ".")] 
+[ Column(TypeName = "datetime")]
+ public   DateTime  ? kisaKodTarihi {get;set;}
+
  } 
  }

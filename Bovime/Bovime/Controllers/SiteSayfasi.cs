@@ -7,10 +7,7 @@ namespace Bovime.Controllers
 {
     public class SiteSayfasi : Controller
     {
-        public string ipAdresi()
-        {
-            return HttpContext.Connection.RemoteIpAddress?.ToString() ?? "";
-        }
+
         protected bool oturumAcildimi()
         {
             if (HttpContext.Session.GetString("mevcutUye") == null)
@@ -18,16 +15,20 @@ namespace Bovime.Controllers
             else
                 return true;
         }
-        protected UyeAYRINTI oturumAcan()
+        protected Uye oturumAcan()
         {
             string kullanici = HttpContext.Session.GetString("mevcutUye") ?? "";
-            UyeAYRINTI? sonuc = JsonConvert.DeserializeObject<UyeAYRINTI>(kullanici ?? "");
+            Uye? sonuc = JsonConvert.DeserializeObject<Uye>(kullanici ?? "");
             if (sonuc == null)
                 throw new Exception("Oturum açılmamış");
             else
                 return sonuc;
         }
 
+        public string ipAdresi()
+        {
+            return HttpContext.Connection.RemoteIpAddress?.ToString() ?? "";
+        }
         public string sayfaninAdresi()
         {
             string adres = Request.GetEncodedUrl();
