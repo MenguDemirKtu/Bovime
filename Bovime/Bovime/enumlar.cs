@@ -210,13 +210,13 @@ namespace Bovime
         Yayinda = 2,
         Yayinda_Degil = 4
     }
- public enum enumref_UyeDurumu
- {
-Aktif_Uye = 1 , 
-Iptal_Edildi = 3 , 
-Pasif_Uye = 2 
- 
- }
+    public enum enumref_UyeDurumu
+    {
+        Aktif_Uye = 1,
+        Iptal_Edildi = 3,
+        Pasif_Uye = 2
+
+    }
     public enum enumref_BelgeDurumu
     {
         Onaylandi = 3,

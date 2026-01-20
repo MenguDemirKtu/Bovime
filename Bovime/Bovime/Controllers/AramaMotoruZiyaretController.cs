@@ -1,89 +1,81 @@
-using System;
-using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
-      using System;
-    using System.Threading; 
-   using Microsoft.EntityFrameworkCore; 
- using System.Threading;
- using System.Collections.Generic; 
-  using System.Threading.Tasks;
-using System.Linq;
-using Bovime.veri;
 namespace Bovime.Controllers
 {
- public class AramaMotoruZiyaretController : Sayfa
+    public class AramaMotoruZiyaretController : Sayfa
     {
-public async Task<ActionResult> Cek( Models.AramaMotoruZiyaretModel modeli)
-                            {
-                                var nedir = await modeli.ayrintiliAraKos(this);
-                                return basariBildirimi("/AramaMotoruZiyaret?id=" + nedir.kodu);
-                            }
-    public async Task<ActionResult> Index(string id)
+        public async Task<ActionResult> Cek(Models.AramaMotoruZiyaretModel modeli)
         {
-try{
-            string tanitim = "...";
-   tanitim = await Genel.dokumKisaAciklamaKos(this, "AramaMotoruZiyaret"); 
- gorunumAyari("", "", "Ana Sayfa", "/", "/AramaMotoruZiyaret/", tanitim); 
-            if (!oturumAcildimi())
-                return OturumAcilmadi();
-            if (await yetkiVarmiKos())
-            {
-   Models.AramaMotoruZiyaretModel modeli = new Models.AramaMotoruZiyaretModel();
-                if (string.IsNullOrEmpty(id))
-  	await	   modeli.veriCekKos(mevcutKullanici());
-	 else
-    	await	 modeli.kosulaGoreCek(mevcutKullanici(), id);
-                return View(modeli);
-            }
-            else
-            {
-                return YetkiYok();
-            }
-}
-catch(Exception ex)
-{
-return await HataSayfasiKosut(ex);
-}
+            var nedir = await modeli.ayrintiliAraKos(this);
+            return basariBildirimi("/AramaMotoruZiyaret?id=" + nedir.kodu);
         }
-public async Task<ActionResult> Kart(long id)
+        public async Task<ActionResult> Index(string id)
         {
-try{
-            if (!oturumAcildimi())
-                return OturumAcilmadi();
-            string tanitim = "....";
-   tanitim = await Genel.dokumKisaAciklamaKos(this, "AramaMotoruZiyaret"); 
- gorunumAyari("Arama Motoru Ziyaret Kartı", "Arama Motoru Ziyaret Kartı", "Ana Sayfa", "/", "/AramaMotoruZiyaret/", tanitim); 
-            enumref_YetkiTuru yetkiTuru = yetkiTuruBelirle(id);
-if (await yetkiVarmiKos("AramaMotoruZiyaret", yetkiTuru))
+            try
             {
-  Models.AramaMotoruZiyaretModel modeli = new Models.AramaMotoruZiyaretModel(); 
-                  await   modeli.veriCekKos(mevcutKullanici(), id);
-                return View(modeli);
+                string tanitim = "...";
+                tanitim = await Genel.dokumKisaAciklamaKos(this, "AramaMotoruZiyaret");
+                gorunumAyari("", "", "Ana Sayfa", "/", "/AramaMotoruZiyaret/", tanitim);
+                if (!oturumAcildimi())
+                    return OturumAcilmadi();
+                if (await yetkiVarmiKos())
+                {
+                    Models.AramaMotoruZiyaretModel modeli = new Models.AramaMotoruZiyaretModel();
+                    if (string.IsNullOrEmpty(id))
+                        await modeli.veriCekKos(mevcutKullanici());
+                    else
+                        await modeli.kosulaGoreCek(mevcutKullanici(), id);
+                    return View(modeli);
+                }
+                else
+                {
+                    return YetkiYok();
+                }
             }
-            else
+            catch (Exception ex)
             {
-                return YetkiYok();
+                return await HataSayfasiKosut(ex);
             }
- }
- catch (Exception ex )
- {
-     return await HataSayfasiKosut(ex);
- }
         }
-        [HttpPost]
-public async Task<ActionResult> Sil(string id)
+        public async Task<ActionResult> Kart(long id)
         {
-                 try
+            try
             {
                 if (!oturumAcildimi())
-         return OturumAcilmadi();
+                    return OturumAcilmadi();
+                string tanitim = "....";
+                tanitim = await Genel.dokumKisaAciklamaKos(this, "AramaMotoruZiyaret");
+                gorunumAyari("Arama Motoru Ziyaret Kartı", "Arama Motoru Ziyaret Kartı", "Ana Sayfa", "/", "/AramaMotoruZiyaret/", tanitim);
+                enumref_YetkiTuru yetkiTuru = yetkiTuruBelirle(id);
+                if (await yetkiVarmiKos("AramaMotoruZiyaret", yetkiTuru))
+                {
+                    Models.AramaMotoruZiyaretModel modeli = new Models.AramaMotoruZiyaretModel();
+                    await modeli.veriCekKos(mevcutKullanici(), id);
+                    return View(modeli);
+                }
+                else
+                {
+                    return YetkiYok();
+                }
+            }
+            catch (Exception ex)
+            {
+                return await HataSayfasiKosut(ex);
+            }
+        }
+        [HttpPost]
+        public async Task<ActionResult> Sil(string id)
+        {
+            try
+            {
+                if (!oturumAcildimi())
+                    return OturumAcilmadi();
                 if (id == null)
                     uyariVer(Ikazlar.hicKayitSecilmemis(dilKimlik));
                 if (await yetkiVarmiKos("Ogrenci", enumref_YetkiTuru.Silme))
                 {
-Models.AramaMotoruZiyaretModel modeli = new Models.AramaMotoruZiyaretModel();
-              await       modeli.silKos(this, id??"", mevcutKullanici());
-                 await       modeli.veriCekKos(mevcutKullanici()); 
+                    Models.AramaMotoruZiyaretModel modeli = new Models.AramaMotoruZiyaretModel();
+                    await modeli.silKos(this, id ?? "", mevcutKullanici());
+                    await modeli.veriCekKos(mevcutKullanici());
                     return basariBildirimi(Ikazlar.basariylaSilindi(dilKimlik));
                 }
                 else
@@ -97,15 +89,15 @@ Models.AramaMotoruZiyaretModel modeli = new Models.AramaMotoruZiyaretModel();
             }
         }
         [HttpPost]
-   public async Task<ActionResult> Kaydet(Models.AramaMotoruZiyaretModel gelen)
+        public async Task<ActionResult> Kaydet(Models.AramaMotoruZiyaretModel gelen)
         {
             try
-            { 
-               if (!oturumAcildimi())
-                    return OturumAcilmadi(); 
-               await gelen.yetkiKontrolu(this);
-               await gelen.kaydetKos(this);
-               return basariBildirimi(gelen.kartVerisi, dilKimlik);
+            {
+                if (!oturumAcildimi())
+                    return OturumAcilmadi();
+                await gelen.yetkiKontrolu(this);
+                await gelen.kaydetKos(this);
+                return basariBildirimi(gelen.kartVerisi, dilKimlik);
             }
             catch (Exception istisna)
             {

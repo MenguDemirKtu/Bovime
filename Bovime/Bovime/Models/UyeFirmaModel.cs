@@ -65,7 +65,7 @@ namespace Bovime.Models
                     if (kim == null)
                     {
                         _hataVarmi = true;
-                        _hataAciklamasi = @"Üye girişi yapılmamış. Lütfen oturum açınız. Üye giriçi için <a href=""/UyeGirisi"" > TIKLAYINIZ </a>";
+                        _hataAciklamasi = @"Üye girişi yapılmamış. Lütfen oturum açınız. Üye giriçi için <a href=""/UyeGirisi"" > TIKLAYINIZ </a>. <br> Üye olmak için <a href=""/UyeOl"">TIKLAYINIZ</a>  ";
                         satisi = null;
                         return;
                     }

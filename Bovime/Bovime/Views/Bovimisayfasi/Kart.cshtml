@@ -1,0 +1,108 @@
+﻿@{
+ViewBag.Title = "Kart";
+Layout = "~/Views/_ana.cshtml";
+}
+@using Bovime
+@using Bovime.veri
+@model Bovime.Models.BovimisayfasiModel
+<script src="~/assets/js/jquery.dataTables.min.js"></script>
+<form id="formKayit" name="formKayit" autocomplete="off">
+@{
+int   dilKimlik = Model.gecerliDil();
+}
+<div class="@Ayar.tamGenislik">
+<div class="row">
+@Html.HiddenFor(model => model.fotoKonumu)
+<div class=@Ayar.yariGenislik>
+                <div class="@Ayar.formGrup">
+                    <label  class="@Ayar.labelBicim"> @Ayar.sozcuk("Bovimi Sayfası Başlık", dilKimlik)  </label>
+                    @Html.TextBoxFor(m => m.kartVerisi.bovimiSayfasiBaslik, new { @class = @Ayar.textBoxBicim(), maxlength = "200" ,   placeholder = @Ayar.sozcuk("Bovimi Sayfası Başlık", dilKimlik) }) 
+                </div>
+            </div>
+       @Html.HiddenFor(model => model.kartVerisi.bovimisayfasikimlik)
+       @Html.HiddenFor(model => model.kartVerisi.bovimisayfasikimlik)
+       @Html.HiddenFor(model => model.kartVerisi.varmi)
+<div class=@Ayar.yariGenislik>
+                <div class="@Ayar.formGrup">
+                    <label  class="@Ayar.labelBicim"> @Ayar.sozcuk("Title", dilKimlik)  </label>
+                    @Html.TextBoxFor(m => m.kartVerisi.title, new { @class = @Ayar.textBoxBicim(), maxlength = "140" ,   placeholder = @Ayar.sozcuk("Title", dilKimlik) }) 
+                </div>
+            </div>
+<div class=@Ayar.yariGenislik>
+                <div class="@Ayar.formGrup">
+                    <label  class="@Ayar.labelBicim"> @Ayar.sozcuk("URL", dilKimlik)  </label>
+                    @Html.TextBoxFor(m => m.kartVerisi.url, new { @class = @Ayar.textBoxBicim(), maxlength = "100" ,   placeholder = @Ayar.sozcuk("URL", dilKimlik) }) 
+                </div>
+            </div>
+<div class=@Ayar.yariGenislik>
+                <div class="@Ayar.formGrup">
+                    <label  class="@Ayar.labelBicim"> @Ayar.sozcuk("Tanıtım", dilKimlik)  </label>
+                    @Html.TextBoxFor(m => m.kartVerisi.tanitim, new { @class = @Ayar.textBoxBicim(), maxlength = "500" ,   placeholder = @Ayar.sozcuk("Tanıtım", dilKimlik) }) 
+                </div>
+            </div>
+<div class=@Ayar.yariGenislik>
+                <div class="@Ayar.formGrup">
+                    <label  class="@Ayar.labelBicim"> @Ayar.sozcuk("Yayında mı", dilKimlik)  </label>
+                    @Html.DropDownListFor(m => m.kartVerisi.e_yayindaMi, Model.evetHayirCek() ,  @Ayar.sozcuk("Lütfen Seçiniz", dilKimlik), new { @class = "form-control select2" })
+                </div>
+            </div>
+<div class=@Ayar.tamGenislik>
+                <br />
+                <div class="card table-card">
+                    <div class="card-header pb-0">
+                        <h4> 
+              @Ayar.sozcuk("Açıklama", dilKimlik)  
+</h4>
+                    </div> 
+                    @Html.TextAreaFor(m => m.kartVerisi.aciklama, new { @id = "elm1", name = "elm1" })
+                </div>
+            </div>
+@Html.HiddenFor(model => model.yenimi)
+</div>
+<hr />
+<button type="button" onclick="ekle(); return false;" id="btnKaydet" class="btn btn-success" data-bs-toggle="modal">
+@Ayar.sozcuk("Kaydet", dilKimlik)
+</button>
+</div>
+</form>
+<script>
+    @Html.Raw(Ayar.yukleyiciIfadesi())
+</script>
+<script>
+function ekle() {
+tinyMCE.triggerSave();
+var valdata = $("#formKayit").serialize();
+console.table(valdata);
+$.ajax({
+url: "/Bovimisayfasi/Kaydet/",
+type: "Post",
+data: valdata,
+contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+dataType: "json",
+success: function (response) {
+if (!response.success) {
+Swal.fire(
+'@Ayar.sozcuk("Hata", dilKimlik)',
+response.message,
+'error'        );
+return false;
+}
+else {
+Swal.fire(	'@Ayar.sozcuk("Başarılı", dilKimlik)',   response.message,
+'success'                    ).then(function () {
+if(response.yonlensinmi == true)
+{
+window.location.href= response.yonlenmeAdresi;
+}
+var deger = String(document.getElementById("yenimi").value);
+if (deger == "True") {
+window.location.reload();
+}
+})
+}
+}
+});
+}
+
+</script>
+

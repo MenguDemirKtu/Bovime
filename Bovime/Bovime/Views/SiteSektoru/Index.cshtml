@@ -1,50 +1,50 @@
-﻿@{
-
+﻿@{ 
     Layout = "~/Views/_genel.cshtml";
 }
-<h2>
-    Site Seötlrü
+<h2 style="text-align:center !important;" >
+    @Model.sektoru.sektorAdi
 </h2>
+<br />
+<br />
 @model Bovime.Models.SiteSektoruModel
-
- 	<div class="products gutter-30 mobile-2 column-4">
-   
+<div class="products gutter-30 mobile-2 column-4">
     @{
-
-        foreach(var siradaki in Model.firmalari)
+        foreach (var siradaki in Model.firmalari)
         {
             <div class="column-item product type-product post-3109 status-publish first instock product_cat-battery-and-adhesives product_cat-tools-equipment has-post-thumbnail sale shipping-taxable purchasable product-type-simple">
-
-	<div class="product product-type-1"> 
-    <div class="product-wrapper">
-    <div class="product-content"><div class="thumbnail-wrapper entry-media">
-    <div class="product-badges">
-    </div>
-    
-    <a class="product-thumbnail" href="@siradaki.fotosu"><img src="@siradaki.fotosu" data-hover-slides="@siradaki.fotosu" data-options='{"touch": "end", "preloadImages": true }' alt="@siradaki.firmaAdi"></a><div class="product-buttons"> 
-    
-    
-    
-    </div> </div><div class="content-wrapper"><h3 class="product-title"> <a href="@siradaki._URL">@siradaki.firmaAdi </a></h3>
-    
-        <div class="product-rating">
-            <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5">
-                <span style="width:100%">Rated <strong class="rating">5.00</strong> out of 5</span>
-            </div> 
-      </div>
-      
-         
-      
-      <div class="product-stock in-stock"> <i class="klbth-icon-ecommerce-package-ready"></i><span>In Stock</span></div></div></div><div class="product-footer"><div class="product-footer-inner"> <div class="product-footer-details"> <ul>
-
-
-
-</ul></div>
-<span id="woocommerce_loop_add_to_cart_link_describedby_3109" class="screen-reader-text">
-			</span>
-</div></div></div><div class="product-content-fade"></div></div></div> 
-        }
-
-         }
-
+                <div class="product product-type-1">
+                    <div class="product-wrapper">
+                        <div class="product-content">
+                            <div class="thumbnail-wrapper entry-media">
+                                <div class="product-badges">
+                                </div> 
+                                <a class="product-thumbnail"  href="@siradaki._URL">
+                                    <img src="@siradaki.fotosu" data-hover-slides="@siradaki.fotosu" data-options='{"touch": "end", "preloadImages": true }' alt="@siradaki.firmaAdi">
+                                    </a>
+                                <div class="product-buttons">
+                                </div>
+                            </div><div class="content-wrapper">
+                                <h3 class="product-title"> <a href="@siradaki._URL">@siradaki.firmaAdi </a></h3>
+                                <div class="product-rating">
+                                    <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5">
+                                        <span style="width:100%">Rated <strong class="rating">5.00</strong> out of 5</span>
+                                    </div>
+                                </div>
+                                <div class="product-stock in-stock"> <i class="klbth-icon-ecommerce-package-ready"></i><span>In Stock</span></div>
+                            </div>
+                        </div><div class="product-footer">
+                            <div class="product-footer-inner">
+                                <div class="product-footer-details">
+                                    <ul>
+                                    </ul>
+                                </div>
+                                <span id="woocommerce_loop_add_to_cart_link_describedby_3109" class="screen-reader-text">
+                                </span>
+                            </div>
+                        </div>
+                    </div><div class="product-content-fade"></div>
+                </div>
+            </div>
+        } 
+    } 
 </div>

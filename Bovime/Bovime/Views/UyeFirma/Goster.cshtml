@@ -1,25 +1,15 @@
-﻿ 
-@using Bovime
+﻿@using Bovime
 @using Bovime.veri;
 @model Bovime.Models.UyeFirmaModel
-
 @{
-
     Layout = "~/Views/_genel.cshtml";
 }
- 
-
 
 <div class="cell product-gallery col-lg-7">
-
 	<div class="woocommerce-product-gallery woocommerce-product-gallery--with-images woocommerce-product-gallery--columns-7 images"
 		 data-columns="7"
 		 style="opacity: 0; transition: opacity .25s ease-in-out;">
-
-
-
 		<div class="woocommerce-product-gallery__wrapper">
-
 			@{
 				foreach(var siradaki in Model.kampanyalar)
 				{
@@ -40,37 +30,17 @@
 					</div>
 				}
 			}
-
-		
-
-			 
-
 		</div>
 	</div>
-
 </div>
-
-
 
 <div class="cell product-detail col-lg-5">
 	<h1 class="product_title entry-title"> @Model.firmasi.firmaAdi </h1>
 	<div class="product-meta product_meta">
-	@* 	<div class="woocommerce-product-rating product-rating">
-			<div aria-label="Rated 5.00 out of 5" class="star-rating" role="img"><span style="width:100%">Rated <strong class="rating">@Model.firmasi.kullaniciOrtalamasi</strong> out of 5 based on <span class="rating">@Model.firmasi.kullaniciOrtalamasi </span> customer rating</span></div> <a class="woocommerce-review-link" href="#reviews" rel="nofollow"><span class="count"> 1 </span> customer review</a>
-		</div> *@
-	@* 	<div class="product-sku">
-			<span>SKU:</span>
-			<span class="sku">AE3KGO9T</span>
-		</div> *@
-	@* 	<div class="klb-single-stock">
-			<div class="product-stock stock in-stock">In Stock</div>
-		</div> *@
 	</div>
 	<div class="woocommerce-product-details__short-description">
 		<ul> 
-
 			@{
-
 				foreach(var siradaki in Model.kampanyalar)
 				{
 					<li>
@@ -81,30 +51,20 @@
 
 					</li>
 				}
-
 			}
 		</ul>
 	</div>
-	<div class="product-stock stock in-stock">In Stock</div>
- 
+	<div class="product-stock stock in-stock">In Stock</div> 
 	<div class="product-wishlist"> <p>
-
 		Bu firmayı favorilerime ekle
-		
 		</p><div class="wishlist-button"><a class="klbwl-btn klbwl-btn-3123" data-product_id="3123" data-product_title="@Model.firmasi.firmaAdi" href="https://klbtheme.com/partdo/wishlist/"></a><span>Add to wishlist</span></div><!-- wishlist-button --></div><div class="product-assistant"><div class="assistant-avatar"> <img src="@Model.firmasi.fotosu" /></div><div class="assistant-content"> <span> Kampanya Sahibi</span><p>  @Model.firmasi.firmaAdi  </p></div></div><div class="product-iconboxes"><div class="iconbox"><div class="icon"> <i class="klbth-icon-ecommerce-dollar-symbol"></i></div><div class="detail"> <h5 class="entry-title"> @Model.firmasi.sloganBaslik1  </h5> <p> @Model.firmasi.slogan1  </p></div></div><div class="iconbox"><div class="icon"> <i class="klbth-icon-check"></i></div><div class="detail"> <h5 class="entry-title">@Model.firmasi.sloganBaslik2  </h5> <p> @Model.firmasi.slogan2 </p></div></div><div class="iconbox"><div class="icon"> <i class="klbth-icon-ecommerce-headphones"></i></div><div class="detail"> <h5 class="entry-title">@Model.firmasi.sloganBaslik3 </h5> <p> @Model.firmasi.slogan3 </p></div></div><div class="iconbox"><div class="icon"> <i class="klbth-icon-redo"></i></div><div class="detail"> <h5 class="entry-title"> @Model.firmasi.sloganBaslik4 </h5> <p>  @Model.firmasi.slogan4  </p></div></div></div><div class="product-meta bottom product_meta">
 		<div class="product-categories posted_in"><span> Firma Sektörleri :</span>
-
-
-
 			@{
-
 				foreach(var siradaki in Model.sektorleri)
 				{ 
-			<a href="@siradaki._URL" rel="tag">@siradaki.sektorAdi</a> 
-		 
+						<a href="@siradaki._URL" rel="tag">@siradaki.sektorAdi</a>  
 				}
-			}
-			 
+			} 
 	</div>
 </div>
 </div>
@@ -123,11 +83,11 @@
 	</ul>
 	<div aria-labelledby="tab-title-description" class="woocommerce-Tabs-panel woocommerce-Tabs-panel--description panel entry-content wc-tab" id="tab-description" role="tabpanel">
 		<h2>Description</h2>
-		<p><span style="vertical-align: inherit;">  
-			@Html.Raw(Model.firmasi.aciklama)
-
-		</span></p>
-	
+		<p>
+			<span style="vertical-align: inherit;">  
+			@Html.Raw(Model.firmasi.aciklama) 
+		</span>
+		</p> 
 	</div>
 	<div aria-labelledby="tab-title-reviews" class="woocommerce-Tabs-panel woocommerce-Tabs-panel--reviews panel entry-content wc-tab" id="tab-reviews" role="tabpanel">
 		<div class="woocommerce-Reviews" id="reviews">
