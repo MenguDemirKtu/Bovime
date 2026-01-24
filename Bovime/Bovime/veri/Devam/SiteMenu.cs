@@ -51,6 +51,7 @@ namespace Bovime.veri
                 varmi = true;
             bicimlendir(vari);
             await veriTabani.SiteMenuCizelgesi.kaydetKos(this, vari, yedeklensinmi);
+
         }
         public async Task silKos(veri.Varlik vari, params bool[] yedeklensinmi)
         {

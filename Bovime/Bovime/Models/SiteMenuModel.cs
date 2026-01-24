@@ -69,6 +69,17 @@ namespace Bovime.Models
                 kartVerisi._kontrolEt(sayfasi.dilKimlik, vari);
                 kartVerisi._sayfaAta(sayfasi);
                 await kartVerisi.kaydetKos(vari, true);
+
+                List<SiteMenu> menuler = vari.SiteMenus.Where(p => p.e_altMenuMu == false).OrderBy(p => p.sirasi).ToList();
+                int sirasi = 10;
+                foreach (var siradaki in menuler)
+                {
+                    siradaki.sirasi = sirasi;
+                    await veriTabani.SiteMenuCizelgesi.kaydetKos(siradaki, vari, false);
+                    sirasi += 10;
+                }
+
+
                 return kartVerisi;
             }
         }

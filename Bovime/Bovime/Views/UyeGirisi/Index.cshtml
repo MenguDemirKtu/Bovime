@@ -1,11 +1,20 @@
-﻿@model Bovime.Models.GirisViewModel
+﻿<style>
+    .cerceve {
+        border-style: dashed;
+        border-width: 1px;
+        border-color: #7c7c7c;
+        border-radius: 10px;
+    }
+</style>
+
+@model Bovime.Models.GirisViewModel
 @{
     Layout = "~/Views/_genel.cshtml";
 }
 
-<div class="container">
-    <div class="card shadow login-card">
-        <div class="card-body p-4">
+<div class="container d-flex justify-content-center align-items-center">
+    <div class="col-md-6 col-lg-5">
+        <div class="card-body p-4 cerceve">
 
             <h4 class="text-center mb-4">Üye Girişi</h4>
 

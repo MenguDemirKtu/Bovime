@@ -1,4 +1,5 @@
-﻿using Bovime.veri;
+﻿using Bovime.Models;
+using Bovime.veri;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -9,7 +10,9 @@ namespace Bovime.Controllers
     {
         public async Task<IActionResult> Index()
         {
-            return View();
+            UyeOlModel model = new UyeOlModel();
+            await model.hazirla();
+            return View(model);
         }
 
         [HttpPost]

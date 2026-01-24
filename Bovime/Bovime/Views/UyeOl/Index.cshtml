@@ -1,12 +1,21 @@
-﻿  
+﻿<style>
+    .cerceve
+    {
+        border-style: dashed;
+        border-width: 1px; 
+        border-color: #7c7c7c;
+        border-radius: 10px;
+    } 
+</style>  
+
 @model Bovime.Models.UyeOlModel
 @{
     Layout = "~/Views/_genel.cshtml";
 }
 
-<div class="container">
-    <div class="card shadow login-card">
-        <div class="card-body p-4"> 
+<div class="container d-flex justify-content-center align-items-center" >
+    <div class="col-md-6 col-lg-5"> 
+        <div class="card-body p-4 cerceve">
 
             <h4 class="text-center mb-4">Üye Ol</h4>
 
@@ -45,6 +54,14 @@
                 <input id="sifre" type="password" class="form-control" />
             </div>
 
+            <div class="form-check mb-3">
+                <input class="form-check-input" type="checkbox" id="sozlesmeOnay">
+                <label class="form-check-label">
+                    <a href="javascript:void(0)" onclick="sozlesmeAc()">Üyelik sözleşmesini</a> okudum ve onaylıyorum
+                </label>
+            </div>
+
+
             <button class="btn btn-success w-100" onclick="uyeOl()">
                 Üye Ol
             </button>
@@ -53,8 +70,43 @@
     </div>
 </div>
 
+<div class="modal fade" id="sozlesmeModal" tabindex="-1">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title">Üyelik Sözleşmesi</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <div class="modal-body" style="white-space:pre-wrap;">
+                @Html.Raw( Model.uyeOlSozlesmesi.metin)
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
 <script>
+
+        function sozlesmeAc() {
+        var modal = new bootstrap.Modal(document.getElementById('sozlesmeModal'));
+        modal.show();
+    }
+
+
     function uyeOl() {
+
+          if (!document.getElementById("sozlesmeOnay").checked) {
+        alert("Devam etmek için üyelik sözleşmesini onaylamalısınız.");
+        return;
+    }
+
 
         const data = {
             adi: document.getElementById("adi").value,
@@ -79,10 +131,10 @@
         .then(res => {
 
             if (res.basarili) {
-                document.getElementById("basari").innerText = res.mesaj;
+                document.getElementById("basari").innerHTML = res.mesaj;
                 document.getElementById("basari").classList.remove("d-none");
             } else {
-                document.getElementById("hata").innerText = res.mesaj;
+                document.getElementById("hata").innerHTML = res.mesaj;
                 document.getElementById("hata").classList.remove("d-none");
             }
 

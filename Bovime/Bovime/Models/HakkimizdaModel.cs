@@ -1,6 +1,8 @@
 using Bovime.veri;
 using Bovime.veriTabani;
+using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
+
 namespace Bovime.Models
 {
     public class HakkimizdaModel : ModelTabani
@@ -73,7 +75,9 @@ namespace Bovime.Models
                 kartVerisi._sayfaAta(sayfasi);
                 await kartVerisi.kaydetKos(vari, true);
                 await fotoBicimlendirKos(vari, kartVerisi, kartVerisi.i_fotoKimlik);
+                Genel.hakkimizda = await vari.HakkimizdaAYRINTIs.FirstOrDefaultAsync(p => p.varmi == true);
                 return kartVerisi;
+
             }
         }
 

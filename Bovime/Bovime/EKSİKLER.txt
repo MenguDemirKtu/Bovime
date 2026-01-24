@@ -6,13 +6,13 @@
 
 - 
 
-- Üye ol formu daralacak
-- üye olda sözleþme gelecek
++ Üye ol formu daralacak
++ üye olda sözleþme gelecek
++ kullanýcý üye ol sayfasý
++ hakkýmýzda sayfasý
++ sýk sorulan sorular 
++ iletiþim sayfasý
+
 
 - qr kod
-
 - firma üye ol sayfasý
-- kullanýcý üye ol sayfasý
-- hakkýmýzda sayfasý
-- sýk sorulan sorular 
-- iletiþim sayfasý
