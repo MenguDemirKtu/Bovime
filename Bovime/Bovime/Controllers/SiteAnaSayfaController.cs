@@ -14,6 +14,7 @@ namespace Bovime.Controllers
 
         public async Task<ActionResult> yeni()
         {
+            await GenelIslemler.SMSIslemi.smsGonder("5055152086", "denemedir");
             SiteAnaSayfaModel model = new SiteAnaSayfaModel();
             await model.veriCek(this);
             return View(model);

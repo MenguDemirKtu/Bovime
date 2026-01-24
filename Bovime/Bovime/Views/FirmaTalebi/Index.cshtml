@@ -1,0 +1,93 @@
+﻿@{
+    Layout = "~/Views/_genel.cshtml";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+
+            <h3 class="mb-4">Firma Başvurusu</h3>
+
+            <form id="firmaForm">
+                @Html.AntiForgeryToken()
+
+                <!-- Bot koruma alanları -->
+                <input type="text" id="website" name="website" style="display:none" />
+                <input type="hidden" id="formTime" name="formTime" value="@DateTime.Now.Ticks" />
+
+                <div class="mb-3">
+                    <label>Firma Adı *</label>
+                    <input id="firmaAdi" class="form-control" />
+                </div>
+
+                <div class="mb-3">
+                    <label>Telefon *</label>
+                    <input id="tel" class="form-control" />
+                </div>
+
+                <div class="mb-3">
+                    <label>E-Posta *</label>
+                    <input id="ePosta" type="email" class="form-control" />
+                </div>
+
+                <div class="mb-3">
+                    <label>Açıklama *</label>
+                    <textarea id="metin" class="form-control" rows="5"></textarea>
+                </div>
+
+                <button type="button" onclick="firmaBasvur()" class="btn btn-success w-100">
+                    Başvuruyu Gönder
+                </button>
+            </form>
+
+            <div id="basari" class="alert alert-success d-none mt-3"></div>
+            <div id="hata" class="alert alert-danger d-none mt-3"></div>
+
+        </div>
+    </div>
+</div>
+
+<script>
+    function firmaBasvur() {
+
+        const data = {
+            firmaAdi: document.getElementById("firmaAdi").value,
+            tel: document.getElementById("tel").value,
+            ePosta: document.getElementById("ePosta").value,
+            metin: document.getElementById("metin").value,
+            website: document.getElementById("website").value,
+            formTime: document.getElementById("formTime").value
+        };
+
+        const token = document.querySelector('input[name="__RequestVerificationToken"]').value;
+
+        fetch('/FirmaTalebi/FirmaBasvuruAjax', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'RequestVerificationToken': token
+            },
+            body: JSON.stringify(data)
+        })
+        .then(res => res.json())
+        .then(res => {
+
+            document.getElementById("basari").classList.add("d-none");
+            document.getElementById("hata").classList.add("d-none");
+
+            if (res.basarili) {
+                document.getElementById("basari").innerText = res.mesaj;
+                document.getElementById("basari").classList.remove("d-none");
+                document.getElementById("firmaForm").reset();
+            }
+            else {
+                document.getElementById("hata").innerText = res.mesaj;
+                document.getElementById("hata").classList.remove("d-none");
+            }
+        })
+        .catch(err => {
+            alert("Sunucu hatası oluştu");
+            console.error(err);
+        });
+    }
+</script>
