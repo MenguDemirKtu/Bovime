@@ -1579,10 +1579,8 @@
 												<div class="company-content">
 													<h3 class="entry-title">@Genel.hakkimizda.firmaAdi</h3>
 													<div class="entry-description">
-														<p>
-
-															@Genel.hakkimizda.kisaTanitim
-
+														<p> 
+															@Genel.hakkimizda.kisaTanitim 
 														</p>
 													</div>
 													<p><a class="mail" href=@Genel.hakkimizda.ePosta"><span class="__cf_email__" data-cfemail="@Genel.hakkimizda.ePosta">[email protected]</span></a></p>
@@ -1593,56 +1591,14 @@
 								</div>
 							</div><!-- col -->
 							<div class="widgets-column">
-								<div class="row justify-content-between">
-									<div class="col col-12 col-lg-5">
-										<div class="klbfooterwidget widget widget_text">
-											<div class="textwidget">
-												<div class="widget_contact">
-													<h4 class="widget-title">İletişim</h4>
-													<div class="widget-body">
-														<div class="company-phone"> @Genel.hakkimizda.telefon </div>
-													 
-														<p><a class="company-mail" href="/cdn-cgi/l/email-protection#a9dadcd9d9c6dbdde9d9c8dbddcdc6daddc6dbcc87cac6c4"><span class="__cf_email__" data-cfemail="c5b6b0b5b5aab7b185a0bda4a8b5a9a0eba6aaa8">[email protected]</span></a></p>
-														<div class="company-social"></div>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div><!-- col -->
-									<div class="col col-12 col-lg-3">
-										<div class="klbfooterwidget widget widget_nav_menu">
-											<h4 class="widget-title">   Hızlı Erişim </h4><div class="menu-customer-service-container">
-												<ul class="menu" id="menu-customer-service">
-													@{
-														foreach(var siradaki in Genel.ustler)
-														{ 
-															<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3663" ><a href="@siradaki.menuUrl"> @siradaki.siteMenuAdi  </a></li>
-														}
-
-													} 
-												</ul>
-											</div>
-										</div>
-									</div><!-- col -->
-									<div class="col col-12 col-lg-3">
-										<div class="klbfooterwidget widget widget_nav_menu">
-											<h4 class="widget-title">  Hukuki İşlemler </h4><div class="menu-store-information-container">
-												<ul class="menu" id="menu-store-information">
-													<li class="menu-item menu-item-type-post_type menu-item-object-page" ><a href="#">  About1    </a></li> 
-													<li class="menu-item menu-item-type-post_type menu-item-object-page" ><a href="#">  About2    </a></li> 
-													<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="#">  About3    </a></li>
-													<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="#">  About4    </a></li>
-											</div>
-										</div>
-									</div><!-- col -->
+								<div class="row justify-content-between"> 
+									@Html.Raw(Genel.altMenuHtml) 
 								</div>
-							</div>
+							</div> 
 						</div>
 					</div>
 				</div>
-			</div>
-
-		 
+			</div> 
 		</div>
 	</div>
 	<div class="site-mask"></div>

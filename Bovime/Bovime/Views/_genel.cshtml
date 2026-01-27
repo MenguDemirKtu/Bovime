@@ -3,1024 +3,1360 @@
 *@
 @{
 	Layout = null;
-} 
+}
 @using Bovime
- 
+
 <!DOCTYPE html>
 
 <html lang="tr-TR">
 <head>
-<meta charset="utf-8"/>
-<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Bovimi</title>
+	<meta charset="utf-8" />
+	<meta content="IE=edge" http-equiv="X-UA-Compatible" />
+	<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+	<title>Bovimi</title>
 
 	<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
-<meta content="noindex, nofollow" name="robots">
-<link href="//fonts.googleapis.com" rel="dns-prefetch"/>
+	<meta content="noindex, nofollow" name="robots">
+	<link href="//fonts.googleapis.com" rel="dns-prefetch" />
 
 
-<style id="wp-img-auto-sizes-contain-inline-css" type="text/css">
-img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
-/*# sourceURL=wp-img-auto-sizes-contain-inline-css */
-</style>
-<style id="wp-emoji-styles-inline-css" type="text/css">
+	<style id="wp-img-auto-sizes-contain-inline-css" type="text/css">
+		img:is([sizes=auto i],[sizes^="auto," i]) {
+			contain-intrinsic-size: 3000px 1500px
+		}
+		/*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+	</style>
+	<style id="wp-emoji-styles-inline-css" type="text/css">
 
-	img.wp-smiley, img.emoji {
-		display: inline !important;
-		border: none !important;
-		box-shadow: none !important;
-		height: 1em !important;
-		width: 1em !important;
-		margin: 0 0.07em !important;
-		vertical-align: -0.1em !important;
-		background: none !important;
-		padding: 0 !important;
-	}
-/*# sourceURL=wp-emoji-styles-inline-css */
-</style>
-<link href="~/SiteAssets/partdo/wp-includes/css/dist/block-library/style.min.css" id="wp-block-library-css" media="all" rel="stylesheet" type="text/css"/>
-<link href="~/SiteAssets/partdo/wp-content/plugins/woocommerce/assets/client/blocks/wc-blocks.css" id="wc-blocks-style-css" media="all" rel="stylesheet" type="text/css"/>
-<style id="global-styles-inline-css" type="text/css">
-:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgb(255, 255, 255), 6px 6px rgb(0, 0, 0);--wp--preset--shadow--crisp: 6px 6px 0px rgb(0, 0, 0);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
-/*# sourceURL=global-styles-inline-css */
-</style>
-<style id="classic-theme-styles-inline-css" type="text/css">
-/*! This file is auto-generated */
-.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
-/*# sourceURL=/wp-includes/css/classic-themes.min.css */
-</style>
-<link href="~/SiteAssets/partdo/wp-content/plugins/contact-form-7/includes/css/styles.css" id="contact-form-7-css" media="all" rel="stylesheet" type="text/css"/>
-<link href="~/SiteAssets/partdo/wp-content/plugins/woocommerce/assets/css/photoswipe/photoswipe.min.css" id="photoswipe-css" media="all" rel="stylesheet" type="text/css"/>
-<link href="~/SiteAssets/partdo/wp-content/plugins/woocommerce/assets/css/photoswipe/default-skin/default-skin.min.css" id="photoswipe-default-skin-css" media="all" rel="stylesheet" type="text/css"/>
-<style id="woocommerce-inline-inline-css" type="text/css">
-.woocommerce form .form-row .required { visibility: visible; }
-/*# sourceURL=woocommerce-inline-inline-css */
-</style>
-<link href="~/SiteAssets/partdo/wp-content/plugins/partdo-core/woocommerce-filter/single-ajax/css/single-ajax.css" id="klb-single-ajax-css" media="all" rel="stylesheet" type="text/css"/>
-<link href="~/SiteAssets/partdo/wp-content/plugins/partdo-core/woocommerce-filter/notice-ajax/css/notice-ajax.css" id="klb-notice-ajax-css" media="all" rel="stylesheet" type="text/css"/>
-<link href="~/SiteAssets/partdo/wp-content/plugins/partdo-core/woocommerce-filter/swatches/css/swatches.css" id="klbtheme-swatches-css" media="all" rel="stylesheet" type="text/css"/>
-<link href="~/SiteAssets/partdo/wp-content/plugins/partdo-core/woocommerce-filter/shipping-progress-bar/css/free-shipping.css" id="klb-free-shipping-css" media="all" rel="stylesheet" type="text/css"/>
-<link href="~/SiteAssets/partdo/wp-content/plugins/partdo-core/woocommerce-filter/ajax-search/css/ajax-search.css" id="partdo-ajax-search-css" media="all" rel="stylesheet" type="text/css"/>
-<link href="~/SiteAssets/partdo/wp-content/plugins/partdo-core/woocommerce-filter/product-badge/css/product-badge.css" id="klb-product-badge-css" media="all" rel="stylesheet" type="text/css"/>
-<link href="~/SiteAssets/partdo/wp-content/plugins/partdo-core/woocommerce-filter/single-gallery/css/single-gallery.css" id="partdo-single-gallery-css" media="all" rel="stylesheet" type="text/css"/>
-<link href="~/SiteAssets/partdo/wp-content/plugins/partdo-core/woocommerce-filter/compare/css/compare.css" id="klbcp-frontend-css" media="all" rel="stylesheet" type="text/css"/>
-<link href="~/SiteAssets/partdo/wp-content/plugins/partdo-core/woocommerce-filter/wishlist/css/wishlist.css" id="partdo-wishlist-css" media="all" rel="stylesheet" type="text/css"/>
-<link href="~/SiteAssets/partdo/wp-content/plugins/partdo-core/woocommerce-filter/social-login/css/social-login.css" id="klb-social-login-css" media="all" rel="stylesheet" type="text/css"/>
-<link href="~/SiteAssets/partdo/wp-content/plugins/woocommerce/assets/css/brands.css" id="brands-styles-css" media="all" rel="stylesheet" type="text/css"/>
-<link href="~/SiteAssets/partdo/wp-content/themes/partdo/assets/css/bootstrap.min.css" id="bootstrap-css" media="all" rel="stylesheet" type="text/css"/>
-<link href="~/SiteAssets/partdo/wp-content/themes/partdo/assets/css/base.css" id="partdo-base-css" media="all" rel="stylesheet" type="text/css"/>
-<link href="~/SiteAssets/partdo/wp-content/themes/partdo/assets/css/klbicon.css" id="partdo-klbicon-css" media="all" rel="stylesheet" type="text/css"/>
-<link href="~/SiteAssets/css2" id="partdo-font-krub-css" media="all" rel="stylesheet" type="text/css"/>
-<link href="~/SiteAssets/partdo/wp-content/themes/partdo/style.css" id="partdo-style-css" media="all" rel="stylesheet" type="text/css"/>
-<script id="tmpl-variation-template" type="text/template">
-	<div class="woocommerce-variation-description">{{{ data.variation.variation_description }}}</div>
-	<div class="woocommerce-variation-price">{{{ data.variation.price_html }}}</div>
-	<div class="woocommerce-variation-availability">{{{ data.variation.availability_html }}}</div>
-</script>
-<script id="tmpl-unavailable-variation-template" type="text/template">
-	<p role="alert">Sorry, this product is unavailable. Please choose a different combination.</p>
-</script>
-<script id="jquery-core-js" src="~/SiteAssets/partdo/wp-includes/js/jquery/jquery.min.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
-<script id="jquery-migrate-js" src="~/SiteAssets/partdo/wp-includes/js/jquery/jquery-migrate.min.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
-<script data-wp-strategy="defer" defer="defer" id="wc-jquery-blockui-js" src="~/SiteAssets/partdo/wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
-<script id="wc-add-to-cart-js-extra" type="1a18d98887230957f6a6eec6-text/javascript">
-/* <![CDATA[ */
-var wc_add_to_cart_params = {"ajax_url":"/partdo/wp-admin/admin-ajax.php","wc_ajax_url":"/partdo/?wc-ajax=%%endpoint%%","i18n_view_cart":"View cart","cart_url":"https://klbtheme.com/partdo/cart/","is_cart":"","cart_redirect_after_add":"no"};
-//# sourceURL=wc-add-to-cart-js-extra
-/* ]]> */
-</script>
-<script data-wp-strategy="defer" defer="defer" id="wc-add-to-cart-js" src="~/SiteAssets/partdo/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.min.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
-<script data-wp-strategy="defer" defer="defer" id="wc-zoom-js" src="~/SiteAssets/partdo/wp-content/plugins/woocommerce/assets/js/zoom/jquery.zoom.min.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
-<script data-wp-strategy="defer" defer="defer" id="wc-flexslider-js" src="~/SiteAssets/partdo/wp-content/plugins/woocommerce/assets/js/flexslider/jquery.flexslider.min.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
-<script data-wp-strategy="defer" defer="defer" id="wc-photoswipe-js" src="~/SiteAssets/partdo/wp-content/plugins/woocommerce/assets/js/photoswipe/photoswipe.min.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
-<script data-wp-strategy="defer" defer="defer" id="wc-photoswipe-ui-default-js" src="~/SiteAssets/partdo/wp-content/plugins/woocommerce/assets/js/photoswipe/photoswipe-ui-default.min.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
-<script id="wc-single-product-js-extra" type="1a18d98887230957f6a6eec6-text/javascript">
-/* <![CDATA[ */
-var wc_single_product_params = {"i18n_required_rating_text":"Please select a rating","i18n_rating_options":["1 of 5 stars","2 of 5 stars","3 of 5 stars","4 of 5 stars","5 of 5 stars"],"i18n_product_gallery_trigger_text":"View full-screen image gallery","review_rating_required":"yes","flexslider":{"rtl":false,"animation":"slide","smoothHeight":true,"directionNav":true,"controlNav":"thumbnails","slideshow":false,"animationSpeed":500,"animationLoop":false,"allowOneSlide":false,"direction":"horizontal","prevText":"\u003Cbutton type=\"button\" class=\"slick-nav slick-prev slick-button\"\u003E\u003Csvg xmlns=\"http://www.w3.org/2000/svg\" x=\"0px\" y=\"0px\" viewBox=\"0 0 24 24\" enable-background=\"new 0 0 24 24\" fill=\"currentColor\"\u003E\u003Cpolyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" points=\"17.2,22.4 6.8,12 17.2,1.6 \"/\u003E\u003C/svg\u003E\u003C/button\u003E","nextText":"\u003Cbutton type=\"button\" class=\"slick-nav slick-next slick-button\"\u003E\u003Csvg xmlns=\"http://www.w3.org/2000/svg\" x=\"0px\" y=\"0px\" viewBox=\"0 0 24 24\" enable-background=\"new 0 0 24 24\" fill=\"currentColor\"\u003E\u003Cpolyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" points=\"6.8,22.4 17.2,12 6.8,1.6 \"/\u003E\u003C/svg\u003E\u003C/button\u003E"},"zoom_enabled":"1","zoom_options":[],"photoswipe_enabled":"1","photoswipe_options":{"shareEl":false,"closeOnScroll":false,"history":false,"hideAnimationDuration":0,"showAnimationDuration":0},"flexslider_enabled":"1"};
-//# sourceURL=wc-single-product-js-extra
-/* ]]> */
-</script>
-<script data-wp-strategy="defer" defer="defer" id="wc-single-product-js" src="~/SiteAssets/partdo/wp-content/plugins/woocommerce/assets/js/frontend/single-product.min.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
-<script data-wp-strategy="defer" id="wc-js-cookie-js" src="~/SiteAssets/partdo/wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
-<script id="woocommerce-js-extra" type="1a18d98887230957f6a6eec6-text/javascript">
-/* <![CDATA[ */
-var woocommerce_params = {"ajax_url":"/partdo/wp-admin/admin-ajax.php","wc_ajax_url":"/partdo/?wc-ajax=%%endpoint%%","i18n_password_show":"Show password","i18n_password_hide":"Hide password"};
-//# sourceURL=woocommerce-js-extra
-/* ]]> */
-</script>
-<script data-wp-strategy="defer" defer="defer" id="woocommerce-js" src="~/SiteAssets/partdo/wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
-<script id="klb-single-ajax-js" src="~/SiteAssets/partdo/wp-content/plugins/partdo-core/woocommerce-filter/single-ajax/js/single-ajax.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
-<script id="klb-notice-ajax-js" src="~/SiteAssets/partdo/wp-content/plugins/partdo-core/woocommerce-filter/notice-ajax/js/notice-ajax.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
-<script id="underscore-js" src="~/SiteAssets/partdo/wp-includes/js/underscore.min.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
-<script id="wp-util-js-extra" type="1a18d98887230957f6a6eec6-text/javascript">
-/* <![CDATA[ */
-var _wpUtilSettings = {"ajax":{"url":"/partdo/wp-admin/admin-ajax.php"}};
-//# sourceURL=wp-util-js-extra
-/* ]]> */
-</script>
-<script id="wp-util-js" src="~/SiteAssets/partdo/wp-includes/js/wp-util.min.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
-<script id="wc-add-to-cart-variation-js-extra" type="1a18d98887230957f6a6eec6-text/javascript">
- 
-</script>
-<script data-wp-strategy="defer" defer="defer" id="wc-add-to-cart-variation-js" src="~/SiteAssets/partdo/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart-variation.min.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
-<script id="partdo-ajax-search-js-extra" type="1a18d98887230957f6a6eec6-text/javascript">
- 
-</script>
-<script id="partdo-ajax-search-js" src="~/SiteAssets/partdo/wp-content/plugins/partdo-core/woocommerce-filter/ajax-search/js/ajax-search.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
-<script id="partdo-wishlist-js-extra" type="1a18d98887230957f6a6eec6-text/javascript">
- 
-</script>
-<script id="partdo-wishlist-js" src="~/SiteAssets/partdo/wp-content/plugins/partdo-core/woocommerce-filter/wishlist/js/wishlist.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
-<script id="pjax-helpers-js" src="~/SiteAssets/partdo/wp-content/themes/partdo/includes/pjax/js/helpers.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
-<link href="https://klbtheme.com/partdo/wp-json/" rel="https://api.w.org/"/><link href="https://klbtheme.com/partdo/wp-json/wp/v2/product/3123" rel="alternate" title="JSON" type="application/json"/><link href="https://klbtheme.com/partdo/xmlrpc.php?rsd" rel="EditURI" title="RSD" type="application/rsd+xml"/>
-<meta content="WordPress 6.9" name="generator">
-<meta content="WooCommerce 10.3.5" name="generator">
-<link href="https://klbtheme.com/partdo/product/technaxx-car-alarm-with-charging-function-tx-100/" rel="canonical"/>
-<link href="https://klbtheme.com/partdo/?p=3123" rel="shortlink"/>
-<style type="text/css">
+		img.wp-smiley, img.emoji {
+			display: inline !important;
+			border: none !important;
+			box-shadow: none !important;
+			height: 1em !important;
+			width: 1em !important;
+			margin: 0 0.07em !important;
+			vertical-align: -0.1em !important;
+			background: none !important;
+			padding: 0 !important;
+		}
+		/*# sourceURL=wp-emoji-styles-inline-css */
+	</style>
+	<link href="~/SiteAssets/partdo/wp-includes/css/dist/block-library/style.min.css" id="wp-block-library-css" media="all" rel="stylesheet" type="text/css" />
+	<link href="~/SiteAssets/partdo/wp-content/plugins/woocommerce/assets/client/blocks/wc-blocks.css" id="wc-blocks-style-css" media="all" rel="stylesheet" type="text/css" />
+	<style id="global-styles-inline-css" type="text/css">
+		:root {
+			--wp--preset--aspect-ratio--square: 1;
+			--wp--preset--aspect-ratio--4-3: 4/3;
+			--wp--preset--aspect-ratio--3-4: 3/4;
+			--wp--preset--aspect-ratio--3-2: 3/2;
+			--wp--preset--aspect-ratio--2-3: 2/3;
+			--wp--preset--aspect-ratio--16-9: 16/9;
+			--wp--preset--aspect-ratio--9-16: 9/16;
+			--wp--preset--color--black: #000000;
+			--wp--preset--color--cyan-bluish-gray: #abb8c3;
+			--wp--preset--color--white: #ffffff;
+			--wp--preset--color--pale-pink: #f78da7;
+			--wp--preset--color--vivid-red: #cf2e2e;
+			--wp--preset--color--luminous-vivid-orange: #ff6900;
+			--wp--preset--color--luminous-vivid-amber: #fcb900;
+			--wp--preset--color--light-green-cyan: #7bdcb5;
+			--wp--preset--color--vivid-green-cyan: #00d084;
+			--wp--preset--color--pale-cyan-blue: #8ed1fc;
+			--wp--preset--color--vivid-cyan-blue: #0693e3;
+			--wp--preset--color--vivid-purple: #9b51e0;
+			--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);
+			--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);
+			--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%);
+			--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%);
+			--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);
+			--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);
+			--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);
+			--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);
+			--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);
+			--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);
+			--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);
+			--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);
+			--wp--preset--font-size--small: 13px;
+			--wp--preset--font-size--medium: 20px;
+			--wp--preset--font-size--large: 36px;
+			--wp--preset--font-size--x-large: 42px;
+			--wp--preset--spacing--20: 0.44rem;
+			--wp--preset--spacing--30: 0.67rem;
+			--wp--preset--spacing--40: 1rem;
+			--wp--preset--spacing--50: 1.5rem;
+			--wp--preset--spacing--60: 2.25rem;
+			--wp--preset--spacing--70: 3.38rem;
+			--wp--preset--spacing--80: 5.06rem;
+			--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);
+			--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);
+			--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);
+			--wp--preset--shadow--outlined: 6px 6px 0px -3px rgb(255, 255, 255), 6px 6px rgb(0, 0, 0);
+			--wp--preset--shadow--crisp: 6px 6px 0px rgb(0, 0, 0);
+		}
 
-@@media(max-width:64rem){
-	header.sticky-header .header-mobile {
-		position: fixed;
-		top: 0;
-		left: 0;
-		right: 0;
-		z-index: 9;
-		border-bottom: 1px solid #e3e4e6;
-	}	
-}
+		:where(.is-layout-flex) {
+			gap: 0.5em;
+		}
+
+		:where(.is-layout-grid) {
+			gap: 0.5em;
+		}
+
+		body .is-layout-flex {
+			display: flex;
+		}
+
+		.is-layout-flex {
+			flex-wrap: wrap;
+			align-items: center;
+		}
+
+			.is-layout-flex > :is(*, div) {
+				margin: 0;
+			}
+
+		body .is-layout-grid {
+			display: grid;
+		}
+
+		.is-layout-grid > :is(*, div) {
+			margin: 0;
+		}
+
+		:where(.wp-block-columns.is-layout-flex) {
+			gap: 2em;
+		}
+
+		:where(.wp-block-columns.is-layout-grid) {
+			gap: 2em;
+		}
+
+		:where(.wp-block-post-template.is-layout-flex) {
+			gap: 1.25em;
+		}
+
+		:where(.wp-block-post-template.is-layout-grid) {
+			gap: 1.25em;
+		}
+
+		.has-black-color {
+			color: var(--wp--preset--color--black) !important;
+		}
+
+		.has-cyan-bluish-gray-color {
+			color: var(--wp--preset--color--cyan-bluish-gray) !important;
+		}
+
+		.has-white-color {
+			color: var(--wp--preset--color--white) !important;
+		}
+
+		.has-pale-pink-color {
+			color: var(--wp--preset--color--pale-pink) !important;
+		}
+
+		.has-vivid-red-color {
+			color: var(--wp--preset--color--vivid-red) !important;
+		}
+
+		.has-luminous-vivid-orange-color {
+			color: var(--wp--preset--color--luminous-vivid-orange) !important;
+		}
+
+		.has-luminous-vivid-amber-color {
+			color: var(--wp--preset--color--luminous-vivid-amber) !important;
+		}
+
+		.has-light-green-cyan-color {
+			color: var(--wp--preset--color--light-green-cyan) !important;
+		}
+
+		.has-vivid-green-cyan-color {
+			color: var(--wp--preset--color--vivid-green-cyan) !important;
+		}
+
+		.has-pale-cyan-blue-color {
+			color: var(--wp--preset--color--pale-cyan-blue) !important;
+		}
+
+		.has-vivid-cyan-blue-color {
+			color: var(--wp--preset--color--vivid-cyan-blue) !important;
+		}
+
+		.has-vivid-purple-color {
+			color: var(--wp--preset--color--vivid-purple) !important;
+		}
+
+		.has-black-background-color {
+			background-color: var(--wp--preset--color--black) !important;
+		}
+
+		.has-cyan-bluish-gray-background-color {
+			background-color: var(--wp--preset--color--cyan-bluish-gray) !important;
+		}
+
+		.has-white-background-color {
+			background-color: var(--wp--preset--color--white) !important;
+		}
+
+		.has-pale-pink-background-color {
+			background-color: var(--wp--preset--color--pale-pink) !important;
+		}
+
+		.has-vivid-red-background-color {
+			background-color: var(--wp--preset--color--vivid-red) !important;
+		}
+
+		.has-luminous-vivid-orange-background-color {
+			background-color: var(--wp--preset--color--luminous-vivid-orange) !important;
+		}
+
+		.has-luminous-vivid-amber-background-color {
+			background-color: var(--wp--preset--color--luminous-vivid-amber) !important;
+		}
+
+		.has-light-green-cyan-background-color {
+			background-color: var(--wp--preset--color--light-green-cyan) !important;
+		}
+
+		.has-vivid-green-cyan-background-color {
+			background-color: var(--wp--preset--color--vivid-green-cyan) !important;
+		}
+
+		.has-pale-cyan-blue-background-color {
+			background-color: var(--wp--preset--color--pale-cyan-blue) !important;
+		}
+
+		.has-vivid-cyan-blue-background-color {
+			background-color: var(--wp--preset--color--vivid-cyan-blue) !important;
+		}
+
+		.has-vivid-purple-background-color {
+			background-color: var(--wp--preset--color--vivid-purple) !important;
+		}
+
+		.has-black-border-color {
+			border-color: var(--wp--preset--color--black) !important;
+		}
+
+		.has-cyan-bluish-gray-border-color {
+			border-color: var(--wp--preset--color--cyan-bluish-gray) !important;
+		}
+
+		.has-white-border-color {
+			border-color: var(--wp--preset--color--white) !important;
+		}
+
+		.has-pale-pink-border-color {
+			border-color: var(--wp--preset--color--pale-pink) !important;
+		}
+
+		.has-vivid-red-border-color {
+			border-color: var(--wp--preset--color--vivid-red) !important;
+		}
+
+		.has-luminous-vivid-orange-border-color {
+			border-color: var(--wp--preset--color--luminous-vivid-orange) !important;
+		}
+
+		.has-luminous-vivid-amber-border-color {
+			border-color: var(--wp--preset--color--luminous-vivid-amber) !important;
+		}
+
+		.has-light-green-cyan-border-color {
+			border-color: var(--wp--preset--color--light-green-cyan) !important;
+		}
+
+		.has-vivid-green-cyan-border-color {
+			border-color: var(--wp--preset--color--vivid-green-cyan) !important;
+		}
+
+		.has-pale-cyan-blue-border-color {
+			border-color: var(--wp--preset--color--pale-cyan-blue) !important;
+		}
+
+		.has-vivid-cyan-blue-border-color {
+			border-color: var(--wp--preset--color--vivid-cyan-blue) !important;
+		}
+
+		.has-vivid-purple-border-color {
+			border-color: var(--wp--preset--color--vivid-purple) !important;
+		}
+
+		.has-vivid-cyan-blue-to-vivid-purple-gradient-background {
+			background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;
+		}
+
+		.has-light-green-cyan-to-vivid-green-cyan-gradient-background {
+			background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;
+		}
+
+		.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background {
+			background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;
+		}
+
+		.has-luminous-vivid-orange-to-vivid-red-gradient-background {
+			background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;
+		}
+
+		.has-very-light-gray-to-cyan-bluish-gray-gradient-background {
+			background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;
+		}
+
+		.has-cool-to-warm-spectrum-gradient-background {
+			background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;
+		}
+
+		.has-blush-light-purple-gradient-background {
+			background: var(--wp--preset--gradient--blush-light-purple) !important;
+		}
+
+		.has-blush-bordeaux-gradient-background {
+			background: var(--wp--preset--gradient--blush-bordeaux) !important;
+		}
+
+		.has-luminous-dusk-gradient-background {
+			background: var(--wp--preset--gradient--luminous-dusk) !important;
+		}
+
+		.has-pale-ocean-gradient-background {
+			background: var(--wp--preset--gradient--pale-ocean) !important;
+		}
+
+		.has-electric-grass-gradient-background {
+			background: var(--wp--preset--gradient--electric-grass) !important;
+		}
+
+		.has-midnight-gradient-background {
+			background: var(--wp--preset--gradient--midnight) !important;
+		}
+
+		.has-small-font-size {
+			font-size: var(--wp--preset--font-size--small) !important;
+		}
+
+		.has-medium-font-size {
+			font-size: var(--wp--preset--font-size--medium) !important;
+		}
+
+		.has-large-font-size {
+			font-size: var(--wp--preset--font-size--large) !important;
+		}
+
+		.has-x-large-font-size {
+			font-size: var(--wp--preset--font-size--x-large) !important;
+		}
+		/*# sourceURL=global-styles-inline-css */
+	</style>
+	<style id="classic-theme-styles-inline-css" type="text/css">
+		/*! This file is auto-generated */
+		.wp-block-button__link {
+			color: #fff;
+			background-color: #32373c;
+			border-radius: 9999px;
+			box-shadow: none;
+			text-decoration: none;
+			padding: calc(.667em + 2px) calc(1.333em + 2px);
+			font-size: 1.125em
+		}
+
+		.wp-block-file__button {
+			background: #32373c;
+			color: #fff;
+			text-decoration: none
+		}
+		/*# sourceURL=/wp-includes/css/classic-themes.min.css */
+	</style>
+	<link href="~/SiteAssets/partdo/wp-content/plugins/contact-form-7/includes/css/styles.css" id="contact-form-7-css" media="all" rel="stylesheet" type="text/css" />
+	<link href="~/SiteAssets/partdo/wp-content/plugins/woocommerce/assets/css/photoswipe/photoswipe.min.css" id="photoswipe-css" media="all" rel="stylesheet" type="text/css" />
+	<link href="~/SiteAssets/partdo/wp-content/plugins/woocommerce/assets/css/photoswipe/default-skin/default-skin.min.css" id="photoswipe-default-skin-css" media="all" rel="stylesheet" type="text/css" />
+	<style id="woocommerce-inline-inline-css" type="text/css">
+		.woocommerce form .form-row .required {
+			visibility: visible;
+		}
+		/*# sourceURL=woocommerce-inline-inline-css */
+	</style>
+	<link href="~/SiteAssets/partdo/wp-content/plugins/partdo-core/woocommerce-filter/single-ajax/css/single-ajax.css" id="klb-single-ajax-css" media="all" rel="stylesheet" type="text/css" />
+	<link href="~/SiteAssets/partdo/wp-content/plugins/partdo-core/woocommerce-filter/notice-ajax/css/notice-ajax.css" id="klb-notice-ajax-css" media="all" rel="stylesheet" type="text/css" />
+	<link href="~/SiteAssets/partdo/wp-content/plugins/partdo-core/woocommerce-filter/swatches/css/swatches.css" id="klbtheme-swatches-css" media="all" rel="stylesheet" type="text/css" />
+	<link href="~/SiteAssets/partdo/wp-content/plugins/partdo-core/woocommerce-filter/shipping-progress-bar/css/free-shipping.css" id="klb-free-shipping-css" media="all" rel="stylesheet" type="text/css" />
+	<link href="~/SiteAssets/partdo/wp-content/plugins/partdo-core/woocommerce-filter/ajax-search/css/ajax-search.css" id="partdo-ajax-search-css" media="all" rel="stylesheet" type="text/css" />
+	<link href="~/SiteAssets/partdo/wp-content/plugins/partdo-core/woocommerce-filter/product-badge/css/product-badge.css" id="klb-product-badge-css" media="all" rel="stylesheet" type="text/css" />
+	<link href="~/SiteAssets/partdo/wp-content/plugins/partdo-core/woocommerce-filter/single-gallery/css/single-gallery.css" id="partdo-single-gallery-css" media="all" rel="stylesheet" type="text/css" />
+	<link href="~/SiteAssets/partdo/wp-content/plugins/partdo-core/woocommerce-filter/compare/css/compare.css" id="klbcp-frontend-css" media="all" rel="stylesheet" type="text/css" />
+	<link href="~/SiteAssets/partdo/wp-content/plugins/partdo-core/woocommerce-filter/wishlist/css/wishlist.css" id="partdo-wishlist-css" media="all" rel="stylesheet" type="text/css" />
+	<link href="~/SiteAssets/partdo/wp-content/plugins/partdo-core/woocommerce-filter/social-login/css/social-login.css" id="klb-social-login-css" media="all" rel="stylesheet" type="text/css" />
+	<link href="~/SiteAssets/partdo/wp-content/plugins/woocommerce/assets/css/brands.css" id="brands-styles-css" media="all" rel="stylesheet" type="text/css" />
+	<link href="~/SiteAssets/partdo/wp-content/themes/partdo/assets/css/bootstrap.min.css" id="bootstrap-css" media="all" rel="stylesheet" type="text/css" />
+	<link href="~/SiteAssets/partdo/wp-content/themes/partdo/assets/css/base.css" id="partdo-base-css" media="all" rel="stylesheet" type="text/css" />
+	<link href="~/SiteAssets/partdo/wp-content/themes/partdo/assets/css/klbicon.css" id="partdo-klbicon-css" media="all" rel="stylesheet" type="text/css" />
+	<link href="~/SiteAssets/css2" id="partdo-font-krub-css" media="all" rel="stylesheet" type="text/css" />
+	<link href="~/SiteAssets/partdo/wp-content/themes/partdo/style.css" id="partdo-style-css" media="all" rel="stylesheet" type="text/css" />
+	<script id="tmpl-variation-template" type="text/template">
+		<div class="woocommerce-variation-description">{{{ data.variation.variation_description }}}</div>
+		<div class="woocommerce-variation-price">{{{ data.variation.price_html }}}</div>
+		<div class="woocommerce-variation-availability">{{{ data.variation.availability_html }}}</div>
+	</script>
+	<script id="tmpl-unavailable-variation-template" type="text/template">
+		<p role="alert">Sorry, this product is unavailable. Please choose a different combination.</p>
+	</script>
+	<script id="jquery-core-js" src="~/SiteAssets/partdo/wp-includes/js/jquery/jquery.min.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
+	<script id="jquery-migrate-js" src="~/SiteAssets/partdo/wp-includes/js/jquery/jquery-migrate.min.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
+	<script data-wp-strategy="defer" defer="defer" id="wc-jquery-blockui-js" src="~/SiteAssets/partdo/wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
+	<script id="wc-add-to-cart-js-extra" type="1a18d98887230957f6a6eec6-text/javascript">
+		/* <![CDATA[ */
+		var wc_add_to_cart_params = {"ajax_url":"/partdo/wp-admin/admin-ajax.php","wc_ajax_url":"/partdo/?wc-ajax=%%endpoint%%","i18n_view_cart":"View cart","cart_url":"https://klbtheme.com/partdo/cart/","is_cart":"","cart_redirect_after_add":"no"};
+		//# sourceURL=wc-add-to-cart-js-extra
+		/* ]]> */
+	</script>
+	<script data-wp-strategy="defer" defer="defer" id="wc-add-to-cart-js" src="~/SiteAssets/partdo/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.min.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
+	<script data-wp-strategy="defer" defer="defer" id="wc-zoom-js" src="~/SiteAssets/partdo/wp-content/plugins/woocommerce/assets/js/zoom/jquery.zoom.min.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
+	<script data-wp-strategy="defer" defer="defer" id="wc-flexslider-js" src="~/SiteAssets/partdo/wp-content/plugins/woocommerce/assets/js/flexslider/jquery.flexslider.min.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
+	<script data-wp-strategy="defer" defer="defer" id="wc-photoswipe-js" src="~/SiteAssets/partdo/wp-content/plugins/woocommerce/assets/js/photoswipe/photoswipe.min.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
+	<script data-wp-strategy="defer" defer="defer" id="wc-photoswipe-ui-default-js" src="~/SiteAssets/partdo/wp-content/plugins/woocommerce/assets/js/photoswipe/photoswipe-ui-default.min.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
+	<script id="wc-single-product-js-extra" type="1a18d98887230957f6a6eec6-text/javascript">
+		/* <![CDATA[ */
+		var wc_single_product_params = {"i18n_required_rating_text":"Please select a rating","i18n_rating_options":["1 of 5 stars","2 of 5 stars","3 of 5 stars","4 of 5 stars","5 of 5 stars"],"i18n_product_gallery_trigger_text":"View full-screen image gallery","review_rating_required":"yes","flexslider":{"rtl":false,"animation":"slide","smoothHeight":true,"directionNav":true,"controlNav":"thumbnails","slideshow":false,"animationSpeed":500,"animationLoop":false,"allowOneSlide":false,"direction":"horizontal","prevText":"\u003Cbutton type=\"button\" class=\"slick-nav slick-prev slick-button\"\u003E\u003Csvg xmlns=\"http://www.w3.org/2000/svg\" x=\"0px\" y=\"0px\" viewBox=\"0 0 24 24\" enable-background=\"new 0 0 24 24\" fill=\"currentColor\"\u003E\u003Cpolyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" points=\"17.2,22.4 6.8,12 17.2,1.6 \"/\u003E\u003C/svg\u003E\u003C/button\u003E","nextText":"\u003Cbutton type=\"button\" class=\"slick-nav slick-next slick-button\"\u003E\u003Csvg xmlns=\"http://www.w3.org/2000/svg\" x=\"0px\" y=\"0px\" viewBox=\"0 0 24 24\" enable-background=\"new 0 0 24 24\" fill=\"currentColor\"\u003E\u003Cpolyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" points=\"6.8,22.4 17.2,12 6.8,1.6 \"/\u003E\u003C/svg\u003E\u003C/button\u003E"},"zoom_enabled":"1","zoom_options":[],"photoswipe_enabled":"1","photoswipe_options":{"shareEl":false,"closeOnScroll":false,"history":false,"hideAnimationDuration":0,"showAnimationDuration":0},"flexslider_enabled":"1"};
+		//# sourceURL=wc-single-product-js-extra
+		/* ]]> */
+	</script>
+	<script data-wp-strategy="defer" defer="defer" id="wc-single-product-js" src="~/SiteAssets/partdo/wp-content/plugins/woocommerce/assets/js/frontend/single-product.min.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
+	<script data-wp-strategy="defer" id="wc-js-cookie-js" src="~/SiteAssets/partdo/wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
+	<script id="woocommerce-js-extra" type="1a18d98887230957f6a6eec6-text/javascript">
+		/* <![CDATA[ */
+		var woocommerce_params = {"ajax_url":"/partdo/wp-admin/admin-ajax.php","wc_ajax_url":"/partdo/?wc-ajax=%%endpoint%%","i18n_password_show":"Show password","i18n_password_hide":"Hide password"};
+		//# sourceURL=woocommerce-js-extra
+		/* ]]> */
+	</script>
+	<script data-wp-strategy="defer" defer="defer" id="woocommerce-js" src="~/SiteAssets/partdo/wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
+	<script id="klb-single-ajax-js" src="~/SiteAssets/partdo/wp-content/plugins/partdo-core/woocommerce-filter/single-ajax/js/single-ajax.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
+	<script id="klb-notice-ajax-js" src="~/SiteAssets/partdo/wp-content/plugins/partdo-core/woocommerce-filter/notice-ajax/js/notice-ajax.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
+	<script id="underscore-js" src="~/SiteAssets/partdo/wp-includes/js/underscore.min.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
+	<script id="wp-util-js-extra" type="1a18d98887230957f6a6eec6-text/javascript">
+		/* <![CDATA[ */
+		var _wpUtilSettings = {"ajax":{"url":"/partdo/wp-admin/admin-ajax.php"}};
+		//# sourceURL=wp-util-js-extra
+		/* ]]> */
+	</script>
+	<script id="wp-util-js" src="~/SiteAssets/partdo/wp-includes/js/wp-util.min.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
+	<script id="wc-add-to-cart-variation-js-extra" type="1a18d98887230957f6a6eec6-text/javascript">
+
+	</script>
+	<script data-wp-strategy="defer" defer="defer" id="wc-add-to-cart-variation-js" src="~/SiteAssets/partdo/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart-variation.min.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
+	<script id="partdo-ajax-search-js-extra" type="1a18d98887230957f6a6eec6-text/javascript">
+
+	</script>
+	<script id="partdo-ajax-search-js" src="~/SiteAssets/partdo/wp-content/plugins/partdo-core/woocommerce-filter/ajax-search/js/ajax-search.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
+	<script id="partdo-wishlist-js-extra" type="1a18d98887230957f6a6eec6-text/javascript">
+
+	</script>
+	<script id="partdo-wishlist-js" src="~/SiteAssets/partdo/wp-content/plugins/partdo-core/woocommerce-filter/wishlist/js/wishlist.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
+	<script id="pjax-helpers-js" src="~/SiteAssets/partdo/wp-content/themes/partdo/includes/pjax/js/helpers.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
+	<link href="https://klbtheme.com/partdo/wp-json/" rel="https://api.w.org/" />
+	<link href="https://klbtheme.com/partdo/wp-json/wp/v2/product/3123" rel="alternate" title="JSON" type="application/json" />
+	<link href="https://klbtheme.com/partdo/xmlrpc.php?rsd" rel="EditURI" title="RSD" type="application/rsd+xml" />
+	<meta content="WordPress 6.9" name="generator">
+	<meta content="WooCommerce 10.3.5" name="generator">
+	<link href="https://klbtheme.com/partdo/product/technaxx-car-alarm-with-charging-function-tx-100/" rel="canonical" />
+	<link href="https://klbtheme.com/partdo/?p=3123" rel="shortlink" />
+	<style type="text/css">
+
+		@@media(max-width:64rem) {
+			header.sticky-header .header-mobile {
+				position: fixed;
+				top: 0;
+				left: 0;
+				right: 0;
+				z-index: 9;
+				border-bottom: 1px solid #e3e4e6;
+			}
+		}
 
 
 		@@media(max-width:64rem) {
-	.single .product-type-simple form.cart {
-	    position: fixed;
-	    bottom: 0;
-	    right: 0;
-	    z-index: 9999;
-	    background: #fff;
-	    margin-bottom: 0;
-	    padding: 15px;
-	    -webkit-box-shadow: 0 -2px 5px rgb(0 0 0 / 7%);
-	    box-shadow: 0 -2px 5px rgb(0 0 0 / 7%);
-	    justify-content: space-between;
-		width: 100%;
-	}
-
-	.single .woocommerce-variation-add-to-cart {
-	    display: -webkit-box;
-	    display: -ms-flexbox;
-	    display: flex;
-	    position: fixed;
-	    bottom: 0;
-	    right: 0;
-	    z-index: 9999;
-	    background: #fff;
-	    margin-bottom: 0;
-	    padding: 15px;
-	    -webkit-box-shadow: 0 -2px 5px rgb(0 0 0 / 7%);
-	    box-shadow: 0 -2px 5px rgb(0 0 0 / 7%);
-	    justify-content: space-between;
-    	width: 100%;
-		flex-wrap: wrap;
-		width: 100%; 
-	}
-
-	.single .site-footer .footer-row.footer-copyright {
-	    margin-bottom: 79px;
-	}
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-.site-header.header-type-1 .header-border{
-	background-color: ;
-}
-
-.site-header.header-type-1 .header-topbar  {
-	background-color: ;
-	color: ;
-}
-
-.site-header.header-type-1 .klbth-menu-wrapper.topbar .klbth-menu > li:hover > a,
-.site-header.header-type-1 .header-topbar .header-notice p a:hover,
-.site-header.header-type-1 .klbth-menu-wrapper.topbar .klbth-menu .sub-menu li a:hover{
-	color: ;
-}
-
-.site-header.header-type-1 .header-main,
-.site-header.header-type-1 .header-nav,
-.site-header.header-type-1 .header-mobile{
-	background-color: ;
-}
-
-.site-header.header-type-1 .header-topbar{
-	border-color: ;
-}
-
-.site-header.header-type-1 .klbth-menu-wrapper.primary .klbth-menu > .menu-item > a,
-.site-header.header-type-1 .mega-items .mega-item > a{
-	color: ;
-}
-
-.site-header.header-type-1 .klbth-menu-wrapper.primary .klbth-menu > .menu-item:hover > a,
-.site-header.header-type-1 .mega-items .mega-item:hover > a{
-	color: ;
-}
-
-.site-header.header-type-1 .klbth-menu-wrapper.primary .menu-item-has-children .sub-menu .menu-item:hover > a{
-	background-color: ;
-	color: ;
-}
-
-.site-header.header-type-1 .klbth-menu-wrapper.primary .menu-item-has-children .sub-menu .menu-item a{
-	color: ;
-}
-
-.site-header.header-type-1 .quick-button .quick-icon,
-.site-header.header-type-1 .quick-button .quick-text,
-.site-header.header-type-1 .quick-button .arrow{
-	color: ;
-}
-
-.site-header.header-type-1 .notice-button .notice-link{
-	color: ;
-}
-
-.site-header.header-type-2 .header-notify{
-	color: ;
-}
-
-.site-header.header-type-2 .header-topbar,
-.site-header.header-type-2 .klbth-menu-wrapper.topbar .klbth-menu > li:hover > a{
-	background-color: ;
-	color: ;
-}
-
-.site-header.header-type-2 .klbth-menu-wrapper.topbar .klbth-menu > li > a:hover,
-.site-header.header-type-2 .header-topbar .header-notice p a:hover,
-.site-header.header-type-2 .klbth-menu-wrapper.topbar .klbth-menu .sub-menu li a:hover,
-.site-header.header-type-2 .klbth-menu-wrapper.topbar .klbth-menu > li:hover > a{
-	color: ;
-}
-
-.site-header.header-type-2 .header-main,
-.site-header.header-type-2 .header-nav,
-.site-header.header-type-2 .header-mobile{
-	background-color: ;
-}
-
-.site-header.header-type-2 .header-topbar{
-	border-color: ;
-}
-
-.site-header.header-type-2 .klbth-menu-wrapper.primary .klbth-menu > .menu-item > a,
-.site-header.header-type-2 .mega-items .mega-item > a{
-	color: ;
-}
-
-.site-header.header-type-2 .klbth-menu-wrapper.primary .klbth-menu > .menu-item:hover > a,
-.site-header.header-type-2 .mega-items .mega-item:hover > a{
-	color: ;
-}
-
-.site-header.header-type-2 .klbth-menu-wrapper.primary .menu-item-has-children .sub-menu .menu-item a{
-	color: ;
-}
-
-.site-header.header-type-2 .klbth-menu-wrapper.primary .menu-item-has-children .sub-menu .menu-item:hover > a{
-	background-color: ;
-	color: ;
-}
-
-.site-header.header-type-2 .quick-button .quick-icon{
-	color: ;
-}
-
-.site-header.klb-type-3 .header-border{
-	background-color: ;
-}
-
-.site-header.klb-type-3 .header-sub{
-	background-color: ;
-}
-
-.site-header.klb-type-3 .klbth-menu-wrapper.horizontal .klbth-menu li a{
-	color: ;
-}
-
-.site-header.klb-type-3 .klbth-menu-wrapper.primary .klbth-menu > .menu-item > a:hover,
-.site-header.klb-type-3 .klbth-menu-wrapper.topbar .klbth-menu .sub-menu li a:hover,
-.site-header.klb-type-3 .klbth-menu-wrapper.topbar .klbth-menu > li:hover > a{
-	color: ;
-}
-
-.site-header.klb-type-3 .header-main,
-.site-header.klb-type-3 .header-mobile{
-	background-color: ;
-}
-
-.site-header.klb-type-3 .header-sub{
-	border-color: ;
-}
-
-.site-header.klb-type-3 .quick-button .quick-icon,
-.site-header.klb-type-3 .quick-button .quick-text,
-.site-header.klb-type-3 .quick-button .arrow{
-	color: ;
-}
-
-.site-header.klb-type-4 .header-notify{
-	color: ;
-}
-
-.site-header.klb-type-4 .header-sub{
-	background-color: ;
-}
-
-.site-header.klb-type-4 .klbth-menu-wrapper.horizontal .klbth-menu li a{
-	color: ;
-}
-
-.site-header.klb-type-4 .klbth-menu-wrapper.primary .klbth-menu > .menu-item > a:hover,
-.site-header.klb-type-4 .klbth-menu-wrapper.topbar .klbth-menu .sub-menu li a:hover,
-.site-header.klb-type-4  .klbth-menu-wrapper.topbar .klbth-menu > li:hover > a{
-	color: ;
-}
-
-.site-header.klb-type-4 .header-main,
-.site-header.klb-type-4 .header-mobile{
-	background-color: ;
-}
-
-.site-header.klb-type-4 .header-sub{
-	border-color: ;
-}
-
-.site-header.klb-type-4 .quick-button .quick-icon,
-.site-header.klb-type-4 .quick-button .quick-text,
-.site-header.klb-type-4 .quick-button .arrow{
-	color: ;
-}
-
-.klbth-modal-holder .klbth-modal-header .entry-title{
-	color: ;
-}
-
-.service-search-modal .entry-description{
-	color: ;
-}
-
-.service-search-modal .service-description p{
-	color: ;
-}
-
-.site-header .discount-products-header .entry-title{
-	color: ;
-}
-
-.site-header .discount-products-header p{
-	color: ;
-}
-
-.widget_banner .klbth-banner .entry-heading .entry-title{
-	color: ;
-}
-
-.widget_banner .klbth-banner .badge{
-	background-color: ;
-	color: ;
-}
-
-.widget_banner .klbth-banner .entry-footer .btn.link{
-	color: ;
-}
-
-.klbth-banner.shop-banner .entry-heading .entry-title{
-	color: ;
-}
-
-.klbth-banner.shop-banner .badge{
-	background-color: ;
-	color: ;
-}
-
-.klbth-banner.shop-banner .entry-excerpt{
-	color: ;
-}
-
-.klbth-banner.shop-banner .entry-footer .btn.link{
-	color: ;
-}
-
-.site-drawer .site-scroll{
-	background-color: #fff;
-}
-
-.site-drawer .drawer-heading{
-	color: ;
-}
-
-.site-drawer .klbth-menu-wrapper .klbth-menu .menu-item{
-	color: ;
-	border-color:  !important;
-}
-
-.site-drawer .drawer-contacts ul li .contact-icon{
-	color: ;
-}
-
-.site-drawer .drawer-contacts ul li .contact-detail{
-	color: ;
-}
-
-.site-drawer .drawer-contacts ul li .contact-description{
-	color: ;
-}
-
-.site-drawer .site-copyright{
-	color: ;	
-}
-
-.mobile-bottom-menu{
-	background-color: ;
-}
-
-.mobile-bottom-menu ul li a i,
-.mobile-bottom-menu ul li a svg{
-	color: ;
-}
-
-.mobile-bottom-menu ul li a span{
-	color: ;
-}
-
-.site-footer .klbth-newsletter .klbth-newsletter-text .text-icon{
-	color: ;
-}
-
-.site-footer .footer-row.footer-newsletter{
-	background-color: ;
-}
-
-.site-footer .footer-newsletter.dark .footer-inner{
-	border-color:  !important;
-}
-
-.site-footer .klbth-newsletter .klbth-newsletter-text .text-body .entry-title{
-	color: ;
-}
-
-.site-footer .klbth-newsletter .klbth-newsletter-text .text-body .entry-subtitle{
-	color: ;
-}
-
-.site-footer .klbth-newsletter .klbth-newsletter-text .text-body .entry-description{
-	color: ;
-}
-
-.site-footer .footer-row.custom-background-light.dark{
-	background-color: ;
-}
-
-.footer-row.dark .klbfooterwidget.widget .widget-title,
-.footer-row.dark .widget_about_company .company-content .entry-title,
-.footer-row.dark .widget_contact .company-phone,
-.site-footer .footer-copyright.dark .mobile-app-content span{
-	color: ;
-}
-
-.site-footer .subfooter.dark .footer-inner,
-.site-footer .footer-row.dark .custom-column,
-.site-footer .footer-row.dark .sub-banners ul li + li,
-.site-footer .footer-copyright.dark .footer-inner{
-	border-color:  !important;
-}
-
-.footer-row.dark .widget_nav_menu ul li a,
-.footer-row.dark .widget_contact .company-works p,
-.footer-row.dark .widget_about_company .company-content .entry-description p{
-	color: ;
-}
-
-.site-footer .subfooter.dark .sub-banners ul li{
-	color: ;
-}
-
-.site-footer .footer-copyright.dark .footer-menu ul li a{
-	color: ;
-}
-
-.site-footer .footer-copyright.dark .site-copyright p{
-	color: ;
-}
-
-.site-footer .footer-row.custom-background-dark{
-	background-color: ;
-}
-
-.site-footer .subfooter.light .footer-inner,
-.site-footer .footer-row.light .custom-column,
-.site-footer .footer-row.light .sub-banners ul li + li,
-.site-footer .footer-copyright.light .footer-inner{
-	border-color:  !important;
-}
-
-.footer-row.light .klbfooterwidget.widget .widget-title,
-.footer-row.light .widget_about_company .company-content .entry-title,
-.footer-row.light .widget_contact .company-phone,
-.site-footer .footer-copyright.light .mobile-app-content span{
-	color: ;
-}
-
-.footer-row.light .widget_nav_menu ul li a,
-.footer-row.light .widget_contact .company-works p,
-.footer-row.light .widget_about_company .company-content .entry-description p{
-	color: ;
-}
-
-.site-footer .subfooter.light .sub-banners ul li{
-	color: ;
-}
-
-.site-footer .footer-copyright.light .footer-menu ul li a{
-	color: ;
-}
-
-.site-footer .footer-copyright.light .site-copyright p{
-	color: ;
-}
-
-.site-footer .footer-copyright.light .site-copyright p{
-	color: ;
-}
-
-.maintenance-mode-wrapper h2.entry-title{
-	color: ;
-}
-
-.maintenance-mode-wrapper h1.entry-sub{
-	color: ;
-}
-
-body#error-page .maintenance-content .entry-description{
-	color: ;
-}
-
-.site-header.header-type-1 .dropdown-cats > a{
-	background-color: ;
-	color: ;
-}
-
-.site-header .dropdown-cats .dropdown-menu,
-.site-header .dropdown-cats .dropdown-menu .klbth-menu .sub-menu{
-	background-color: ;	
-	border-color: ;	
-}
-
-.site-header .dropdown-cats .dropdown-menu .klbth-menu a{
-	color: ;
-}
-
-.site-header .dropdown-cats .dropdown-menu .klbth-menu a:hover,
-.site-header .dropdown-cats .dropdown-menu .klbth-menu > .menu-item.menu-item-has-children:hover > a{
-	color: ;
-}
-
-.site-header .dropdown-cats .dropdown-menu .klbth-menu > .menu-item > a:hover,
-.site-header .dropdown-cats .dropdown-menu .klbth-menu > .menu-item.menu-item-has-children:hover > a{
-	background-color: ;	
-}
-
-.site-header .dropdown-cats .dropdown-menu .klbth-menu > li > ul.sub-menu > li.menu-item-has-children > a{
-	color: ;
-}
-
-.single-product .site-content{
-	background-color: ;
-}
-
-.single-product-wrapper .product-detail .product_title{
-	color: ;
-}
-
-.single-product-wrapper .product-gallery .flex-control-thumbs li.slick-slide img.flex-active{
-	border-color: ;
-}
-
-.single-product-wrapper .product-detail .product-meta .product-stock.in-stock{
-	background-color: ;
-	color: ;
-}
-
-.single-product-wrapper .product-detail .product-meta .product-stock.out-of-stock{
-	background-color: ;
-	color: ;
-}
-
-.single-product-wrapper .cell.product-detail .price ins{
-	color: ;
-}
-
-.single-product-wrapper .cell.product-detail .price del{
-	color: ;
-}
-
-.single-product-wrapper .single-product .woocommerce-product-details__short-description{
-	color: ;
-}
-
-.single-product-wrapper .product-detail .single_add_to_cart_button{
-	background-color: ;
-	border-color: ;
-	color: ;
-}
-
-.single-product-wrapper .product-detail .single_add_to_cart_button:hover{
-	background-color: ;
-	border-color: ;
-	color: ;
-}
-
-.single-product-wrapper .product-detail .product-wishlist p{
-	color: ;
-}
-
-.single-product-wrapper .product-detail .product-wishlist a{
-	background-color: ;
-	border-color: ;
-	color: ;
-}
-
-.single-product-wrapper .product-detail .product-wishlist a:hover{
-	background-color: ;
-	border-color: ;
-	color: ;
-}
-
-.single-product-wrapper .product-detail .product-meta.bottom > * > span{
-	color: ;
-}
-
-.single-product-wrapper .product-detail .product-meta.bottom > * a{
-	color: ;
-}
-
-.single-product .woocommerce-tabs ul.wc-tabs li.active > a,
-.single-product .related.products .klb-title h2.entry-title,
-.single-product .recently-viewed .klb-title h2.entry-title{
-	color: ;
-}
-
-p.woocommerce-mini-cart__buttons.buttons a:not(.checkout){
-	background-color: ;
-	color: ;
-}
-
-p.woocommerce-mini-cart__buttons.buttons a:not(.checkout):hover{
-	background-color: ;
-	color: ;
-}
-
-
-p.woocommerce-mini-cart__buttons.buttons a.checkout{
-	background-color: ;
-	border-color: ;
-	color: ;
-}
-
-p.woocommerce-mini-cart__buttons.buttons a.checkout:hover{
-	background-color: ;
-	border-color: ;
-	color: ;
-}
-
-</style>
-<noscript><style>.woocommerce-product-gallery{ opacity: 1 !important; }</style></noscript>
-<meta content="Elementor 3.33.2; features: additional_custom_breakpoints; settings: css_print_method-external, google_font-enabled, font_display-swap" name="generator"/>
-<style>
-				.e-con.e-parent:nth-of-type(n+4):not(.e-lazyloaded):not(.e-no-lazyload),
-				.e-con.e-parent:nth-of-type(n+4):not(.e-lazyloaded):not(.e-no-lazyload) * {
-					background-image: none !important;
+			.single .product-type-simple form.cart {
+				position: fixed;
+				bottom: 0;
+				right: 0;
+				z-index: 9999;
+				background: #fff;
+				margin-bottom: 0;
+				padding: 15px;
+				-webkit-box-shadow: 0 -2px 5px rgb(0 0 0 / 7%);
+				box-shadow: 0 -2px 5px rgb(0 0 0 / 7%);
+				justify-content: space-between;
+				width: 100%;
+			}
+
+			.single .woocommerce-variation-add-to-cart {
+				display: -webkit-box;
+				display: -ms-flexbox;
+				display: flex;
+				position: fixed;
+				bottom: 0;
+				right: 0;
+				z-index: 9999;
+				background: #fff;
+				margin-bottom: 0;
+				padding: 15px;
+				-webkit-box-shadow: 0 -2px 5px rgb(0 0 0 / 7%);
+				box-shadow: 0 -2px 5px rgb(0 0 0 / 7%);
+				justify-content: space-between;
+				width: 100%;
+				flex-wrap: wrap;
+				width: 100%;
+			}
+
+			.single .site-footer .footer-row.footer-copyright {
+				margin-bottom: 79px;
+			}
+		}
+
+
+
+
+
+
+
+
+
+
+
+
+
+		.site-header.header-type-1 .header-border {
+			background-color:;
+		}
+
+		.site-header.header-type-1 .header-topbar {
+			background-color:;
+			color:;
+		}
+
+			.site-header.header-type-1 .klbth-menu-wrapper.topbar .klbth-menu > li:hover > a,
+			.site-header.header-type-1 .header-topbar .header-notice p a:hover,
+			.site-header.header-type-1 .klbth-menu-wrapper.topbar .klbth-menu .sub-menu li a:hover {
+				color:;
+			}
+
+		.site-header.header-type-1 .header-main,
+		.site-header.header-type-1 .header-nav,
+		.site-header.header-type-1 .header-mobile {
+			background-color:;
+		}
+
+		.site-header.header-type-1 .header-topbar {
+			border-color:;
+		}
+
+		.site-header.header-type-1 .klbth-menu-wrapper.primary .klbth-menu > .menu-item > a,
+		.site-header.header-type-1 .mega-items .mega-item > a {
+			color:;
+		}
+
+		.site-header.header-type-1 .klbth-menu-wrapper.primary .klbth-menu > .menu-item:hover > a,
+		.site-header.header-type-1 .mega-items .mega-item:hover > a {
+			color:;
+		}
+
+		.site-header.header-type-1 .klbth-menu-wrapper.primary .menu-item-has-children .sub-menu .menu-item:hover > a {
+			background-color:;
+			color:;
+		}
+
+		.site-header.header-type-1 .klbth-menu-wrapper.primary .menu-item-has-children .sub-menu .menu-item a {
+			color:;
+		}
+
+		.site-header.header-type-1 .quick-button .quick-icon,
+		.site-header.header-type-1 .quick-button .quick-text,
+		.site-header.header-type-1 .quick-button .arrow {
+			color:;
+		}
+
+		.site-header.header-type-1 .notice-button .notice-link {
+			color:;
+		}
+
+		.site-header.header-type-2 .header-notify {
+			color:;
+		}
+
+		.site-header.header-type-2 .header-topbar,
+		.site-header.header-type-2 .klbth-menu-wrapper.topbar .klbth-menu > li:hover > a {
+			background-color:;
+			color:;
+		}
+
+			.site-header.header-type-2 .klbth-menu-wrapper.topbar .klbth-menu > li > a:hover,
+			.site-header.header-type-2 .header-topbar .header-notice p a:hover,
+			.site-header.header-type-2 .klbth-menu-wrapper.topbar .klbth-menu .sub-menu li a:hover,
+			.site-header.header-type-2 .klbth-menu-wrapper.topbar .klbth-menu > li:hover > a {
+				color:;
+			}
+
+		.site-header.header-type-2 .header-main,
+		.site-header.header-type-2 .header-nav,
+		.site-header.header-type-2 .header-mobile {
+			background-color:;
+		}
+
+		.site-header.header-type-2 .header-topbar {
+			border-color:;
+		}
+
+		.site-header.header-type-2 .klbth-menu-wrapper.primary .klbth-menu > .menu-item > a,
+		.site-header.header-type-2 .mega-items .mega-item > a {
+			color:;
+		}
+
+		.site-header.header-type-2 .klbth-menu-wrapper.primary .klbth-menu > .menu-item:hover > a,
+		.site-header.header-type-2 .mega-items .mega-item:hover > a {
+			color:;
+		}
+
+		.site-header.header-type-2 .klbth-menu-wrapper.primary .menu-item-has-children .sub-menu .menu-item a {
+			color:;
+		}
+
+		.site-header.header-type-2 .klbth-menu-wrapper.primary .menu-item-has-children .sub-menu .menu-item:hover > a {
+			background-color:;
+			color:;
+		}
+
+		.site-header.header-type-2 .quick-button .quick-icon {
+			color:;
+		}
+
+		.site-header.klb-type-3 .header-border {
+			background-color:;
+		}
+
+		.site-header.klb-type-3 .header-sub {
+			background-color:;
+		}
+
+		.site-header.klb-type-3 .klbth-menu-wrapper.horizontal .klbth-menu li a {
+			color:;
+		}
+
+		.site-header.klb-type-3 .klbth-menu-wrapper.primary .klbth-menu > .menu-item > a:hover,
+		.site-header.klb-type-3 .klbth-menu-wrapper.topbar .klbth-menu .sub-menu li a:hover,
+		.site-header.klb-type-3 .klbth-menu-wrapper.topbar .klbth-menu > li:hover > a {
+			color:;
+		}
+
+		.site-header.klb-type-3 .header-main,
+		.site-header.klb-type-3 .header-mobile {
+			background-color:;
+		}
+
+		.site-header.klb-type-3 .header-sub {
+			border-color:;
+		}
+
+		.site-header.klb-type-3 .quick-button .quick-icon,
+		.site-header.klb-type-3 .quick-button .quick-text,
+		.site-header.klb-type-3 .quick-button .arrow {
+			color:;
+		}
+
+		.site-header.klb-type-4 .header-notify {
+			color:;
+		}
+
+		.site-header.klb-type-4 .header-sub {
+			background-color:;
+		}
+
+		.site-header.klb-type-4 .klbth-menu-wrapper.horizontal .klbth-menu li a {
+			color:;
+		}
+
+		.site-header.klb-type-4 .klbth-menu-wrapper.primary .klbth-menu > .menu-item > a:hover,
+		.site-header.klb-type-4 .klbth-menu-wrapper.topbar .klbth-menu .sub-menu li a:hover,
+		.site-header.klb-type-4 .klbth-menu-wrapper.topbar .klbth-menu > li:hover > a {
+			color:;
+		}
+
+		.site-header.klb-type-4 .header-main,
+		.site-header.klb-type-4 .header-mobile {
+			background-color:;
+		}
+
+		.site-header.klb-type-4 .header-sub {
+			border-color:;
+		}
+
+		.site-header.klb-type-4 .quick-button .quick-icon,
+		.site-header.klb-type-4 .quick-button .quick-text,
+		.site-header.klb-type-4 .quick-button .arrow {
+			color:;
+		}
+
+		.klbth-modal-holder .klbth-modal-header .entry-title {
+			color:;
+		}
+
+		.service-search-modal .entry-description {
+			color:;
+		}
+
+		.service-search-modal .service-description p {
+			color:;
+		}
+
+		.site-header .discount-products-header .entry-title {
+			color:;
+		}
+
+		.site-header .discount-products-header p {
+			color:;
+		}
+
+		.widget_banner .klbth-banner .entry-heading .entry-title {
+			color:;
+		}
+
+		.widget_banner .klbth-banner .badge {
+			background-color:;
+			color:;
+		}
+
+		.widget_banner .klbth-banner .entry-footer .btn.link {
+			color:;
+		}
+
+		.klbth-banner.shop-banner .entry-heading .entry-title {
+			color:;
+		}
+
+		.klbth-banner.shop-banner .badge {
+			background-color:;
+			color:;
+		}
+
+		.klbth-banner.shop-banner .entry-excerpt {
+			color:;
+		}
+
+		.klbth-banner.shop-banner .entry-footer .btn.link {
+			color:;
+		}
+
+		.site-drawer .site-scroll {
+			background-color: #fff;
+		}
+
+		.site-drawer .drawer-heading {
+			color:;
+		}
+
+		.site-drawer .klbth-menu-wrapper .klbth-menu .menu-item {
+			color:;
+			border-color: !important;
+		}
+
+		.site-drawer .drawer-contacts ul li .contact-icon {
+			color:;
+		}
+
+		.site-drawer .drawer-contacts ul li .contact-detail {
+			color:;
+		}
+
+		.site-drawer .drawer-contacts ul li .contact-description {
+			color:;
+		}
+
+		.site-drawer .site-copyright {
+			color:;
+		}
+
+		.mobile-bottom-menu {
+			background-color:;
+		}
+
+			.mobile-bottom-menu ul li a i,
+			.mobile-bottom-menu ul li a svg {
+				color:;
+			}
+
+			.mobile-bottom-menu ul li a span {
+				color:;
+			}
+
+		.site-footer .klbth-newsletter .klbth-newsletter-text .text-icon {
+			color:;
+		}
+
+		.site-footer .footer-row.footer-newsletter {
+			background-color:;
+		}
+
+		.site-footer .footer-newsletter.dark .footer-inner {
+			border-color: !important;
+		}
+
+		.site-footer .klbth-newsletter .klbth-newsletter-text .text-body .entry-title {
+			color:;
+		}
+
+		.site-footer .klbth-newsletter .klbth-newsletter-text .text-body .entry-subtitle {
+			color:;
+		}
+
+		.site-footer .klbth-newsletter .klbth-newsletter-text .text-body .entry-description {
+			color:;
+		}
+
+		.site-footer .footer-row.custom-background-light.dark {
+			background-color:;
+		}
+
+		.footer-row.dark .klbfooterwidget.widget .widget-title,
+		.footer-row.dark .widget_about_company .company-content .entry-title,
+		.footer-row.dark .widget_contact .company-phone,
+		.site-footer .footer-copyright.dark .mobile-app-content span {
+			color:;
+		}
+
+		.site-footer .subfooter.dark .footer-inner,
+		.site-footer .footer-row.dark .custom-column,
+		.site-footer .footer-row.dark .sub-banners ul li + li,
+		.site-footer .footer-copyright.dark .footer-inner {
+			border-color: !important;
+		}
+
+		.footer-row.dark .widget_nav_menu ul li a,
+		.footer-row.dark .widget_contact .company-works p,
+		.footer-row.dark .widget_about_company .company-content .entry-description p {
+			color:;
+		}
+
+		.site-footer .subfooter.dark .sub-banners ul li {
+			color:;
+		}
+
+		.site-footer .footer-copyright.dark .footer-menu ul li a {
+			color:;
+		}
+
+		.site-footer .footer-copyright.dark .site-copyright p {
+			color:;
+		}
+
+		.site-footer .footer-row.custom-background-dark {
+			background-color:;
+		}
+
+		.site-footer .subfooter.light .footer-inner,
+		.site-footer .footer-row.light .custom-column,
+		.site-footer .footer-row.light .sub-banners ul li + li,
+		.site-footer .footer-copyright.light .footer-inner {
+			border-color: !important;
+		}
+
+		.footer-row.light .klbfooterwidget.widget .widget-title,
+		.footer-row.light .widget_about_company .company-content .entry-title,
+		.footer-row.light .widget_contact .company-phone,
+		.site-footer .footer-copyright.light .mobile-app-content span {
+			color:;
+		}
+
+		.footer-row.light .widget_nav_menu ul li a,
+		.footer-row.light .widget_contact .company-works p,
+		.footer-row.light .widget_about_company .company-content .entry-description p {
+			color:;
+		}
+
+		.site-footer .subfooter.light .sub-banners ul li {
+			color:;
+		}
+
+		.site-footer .footer-copyright.light .footer-menu ul li a {
+			color:;
+		}
+
+		.site-footer .footer-copyright.light .site-copyright p {
+			color:;
+		}
+
+		.site-footer .footer-copyright.light .site-copyright p {
+			color:;
+		}
+
+		.maintenance-mode-wrapper h2.entry-title {
+			color:;
+		}
+
+		.maintenance-mode-wrapper h1.entry-sub {
+			color:;
+		}
+
+		body#error-page .maintenance-content .entry-description {
+			color:;
+		}
+
+		.site-header.header-type-1 .dropdown-cats > a {
+			background-color:;
+			color:;
+		}
+
+		.site-header .dropdown-cats .dropdown-menu,
+		.site-header .dropdown-cats .dropdown-menu .klbth-menu .sub-menu {
+			background-color:;
+			border-color:;
+		}
+
+			.site-header .dropdown-cats .dropdown-menu .klbth-menu a {
+				color:;
+			}
+
+				.site-header .dropdown-cats .dropdown-menu .klbth-menu a:hover,
+				.site-header .dropdown-cats .dropdown-menu .klbth-menu > .menu-item.menu-item-has-children:hover > a {
+					color:;
 				}
+
+			.site-header .dropdown-cats .dropdown-menu .klbth-menu > .menu-item > a:hover,
+			.site-header .dropdown-cats .dropdown-menu .klbth-menu > .menu-item.menu-item-has-children:hover > a {
+				background-color:;
+			}
+
+			.site-header .dropdown-cats .dropdown-menu .klbth-menu > li > ul.sub-menu > li.menu-item-has-children > a {
+				color:;
+			}
+
+		.single-product .site-content {
+			background-color:;
+		}
+
+		.single-product-wrapper .product-detail .product_title {
+			color:;
+		}
+
+		.single-product-wrapper .product-gallery .flex-control-thumbs li.slick-slide img.flex-active {
+			border-color:;
+		}
+
+		.single-product-wrapper .product-detail .product-meta .product-stock.in-stock {
+			background-color:;
+			color:;
+		}
+
+		.single-product-wrapper .product-detail .product-meta .product-stock.out-of-stock {
+			background-color:;
+			color:;
+		}
+
+		.single-product-wrapper .cell.product-detail .price ins {
+			color:;
+		}
+
+		.single-product-wrapper .cell.product-detail .price del {
+			color:;
+		}
+
+		.single-product-wrapper .single-product .woocommerce-product-details__short-description {
+			color:;
+		}
+
+		.single-product-wrapper .product-detail .single_add_to_cart_button {
+			background-color:;
+			border-color:;
+			color:;
+		}
+
+			.single-product-wrapper .product-detail .single_add_to_cart_button:hover {
+				background-color:;
+				border-color:;
+				color:;
+			}
+
+		.single-product-wrapper .product-detail .product-wishlist p {
+			color:;
+		}
+
+		.single-product-wrapper .product-detail .product-wishlist a {
+			background-color:;
+			border-color:;
+			color:;
+		}
+
+			.single-product-wrapper .product-detail .product-wishlist a:hover {
+				background-color:;
+				border-color:;
+				color:;
+			}
+
+		.single-product-wrapper .product-detail .product-meta.bottom > * > span {
+			color:;
+		}
+
+		.single-product-wrapper .product-detail .product-meta.bottom > * a {
+			color:;
+		}
+
+		.single-product .woocommerce-tabs ul.wc-tabs li.active > a,
+		.single-product .related.products .klb-title h2.entry-title,
+		.single-product .recently-viewed .klb-title h2.entry-title {
+			color:;
+		}
+
+		p.woocommerce-mini-cart__buttons.buttons a:not(.checkout) {
+			background-color:;
+			color:;
+		}
+
+			p.woocommerce-mini-cart__buttons.buttons a:not(.checkout):hover {
+				background-color:;
+				color:;
+			}
+
+
+		p.woocommerce-mini-cart__buttons.buttons a.checkout {
+			background-color:;
+			border-color:;
+			color:;
+		}
+
+			p.woocommerce-mini-cart__buttons.buttons a.checkout:hover {
+				background-color:;
+				border-color:;
+				color:;
+			}
+
+	</style>
+	<noscript>
+		<style>
+			.woocommerce-product-gallery {
+				opacity: 1 !important;
+			}</style>
+	</noscript>
+	<meta content="Elementor 3.33.2; features: additional_custom_breakpoints; settings: css_print_method-external, google_font-enabled, font_display-swap" name="generator" />
+	<style>
+		.e-con.e-parent:nth-of-type(n+4):not(.e-lazyloaded):not(.e-no-lazyload),
+		.e-con.e-parent:nth-of-type(n+4):not(.e-lazyloaded):not(.e-no-lazyload) * {
+			background-image: none !important;
+		}
+
 		@@media screen and (max-height: 1024px) {
-					.e-con.e-parent:nth-of-type(n+3):not(.e-lazyloaded):not(.e-no-lazyload),
-					.e-con.e-parent:nth-of-type(n+3):not(.e-lazyloaded):not(.e-no-lazyload) * {
-						background-image: none !important;
-					}
-				}
-				@@media screen and (max-height: 640px) {
-					.e-con.e-parent:nth-of-type(n+2):not(.e-lazyloaded):not(.e-no-lazyload),
-					.e-con.e-parent:nth-of-type(n+2):not(.e-lazyloaded):not(.e-no-lazyload) * {
-						background-image: none !important;
-					}
-				}
-			</style>
-<link href="https://klbtheme.com/partdo/wp-content/uploads/2022/12/cropped-logo-dark-32x32.png" rel="icon" sizes="32x32"/>
-<link href="https://klbtheme.com/partdo/wp-content/uploads/2022/12/cropped-logo-dark-192x192.png" rel="icon" sizes="192x192"/>
-<link href="https://klbtheme.com/partdo/wp-content/uploads/2022/12/cropped-logo-dark-180x180.png" rel="apple-touch-icon"/>
-<meta content="https://klbtheme.com/partdo/wp-content/uploads/2022/12/cropped-logo-dark-270x270.png" name="msapplication-TileImage">
-<style id="kirki-inline-styles">.site-header .header-main .site-brand img{width:164px;}.site-header .header-mobile .site-brand img{width:147px;}.site-drawer .site-brand img{width:147px;}</style><link href="~/SiteAssets/partdo/wp-content/plugins/partdo-core/woocommerce-filter/image-zoom/css/image-zoom.css" id="klb-image-zoom-css" media="all" rel="stylesheet" type="text/css"/>
+			.e-con.e-parent:nth-of-type(n+3):not(.e-lazyloaded):not(.e-no-lazyload),
+			.e-con.e-parent:nth-of-type(n+3):not(.e-lazyloaded):not(.e-no-lazyload) * {
+				background-image: none !important;
+			}
+		}
+
+		@@media screen and (max-height: 640px) {
+			.e-con.e-parent:nth-of-type(n+2):not(.e-lazyloaded):not(.e-no-lazyload),
+			.e-con.e-parent:nth-of-type(n+2):not(.e-lazyloaded):not(.e-no-lazyload) * {
+				background-image: none !important;
+			}
+		}
+	</style>
+	<link href="https://klbtheme.com/partdo/wp-content/uploads/2022/12/cropped-logo-dark-32x32.png" rel="icon" sizes="32x32" />
+	<link href="https://klbtheme.com/partdo/wp-content/uploads/2022/12/cropped-logo-dark-192x192.png" rel="icon" sizes="192x192" />
+	<link href="https://klbtheme.com/partdo/wp-content/uploads/2022/12/cropped-logo-dark-180x180.png" rel="apple-touch-icon" />
+	<meta content="https://klbtheme.com/partdo/wp-content/uploads/2022/12/cropped-logo-dark-270x270.png" name="msapplication-TileImage">
+	<style id="kirki-inline-styles">
+		.site-header .header-main .site-brand img {
+			width: 164px;
+		}
+
+		.site-header .header-mobile .site-brand img {
+			width: 147px;
+		}
+
+		.site-drawer .site-brand img {
+			width: 147px;
+		}</style>
+	<link href="~/SiteAssets/partdo/wp-content/plugins/partdo-core/woocommerce-filter/image-zoom/css/image-zoom.css" id="klb-image-zoom-css" media="all" rel="stylesheet" type="text/css" />
 
 </head>
 <body class="wp-singular product-template-default single single-product postid-3123 wp-theme-partdo theme-partdo woocommerce woocommerce-page woocommerce-no-js elementor-default elementor-kit-5">
-<div class="page-content" id="page">
-<header class="site-header header-type-3 klb-type-4 shadow-enable" id="masthead">
-<div class="header-row header-notify hide-below-1200">
-<div class="container">
-<div class="header-inner">
-<div class="column left align-center">
-<div class="header-notify-messages">
-<ul>
-<li>  </li>
-<li> </li>
-</ul>
-</div>
-</div>
-<div class="column right align-center"><span class="counter-text">     </span>
-<div class="klbth-countdown-wrapper">
-<div class="kblth-countdown" data-date="2026-03-12" data-text="Expired"> 
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="header-row header-sub border-bottom-full hide-below-1200">
-<div class="container">
-<div class="header-inner">
-<div class="column left align-center">
-<nav class="klbth-menu-wrapper horizontal primary shadow-enable">
-<ul class="klbth-menu" id="topbar-left">
-
-	@Html.Raw(Genel.menuHtml)
-
-</ul> </nav>
-</div>
-<div class="column right align-center">
-<div class="header-switcher">
- 
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="header-row header-main spacing hide-below-1200">
-<div class="container">
-<div class="header-inner">
-<div class="column left align-center">
-<div class="quick-button toggle-button">
-<div class="quick-button-inner">
-<div class="quick-icon"><i class="klbth-icon-menu"></i></div>
-</div>
-</div>
-<div class="site-brand">
-<a href="/" title="Partdo – Tools Shop eCommerce Theme"> 
-</a>
-</div><!-- site-brand -->
-</div>
-<div class="column center align-center">
-<div class="quick-button custom-button">
-<div class="quick-button-inner">
-									<div class="quick-icon" style="visibility: hidden;" data-bs-custom-class="partdo-tooltip white arrow-hide" data-bs-placement="bottom" data-bs-title="Find the Right Parts Faster" data-bs-toggle="tooltip" data-klbth-modal="service-modal"><i class="klbth-icon-garage-house"></i></div>
-<div aria-labelledby="service-modal" aria-modal="true" class="klbth-modal-holder" id="service-modal" role="dialog" tabindex="-1">
-<div class="klbth-modal-inner size--sm">
-<div class="klbth-modal-header">
-<h3 class="entry-title">Find the Right Parts Faster</h3>
-<div class="site-close"> <a aria-hidden="false" href="#"> <i class="klbth-icon-xmark"></i></a></div>
-</div>
-<div class="klbth-modal-body">
-<div class="service-search-modal">
-<img alt="search" src="~/SiteAssets/partdo/wp-content/uploads/2022/11/car-service-vector.png">
-<div class="entry-description">
-<p>Having the right automotive parts and car accessories will help you to boost your travel comfort and go on the long-distance journey comfortably that you have been planning.</p>
-</div>
-<form action="https://klbtheme.com/partdo/shop/" class="service-search-form" id="klb-attribute-filter" method="get"><div class="form-column"><select class="theme-select" data-placeholder="Select Make" data-search="true" data-searchplaceholder="Search item..." id="filter_make" name="filter_make" tax="pa_make"><option value="">Select Make</option><option id="83" value="audi">Audi</option><option id="84" value="bmw">BMW</option><option id="85" value="chevrolet">Chevrolet</option><option id="86" value="dodge">Dodge</option><option id="87" value="fiat">Fiat</option><option id="88" value="ford">Ford</option><option id="89" value="honda">Honda</option><option id="90" value="hyundai">Hyundai</option><option id="91" value="jaguar">Jaguar</option><option id="92" value="kia">Kia</option></select></div><div class="form-column"><select class="child-attr theme-select" data-placeholder="Select Model" data-search="true" data-searchplaceholder="Search item..." disabled="" id="child_filter_make" name="filter_make"><option value="0">Select make First</option></select></div><input hidden="" id="klb_filter_make" name="filter_make" type="text" value=""/><div class="form-column"><select class="theme-select" data-placeholder="Select Year" data-search="true" data-searchplaceholder="Search item..." id="filter_year-attr" name="filter_year-attr" tax="pa_year-attr"><option value="">Select Year</option><option id="98" value="1990">1990</option><option id="99" value="1991">1991</option><option id="100" value="1992">1992</option><option id="101" value="1993">1993</option><option id="102" value="1994">1994</option><option id="103" value="1995">1995</option><option id="110" value="2002">2002</option><option id="111" value="2003">2003</option><option id="112" value="2004">2004</option><option id="113" value="2005">2005</option><option id="114" value="2006">2006</option><option id="115" value="2007">2007</option><option id="116" value="2008">2008</option><option id="117" value="2009">2009</option><option id="118" value="2010">2010</option><option id="119" value="2011">2011</option><option id="120" value="2012">2012</option><option id="121" value="2013">2013</option><option id="122" value="2014">2014</option><option id="123" value="2015">2015</option><option id="124" value="2016">2016</option><option id="125" value="2017">2017</option><option id="126" value="2018">2018</option><option id="127" value="2019">2019</option><option id="128" value="2020">2020</option><option id="129" value="2021">2021</option><option id="130" value="2022">2022</option></select></div><input hidden="" id="klb_filter_year-attr" name="filter_year-attr" type="text" value=""/><div class="form-column"><button class="btn primary">Find Auto Parts</button></div></form> <div class="service-description">
-<p>Please fill in the criteria you are looking for</p>
-</div>
-</img></div>
-</div>
-</div>
-<div class="klbth-modal-overlay"></div>
-</div>
-</div>
-</div>
-<div class="search-form-wrapper">
-<div class="search-form-inner">
-<form action="/" class="search-form"><input autocomplete="off" class="form-control search-input" name="s" placeholder="Search for products..." type="search" value=""/><button class="btn" type="submit"><i class="klbth-icon-search"></i></button><input name="post_type" type="hidden" value="product"/></form><!-- search-form --> </div>
-</div>
-</div>
-
-
-
-<div class="column right align-center">
-				<div class="quick-button login-button">
-					<div class="quick-button-inner">
-						<div class="quick-text">
-							<p class="primary-text"> Hesabım </p><span class="sub-text"> Üye Girişi</span>
-						</div>
-						<div class="arrow">
-							<i class="klbth-icon-chevron-down"></i>
-						</div>
-					</div>
-					<div class="login-dropdown">
-						<div class="login-dropdown-wrapper">
-							<div class="login-text">
-								<p>Oturum açın ve fırsatlardan yararlanmaya başlayın.</p>
+	<div class="page-content" id="page">
+		<header class="site-header header-type-3 klb-type-4 shadow-enable" id="masthead">
+			<div class="header-row header-notify hide-below-1200">
+				<div class="container">
+					<div class="header-inner">
+						<div class="column left align-center">
+							<div class="header-notify-messages">
+								<ul>
+									<li>  </li>
+									<li> </li>
+								</ul>
 							</div>
-							<a class="btn secondary wide" href="/UyeGirisi"> Üye Girişi  </a>
-							<div class="new-customer">
-								Üye değil misiniz? 
-								<a href="/UyeOl">  Üye Ol </a>
+						</div>
+						<div class="column right align-center">
+							<span class="counter-text">     </span>
+							<div class="klbth-countdown-wrapper">
+								<div class="kblth-countdown" data-date="2026-03-12" data-text="Expired">
+								</div>
 							</div>
 						</div>
 					</div>
-				</div> 
-				<div class="quick-button cart-button"> 
-					 <img src="/yali.png" />
 				</div>
-</div>
-</div>
-</div>
-</div>
-<div class="header-row header-mobile hide-above-1200">
-<div class="container">
-<div class="header-inner">
-<div class="column left align-center">
-<div class="quick-button toggle-button">
-<div class="quick-button-inner">
-<div class="quick-icon"><i class="klbth-icon-menu"></i></div>
-</div>
-</div>
-</div>
-<div class="column center align-center">
-<div class="site-brand">
-<a href="/" title="Partdo – Tools Shop eCommerce Theme">
-<img alt="Partdo – Tools Shop eCommerce Theme" src="~/SiteAssets/partdo/wp-content/themes/partdo/assets/img/logo-dark.png"/>
-</a>
-</div><!-- site-brand -->
-</div>
-<div class="column right align-center">
-<div class="quick-button cart-button"><a class="quick-button-inner" href="https://klbtheme.com/partdo/cart/">
-<div class="quick-icon"><i class="klbth-icon-shopping-bag-large"></i><span class="cart-count count">0</span></div></a>
-<div class="cart-dropdown hide">
-<div class="cart-dropdown-wrapper">
-<div class="fl-mini-cart-content">
-<div class="cart-empty">
-<div class="empty-icon">
-<svg style="enable-background:new 0 0 231.523 231.523" viewbox="0 0 231.523 231.523" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
+			</div>
+			<div class="header-row header-sub border-bottom-full hide-below-1200">
+				<div class="container">
+					<div class="header-inner">
+						<div class="column left align-center">
+							<nav class="klbth-menu-wrapper horizontal primary shadow-enable">
+								<ul class="klbth-menu" id="topbar-left">
+
+									@Html.Raw(Genel.menuHtml)
+
+								</ul>
+							</nav>
+						</div>
+						<div class="column right align-center">
+							<div class="header-switcher">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="header-row header-main spacing hide-below-1200">
+				<div class="container">
+					<div class="header-inner">
+						<div class="column left align-center">
+							<div class="quick-button toggle-button">
+								<div class="quick-button-inner">
+									<div class="quick-icon"><i class="klbth-icon-menu"></i></div>
+								</div>
+							</div>
+							<div class="site-brand">
+								<a href="/" title="Partdo – Tools Shop eCommerce Theme">
+								</a>
+							</div><!-- site-brand -->
+						</div>
+						<div class="column center align-center">
+							<div class="quick-button custom-button">
+								<div class="quick-button-inner">
+									<div class="quick-icon" style="visibility: hidden;" data-bs-custom-class="partdo-tooltip white arrow-hide" data-bs-placement="bottom" data-bs-title="Find the Right Parts Faster" data-bs-toggle="tooltip" data-klbth-modal="service-modal"><i class="klbth-icon-garage-house"></i></div>
+									<div aria-labelledby="service-modal" aria-modal="true" class="klbth-modal-holder" id="service-modal" role="dialog" tabindex="-1">
+										<div class="klbth-modal-inner size--sm">
+											<div class="klbth-modal-header">
+												<h3 class="entry-title">Find the Right Parts Faster</h3>
+												<div class="site-close"> <a aria-hidden="false" href="#"> <i class="klbth-icon-xmark"></i></a></div>
+											</div>
+											<div class="klbth-modal-body">
+												<div class="service-search-modal">
+													<img alt="search" src="~/SiteAssets/partdo/wp-content/uploads/2022/11/car-service-vector.png">
+													<div class="entry-description">
+														<p>Having the right automotive parts and car accessories will help you to boost your travel comfort and go on the long-distance journey comfortably that you have been planning.</p>
+													</div>
+													<form action="https://klbtheme.com/partdo/shop/" class="service-search-form" id="klb-attribute-filter" method="get"><div class="form-column"><select class="theme-select" data-placeholder="Select Make" data-search="true" data-searchplaceholder="Search item..." id="filter_make" name="filter_make" tax="pa_make"><option value="">Select Make</option><option id="83" value="audi">Audi</option><option id="84" value="bmw">BMW</option><option id="85" value="chevrolet">Chevrolet</option><option id="86" value="dodge">Dodge</option><option id="87" value="fiat">Fiat</option><option id="88" value="ford">Ford</option><option id="89" value="honda">Honda</option><option id="90" value="hyundai">Hyundai</option><option id="91" value="jaguar">Jaguar</option><option id="92" value="kia">Kia</option></select></div><div class="form-column"><select class="child-attr theme-select" data-placeholder="Select Model" data-search="true" data-searchplaceholder="Search item..." disabled="" id="child_filter_make" name="filter_make"><option value="0">Select make First</option></select></div><input hidden="" id="klb_filter_make" name="filter_make" type="text" value="" /><div class="form-column"><select class="theme-select" data-placeholder="Select Year" data-search="true" data-searchplaceholder="Search item..." id="filter_year-attr" name="filter_year-attr" tax="pa_year-attr"><option value="">Select Year</option><option id="98" value="1990">1990</option><option id="99" value="1991">1991</option><option id="100" value="1992">1992</option><option id="101" value="1993">1993</option><option id="102" value="1994">1994</option><option id="103" value="1995">1995</option><option id="110" value="2002">2002</option><option id="111" value="2003">2003</option><option id="112" value="2004">2004</option><option id="113" value="2005">2005</option><option id="114" value="2006">2006</option><option id="115" value="2007">2007</option><option id="116" value="2008">2008</option><option id="117" value="2009">2009</option><option id="118" value="2010">2010</option><option id="119" value="2011">2011</option><option id="120" value="2012">2012</option><option id="121" value="2013">2013</option><option id="122" value="2014">2014</option><option id="123" value="2015">2015</option><option id="124" value="2016">2016</option><option id="125" value="2017">2017</option><option id="126" value="2018">2018</option><option id="127" value="2019">2019</option><option id="128" value="2020">2020</option><option id="129" value="2021">2021</option><option id="130" value="2022">2022</option></select></div><input hidden="" id="klb_filter_year-attr" name="filter_year-attr" type="text" value="" /><div class="form-column"><button class="btn primary">Find Auto Parts</button></div></form> <div class="service-description">
+														<p>Please fill in the criteria you are looking for</p>
+													</div>
+													</img>
+												</div>
+											</div>
+										</div>
+										<div class="klbth-modal-overlay"></div>
+									</div>
+								</div>
+							</div>
+							<div class="search-form-wrapper">
+								<div class="search-form-inner">
+									<form action="/" class="search-form"><input autocomplete="off" class="form-control search-input" name="s" placeholder="Search for products..." type="search" value="" /><button class="btn" type="submit"><i class="klbth-icon-search"></i></button><input name="post_type" type="hidden" value="product" /></form><!-- search-form -->
+								</div>
+							</div>
+						</div>
+
+
+
+						<div class="column right align-center">
+							<div class="quick-button login-button">
+								<div class="quick-button-inner">
+									<div class="quick-text">
+										<p class="primary-text"> Hesabım </p><span class="sub-text"> Üye Girişi</span>
+									</div>
+									<div class="arrow">
+										<i class="klbth-icon-chevron-down"></i>
+									</div>
+								</div>
+								<div class="login-dropdown">
+									<div class="login-dropdown-wrapper">
+										<div class="login-text">
+											<p>Oturum açın ve fırsatlardan yararlanmaya başlayın.</p>
+										</div>
+										<a class="btn secondary wide" href="/UyeGirisi"> Üye Girişi  </a>
+										<div class="new-customer">
+											Üye değil misiniz?
+											<a href="/UyeOl">  Üye Ol </a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="quick-button cart-button">
+								<img src="/yali.png" />
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="header-row header-mobile hide-above-1200">
+				<div class="container">
+					<div class="header-inner">
+						<div class="column left align-center">
+							<div class="quick-button toggle-button">
+								<div class="quick-button-inner">
+									<div class="quick-icon"><i class="klbth-icon-menu"></i></div>
+								</div>
+							</div>
+						</div>
+						<div class="column center align-center">
+							<div class="site-brand">
+								<a href="/" title="Partdo – Tools Shop eCommerce Theme">
+									<img alt="Partdo – Tools Shop eCommerce Theme" src="~/SiteAssets/partdo/wp-content/themes/partdo/assets/img/logo-dark.png" />
+								</a>
+							</div><!-- site-brand -->
+						</div>
+						<div class="column right align-center">
+							<div class="quick-button cart-button">
+								<a class="quick-button-inner" href="https://klbtheme.com/partdo/cart/">
+									<div class="quick-icon"><i class="klbth-icon-shopping-bag-large"></i><span class="cart-count count">0</span></div>
+								</a>
+								<div class="cart-dropdown hide">
+									<div class="cart-dropdown-wrapper">
+										<div class="fl-mini-cart-content">
+											<div class="cart-empty">
+												<div class="empty-icon">
+													<svg style="enable-background:new 0 0 231.523 231.523" viewbox="0 0 231.523 231.523" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
 <path d="M107.415 145.798a7.502 7.502 0 0 0 8.231 6.69 7.5 7.5 0 0 0 6.689-8.231l-3.459-33.468a7.5 7.5 0 0 0-14.92 1.542l3.459 33.467zM154.351 152.488a7.501 7.501 0 0 0 8.231-6.69l3.458-33.468a7.499 7.499 0 0 0-6.689-8.231c-4.123-.421-7.806 2.57-8.232 6.689l-3.458 33.468a7.5 7.5 0 0 0 6.69 8.232zM96.278 185.088c-12.801 0-23.215 10.414-23.215 23.215 0 12.804 10.414 23.221 23.215 23.221s23.216-10.417 23.216-23.221c0-12.801-10.415-23.215-23.216-23.215zm0 31.435c-4.53 0-8.215-3.688-8.215-8.221 0-4.53 3.685-8.215 8.215-8.215 4.53 0 8.216 3.685 8.216 8.215 0 4.533-3.686 8.221-8.216 8.221zM173.719 185.088c-12.801 0-23.216 10.414-23.216 23.215 0 12.804 10.414 23.221 23.216 23.221 12.802 0 23.218-10.417 23.218-23.221 0-12.801-10.416-23.215-23.218-23.215zm0 31.435c-4.53 0-8.216-3.688-8.216-8.221 0-4.53 3.686-8.215 8.216-8.215 4.531 0 8.218 3.685 8.218 8.215 0 4.533-3.686 8.221-8.218 8.221z"></path>
 <path d="M218.58 79.08a7.5 7.5 0 0 0-5.933-2.913H63.152l-6.278-24.141a7.5 7.5 0 0 0-7.259-5.612H18.876a7.5 7.5 0 0 0 0 15h24.94l6.227 23.946c.031.134.066.267.104.398l23.157 89.046a7.5 7.5 0 0 0 7.259 5.612h108.874a7.5 7.5 0 0 0 7.259-5.612l23.21-89.25a7.502 7.502 0 0 0-1.326-6.474zm-34.942 86.338H86.362l-19.309-74.25h135.895l-19.31 74.25zM105.556 52.851a7.478 7.478 0 0 0 5.302 2.195 7.5 7.5 0 0 0 5.302-12.805L92.573 18.665a7.501 7.501 0 0 0-10.605 10.609l23.588 23.577zM159.174 55.045c1.92 0 3.841-.733 5.306-2.199l23.552-23.573a7.5 7.5 0 0 0-.005-10.606 7.5 7.5 0 0 0-10.606.005l-23.552 23.573a7.5 7.5 0 0 0 5.305 12.8zM135.006 48.311h.002a7.5 7.5 0 0 0 7.5-7.498l.008-33.311A7.5 7.5 0 0 0 135.018 0h-.001a7.5 7.5 0 0 0-7.501 7.498l-.008 33.311a7.5 7.5 0 0 0 7.498 7.502z"></path>
 </svg>
-</div>
-<div class="empty-text">No products in the cart.</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</header>
-<div class="site-primary" id="main">
-<div class="site-content" id="content"> <div class="shop-container single-product-wrapper">
-<div class="container">
-<div class="content-area" id="primary"><main class="site-main" id="main" role="main"> <script type="1a18d98887230957f6a6eec6-text/javascript">
-		var loadmore = {
-			"ajaxurl":"https://klbtheme.com/partdo/wp-admin/admin-ajax.php",
-			"current_page":1,
-			"per_page":0,
-			"max_page":0,
-			"term_id":"",
-			"taxonomy":"",
-			"filter_cat":"",
-			"layered_nav":[],
-			"on_sale":[],
-			"orderby":"",
-			"shop_view":"",
-			"min_price":"",
-			"max_price":"",
-			"no_more_products":"No More Products",
-			"is_search":"",
-			"s":"",
-		}
-	</script>
-<div class="woocommerce-notices-wrapper"></div><article class="single-product product type-product post-3123 status-publish first instock product_cat-alarm-systems product_cat-auto-safety-security product_cat-interior-accessories has-post-thumbnail sale shipping-taxable purchasable product-type-simple" id="product-3123">
-<div class="single-product-wrapper">
+												</div>
+												<div class="empty-text">No products in the cart.</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<div class="site-primary" id="main">
+			<div class="site-content" id="content">
+				<div class="shop-container single-product-wrapper">
+					<div class="container">
+						<div class="content-area" id="primary">
+							<main class="site-main" id="main" role="main">
+								<script type="1a18d98887230957f6a6eec6-text/javascript">
+									var loadmore = {
+										"ajaxurl":"https://klbtheme.com/partdo/wp-admin/admin-ajax.php",
+										"current_page":1,
+										"per_page":0,
+										"max_page":0,
+										"term_id":"",
+										"taxonomy":"",
+										"filter_cat":"",
+										"layered_nav":[],
+										"on_sale":[],
+										"orderby":"",
+										"shop_view":"",
+										"min_price":"",
+										"max_price":"",
+										"no_more_products":"No More Products",
+										"is_search":"",
+										"s":"",
+									}
+								</script>
+								<div class="woocommerce-notices-wrapper"></div><article class="single-product product type-product post-3123 status-publish first instock product_cat-alarm-systems product_cat-auto-safety-security product_cat-interior-accessories has-post-thumbnail sale shipping-taxable purchasable product-type-simple" id="product-3123">
+									<div class="single-product-wrapper">
 
-	@RenderBody()
- 
-<div class="column">
-<div class="klbth-newsletter-form">
-<script type="1a18d98887230957f6a6eec6-text/javascript">(function() {
-	window.mc4wp = window.mc4wp || {
-		listeners: [],
-		forms: {
-			on: function(evt, cb) {
-				window.mc4wp.listeners.push(
-					{
-						event   : evt,
-						callback: cb
-					}
-				);
-			}
-		}
-	}
-})();
-</script>
+										@RenderBody()
 
-
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="footer-row footer-widgets custom-background-dark light">
-<div class="container">
-<div class="footer-inner">
-<div class="footer-sidebar">
-<div class="custom-column">
-<div class="klbfooterwidget widget widget_text"> <div class="textwidget"><div class="widget_about_company custom-column">
-<div class="widget-body">
-<div class="company-logo">
+										<div class="column">
+											<div class="klbth-newsletter-form">
+												<script type="1a18d98887230957f6a6eec6-text/javascript">
+													(function() {
+														window.mc4wp = window.mc4wp || {
+															listeners: [],
+															forms: {
+																on: function(evt, cb) {
+																	window.mc4wp.listeners.push(
+																		{
+																			event   : evt,
+																			callback: cb
+																		}
+																	);
+																}
+															}
+														}
+													})();
+												</script>
 
 
+											</div>
+										</div>
+									</div>
+						</div>
+					</div>
+				</div>
+			
 
-</div> 
-</div>
-</div>
-</div>
-</div> </div><!-- col -->
-<div class="widgets-column">
-<div class="row justify-content-between">
-<div class="col col-12 col-lg-5">
-<div class="klbfooterwidget widget widget_text"> <div class="textwidget"><div class="widget_contact">
-<h4 class="widget-title">Need Help?</h4>
-<div class="widget-body">
-<div class="company-phone">(+800) 1234 5678 90</div>
-<div class="company-works">
-<p>Monday – Friday: 9:00-20:00</p>
-<p>Saturady: 11:00 – 15:00</p>
-</div>
-<p><a class="company-mail" href="/cdn-cgi/l/email-protection#4a393f3a3a25383e0a3a2b383e2e25393e25382f64292527"><span class="__cf_email__" data-cfemail="493a3c3939263b3d092c31282439252c672a2624">[email protected]</span></a></p>
-<div class="company-social"></div>
-</div>
-</div>
-</div>
-</div> </div><!-- col -->
-<div class="col col-12 col-lg-3">
-<div class="klbfooterwidget widget widget_nav_menu"><h4 class="widget-title">Customer Service</h4><div class="menu-customer-service-container"><ul class="menu" id="menu-customer-service"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3663" id="menu-item-3663"><a href="https://klbtheme.com/partdo/contact/">Help Center</a></li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3832" id="menu-item-3832"><a href="/UyeGirisi">My account</a></li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3833" id="menu-item-3833"><a href="https://klbtheme.com/partdo/order-tracking/">Track Products</a></li>
-<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3664" id="menu-item-3664"><a href="/UyeGirisiorders/">My Orders</a></li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3834" id="menu-item-3834"><a href="https://klbtheme.com/partdo/wishlist/">Your Wishlist</a></li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3842" id="menu-item-3842"><a href="https://klbtheme.com/partdo/refund_returns/">Return Policy</a></li>
-<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3672" id="menu-item-3672"><a href="https://klbtheme.com/partdo/shop">Buy Gift Cards</a></li>
-</ul></div></div> </div><!-- col -->
-<div class="col col-12 col-lg-3">
-<div class="klbfooterwidget widget widget_nav_menu"><h4 class="widget-title">Store Information</h4><div class="menu-store-information-container"><ul class="menu" id="menu-store-information"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3835" id="menu-item-3835"><a href="https://klbtheme.com/partdo/about-us/">About Partdo Store</a></li>
-<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3665" id="menu-item-3665"><a href="https://klbtheme.com/partdo/shop/?orderby=popularity&amp;paged=1">Bestsellers</a></li>
-<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3666" id="menu-item-3666"><a href="https://klbtheme.com/partdo/shop/?orderby=date&amp;paged=1">Latest Products</a></li>
-<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3667" id="menu-item-3667"><a href="https://klbtheme.com/partdo/shop/?orderby=price&amp;paged=1">New Discounts</a></li>
-<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3668" id="menu-item-3668"><a href="https://klbtheme.com/partdo/shop">Sale Products</a></li>
-<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3669" id="menu-item-3669"><a href="https://klbtheme.com/partdo/shop">Affiliate Program</a></li>
-<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3670" id="menu-item-3670"><a href="https://klbtheme.com/partdo/shop">Sell on Partdo</a></li>
-</ul></div></div> </div><!-- col -->
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="footer-row subfooter border-boxed custom-background-dark light">
-<div class="container">
-<div class="footer-inner">
-<div class="sub-banners">
- 
-</div>
-</div>
-</div>
-</div>
+				<div class="site-footer">
+					<div class="footer-row footer-widgets custom-background-light dark">
+						<div class="container">
+							<div class="footer-inner">
+								<div class="footer-sidebar">
+									<div class="custom-column">
+										<div class="klbfooterwidget widget widget_text">
+											<div class="textwidget">
+												<div class="widget_about_company custom-column">
+													<div class="widget-body">
+														<div class="company-logo">
+															<div class="logo-dark">
+																<div class="site-brand"><img alt="" class="alignnone size-medium wp-image-2749" decoding="async" height="38" sizes="(max-width: 155px) 100vw, 155px" src="~/SiteAssets/partdo/wp-content/uploads/2022/10/logo-dark-300x73.png" width="155" /></div>
+															</div>
+															<div class="logo-light">
+																<div class="site-brand"><img alt="" class="alignnone size-medium wp-image-3490" decoding="async" height="38" sizes="(max-width: 155px) 100vw, 155px" src="~/SiteAssets/partdo/wp-content/uploads/2022/10/logo-light-300x73.png" width="155" /></div>
+															</div>
+														</div>
+														<div class="company-content">
+															<h3 class="entry-title">@Genel.hakkimizda.firmaAdi</h3>
+															<div class="entry-description">
+																<p>
+																	@Genel.hakkimizda.kisaTanitim
+																</p>
+															</div>
+															<p><a class="mail" href=@Genel.hakkimizda.ePosta"><span class="__cf_email__" data-cfemail="@Genel.hakkimizda.ePosta"> @Genel.hakkimizda.ePosta </span></a></p>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div><!-- col -->
+									<div class="widgets-column">
+										<div class="row justify-content-between">
+											@Html.Raw(Genel.altMenuHtml)
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 
-<div class="klbwl-popup" id="klbwl_wishlist"></div>
-	<div class="site-drawer">
-		<div class="site-scroll">
-		
+
+				<div class="footer-row subfooter border-boxed custom-background-dark light">
+					<div class="container">
+						<div class="footer-inner">
+							<div class="sub-banners">
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="klbwl-popup" id="klbwl_wishlist"></div>
+				<div class="site-drawer">
+					<div class="site-scroll">
+
 
 						<div class="site-drawer-row site-drawer-body">
 							<span class="drawer-heading">Main Menu</span>
@@ -1031,126 +1367,126 @@ p.woocommerce-mini-cart__buttons.buttons a.checkout:hover{
 							</nav>
 						</div>
 
-		</div>
+					</div>
 				</div>
 			</div>
 
-	  
-			
-<div class="search-holder"> 
- 
-</div>
-</div>
-</div> 
-<div aria-hidden="true" aria-label="Full screen image" aria-modal="true" class="pswp" id="photoswipe-fullscreen-dialog" role="dialog" tabindex="-1">
-<div class="pswp__bg"></div>
-<div class="pswp__scroll-wrap">
-<div class="pswp__container">
-<div class="pswp__item"></div>
-<div class="pswp__item"></div>
-<div class="pswp__item"></div>
-</div>
-<div class="pswp__ui pswp__ui--hidden">
-<div class="pswp__top-bar">
-<div class="pswp__counter"></div>
-<button aria-label="Zoom in/out" class="pswp__button pswp__button--zoom"></button>
-<button aria-label="Toggle fullscreen" class="pswp__button pswp__button--fs"></button>
-<button aria-label="Share" class="pswp__button pswp__button--share"></button>
-<button aria-label="Close (Esc)" class="pswp__button pswp__button--close"></button>
-<div class="pswp__preloader">
-<div class="pswp__preloader__icn">
-<div class="pswp__preloader__cut">
-<div class="pswp__preloader__donut"></div>
-</div>
-</div>
-</div>
-</div>
-<div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-<div class="pswp__share-tooltip"></div>
-</div>
-<button aria-label="Previous (arrow left)" class="pswp__button pswp__button--arrow--left"></button>
-<button aria-label="Next (arrow right)" class="pswp__button pswp__button--arrow--right"></button>
-<div class="pswp__caption">
-<div class="pswp__caption__center"></div>
-</div>
-</div>
-</div>
-</div> 
-<script id="wp-hooks-js" src="~/SiteAssets/partdo/wp-includes/js/dist/hooks.min.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
-<script id="wp-i18n-js" src="~/SiteAssets/partdo/wp-includes/js/dist/i18n.min.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
-<script id="wp-i18n-js-after" type="1a18d98887230957f6a6eec6-text/javascript">
 
-<script id="swv-js" src="~/SiteAssets/partdo/wp-content/plugins/contact-form-7/includes/swv/js/index.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
-<script id="contact-form-7-js-before" type="1a18d98887230957f6a6eec6-text/javascript">
 
-</script>
-<script id="contact-form-7-js" src="~/SiteAssets/partdo/wp-content/plugins/contact-form-7/includes/js/index.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
-<script id="klbtheme-swatches-js" src="~/SiteAssets/partdo/wp-content/plugins/partdo-core/woocommerce-filter/swatches/js/swatches.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
+			<div class="search-holder">
+			</div>
+		</div>
+	</div>
+	<div aria-hidden="true" aria-label="Full screen image" aria-modal="true" class="pswp" id="photoswipe-fullscreen-dialog" role="dialog" tabindex="-1">
+		<div class="pswp__bg"></div>
+		<div class="pswp__scroll-wrap">
+			<div class="pswp__container">
+				<div class="pswp__item"></div>
+				<div class="pswp__item"></div>
+				<div class="pswp__item"></div>
+			</div>
+			<div class="pswp__ui pswp__ui--hidden">
+				<div class="pswp__top-bar">
+					<div class="pswp__counter"></div>
+					<button aria-label="Zoom in/out" class="pswp__button pswp__button--zoom"></button>
+					<button aria-label="Toggle fullscreen" class="pswp__button pswp__button--fs"></button>
+					<button aria-label="Share" class="pswp__button pswp__button--share"></button>
+					<button aria-label="Close (Esc)" class="pswp__button pswp__button--close"></button>
+					<div class="pswp__preloader">
+						<div class="pswp__preloader__icn">
+							<div class="pswp__preloader__cut">
+								<div class="pswp__preloader__donut"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+					<div class="pswp__share-tooltip"></div>
+				</div>
+				<button aria-label="Previous (arrow left)" class="pswp__button pswp__button--arrow--left"></button>
+				<button aria-label="Next (arrow right)" class="pswp__button pswp__button--arrow--right"></button>
+				<div class="pswp__caption">
+					<div class="pswp__caption__center"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script id="wp-hooks-js" src="~/SiteAssets/partdo/wp-includes/js/dist/hooks.min.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
+	<script id="wp-i18n-js" src="~/SiteAssets/partdo/wp-includes/js/dist/i18n.min.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
+	<script id="wp-i18n-js-after" type="1a18d98887230957f6a6eec6-text/javascript">
 
-<script id="klbcp-frontend-js" src="~/SiteAssets/partdo/wp-content/plugins/partdo-core/woocommerce-filter/compare/js/compare.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
-<script async="async" data-wp-strategy="async" fetchpriority="low" id="comment-reply-js" src="~/SiteAssets/partdo/wp-includes/js/comment-reply.min.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
-<script id="imagesloaded-js" src="~/SiteAssets/partdo/wp-includes/js/imagesloaded.min.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
-<script id="bootstrap-bundle-js" src="~/SiteAssets/partdo/wp-content/themes/partdo/assets/js/bootstrap.bundle.min.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
-<script id="moment-min-js" src="~/SiteAssets/partdo/wp-content/themes/partdo/assets/js/moment.min.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
-<script id="moment-timezone-js" src="~/SiteAssets/partdo/wp-content/themes/partdo/assets/js/moment-timezone.min.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
-<script id="gsap-min-js" src="~/SiteAssets/partdo/wp-content/themes/partdo/assets/js/plugins/gsap.min.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
-<script id="hover-slider-min-js" src="~/SiteAssets/partdo/wp-content/themes/partdo/assets/js/plugins/hover-slider.min.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
-<script id="jquery-countdown-min-js" src="~/SiteAssets/partdo/wp-content/themes/partdo/assets/js/plugins/jquery.countdown.min.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
-<script id="jquery-magnific-popup-min-js" src="~/SiteAssets/partdo/wp-content/themes/partdo/assets/js/plugins/jquery.magnific-popup.min.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
-<script id="perfect-scrollbar-min-js" src="~/SiteAssets/partdo/wp-content/themes/partdo/assets/js/plugins/perfect-scrollbar.min.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
-<script id="select2-full-min-js" src="~/SiteAssets/partdo/wp-content/themes/partdo/assets/js/plugins/select2.full.min.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
-<script id="slick-min-js" src="~/SiteAssets/partdo/wp-content/themes/partdo/assets/js/plugins/slick.min.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
-<script id="theia-sticky-sidebar-min-js" src="~/SiteAssets/partdo/wp-content/themes/partdo/assets/js/plugins/theia-sticky-sidebar.min.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
-<script id="partdo-siteslider-js" src="~/SiteAssets/partdo/wp-content/themes/partdo/assets/js/custom/siteslider.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
-<script id="partdo-countdown-js" src="~/SiteAssets/partdo/wp-content/themes/partdo/assets/js/custom/countdown.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
-<script id="partdo-stickysidebar-js" src="~/SiteAssets/partdo/wp-content/themes/partdo/assets/js/custom/stickysidebar.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
-<script id="partdo-productquantity-js" src="~/SiteAssets/partdo/wp-content/themes/partdo/assets/js/custom/productquantity.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
-<script id="partdo-hoverslider-js" src="~/SiteAssets/partdo/wp-content/themes/partdo/assets/js/custom/hoverslider.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
-<script id="partdo-productHover-js" src="~/SiteAssets/partdo/wp-content/themes/partdo/assets/js/custom/productHover.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
-<script id="partdo-sidebarfilter-js" src="~/SiteAssets/partdo/wp-content/themes/partdo/assets/js/custom/sidebarfilter.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
-<script id="partdo-sitescroll-js" src="~/SiteAssets/partdo/wp-content/themes/partdo/assets/js/custom/sitescroll.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
-<script id="partdo-theme-select-js" src="~/SiteAssets/partdo/wp-content/themes/partdo/assets/js/custom/theme-select.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
-<script id="partdo-layered-dropdown-js" src="~/SiteAssets/partdo/wp-content/themes/partdo/assets/js/custom/layered-dropdown.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
-<script id="bundle-js" src="~/SiteAssets/partdo/wp-content/themes/partdo/assets/js/bundle.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
-<script id="partdo-quick-ajax-js-extra" type="1a18d98887230957f6a6eec6-text/javascript">
- 
-</script>
-<script id="partdo-quick-ajax-js" src="~/SiteAssets/partdo/wp-content/themes/partdo/assets/js/custom/quick_ajax.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
-<script id="partdo-tab-ajax-js" src="~/SiteAssets/partdo/wp-content/themes/partdo/assets/js/custom/tab-ajax.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
-<script id="partdo-variationform-js" src="~/SiteAssets/partdo/wp-content/themes/partdo/assets/js/custom/variationform.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
-<script id="sourcebuster-js-js" src="~/SiteAssets/partdo/wp-content/plugins/woocommerce/assets/js/sourcebuster/sourcebuster.min.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
-<script id="wc-order-attribution-js-extra" type="1a18d98887230957f6a6eec6-text/javascript">
-/* <![CDATA[ */
-var wc_order_attribution = {"params":{"lifetime":1.0000000000000000818030539140313095458623138256371021270751953125e-5,"session":30,"base64":false,"ajaxurl":"https://klbtheme.com/partdo/wp-admin/admin-ajax.php","prefix":"wc_order_attribution_","allowTracking":true},"fields":{"source_type":"current.typ","referrer":"current_add.rf","utm_campaign":"current.cmp","utm_source":"current.src","utm_medium":"current.mdm","utm_content":"current.cnt","utm_id":"current.id","utm_term":"current.trm","utm_source_platform":"current.plt","utm_creative_format":"current.fmt","utm_marketing_tactic":"current.tct","session_entry":"current_add.ep","session_start_time":"current_add.fd","session_pages":"session.pgs","session_count":"udata.vst","user_agent":"udata.uag"}};
-//# sourceURL=wc-order-attribution-js-extra
-/* ]]> */
-</script>
-<script id="wc-order-attribution-js" src="~/SiteAssets/partdo/wp-content/plugins/woocommerce/assets/js/frontend/order-attribution.min.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
-<script id="partdo-attribute-filter-js" src="~/SiteAssets/partdo/wp-content/plugins/partdo-core/inc/klb-attribute-search/js/attribute-search.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
-<script id="partdo-mini-cart-scroll-js" src="~/SiteAssets/partdo/wp-content/themes/partdo/assets/js/custom/mini_cart_scroll.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
-<script id="partdo-flex-thumbs-js-extra" type="1a18d98887230957f6a6eec6-text/javascript">
-/* <![CDATA[ */
-var flexthumbs = {"arrow":"false"};
-//# sourceURL=partdo-flex-thumbs-js-extra
-/* ]]> */
-</script>
-<script id="partdo-flex-thumbs-js" src="~/SiteAssets/partdo/wp-content/themes/partdo/assets/js/custom/flex-thumbs.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
-<script id="jquery-zoom-js" src="~/SiteAssets/partdo/wp-content/plugins/partdo-core/woocommerce-filter/image-zoom/js/jquery.zoom.min.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
-<script id="klb-image-zoom-js" src="~/SiteAssets/partdo/wp-content/plugins/partdo-core/woocommerce-filter/image-zoom/js/image-zoom.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
-<script id="jquery-socialshare-js" src="~/SiteAssets/partdo/wp-content/plugins/partdo-core/js/jquery-socialshare.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
-<script id="klb-social-share-js" src="~/SiteAssets/partdo/wp-content/plugins/partdo-core/js/custom/social_share.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
-<script defer="" id="akismet-frontend-js" src="~/SiteAssets/partdo/wp-content/plugins/akismet/_inc/akismet-frontend.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
-<script defer="" id="mc4wp-forms-api-js" src="~/SiteAssets/partdo/wp-content/plugins/mailchimp-for-wp/assets/js/forms.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
-<script id="wp-emoji-settings" type="application/json">
-{"baseUrl":"https://s.w.org/images/core/emoji/17.0.2/72x72/","ext":".png","svgUrl":"https://s.w.org/images/core/emoji/17.0.2/svg/","svgExt":".svg","source":{"concatemoji":"https://klbtheme.com/partdo/wp-includes/js/wp-emoji-release.min.js?ver=6.9"}}
-</script>
-<script type="1a18d98887230957f6a6eec6-module">
-/* <![CDATA[ */
-/*! This file is auto-generated */
-const a=JSON.parse(document.getElementById("wp-emoji-settings").textContent),o=(window._wpemojiSettings=a,"wpEmojiSettingsSupports"),s=["flag","emoji"];function i(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function c(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0);const a=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);return t.every((e,t)=>e===a[t])}function p(e,t){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var n=e.getImageData(16,16,1,1);for(let e=0;e<n.data.length;e++)if(0!==n.data[e])return!1;return!0}function u(e,t,n,a){switch(t){case"flag":return n(e,"\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!n(e,"\ud83c\udde8\ud83c\uddf6","\ud83c\udde8\u200b\ud83c\uddf6")&&!n(e,"\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!a(e,"\ud83e\u1fac8")}return!1}function f(e,t,n,a){let r;const o=(r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):document.createElement("canvas")).getContext("2d",{willReadFrequently:!0}),s=(o.textBaseline="top",o.font="600 32px Arial",{});return e.forEach(e=>{s[e]=t(o,e,n,a)}),s}function r(e){var t=document.createElement("script");t.src=e,t.defer=!0,document.head.appendChild(t)}a.supports={everything:!0,everythingExceptFlag:!0},new Promise(t=>{let n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(s),u.toString(),c.toString(),p.toString()].join(",")+"));",a=new Blob([e],{type:"text/javascript"});const r=new Worker(URL.createObjectURL(a),{name:"wpTestEmojiSupports"});return void(r.onmessage=e=>{i(n=e.data),r.terminate(),t(n)})}catch(e){}i(n=f(s,u,c,p))}t(n)}).then(e=>{for(const n in e)a.supports[n]=e[n],a.supports.everything=a.supports.everything&&a.supports[n],"flag"!==n&&(a.supports.everythingExceptFlag=a.supports.everythingExceptFlag&&a.supports[n]);var t;a.supports.everythingExceptFlag=a.supports.everythingExceptFlag&&!a.supports.flag,a.supports.everything||((t=a.source||{}).concatemoji?r(t.concatemoji):t.wpemoji&&t.twemoji&&(r(t.twemoji),r(t.wpemoji)))});
-//# sourceURL=https://klbtheme.com/partdo/wp-includes/js/wp-emoji-loader.min.js
-/* ]]> */
-</script>
-<script data-cf-settings="1a18d98887230957f6a6eec6-|49" defer="" src="~/SiteAssets/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js"></script><script crossorigin="anonymous" data-cf-beacon='{"rayId":"9b07d4e87b44b633","serverTiming":{"name":{"cfExtPri":true,"cfEdge":true,"cfOrigin":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}},"version":"2025.9.1","token":"493b41a9edcf4a31934390e325d92edd"}' defer="" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" src="~/SiteAssets/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015"></script>
+		<script id="swv-js" src="~/SiteAssets/partdo/wp-content/plugins/contact-form-7/includes/swv/js/index.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
+	<script id="contact-form-7-js-before" type="1a18d98887230957f6a6eec6-text/javascript">
+
+	</script>
+	<script id="contact-form-7-js" src="~/SiteAssets/partdo/wp-content/plugins/contact-form-7/includes/js/index.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
+	<script id="klbtheme-swatches-js" src="~/SiteAssets/partdo/wp-content/plugins/partdo-core/woocommerce-filter/swatches/js/swatches.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
+
+	<script id="klbcp-frontend-js" src="~/SiteAssets/partdo/wp-content/plugins/partdo-core/woocommerce-filter/compare/js/compare.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
+	<script async="async" data-wp-strategy="async" fetchpriority="low" id="comment-reply-js" src="~/SiteAssets/partdo/wp-includes/js/comment-reply.min.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
+	<script id="imagesloaded-js" src="~/SiteAssets/partdo/wp-includes/js/imagesloaded.min.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
+	<script id="bootstrap-bundle-js" src="~/SiteAssets/partdo/wp-content/themes/partdo/assets/js/bootstrap.bundle.min.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
+	<script id="moment-min-js" src="~/SiteAssets/partdo/wp-content/themes/partdo/assets/js/moment.min.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
+	<script id="moment-timezone-js" src="~/SiteAssets/partdo/wp-content/themes/partdo/assets/js/moment-timezone.min.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
+	<script id="gsap-min-js" src="~/SiteAssets/partdo/wp-content/themes/partdo/assets/js/plugins/gsap.min.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
+	<script id="hover-slider-min-js" src="~/SiteAssets/partdo/wp-content/themes/partdo/assets/js/plugins/hover-slider.min.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
+	<script id="jquery-countdown-min-js" src="~/SiteAssets/partdo/wp-content/themes/partdo/assets/js/plugins/jquery.countdown.min.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
+	<script id="jquery-magnific-popup-min-js" src="~/SiteAssets/partdo/wp-content/themes/partdo/assets/js/plugins/jquery.magnific-popup.min.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
+	<script id="perfect-scrollbar-min-js" src="~/SiteAssets/partdo/wp-content/themes/partdo/assets/js/plugins/perfect-scrollbar.min.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
+	<script id="select2-full-min-js" src="~/SiteAssets/partdo/wp-content/themes/partdo/assets/js/plugins/select2.full.min.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
+	<script id="slick-min-js" src="~/SiteAssets/partdo/wp-content/themes/partdo/assets/js/plugins/slick.min.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
+	<script id="theia-sticky-sidebar-min-js" src="~/SiteAssets/partdo/wp-content/themes/partdo/assets/js/plugins/theia-sticky-sidebar.min.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
+	<script id="partdo-siteslider-js" src="~/SiteAssets/partdo/wp-content/themes/partdo/assets/js/custom/siteslider.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
+	<script id="partdo-countdown-js" src="~/SiteAssets/partdo/wp-content/themes/partdo/assets/js/custom/countdown.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
+	<script id="partdo-stickysidebar-js" src="~/SiteAssets/partdo/wp-content/themes/partdo/assets/js/custom/stickysidebar.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
+	<script id="partdo-productquantity-js" src="~/SiteAssets/partdo/wp-content/themes/partdo/assets/js/custom/productquantity.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
+	<script id="partdo-hoverslider-js" src="~/SiteAssets/partdo/wp-content/themes/partdo/assets/js/custom/hoverslider.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
+	<script id="partdo-productHover-js" src="~/SiteAssets/partdo/wp-content/themes/partdo/assets/js/custom/productHover.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
+	<script id="partdo-sidebarfilter-js" src="~/SiteAssets/partdo/wp-content/themes/partdo/assets/js/custom/sidebarfilter.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
+	<script id="partdo-sitescroll-js" src="~/SiteAssets/partdo/wp-content/themes/partdo/assets/js/custom/sitescroll.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
+	<script id="partdo-theme-select-js" src="~/SiteAssets/partdo/wp-content/themes/partdo/assets/js/custom/theme-select.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
+	<script id="partdo-layered-dropdown-js" src="~/SiteAssets/partdo/wp-content/themes/partdo/assets/js/custom/layered-dropdown.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
+	<script id="bundle-js" src="~/SiteAssets/partdo/wp-content/themes/partdo/assets/js/bundle.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
+	<script id="partdo-quick-ajax-js-extra" type="1a18d98887230957f6a6eec6-text/javascript">
+
+	</script>
+	<script id="partdo-quick-ajax-js" src="~/SiteAssets/partdo/wp-content/themes/partdo/assets/js/custom/quick_ajax.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
+	<script id="partdo-tab-ajax-js" src="~/SiteAssets/partdo/wp-content/themes/partdo/assets/js/custom/tab-ajax.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
+	<script id="partdo-variationform-js" src="~/SiteAssets/partdo/wp-content/themes/partdo/assets/js/custom/variationform.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
+	<script id="sourcebuster-js-js" src="~/SiteAssets/partdo/wp-content/plugins/woocommerce/assets/js/sourcebuster/sourcebuster.min.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
+	<script id="wc-order-attribution-js-extra" type="1a18d98887230957f6a6eec6-text/javascript">
+		/* <![CDATA[ */
+		var wc_order_attribution = {"params":{"lifetime":1.0000000000000000818030539140313095458623138256371021270751953125e-5,"session":30,"base64":false,"ajaxurl":"https://klbtheme.com/partdo/wp-admin/admin-ajax.php","prefix":"wc_order_attribution_","allowTracking":true},"fields":{"source_type":"current.typ","referrer":"current_add.rf","utm_campaign":"current.cmp","utm_source":"current.src","utm_medium":"current.mdm","utm_content":"current.cnt","utm_id":"current.id","utm_term":"current.trm","utm_source_platform":"current.plt","utm_creative_format":"current.fmt","utm_marketing_tactic":"current.tct","session_entry":"current_add.ep","session_start_time":"current_add.fd","session_pages":"session.pgs","session_count":"udata.vst","user_agent":"udata.uag"}};
+		//# sourceURL=wc-order-attribution-js-extra
+		/* ]]> */
+	</script>
+	<script id="wc-order-attribution-js" src="~/SiteAssets/partdo/wp-content/plugins/woocommerce/assets/js/frontend/order-attribution.min.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
+	<script id="partdo-attribute-filter-js" src="~/SiteAssets/partdo/wp-content/plugins/partdo-core/inc/klb-attribute-search/js/attribute-search.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
+	<script id="partdo-mini-cart-scroll-js" src="~/SiteAssets/partdo/wp-content/themes/partdo/assets/js/custom/mini_cart_scroll.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
+	<script id="partdo-flex-thumbs-js-extra" type="1a18d98887230957f6a6eec6-text/javascript">
+		/* <![CDATA[ */
+		var flexthumbs = {"arrow":"false"};
+		//# sourceURL=partdo-flex-thumbs-js-extra
+		/* ]]> */
+	</script>
+	<script id="partdo-flex-thumbs-js" src="~/SiteAssets/partdo/wp-content/themes/partdo/assets/js/custom/flex-thumbs.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
+	<script id="jquery-zoom-js" src="~/SiteAssets/partdo/wp-content/plugins/partdo-core/woocommerce-filter/image-zoom/js/jquery.zoom.min.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
+	<script id="klb-image-zoom-js" src="~/SiteAssets/partdo/wp-content/plugins/partdo-core/woocommerce-filter/image-zoom/js/image-zoom.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
+	<script id="jquery-socialshare-js" src="~/SiteAssets/partdo/wp-content/plugins/partdo-core/js/jquery-socialshare.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
+	<script id="klb-social-share-js" src="~/SiteAssets/partdo/wp-content/plugins/partdo-core/js/custom/social_share.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
+	<script defer="" id="akismet-frontend-js" src="~/SiteAssets/partdo/wp-content/plugins/akismet/_inc/akismet-frontend.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
+	<script defer="" id="mc4wp-forms-api-js" src="~/SiteAssets/partdo/wp-content/plugins/mailchimp-for-wp/assets/js/forms.js" type="1a18d98887230957f6a6eec6-text/javascript"></script>
+	<script id="wp-emoji-settings" type="application/json">
+		{"baseUrl":"https://s.w.org/images/core/emoji/17.0.2/72x72/","ext":".png","svgUrl":"https://s.w.org/images/core/emoji/17.0.2/svg/","svgExt":".svg","source":{"concatemoji":"https://klbtheme.com/partdo/wp-includes/js/wp-emoji-release.min.js?ver=6.9"}}
+	</script>
+	<script type="1a18d98887230957f6a6eec6-module">
+		/* <![CDATA[ */
+		/*! This file is auto-generated */
+		const a=JSON.parse(document.getElementById("wp-emoji-settings").textContent),o=(window._wpemojiSettings=a,"wpEmojiSettingsSupports"),s=["flag","emoji"];function i(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function c(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0);const a=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);return t.every((e,t)=>e===a[t])}function p(e,t){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var n=e.getImageData(16,16,1,1);for(let e=0;e<n.data.length;e++)if(0!==n.data[e])return!1;return!0}function u(e,t,n,a){switch(t){case"flag":return n(e,"\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!n(e,"\ud83c\udde8\ud83c\uddf6","\ud83c\udde8\u200b\ud83c\uddf6")&&!n(e,"\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!a(e,"\ud83e\u1fac8")}return!1}function f(e,t,n,a){let r;const o=(r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):document.createElement("canvas")).getContext("2d",{willReadFrequently:!0}),s=(o.textBaseline="top",o.font="600 32px Arial",{});return e.forEach(e=>{s[e]=t(o,e,n,a)}),s}function r(e){var t=document.createElement("script");t.src=e,t.defer=!0,document.head.appendChild(t)}a.supports={everything:!0,everythingExceptFlag:!0},new Promise(t=>{let n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(s),u.toString(),c.toString(),p.toString()].join(",")+"));",a=new Blob([e],{type:"text/javascript"});const r=new Worker(URL.createObjectURL(a),{name:"wpTestEmojiSupports"});return void(r.onmessage=e=>{i(n=e.data),r.terminate(),t(n)})}catch(e){}i(n=f(s,u,c,p))}t(n)}).then(e=>{for(const n in e)a.supports[n]=e[n],a.supports.everything=a.supports.everything&&a.supports[n],"flag"!==n&&(a.supports.everythingExceptFlag=a.supports.everythingExceptFlag&&a.supports[n]);var t;a.supports.everythingExceptFlag=a.supports.everythingExceptFlag&&!a.supports.flag,a.supports.everything||((t=a.source||{}).concatemoji?r(t.concatemoji):t.wpemoji&&t.twemoji&&(r(t.twemoji),r(t.wpemoji)))});
+		//# sourceURL=https://klbtheme.com/partdo/wp-includes/js/wp-emoji-loader.min.js
+		/* ]]> */
+	</script>
+	<script data-cf-settings="1a18d98887230957f6a6eec6-|49" defer="" src="~/SiteAssets/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js"></script>
+	<script crossorigin="anonymous" data-cf-beacon='{"rayId":"9b07d4e87b44b633","serverTiming":{"name":{"cfExtPri":true,"cfEdge":true,"cfOrigin":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}},"version":"2025.9.1","token":"493b41a9edcf4a31934390e325d92edd"}' defer="" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" src="~/SiteAssets/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015"></script>
 </body>
 </html>

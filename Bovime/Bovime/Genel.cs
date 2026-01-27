@@ -14,6 +14,8 @@ namespace Bovime
 
         public static string mobilMenuHtml { get; set; }
 
+        public static string altMenuHtml { get; set; }
+
 
         public static HakkimizdaAYRINTI hakkimizda { get; set; }
 
@@ -32,6 +34,7 @@ namespace Bovime
             if (yenilensinmi == true)
             {
                 await menuOlustur(vari);
+                await altMenuOlustur(vari);
                 hakkimizda = await vari.HakkimizdaAYRINTIs.FirstOrDefaultAsync() ?? new HakkimizdaAYRINTI();
                 yenilensinmi = false;
             }
@@ -71,6 +74,52 @@ namespace Bovime
 
                 }
             }
+        }
+        public static async Task<string> altMenuOlustur(veri.Varlik vari)
+        {
+            string sonuc = "";
+            List<AltMenuAYRINTI> altlar = await AltMenuAYRINTI.ara(vari);
+            altlar = altlar.OrderBy(p => p.sirasi).ToList();
+            List<string> basliklar = altlar.Select(p => p.altMenuBaslik).Distinct().ToList();
+
+
+
+            string tamami = "";
+
+            foreach (string siradaki in basliklar)
+            {
+                sonuc = @"	<div class=""col col-12 col-lg-3"">
+										<div class=""klbfooterwidget widget widget_nav_menu"">
+											<h4 class=""widget-title"">     xxxxxxxx  </h4><div class=""menu-customer-service-container"">
+												<ul class=""menu"" id=""menu-customer-service"">
+												 
+												";
+                sonuc = sonuc.Replace("xxxxxxxx", siradaki);
+                List<AltMenuAYRINTI> karsilik = altlar.Where(p => p.altMenuBaslik == siradaki).OrderBy(p => p.sirasi).ToList();
+
+
+                for (int i = 0; i < karsilik.Count; i++)
+                {
+                    string ara = "<li class=\"menu-item menu-item-type-custom menu-item-object-custom menu-item-3663\" ><a href=\"/FirmaTalebi\"> xxxx  </a></li>";
+
+                    ara = ara.Replace("/FirmaTalebi", karsilik[i].menuUrl);
+                    ara = ara.Replace("xxxx", karsilik[i].menuAdi);
+
+                    sonuc += ara;
+
+                }
+
+                sonuc += @"</ul>
+											</div>
+										</div>
+									</div>";
+
+
+                tamami += sonuc;
+            }
+            altMenuHtml = tamami;
+
+            return sonuc;
         }
         public static async Task<string> menuOlustur(veri.Varlik vari)
         {

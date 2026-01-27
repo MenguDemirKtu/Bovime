@@ -1,25 +1,25 @@
 using Microsoft.AspNetCore.Mvc;
 namespace Bovime.Controllers
 {
-    public class IletisimTalebiController : Sayfa
+    public class AltMenuController : Sayfa
     {
-        public async Task<ActionResult> Cek(Models.IletisimTalebiModel modeli)
+        public async Task<ActionResult> Cek(Models.AltMenuModel modeli)
         {
             var nedir = await modeli.ayrintiliAraKos(this);
-            return basariBildirimi("/IletisimTalebi?id=" + nedir.kodu);
+            return basariBildirimi("/AltMenu?id=" + nedir.kodu);
         }
         public async Task<ActionResult> Index(string id)
         {
             try
             {
                 string tanitim = "...";
-                tanitim = await Genel.dokumKisaAciklamaKos(this, "IletisimTalebi");
-                gorunumAyari("", "", "Ana Sayfa", "/", "/IletisimTalebi/", tanitim);
+                tanitim = await Genel.dokumKisaAciklamaKos(this, "AltMenu");
+                gorunumAyari("", "", "Ana Sayfa", "/", "/AltMenu/", tanitim);
                 if (!oturumAcildimi())
                     return OturumAcilmadi();
                 if (await yetkiVarmiKos())
                 {
-                    Models.IletisimTalebiModel modeli = new Models.IletisimTalebiModel();
+                    Models.AltMenuModel modeli = new Models.AltMenuModel();
                     if (string.IsNullOrEmpty(id))
                         await modeli.veriCekKos(mevcutKullanici());
                     else
@@ -43,12 +43,12 @@ namespace Bovime.Controllers
                 if (!oturumAcildimi())
                     return OturumAcilmadi();
                 string tanitim = "....";
-                tanitim = await Genel.dokumKisaAciklamaKos(this, "IletisimTalebi");
-                gorunumAyari("İletişim Talebi Kartı", "İletişim Talebi Kartı", "Ana Sayfa", "/", "/IletisimTalebi/", tanitim);
+                tanitim = await Genel.dokumKisaAciklamaKos(this, "AltMenu");
+                gorunumAyari("Alt Menü Kartı", "Alt Menü Kartı", "Ana Sayfa", "/", "/AltMenu/", tanitim);
                 enumref_YetkiTuru yetkiTuru = yetkiTuruBelirle(id);
-                if (await yetkiVarmiKos("IletisimTalebi", yetkiTuru))
+                if (await yetkiVarmiKos("AltMenu", yetkiTuru))
                 {
-                    Models.IletisimTalebiModel modeli = new Models.IletisimTalebiModel();
+                    Models.AltMenuModel modeli = new Models.AltMenuModel();
                     await modeli.veriCekKos(mevcutKullanici(), id);
                     return View(modeli);
                 }
@@ -73,9 +73,10 @@ namespace Bovime.Controllers
                     uyariVer(Ikazlar.hicKayitSecilmemis(dilKimlik));
                 if (await yetkiVarmiKos("Ogrenci", enumref_YetkiTuru.Silme))
                 {
-                    Models.IletisimTalebiModel modeli = new Models.IletisimTalebiModel();
+                    Models.AltMenuModel modeli = new Models.AltMenuModel();
                     await modeli.silKos(this, id ?? "", mevcutKullanici());
                     await modeli.veriCekKos(mevcutKullanici());
+                    Genel.yenilensinmi = true;
                     return basariBildirimi(Ikazlar.basariylaSilindi(dilKimlik));
                 }
                 else
@@ -89,7 +90,7 @@ namespace Bovime.Controllers
             }
         }
         [HttpPost]
-        public async Task<ActionResult> Kaydet(Models.IletisimTalebiModel gelen)
+        public async Task<ActionResult> Kaydet(Models.AltMenuModel gelen)
         {
             try
             {
@@ -97,6 +98,7 @@ namespace Bovime.Controllers
                     return OturumAcilmadi();
                 await gelen.yetkiKontrolu(this);
                 await gelen.kaydetKos(this);
+                Genel.yenilensinmi = true;
                 return basariBildirimi(gelen.kartVerisi, dilKimlik);
             }
             catch (Exception istisna)

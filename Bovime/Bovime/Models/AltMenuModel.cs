@@ -3,18 +3,18 @@ using Bovime.veriTabani;
 using Newtonsoft.Json;
 namespace Bovime.Models
 {
-    public class FirmaBasvurusuModel : ModelTabani
+    public class AltMenuModel : ModelTabani
     {
-        public FirmaBasvurusu kartVerisi { get; set; }
-        public List<FirmaBasvurusuAYRINTI> dokumVerisi { get; set; }
-        public FirmaBasvurusuAYRINTIArama aramaParametresi { get; set; }
+        public AltMenu kartVerisi { get; set; }
+        public List<AltMenuAYRINTI> dokumVerisi { get; set; }
+        public AltMenuAYRINTIArama aramaParametresi { get; set; }
 
 
-        public FirmaBasvurusuModel()
+        public AltMenuModel()
         {
-            this.kartVerisi = new FirmaBasvurusu();
-            this.dokumVerisi = new List<FirmaBasvurusuAYRINTI>();
-            this.aramaParametresi = new FirmaBasvurusuAYRINTIArama();
+            this.kartVerisi = new AltMenu();
+            this.dokumVerisi = new List<AltMenuAYRINTI>();
+            this.aramaParametresi = new AltMenuAYRINTIArama();
         }
 
 
@@ -31,7 +31,7 @@ namespace Bovime.Models
                 return talep;
             }
         }
-        private async Task ekkosulEkle(veri.Varlik vari, Yonetici kime, FirmaBasvurusuAYRINTIArama kosul)
+        private async Task ekkosulEkle(veri.Varlik vari, Yonetici kime, AltMenuAYRINTIArama kosul)
         {
         }
         public async Task silKos(Sayfa sayfasi, string id, Yonetici silen)
@@ -41,14 +41,14 @@ namespace Bovime.Models
                 List<string> kayitlar = id.Split(',').ToList();
                 for (int i = 0; i < kayitlar.Count; i++)
                 {
-                    FirmaBasvurusu? silinecek = await FirmaBasvurusu.olusturKos(vari, kayitlar[i]);
+                    AltMenu? silinecek = await AltMenu.olusturKos(vari, kayitlar[i]);
                     if (silinecek == null)
                         continue;
                     silinecek._sayfaAta(sayfasi);
                     await silinecek.silKos(vari);
                 }
             }
-            Models.FirmaBasvurusuModel modeli = new Models.FirmaBasvurusuModel();
+            Models.AltMenuModel modeli = new Models.AltMenuModel();
             await modeli.veriCekKos(silen);
         }
         public async Task yetkiKontrolu(Sayfa sayfasi)
@@ -63,7 +63,7 @@ namespace Bovime.Models
 
 
 
-        public async Task<FirmaBasvurusu> kaydetKos(Sayfa sayfasi)
+        public async Task<AltMenu> kaydetKos(Sayfa sayfasi)
         {
             using (veri.Varlik vari = new veri.Varlik())
             {
@@ -82,10 +82,10 @@ namespace Bovime.Models
             yenimiBelirle(kimlik);
             using (veri.Varlik vari = new Varlik())
             {
-                var kart = await FirmaBasvurusu.olusturKos(vari, kimlik);
+                var kart = await AltMenu.olusturKos(vari, kimlik);
                 if (kart != null)
                     kartVerisi = kart;
-                dokumVerisi = new List<FirmaBasvurusuAYRINTI>();
+                dokumVerisi = new List<AltMenuAYRINTI>();
                 await baglilariCek(vari, kime);
             }
         }
@@ -97,9 +97,9 @@ namespace Bovime.Models
             this.kullanan = kime;
             using (veri.Varlik vari = new Varlik())
             {
-                FirmaBasvurusuAYRINTIArama kosul = new FirmaBasvurusuAYRINTIArama();
+                AltMenuAYRINTIArama kosul = new AltMenuAYRINTIArama();
                 kosul.varmi = true;
-                kartVerisi = new FirmaBasvurusu();
+                kartVerisi = new AltMenu();
                 await ekkosulEkle(vari, kime, kosul);
                 dokumVerisi = await kosul.cek(vari);
                 await baglilariCek(vari, kime);
@@ -113,10 +113,10 @@ namespace Bovime.Models
                 var talep = vari.AramaTalebis.FirstOrDefault(p => p.kodu == id);
                 if (talep != null)
                 {
-                    FirmaBasvurusuAYRINTIArama kosul = JsonConvert.DeserializeObject<FirmaBasvurusuAYRINTIArama>(talep.talepAyrintisi ?? "") ?? new FirmaBasvurusuAYRINTIArama();
+                    AltMenuAYRINTIArama kosul = JsonConvert.DeserializeObject<AltMenuAYRINTIArama>(talep.talepAyrintisi ?? "") ?? new AltMenuAYRINTIArama();
                     await ekkosulEkle(vari, kime, kosul);
                     dokumVerisi = await kosul.cek(vari);
-                    kartVerisi = new FirmaBasvurusu();
+                    kartVerisi = new AltMenu();
                     await baglilariCek(vari, kime);
                     aramaParametresi = kosul;
                 }

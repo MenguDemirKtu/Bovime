@@ -6,27 +6,30 @@ using System.Linq.Expressions;
 namespace Bovime.veriTabani
 {
 
-    public class SikSorulanSorularArama
+    public class AltMenuArama
     {
-        public Int32? sikSorulanSorularkimlik { get; set; }
-        public string? soru { get; set; }
-        public string? yanit { get; set; }
+        public Int32? altMenukimlik { get; set; }
+        public string? altMenuBaslik { get; set; }
+        public string? menuAdi { get; set; }
+        public string? menuUrl { get; set; }
         public Int32? sirasi { get; set; }
         public bool? varmi { get; set; }
-        public SikSorulanSorularArama()
+        public AltMenuArama()
         {
             this.varmi = true;
         }
 
-        private ExpressionStarter<SikSorulanSorular> kosulOlustur()
+        private ExpressionStarter<AltMenu> kosulOlustur()
         {
-            var predicate = PredicateBuilder.New<SikSorulanSorular>(P => P.varmi == true);
-            if (sikSorulanSorularkimlik != null)
-                predicate = predicate.And(x => x.sikSorulanSorularkimlik == sikSorulanSorularkimlik);
-            if (soru != null)
-                predicate = predicate.And(x => x.soru != null && x.soru.Contains(soru));
-            if (yanit != null)
-                predicate = predicate.And(x => x.yanit != null && x.yanit.Contains(yanit));
+            var predicate = PredicateBuilder.New<AltMenu>(P => P.varmi == true);
+            if (altMenukimlik != null)
+                predicate = predicate.And(x => x.altMenukimlik == altMenukimlik);
+            if (altMenuBaslik != null)
+                predicate = predicate.And(x => x.altMenuBaslik != null && x.altMenuBaslik.Contains(altMenuBaslik));
+            if (menuAdi != null)
+                predicate = predicate.And(x => x.menuAdi != null && x.menuAdi.Contains(menuAdi));
+            if (menuUrl != null)
+                predicate = predicate.And(x => x.menuUrl != null && x.menuUrl.Contains(menuUrl));
             if (sirasi != null)
                 predicate = predicate.And(x => x.sirasi == sirasi);
             if (varmi != null)
@@ -34,17 +37,17 @@ namespace Bovime.veriTabani
             return predicate;
 
         }
-        public async Task<List<SikSorulanSorular>> cek(veri.Varlik vari)
+        public async Task<List<AltMenu>> cek(veri.Varlik vari)
         {
-            List<SikSorulanSorular> sonuc = await vari.SikSorulanSorulars
+            List<AltMenu> sonuc = await vari.AltMenus
            .Where(kosulOlustur())
            .ToListAsync();
             return sonuc;
         }
-        public async Task<SikSorulanSorular?> bul(veri.Varlik vari)
+        public async Task<AltMenu?> bul(veri.Varlik vari)
         {
             var predicate = kosulOlustur();
-            SikSorulanSorular? sonuc = await vari.SikSorulanSorulars
+            AltMenu? sonuc = await vari.AltMenus
            .Where(predicate)
            .FirstOrDefaultAsync();
             return sonuc;
@@ -52,7 +55,7 @@ namespace Bovime.veriTabani
     }
 
 
-    public class SikSorulanSorularCizelgesi
+    public class AltMenuCizelgesi
     {
 
 
@@ -63,50 +66,50 @@ namespace Bovime.veriTabani
         /// </summary>  
         /// <param name="kosullar"></param> 
         /// <returns></returns> 
-        public static async Task<List<SikSorulanSorular>> ara(params Expression<Func<SikSorulanSorular, bool>>[] kosullar)
+        public static async Task<List<AltMenu>> ara(params Expression<Func<AltMenu, bool>>[] kosullar)
         {
             using (var vari = new veri.Varlik())
             {
                 return await ara(vari, kosullar);
             }
         }
-        public static async Task<List<SikSorulanSorular>> ara(veri.Varlik vari, params Expression<Func<SikSorulanSorular, bool>>[] kosullar)
+        public static async Task<List<AltMenu>> ara(veri.Varlik vari, params Expression<Func<AltMenu, bool>>[] kosullar)
         {
             var kosul = Vt.Birlestir(kosullar);
-            return await vari.SikSorulanSorulars
-                            .Where(kosul).OrderByDescending(p => p.sikSorulanSorularkimlik)
+            return await vari.AltMenus
+                            .Where(kosul).OrderByDescending(p => p.altMenukimlik)
                    .ToListAsync();
         }
-        public static async Task<SikSorulanSorular?> bul(veri.Varlik vari, params Expression<Func<SikSorulanSorular, bool>>[] kosullar)
+        public static async Task<AltMenu?> bul(veri.Varlik vari, params Expression<Func<AltMenu, bool>>[] kosullar)
         {
             var kosul = Vt.Birlestir(kosullar);
-            return await vari.SikSorulanSorulars.FirstOrDefaultAsync(kosul);
+            return await vari.AltMenus.FirstOrDefaultAsync(kosul);
         }
 
 
 
-        public static async Task<SikSorulanSorular?> tekliCekKos(Int32 kimlik, Varlik kime)
+        public static async Task<AltMenu?> tekliCekKos(Int32 kimlik, Varlik kime)
         {
-            SikSorulanSorular? kayit = await kime.SikSorulanSorulars.FirstOrDefaultAsync(p => p.sikSorulanSorularkimlik == kimlik && p.varmi == true);
+            AltMenu? kayit = await kime.AltMenus.FirstOrDefaultAsync(p => p.altMenukimlik == kimlik && p.varmi == true);
             return kayit;
         }
 
 
-        public static async Task kaydetKos(SikSorulanSorular yeni, Varlik vari, params bool[] yedekAlinsinmi)
+        public static async Task kaydetKos(AltMenu yeni, Varlik vari, params bool[] yedekAlinsinmi)
         {
-            if (yeni.sikSorulanSorularkimlik <= 0)
+            if (yeni.altMenukimlik <= 0)
             {
                 Kayit kay = new Kayit(yeni, "E", yeni._tanimi() + " kaydının eklenmesi ");
                 if (yeni.varmi == null)
                     yeni.varmi = true;
-                await vari.SikSorulanSorulars.AddAsync(yeni);
+                await vari.AltMenus.AddAsync(yeni);
                 await vari.SaveChangesAsync();
                 await kay.kaydetKos(vari, yedekAlinsinmi);
             }
             else
             {
                 Kayit kay = new Kayit(yeni, "G", yeni._tanimi() + " kaydının güncellenmesi ");
-                SikSorulanSorular? bulunan = await vari.SikSorulanSorulars.FirstOrDefaultAsync(p => p.sikSorulanSorularkimlik == yeni.sikSorulanSorularkimlik);
+                AltMenu? bulunan = await vari.AltMenus.FirstOrDefaultAsync(p => p.altMenukimlik == yeni.altMenukimlik);
                 if (bulunan == null)
                     return;
                 vari.Entry(bulunan).CurrentValues.SetValues(yeni);
@@ -116,11 +119,11 @@ namespace Bovime.veriTabani
         }
 
 
-        public static async Task silKos(SikSorulanSorular kimi, Varlik vari, params bool[] yedekAlinsinmi)
+        public static async Task silKos(AltMenu kimi, Varlik vari, params bool[] yedekAlinsinmi)
         {
             Kayit kay = new Kayit(kimi, "S", kimi._tanimi() + " kaydının silinmesi");
             kimi.varmi = false;
-            var bulunan = await vari.SikSorulanSorulars.FirstOrDefaultAsync(p => p.sikSorulanSorularkimlik == kimi.sikSorulanSorularkimlik);
+            var bulunan = await vari.AltMenus.FirstOrDefaultAsync(p => p.altMenukimlik == kimi.altMenukimlik);
             if (bulunan == null)
                 return;
             kimi.varmi = false;
@@ -129,9 +132,9 @@ namespace Bovime.veriTabani
         }
 
 
-        public static SikSorulanSorular? tekliCek(Int32 kimlik, Varlik kime)
+        public static AltMenu? tekliCek(Int32 kimlik, Varlik kime)
         {
-            SikSorulanSorular? kayit = kime.SikSorulanSorulars.FirstOrDefault(p => p.sikSorulanSorularkimlik == kimlik);
+            AltMenu? kayit = kime.AltMenus.FirstOrDefault(p => p.altMenukimlik == kimlik);
             if (kayit != null)
                 if (kayit.varmi != true)
                     return null;
@@ -145,13 +148,13 @@ namespace Bovime.veriTabani
         /// <param name="yeni"></param> 
         /// <param name="kime"></param> 
         /// <param name="kaydedilsinmi">Girmek isteğe bağlıdır. Eğer false değeri girilirse yedeği alınmaz. İkinci parametre </param> 
-        public static void kaydet(SikSorulanSorular yeni, Varlik kime, params bool[] yedekAlinsinmi)
+        public static void kaydet(AltMenu yeni, Varlik kime, params bool[] yedekAlinsinmi)
         {
-            if (yeni.sikSorulanSorularkimlik <= 0)
+            if (yeni.altMenukimlik <= 0)
             {
                 if (yeni.varmi == null)
                     yeni.varmi = true;
-                kime.SikSorulanSorulars.Add(yeni);
+                kime.AltMenus.Add(yeni);
                 kime.SaveChanges();
                 Kayit kay = new Kayit(yeni, "E", yeni._tanimi() + " kaydının eklenmesi ");
                 kay.kaydet(yedekAlinsinmi);
@@ -159,7 +162,7 @@ namespace Bovime.veriTabani
             else
             {
 
-                var bulunan = kime.SikSorulanSorulars.FirstOrDefault(p => p.sikSorulanSorularkimlik == yeni.sikSorulanSorularkimlik);
+                var bulunan = kime.AltMenus.FirstOrDefault(p => p.altMenukimlik == yeni.altMenukimlik);
                 if (bulunan == null)
                     return;
                 kime.Entry(bulunan).CurrentValues.SetValues(yeni);
@@ -171,10 +174,10 @@ namespace Bovime.veriTabani
         }
 
 
-        public static void sil(SikSorulanSorular kimi, Varlik kime)
+        public static void sil(AltMenu kimi, Varlik kime)
         {
             kimi.varmi = false;
-            var bulunan = kime.SikSorulanSorulars.FirstOrDefault(p => p.sikSorulanSorularkimlik == kimi.sikSorulanSorularkimlik);
+            var bulunan = kime.AltMenus.FirstOrDefault(p => p.altMenukimlik == kimi.altMenukimlik);
             if (bulunan == null)
                 return;
             kime.Entry(bulunan).CurrentValues.SetValues(kimi);

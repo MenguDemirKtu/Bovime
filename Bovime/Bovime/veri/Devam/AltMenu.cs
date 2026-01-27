@@ -3,10 +3,10 @@ using System.Linq.Expressions;
 
 namespace Bovime.veri
 {
-    public partial class SikSorulanSorular : Bilesen
+    public partial class AltMenu : Bilesen
     {
 
-        public SikSorulanSorular()
+        public AltMenu()
         {
             _varSayilan();
         }
@@ -24,23 +24,23 @@ namespace Bovime.veri
 
         public override string _tanimi()
         {
-            return bossaDoldur(soru);
+            return bossaDoldur(altMenuBaslik);
         }
 
 
 
-        public async static Task<SikSorulanSorular?> olusturKos(Varlik vari, object deger)
+        public async static Task<AltMenu?> olusturKos(Varlik vari, object deger)
         {
             Int64 kimlik = Convert.ToInt64(deger);
             if (kimlik <= 0)
             {
-                SikSorulanSorular sonuc = new SikSorulanSorular();
+                AltMenu sonuc = new AltMenu();
                 sonuc._varSayilan();
                 return sonuc;
             }
             else
             {
-                return await vari.SikSorulanSorulars.FirstOrDefaultAsync(p => p.sikSorulanSorularkimlik == kimlik && p.varmi == true);
+                return await vari.AltMenus.FirstOrDefaultAsync(p => p.altMenukimlik == kimlik && p.varmi == true);
             }
         }
 
@@ -50,12 +50,12 @@ namespace Bovime.veri
             if (varmi == null)
                 varmi = true;
             bicimlendir(vari);
-            await veriTabani.SikSorulanSorularCizelgesi.kaydetKos(this, vari, yedeklensinmi);
+            await veriTabani.AltMenuCizelgesi.kaydetKos(this, vari, yedeklensinmi);
         }
         public async Task silKos(veri.Varlik vari, params bool[] yedeklensinmi)
         {
             varmi = false;
-            await veriTabani.SikSorulanSorularCizelgesi.silKos(this, vari, yedeklensinmi);
+            await veriTabani.AltMenuCizelgesi.silKos(this, vari, yedeklensinmi);
         }
 
 
@@ -71,17 +71,17 @@ namespace Bovime.veri
             this.varmi = true;
         }
 
-        public static async Task<List<SikSorulanSorular>> ara(params Expression<Func<SikSorulanSorular, bool>>[] kosullar)
+        public static async Task<List<AltMenu>> ara(params Expression<Func<AltMenu, bool>>[] kosullar)
         {
-            return await veriTabani.SikSorulanSorularCizelgesi.ara(kosullar);
+            return await veriTabani.AltMenuCizelgesi.ara(kosullar);
         }
-        public static async Task<List<SikSorulanSorular>> ara(veri.Varlik vari, params Expression<Func<SikSorulanSorular, bool>>[] kosullar)
+        public static async Task<List<AltMenu>> ara(veri.Varlik vari, params Expression<Func<AltMenu, bool>>[] kosullar)
         {
-            return await veriTabani.SikSorulanSorularCizelgesi.ara(vari, kosullar);
+            return await veriTabani.AltMenuCizelgesi.ara(vari, kosullar);
         }
-        public static async Task<SikSorulanSorular?> bul(veri.Varlik vari, params Expression<Func<SikSorulanSorular, bool>>[] kosullar)
+        public static async Task<AltMenu?> bul(veri.Varlik vari, params Expression<Func<AltMenu, bool>>[] kosullar)
         {
-            return await veriTabani.SikSorulanSorularCizelgesi.bul(vari, kosullar);
+            return await veriTabani.AltMenuCizelgesi.bul(vari, kosullar);
         }
 
 
@@ -90,23 +90,23 @@ namespace Bovime.veri
 
         public override string _cizelgeAdi()
         {
-            return "SikSorulanSorular";
+            return "AltMenu";
         }
 
 
         public override string _turkceAdi()
         {
-            return "Sık Sorulan Sorular";
+            return "Alt Menü";
         }
         public override string _birincilAnahtarAdi()
         {
-            return "sikSorulanSorularkimlik";
+            return "altMenukimlik";
         }
 
 
         public override long _birincilAnahtar()
         {
-            return this.sikSorulanSorularkimlik;
+            return this.altMenukimlik;
         }
 
 
